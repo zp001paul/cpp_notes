@@ -1,0 +1,24 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-O2",
+      "-std=c++20",
+      "const.cpp"
+    ],
+    "directory": "/home/zp001/Documents/MyCppProjects/misc",
+    "file": "/home/zp001/Documents/MyCppProjects/misc/const.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-O2",
+      "-std=c++20",
+      "raiiorder.cpp"
+    ],
+    "directory": "/home/zp001/Documents/MyCppProjects/misc",
+    "file": "/home/zp001/Documents/MyCppProjects/misc/raiiorder.cpp"
+  }
+]
