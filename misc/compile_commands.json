@@ -3,22 +3,14 @@
     "arguments": [
       "/usr/bin/g++",
       "-c",
-      "-O2",
       "-std=c++20",
-      "const.cpp"
+      "-I/usr/local/include/fmt/include",
+      "-o",
+      "misc.o",
+      "misc.cpp"
     ],
-    "directory": "/home/zp001/Documents/MyCppProjects/misc",
-    "file": "/home/zp001/Documents/MyCppProjects/misc/const.cpp"
-  },
-  {
-    "arguments": [
-      "/usr/bin/g++",
-      "-c",
-      "-O2",
-      "-std=c++20",
-      "raiiorder.cpp"
-    ],
-    "directory": "/home/zp001/Documents/MyCppProjects/misc",
-    "file": "/home/zp001/Documents/MyCppProjects/misc/raiiorder.cpp"
+    "directory": "/home/zp001/Documents/cpp_notes/misc",
+    "file": "/home/zp001/Documents/cpp_notes/misc/misc.cpp",
+    "output": "/home/zp001/Documents/cpp_notes/misc/misc.o"
   }
 ]
