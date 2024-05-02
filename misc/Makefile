@@ -1,5 +1,7 @@
-CFLAGS += -c -std=c++20 -I/usr/local/include/fmt/include 
-LDFLAGS += -L/usr/local/lib -lfmt
+# CFLAGS += -c -std=c++20 -I/usr/local/include/fmt/include 
+# LDFLAGS += -L/usr/local/lib -lfmt
+CFLAGS += -c -std=c++20 -fconcepts
+LDFLAGS = 
 
 # .PHONY: default
 # default: misc misc.o

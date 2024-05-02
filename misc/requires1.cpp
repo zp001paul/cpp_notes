@@ -5,8 +5,10 @@
 
 template <typename T>
 concept Averageable = std::is_destructible_v<T> && requires(T a, T b) {
-  { a + b } -> std::convertible_to<T>; // 这里不能直接写T，真奇怪
-  { a / size_t{1} } -> std::convertible_to<T>;
+  { a + b } -> std::same_as<T>;
+  { a / size_t{1} } -> std::same_as<T>;
+  // 这里不能直接写T，因为这里要写一个概念
+  // 其实这里不用管返回值，返回值应该在mean()函数中定义，概念是“一个”T类型的约束
 };
 
 template <Averageable T> T mean(const T *arr, std::size_t length) {

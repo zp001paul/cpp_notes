@@ -2,10 +2,6 @@
 #include <initializer_list>
 #include <numeric>
 
-/* 好文章
- * https://blog.csdn.net/albertsh/article/details/123978539
- * */
-
 // example1
 template <typename... Args> void print(const Args &...args) {
   // int _[]{(std::cout << args << ' ', 0)...}; // 这句和下面这句效果相同
