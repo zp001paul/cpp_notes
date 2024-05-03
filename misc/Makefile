@@ -9,7 +9,7 @@ LDFLAGS =
 misc: misc.o
 	g++ $(LDFLAGS) -o $@ $(@:%=%.o)
 
-misc.o: misc.cpp
+misc.o: misc.cpp myconcept.hpp myprt.hpp myalgorithm.hpp
 	g++ $(CFLAGS) -o $@ $(@:%.o=%.cpp)
 
 
