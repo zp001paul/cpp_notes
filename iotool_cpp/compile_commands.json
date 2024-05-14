@@ -1,0 +1,15 @@
+[
+  {
+    "arguments": [
+      "/usr/lib64/ccache/g++",
+      "-c",
+      "-g",
+      "-o",
+      "iotool",
+      "iotool.c"
+    ],
+    "directory": "/home/zp001/MyRepos/cpp_notes/iotool",
+    "file": "/home/zp001/MyRepos/cpp_notes/iotool/iotool.c",
+    "output": "/home/zp001/MyRepos/cpp_notes/iotool/iotool"
+  }
+]

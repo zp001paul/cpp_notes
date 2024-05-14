@@ -1,35 +1,29 @@
 #include <cstring>
 #include <format>
+#include <fstream>
 #include <iostream>
-#include <regex>
-
-// smatch[0] : 匹配的所有
-// smatch[1] : 第一个() sub-match
-// smatch[2] : 第二个() sub-match
-void PrtMatch(std::smatch &m) {
-  for (auto it{m.begin()}; it != m.end(); ++it) {
-    auto dt{std::distance(m.begin(), it)};
-    // std::cout << std::format("match {}: ", dt) << *it << '\n'; // format()
-    // cannot format *it !
-    std::cout << std::format("match {}: {}\n", dt, it->str());
-  }
-}
 
 int main(int argc, char *argv[]) {
-  std::string text =
-      R"(  std::copy(vec.begin(), vec.end(), std::inserter(s, s.end()));)";
-  // std::string regPtn{
-  //     R"(copy\(.*\))"}; // (.*)解释成真实字符，并不是sub-match符号
-  std::string regPtn{R"(copy(.*))"};
-  // (.*)解释成sub-match符号，即匹配copy之后的所有字符，直到行尾
-  std::regex rgx{regPtn}; // 可以简写成： std::regex rgx{R"(copy(.*))"};
-  std::smatch match;
-
-  if (std::regex_search(text, match, rgx))
-    PrtMatch(match);
-  else
-    std::cout << "cannot find pattern: " << regPtn << " in text: " << text
-              << '\n';
-
-  return EXIT_SUCCESS;
+  const char *TMPFILE{"/tmp/ofile.txt"};
+  std::ofstream ofile(TMPFILE, std::ios::binary); // 使用bin模式打开txt文件
+  if (!ofile.is_open()) {
+    std::cerr << std::format("failed to open file: {}, error: {}\n ", TMPFILE,
+                             std::strerror(errno));
+    return 1;
+  }
+  std::string content{"file contant\n"};
+  ofile.write(content.data(), content.size());
+  ofile.flush();
+  return 0;
 }
+
+/*
+ *
+strace 本段代码的输出：
+openat(AT_FDCWD, "/tmp/ofile.txt", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
+write(3, "file contant\n", 13)          = 13
+close(3)                                = 0
+可以看到：
+1. 根本就没有调用fsync()
+2. 它会自动调用close()
+ * */
