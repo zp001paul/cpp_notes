@@ -1,5 +1,5 @@
 CFLAGS := -std=c++20
-PROGS := buffered sync direct
+PROGS := buffered sync direct bufwrite_directread
 
 .PNONY: all clean
 
