@@ -1,0 +1,122 @@
+CPU 0 is empty
+CPU 2 is empty
+cpus=4
+      write_bdev-6535  [003]   902.889921: funcgraph_entry:                   |  __x64_sys_fsync() {
+      write_bdev-6535  [003]   902.889924: funcgraph_entry:                   |  smp_irq_work_interrupt() {
+      write_bdev-6535  [003]   902.889925: funcgraph_entry:                   |    irq_enter() {
+      write_bdev-6535  [003]   902.889925: funcgraph_entry:                   |      irq_enter_rcu() {
+      write_bdev-6535  [003]   902.889925: funcgraph_entry:        0.080 us   |        irqtime_account_irq();
+      write_bdev-6535  [003]   902.889925: funcgraph_exit:         0.431 us   |      }
+      write_bdev-6535  [003]   902.889925: funcgraph_exit:         0.675 us   |    }
+      write_bdev-6535  [003]   902.889926: funcgraph_entry:                   |    __wake_up() {
+      write_bdev-6535  [003]   902.889926: funcgraph_entry:                   |      __wake_up_common_lock() {
+      write_bdev-6535  [003]   902.889926: funcgraph_entry:        0.033 us   |        _raw_spin_lock_irqsave();
+      write_bdev-6535  [003]   902.889927: funcgraph_entry:        0.045 us   |        __wake_up_common();
+      write_bdev-6535  [003]   902.889927: funcgraph_entry:        0.043 us   |        _raw_spin_unlock_irqrestore();
+      write_bdev-6535  [003]   902.889927: funcgraph_exit:         0.645 us   |      }
+      write_bdev-6535  [003]   902.889927: funcgraph_exit:         0.851 us   |    }
+      write_bdev-6535  [003]   902.889927: funcgraph_entry:                   |    __wake_up() {
+      write_bdev-6535  [003]   902.889927: funcgraph_entry:                   |      __wake_up_common_lock() {
+      write_bdev-6535  [003]   902.889927: funcgraph_entry:        0.032 us   |        _raw_spin_lock_irqsave();
+      write_bdev-6535  [003]   902.889928: funcgraph_entry:                   |        __wake_up_common() {
+      write_bdev-6535  [003]   902.889928: funcgraph_entry:                   |          autoremove_wake_function() {
+      write_bdev-6535  [003]   902.889928: funcgraph_entry:                   |            default_wake_function() {
+      write_bdev-6535  [003]   902.889928: funcgraph_entry:                   |              try_to_wake_up() {
+      write_bdev-6535  [003]   902.889928: funcgraph_entry:        0.081 us   |                _raw_spin_lock_irqsave();
+      write_bdev-6535  [003]   902.889928: funcgraph_entry:                   |                select_task_rq_fair() {
+      write_bdev-6535  [003]   902.889928: funcgraph_entry:        0.127 us   |                  available_idle_cpu();
+      write_bdev-6535  [003]   902.889929: funcgraph_exit:         0.363 us   |                }
+      write_bdev-6535  [003]   902.889929: funcgraph_entry:                   |                ttwu_queue_wakelist() {
+      write_bdev-6535  [003]   902.889929: funcgraph_entry:                   |                  __smp_call_single_queue() {
+      write_bdev-6535  [003]   902.889929: funcgraph_entry:                   |                    send_call_function_single_ipi() {
+      write_bdev-6535  [003]   902.889929: funcgraph_entry:                   |                      native_send_call_func_single_ipi() {
+      write_bdev-6535  [003]   902.889929: funcgraph_entry:        1.738 us   |                        x2apic_send_IPI();
+      write_bdev-6535  [003]   902.889931: funcgraph_exit:         1.946 us   |                      }
+      write_bdev-6535  [003]   902.889931: funcgraph_exit:         2.186 us   |                    }
+      write_bdev-6535  [003]   902.889932: funcgraph_exit:         2.455 us   |                  }
+      write_bdev-6535  [003]   902.889932: funcgraph_exit:         2.718 us   |                }
+      write_bdev-6535  [003]   902.889932: funcgraph_entry:        0.043 us   |                _raw_spin_unlock_irqrestore();
+      write_bdev-6535  [003]   902.889932: funcgraph_exit:         3.959 us   |              }
+      write_bdev-6535  [003]   902.889932: funcgraph_exit:         4.140 us   |            }
+      write_bdev-6535  [003]   902.889932: funcgraph_exit:         4.342 us   |          }
+      write_bdev-6535  [003]   902.889932: funcgraph_exit:         4.586 us   |        }
+      write_bdev-6535  [003]   902.889932: funcgraph_entry:        0.041 us   |        _raw_spin_unlock_irqrestore();
+      write_bdev-6535  [003]   902.889933: funcgraph_exit:         5.169 us   |      }
+      write_bdev-6535  [003]   902.889933: funcgraph_exit:         5.350 us   |    }
+      write_bdev-6535  [003]   902.889933: funcgraph_entry:                   |    irq_exit() {
+      write_bdev-6535  [003]   902.889933: funcgraph_entry:                   |      irq_exit_rcu() {
+      write_bdev-6535  [003]   902.889933: funcgraph_entry:        0.052 us   |        irqtime_account_irq();
+      write_bdev-6535  [003]   902.889933: funcgraph_entry:        0.030 us   |        idle_cpu();
+      write_bdev-6535  [003]   902.889933: funcgraph_exit:         0.452 us   |      }
+      write_bdev-6535  [003]   902.889934: funcgraph_exit:         0.649 us   |    }
+      write_bdev-6535  [003]   902.889934: funcgraph_exit:         9.237 us   |  }
+      write_bdev-6535  [003]   902.890390: funcgraph_exit:       ! 456.261 us |  }
+   systemd-udevd-736   [001]   902.890421: funcgraph_entry:                   |  finish_task_switch() {
+   systemd-udevd-736   [001]   902.890424: funcgraph_entry:                   |    smp_irq_work_interrupt() {
+   systemd-udevd-736   [001]   902.890424: funcgraph_entry:                   |      irq_enter() {
+   systemd-udevd-736   [001]   902.890424: funcgraph_entry:                   |        irq_enter_rcu() {
+   systemd-udevd-736   [001]   902.890424: funcgraph_entry:        0.050 us   |          irqtime_account_irq();
+   systemd-udevd-736   [001]   902.890424: funcgraph_exit:         0.340 us   |        }
+   systemd-udevd-736   [001]   902.890424: funcgraph_exit:         0.559 us   |      }
+   systemd-udevd-736   [001]   902.890425: funcgraph_entry:                   |      __wake_up() {
+   systemd-udevd-736   [001]   902.890426: funcgraph_entry:                   |        __wake_up_common_lock() {
+   systemd-udevd-736   [001]   902.890426: funcgraph_entry:        0.032 us   |          _raw_spin_lock_irqsave();
+   systemd-udevd-736   [001]   902.890426: funcgraph_entry:        0.055 us   |          __wake_up_common();
+   systemd-udevd-736   [001]   902.890426: funcgraph_entry:        0.041 us   |          _raw_spin_unlock_irqrestore();
+   systemd-udevd-736   [001]   902.890426: funcgraph_exit:         0.691 us   |        }
+   systemd-udevd-736   [001]   902.890426: funcgraph_exit:         0.898 us   |      }
+   systemd-udevd-736   [001]   902.890427: funcgraph_entry:                   |      __wake_up() {
+   systemd-udevd-736   [001]   902.890427: funcgraph_entry:                   |        __wake_up_common_lock() {
+   systemd-udevd-736   [001]   902.890427: funcgraph_entry:        0.033 us   |          _raw_spin_lock_irqsave();
+   systemd-udevd-736   [001]   902.890427: funcgraph_entry:                   |          __wake_up_common() {
+   systemd-udevd-736   [001]   902.890427: funcgraph_entry:                   |            autoremove_wake_function() {
+   systemd-udevd-736   [001]   902.890427: funcgraph_entry:                   |              default_wake_function() {
+   systemd-udevd-736   [001]   902.890427: funcgraph_entry:                   |                try_to_wake_up() {
+   systemd-udevd-736   [001]   902.890427: funcgraph_entry:        0.100 us   |                  _raw_spin_lock_irqsave();
+   systemd-udevd-736   [001]   902.890428: funcgraph_entry:                   |                  select_task_rq_fair() {
+   systemd-udevd-736   [001]   902.890428: funcgraph_entry:        0.035 us   |                    available_idle_cpu();
+   systemd-udevd-736   [001]   902.890428: funcgraph_entry:        0.046 us   |                    cpus_share_cache();
+   systemd-udevd-736   [001]   902.890428: funcgraph_exit:         0.561 us   |                  }
+   systemd-udevd-736   [001]   902.890428: funcgraph_entry:        0.036 us   |                  ttwu_queue_wakelist();
+   systemd-udevd-736   [001]   902.890429: funcgraph_entry:        0.032 us   |                  _raw_spin_lock();
+   systemd-udevd-736   [001]   902.890429: funcgraph_entry:                   |                  update_rq_clock() {
+   systemd-udevd-736   [001]   902.890429: funcgraph_entry:        0.068 us   |                    update_irq_load_avg();
+   systemd-udevd-736   [001]   902.890429: funcgraph_exit:         0.279 us   |                  }
+   systemd-udevd-736   [001]   902.890429: funcgraph_entry:                   |                  ttwu_do_activate() {
+   systemd-udevd-736   [001]   902.890429: funcgraph_entry:                   |                    enqueue_task_fair() {
+   systemd-udevd-736   [001]   902.890430: funcgraph_entry:                   |                      enqueue_entity() {
+   systemd-udevd-736   [001]   902.890430: funcgraph_entry:                   |                        update_curr() {
+   systemd-udevd-736   [001]   902.890430: funcgraph_entry:        0.043 us   |                          update_min_vruntime();
+   systemd-udevd-736   [001]   902.890430: funcgraph_entry:        0.383 us   |                          cpuacct_charge();
+   systemd-udevd-736   [001]   902.890431: funcgraph_exit:         0.956 us   |                        }
+   systemd-udevd-736   [001]   902.890431: funcgraph_entry:        0.071 us   |                        __update_load_avg_se();
+   systemd-udevd-736   [001]   902.890431: funcgraph_entry:        0.061 us   |                        __update_load_avg_cfs_rq();
+   systemd-udevd-736   [001]   902.890431: funcgraph_entry:        0.038 us   |                        update_cfs_group();
+   systemd-udevd-736   [001]   902.890431: funcgraph_entry:        0.038 us   |                        place_entity();
+   systemd-udevd-736   [001]   902.890432: funcgraph_entry:        0.046 us   |                        __enqueue_entity();
+   systemd-udevd-736   [001]   902.890432: funcgraph_exit:         2.236 us   |                      }
+   systemd-udevd-736   [001]   902.890432: funcgraph_entry:        0.029 us   |                      hrtick_update();
+   systemd-udevd-736   [001]   902.890432: funcgraph_exit:         2.676 us   |                    }
+   systemd-udevd-736   [001]   902.890432: funcgraph_entry:                   |                    check_preempt_curr() {
+   systemd-udevd-736   [001]   902.890432: funcgraph_entry:                   |                      check_preempt_wakeup() {
+   systemd-udevd-736   [001]   902.890432: funcgraph_entry:        0.037 us   |                        update_curr();
+   systemd-udevd-736   [001]   902.890433: funcgraph_entry:        0.035 us   |                        wakeup_preempt_entity.isra.71();
+   systemd-udevd-736   [001]   902.890433: funcgraph_exit:         0.435 us   |                      }
+   systemd-udevd-736   [001]   902.890433: funcgraph_exit:         0.672 us   |                    }
+   systemd-udevd-736   [001]   902.890433: funcgraph_exit:         3.866 us   |                  }
+   systemd-udevd-736   [001]   902.890433: funcgraph_entry:        0.042 us   |                  _raw_spin_unlock_irqrestore();
+   systemd-udevd-736   [001]   902.890434: funcgraph_exit:         6.170 us   |                }
+   systemd-udevd-736   [001]   902.890434: funcgraph_exit:         6.348 us   |              }
+   systemd-udevd-736   [001]   902.890434: funcgraph_exit:         6.545 us   |            }
+   systemd-udevd-736   [001]   902.890434: funcgraph_exit:         6.810 us   |          }
+   systemd-udevd-736   [001]   902.890434: funcgraph_entry:        0.044 us   |          _raw_spin_unlock_irqrestore();
+   systemd-udevd-736   [001]   902.890434: funcgraph_exit:         7.393 us   |        }
+   systemd-udevd-736   [001]   902.890434: funcgraph_exit:         7.572 us   |      }
+   systemd-udevd-736   [001]   902.890434: funcgraph_entry:                   |      irq_exit() {
+   systemd-udevd-736   [001]   902.890434: funcgraph_entry:                   |        irq_exit_rcu() {
+   systemd-udevd-736   [001]   902.890434: funcgraph_entry:        0.052 us   |          irqtime_account_irq();
+   systemd-udevd-736   [001]   902.890435: funcgraph_entry:        0.031 us   |          idle_cpu();
+   systemd-udevd-736   [001]   902.890435: funcgraph_exit:         0.439 us   |        }
+   systemd-udevd-736   [001]   902.890435: funcgraph_exit:         0.629 us   |      }
+   systemd-udevd-736   [001]   902.890435: funcgraph_exit:       + 11.305 us  |    }
+   systemd-udevd-736   [001]   902.890435: funcgraph_exit:       + 12.649 us  |  }

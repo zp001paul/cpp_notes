@@ -1,0 +1,13 @@
+[
+  {
+    "arguments": [
+      "/usr/lib64/ccache/g++",
+      "-c",
+      "-std=c++20",
+      "-I/home/zp001/App/boost185/include",
+      "std_boost.cpp"
+    ],
+    "directory": "/home/zp001/MyRepos/cpp_notes/std_libs",
+    "file": "/home/zp001/MyRepos/cpp_notes/std_libs/std_boost.cpp"
+  }
+]

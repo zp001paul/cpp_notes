@@ -1,0 +1,1340 @@
+cpus=4
+       trace-cmd-8329  [000]  1976.838755: funcgraph_entry:                   |  should_failslab() {
+          direct-8330  [002]  1976.838756: funcgraph_entry:                   |  mutex_unlock() {
+       trace-cmd-8329  [000]  1976.838758: funcgraph_entry:                   |  smp_irq_work_interrupt() {
+       trace-cmd-8329  [000]  1976.838759: funcgraph_entry:                   |    irq_enter() {
+       trace-cmd-8329  [000]  1976.838759: funcgraph_entry:                   |      irq_enter_rcu() {
+       trace-cmd-8329  [000]  1976.838759: funcgraph_entry:        0.068 us   |        irqtime_account_irq();
+       trace-cmd-8329  [000]  1976.838759: funcgraph_exit:         0.399 us   |      }
+       trace-cmd-8329  [000]  1976.838759: funcgraph_exit:         0.636 us   |    }
+       trace-cmd-8329  [000]  1976.838760: funcgraph_entry:                   |    __wake_up() {
+       trace-cmd-8329  [000]  1976.838760: funcgraph_entry:                   |      __wake_up_common_lock() {
+       trace-cmd-8329  [000]  1976.838760: funcgraph_entry:        0.033 us   |        __lock_text_start();
+       trace-cmd-8329  [000]  1976.838761: funcgraph_entry:        0.041 us   |        __wake_up_common();
+       trace-cmd-8329  [000]  1976.838761: funcgraph_entry:        0.042 us   |        _raw_spin_unlock_irqrestore();
+       trace-cmd-8329  [000]  1976.838761: funcgraph_exit:         0.705 us   |      }
+       trace-cmd-8329  [000]  1976.838761: funcgraph_exit:         0.891 us   |    }
+       trace-cmd-8329  [000]  1976.838761: funcgraph_entry:                   |    __wake_up() {
+       trace-cmd-8329  [000]  1976.838761: funcgraph_entry:                   |      __wake_up_common_lock() {
+       trace-cmd-8329  [000]  1976.838761: funcgraph_entry:        0.032 us   |        __lock_text_start();
+       trace-cmd-8329  [000]  1976.838762: funcgraph_entry:                   |        __wake_up_common() {
+       trace-cmd-8329  [000]  1976.838762: funcgraph_entry:                   |          autoremove_wake_function() {
+       trace-cmd-8329  [000]  1976.838762: funcgraph_entry:                   |            default_wake_function() {
+       trace-cmd-8329  [000]  1976.838762: funcgraph_entry:                   |              try_to_wake_up() {
+       trace-cmd-8329  [000]  1976.838762: funcgraph_entry:        0.066 us   |                __lock_text_start();
+       trace-cmd-8329  [000]  1976.838762: funcgraph_entry:                   |                select_task_rq_fair() {
+       trace-cmd-8329  [000]  1976.838763: funcgraph_entry:        0.076 us   |                  available_idle_cpu();
+       trace-cmd-8329  [000]  1976.838763: funcgraph_exit:         0.342 us   |                }
+       trace-cmd-8329  [000]  1976.838763: funcgraph_entry:                   |                ttwu_queue_wakelist() {
+          direct-8330  [002]  1976.838763: funcgraph_entry:                   |  smp_irq_work_interrupt() {
+       trace-cmd-8329  [000]  1976.838763: funcgraph_entry:                   |                  __smp_call_single_queue() {
+       trace-cmd-8329  [000]  1976.838763: funcgraph_entry:                   |                    send_call_function_single_ipi() {
+       trace-cmd-8329  [000]  1976.838763: funcgraph_entry:                   |                      native_send_call_func_single_ipi() {
+          direct-8330  [002]  1976.838763: funcgraph_entry:                   |    irq_enter() {
+       trace-cmd-8329  [000]  1976.838763: funcgraph_entry:                   |                        x2apic_send_IPI() {
+          direct-8330  [002]  1976.838764: funcgraph_entry:                   |      irq_enter_rcu() {
+          direct-8330  [002]  1976.838764: funcgraph_entry:        0.113 us   |        irqtime_account_irq();
+          direct-8330  [002]  1976.838764: funcgraph_exit:         0.569 us   |      }
+          direct-8330  [002]  1976.838765: funcgraph_exit:         0.996 us   |    }
+       trace-cmd-8329  [000]  1976.838765: funcgraph_exit:         1.859 us   |                        }
+       trace-cmd-8329  [000]  1976.838766: funcgraph_exit:         2.062 us   |                      }
+       trace-cmd-8329  [000]  1976.838766: funcgraph_exit:         2.298 us   |                    }
+       trace-cmd-8329  [000]  1976.838766: funcgraph_exit:         2.518 us   |                  }
+       trace-cmd-8329  [000]  1976.838766: funcgraph_exit:         2.804 us   |                }
+       trace-cmd-8329  [000]  1976.838766: funcgraph_entry:        0.043 us   |                _raw_spin_unlock_irqrestore();
+       trace-cmd-8329  [000]  1976.838766: funcgraph_exit:         4.028 us   |              }
+       trace-cmd-8329  [000]  1976.838766: funcgraph_exit:         4.216 us   |            }
+       trace-cmd-8329  [000]  1976.838766: funcgraph_exit:         4.415 us   |          }
+       trace-cmd-8329  [000]  1976.838766: funcgraph_exit:         4.708 us   |        }
+       trace-cmd-8329  [000]  1976.838767: funcgraph_entry:        0.042 us   |        _raw_spin_unlock_irqrestore();
+       trace-cmd-8329  [000]  1976.838767: funcgraph_exit:         5.289 us   |      }
+       trace-cmd-8329  [000]  1976.838767: funcgraph_exit:         5.469 us   |    }
+       trace-cmd-8329  [000]  1976.838767: funcgraph_entry:                   |    irq_exit() {
+       trace-cmd-8329  [000]  1976.838767: funcgraph_entry:                   |      irq_exit_rcu() {
+       trace-cmd-8329  [000]  1976.838767: funcgraph_entry:        0.053 us   |        irqtime_account_irq();
+          direct-8330  [002]  1976.838767: funcgraph_entry:                   |    __wake_up() {
+       trace-cmd-8329  [000]  1976.838767: funcgraph_entry:                   |        idle_cpu() {
+          direct-8330  [002]  1976.838767: funcgraph_entry:                   |      __wake_up_common_lock() {
+       trace-cmd-8329  [000]  1976.838767: funcgraph_exit:         0.034 us   |        }
+       trace-cmd-8329  [000]  1976.838768: funcgraph_exit:         0.447 us   |      }
+          direct-8330  [002]  1976.838768: funcgraph_entry:                   |        __lock_text_start() {
+       trace-cmd-8329  [000]  1976.838768: funcgraph_exit:         0.641 us   |    }
+       trace-cmd-8329  [000]  1976.838768: funcgraph_exit:         9.332 us   |  }
+          direct-8330  [002]  1976.838768: funcgraph_exit:         0.060 us   |        }
+          direct-8330  [002]  1976.838768: funcgraph_entry:                   |        __wake_up_common() {
+       trace-cmd-8329  [000]  1976.838768: funcgraph_exit:         0.046 us   |  }
+          direct-8330  [002]  1976.838768: funcgraph_exit:         0.049 us   |        }
+          direct-8330  [002]  1976.838768: funcgraph_entry:        0.068 us   |        _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.838769: funcgraph_exit:         1.090 us   |      }
+          direct-8330  [002]  1976.838769: funcgraph_exit:         1.441 us   |    }
+          direct-8330  [002]  1976.838769: funcgraph_entry:                   |    __wake_up() {
+          direct-8330  [002]  1976.838769: funcgraph_entry:                   |      __wake_up_common_lock() {
+          direct-8330  [002]  1976.838769: funcgraph_entry:        0.061 us   |        __lock_text_start();
+          direct-8330  [002]  1976.838770: funcgraph_entry:                   |        __wake_up_common() {
+          direct-8330  [002]  1976.838770: funcgraph_entry:                   |          autoremove_wake_function() {
+          direct-8330  [002]  1976.838770: funcgraph_entry:                   |            default_wake_function() {
+          direct-8330  [002]  1976.838770: funcgraph_entry:                   |              try_to_wake_up() {
+          direct-8330  [002]  1976.838770: funcgraph_entry:        0.118 us   |                __lock_text_start();
+          direct-8330  [002]  1976.838771: funcgraph_entry:                   |                select_task_rq_fair() {
+          direct-8330  [002]  1976.838771: funcgraph_entry:        0.115 us   |                  available_idle_cpu();
+          direct-8330  [002]  1976.838772: funcgraph_exit:         0.521 us   |                }
+          direct-8330  [002]  1976.838772: funcgraph_entry:                   |                ttwu_queue_wakelist() {
+          direct-8330  [002]  1976.838772: funcgraph_entry:                   |                  __smp_call_single_queue() {
+          direct-8330  [002]  1976.838772: funcgraph_entry:                   |                    send_call_function_single_ipi() {
+          direct-8330  [002]  1976.838773: funcgraph_entry:                   |                      native_send_call_func_single_ipi() {
+          direct-8330  [002]  1976.838773: funcgraph_entry:        4.751 us   |                        x2apic_send_IPI();
+          direct-8330  [002]  1976.838778: funcgraph_exit:         5.158 us   |                      }
+          direct-8330  [002]  1976.838778: funcgraph_exit:         5.568 us   |                    }
+          direct-8330  [002]  1976.838778: funcgraph_exit:         5.987 us   |                  }
+          direct-8330  [002]  1976.838778: funcgraph_exit:         6.458 us   |                }
+          direct-8330  [002]  1976.838779: funcgraph_entry:        0.083 us   |                _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.838779: funcgraph_exit:         8.511 us   |              }
+          direct-8330  [002]  1976.838779: funcgraph_exit:         8.860 us   |            }
+          direct-8330  [002]  1976.838779: funcgraph_exit:         9.277 us   |          }
+          direct-8330  [002]  1976.838780: funcgraph_exit:         9.742 us   |        }
+          direct-8330  [002]  1976.838780: funcgraph_entry:        0.068 us   |        _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.838780: funcgraph_exit:       + 10.786 us  |      }
+          direct-8330  [002]  1976.838780: funcgraph_exit:       + 11.120 us  |    }
+          direct-8330  [002]  1976.838780: funcgraph_entry:                   |    irq_exit() {
+          direct-8330  [002]  1976.838781: funcgraph_entry:                   |      irq_exit_rcu() {
+          direct-8330  [002]  1976.838781: funcgraph_entry:        0.096 us   |        irqtime_account_irq();
+          direct-8330  [002]  1976.838781: funcgraph_entry:        0.060 us   |        idle_cpu();
+          direct-8330  [002]  1976.838782: funcgraph_exit:         0.807 us   |      }
+       trace-cmd-8326  [001]  1976.838782: funcgraph_entry:                   |  finish_task_switch() {
+          direct-8330  [002]  1976.838782: funcgraph_exit:         1.190 us   |    }
+          direct-8330  [002]  1976.838782: funcgraph_exit:       + 18.636 us  |  }
+          direct-8330  [002]  1976.838782: funcgraph_exit:         0.099 us   |  }
+       trace-cmd-8326  [001]  1976.838788: funcgraph_entry:                   |    smp_irq_work_interrupt() {
+       trace-cmd-8326  [001]  1976.838789: funcgraph_entry:                   |      irq_enter() {
+       trace-cmd-8326  [001]  1976.838789: funcgraph_entry:                   |        irq_enter_rcu() {
+       trace-cmd-8326  [001]  1976.838789: funcgraph_entry:        0.104 us   |          irqtime_account_irq();
+       trace-cmd-8326  [001]  1976.838790: funcgraph_exit:         0.569 us   |        }
+       trace-cmd-8326  [001]  1976.838790: funcgraph_exit:         0.967 us   |      }
+       trace-cmd-8326  [001]  1976.838792: funcgraph_entry:                   |      __wake_up() {
+       trace-cmd-8326  [001]  1976.838793: funcgraph_entry:                   |        __wake_up_common_lock() {
+       trace-cmd-8326  [001]  1976.838793: funcgraph_entry:        0.060 us   |          __lock_text_start();
+       trace-cmd-8326  [001]  1976.838793: funcgraph_entry:        0.058 us   |          __wake_up_common();
+       trace-cmd-8326  [001]  1976.838793: funcgraph_entry:        0.069 us   |          _raw_spin_unlock_irqrestore();
+       trace-cmd-8326  [001]  1976.838794: funcgraph_exit:         1.094 us   |        }
+       trace-cmd-8326  [001]  1976.838794: funcgraph_exit:         1.443 us   |      }
+       trace-cmd-8326  [001]  1976.838794: funcgraph_entry:                   |      __wake_up() {
+       trace-cmd-8326  [001]  1976.838794: funcgraph_entry:                   |        __wake_up_common_lock() {
+       trace-cmd-8326  [001]  1976.838795: funcgraph_entry:        0.061 us   |          __lock_text_start();
+       trace-cmd-8326  [001]  1976.838795: funcgraph_entry:                   |          __wake_up_common() {
+       trace-cmd-8326  [001]  1976.838795: funcgraph_entry:                   |            autoremove_wake_function() {
+       trace-cmd-8326  [001]  1976.838795: funcgraph_entry:                   |              default_wake_function() {
+       trace-cmd-8326  [001]  1976.838796: funcgraph_entry:                   |                try_to_wake_up() {
+       trace-cmd-8326  [001]  1976.838796: funcgraph_entry:        0.126 us   |                  __lock_text_start();
+       trace-cmd-8326  [001]  1976.838796: funcgraph_entry:                   |                  select_task_rq_fair() {
+       trace-cmd-8326  [001]  1976.838796: funcgraph_entry:        0.114 us   |                    available_idle_cpu();
+       trace-cmd-8326  [001]  1976.838797: funcgraph_entry:        0.137 us   |                    cpus_share_cache();
+       trace-cmd-8326  [001]  1976.838797: funcgraph_exit:         0.983 us   |                  }
+       trace-cmd-8326  [001]  1976.838797: funcgraph_entry:                   |                  ttwu_queue_wakelist() {
+       trace-cmd-8326  [001]  1976.838798: funcgraph_entry:                   |                    __smp_call_single_queue() {
+       trace-cmd-8326  [001]  1976.838798: funcgraph_entry:                   |                      send_call_function_single_ipi() {
+       trace-cmd-8326  [001]  1976.838798: funcgraph_entry:                   |                        native_send_call_func_single_ipi() {
+       trace-cmd-8326  [001]  1976.838798: funcgraph_entry:        3.791 us   |                          x2apic_send_IPI();
+       trace-cmd-8326  [001]  1976.838803: funcgraph_exit:         4.239 us   |                        }
+       trace-cmd-8326  [001]  1976.838803: funcgraph_exit:         4.625 us   |                      }
+       trace-cmd-8326  [001]  1976.838803: funcgraph_exit:         5.048 us   |                    }
+       trace-cmd-8326  [001]  1976.838803: funcgraph_exit:         5.459 us   |                  }
+       trace-cmd-8326  [001]  1976.838803: funcgraph_entry:        0.069 us   |                  _raw_spin_unlock_irqrestore();
+       trace-cmd-8326  [001]  1976.838804: funcgraph_exit:         7.972 us   |                }
+       trace-cmd-8326  [001]  1976.838804: funcgraph_exit:         8.352 us   |              }
+       trace-cmd-8326  [001]  1976.838804: funcgraph_exit:         8.773 us   |            }
+       trace-cmd-8326  [001]  1976.838804: funcgraph_exit:         9.251 us   |          }
+       trace-cmd-8326  [001]  1976.838804: funcgraph_entry:        0.069 us   |          _raw_spin_unlock_irqrestore();
+       trace-cmd-8326  [001]  1976.838805: funcgraph_exit:       + 10.302 us  |        }
+       trace-cmd-8326  [001]  1976.838805: funcgraph_exit:       + 10.639 us  |      }
+       trace-cmd-8326  [001]  1976.838805: funcgraph_entry:                   |      irq_exit() {
+       trace-cmd-8326  [001]  1976.838805: funcgraph_entry:                   |        irq_exit_rcu() {
+       trace-cmd-8326  [001]  1976.838806: funcgraph_entry:        0.093 us   |          irqtime_account_irq();
+       trace-cmd-8326  [001]  1976.838806: funcgraph_entry:        0.060 us   |          idle_cpu();
+       trace-cmd-8326  [001]  1976.838806: funcgraph_exit:         0.785 us   |        }
+       trace-cmd-8326  [001]  1976.838806: funcgraph_exit:         1.160 us   |      }
+       trace-cmd-8326  [001]  1976.838807: funcgraph_exit:       + 18.091 us  |    }
+       trace-cmd-8326  [001]  1976.838807: funcgraph_exit:       + 21.262 us  |  }
+       trace-cmd-8328  [003]  1976.838826: funcgraph_entry:                   |  finish_task_switch() {
+       trace-cmd-8328  [003]  1976.838833: funcgraph_entry:                   |    smp_irq_work_interrupt() {
+       trace-cmd-8328  [003]  1976.838834: funcgraph_entry:                   |      irq_enter() {
+       trace-cmd-8328  [003]  1976.838834: funcgraph_entry:                   |        irq_enter_rcu() {
+       trace-cmd-8328  [003]  1976.838834: funcgraph_entry:        0.103 us   |          irqtime_account_irq();
+       trace-cmd-8328  [003]  1976.838835: funcgraph_exit:         0.485 us   |        }
+       trace-cmd-8328  [003]  1976.838835: funcgraph_exit:         0.879 us   |      }
+       trace-cmd-8328  [003]  1976.838837: funcgraph_entry:                   |      __wake_up() {
+       trace-cmd-8328  [003]  1976.838838: funcgraph_entry:                   |        __wake_up_common_lock() {
+       trace-cmd-8328  [003]  1976.838838: funcgraph_entry:        0.060 us   |          __lock_text_start();
+       trace-cmd-8328  [003]  1976.838838: funcgraph_entry:        0.052 us   |          __wake_up_common();
+       trace-cmd-8328  [003]  1976.838839: funcgraph_entry:        0.071 us   |          _raw_spin_unlock_irqrestore();
+       trace-cmd-8328  [003]  1976.838839: funcgraph_exit:         1.097 us   |        }
+       trace-cmd-8328  [003]  1976.838839: funcgraph_exit:         1.456 us   |      }
+       trace-cmd-8328  [003]  1976.838839: funcgraph_entry:                   |      __wake_up() {
+       trace-cmd-8328  [003]  1976.838839: funcgraph_entry:                   |        __wake_up_common_lock() {
+       trace-cmd-8328  [003]  1976.838840: funcgraph_entry:        0.155 us   |          __lock_text_start();
+       trace-cmd-8328  [003]  1976.838850: funcgraph_entry:        0.049 us   |          __wake_up_common();
+       trace-cmd-8328  [003]  1976.838850: funcgraph_entry:        0.068 us   |          _raw_spin_unlock_irqrestore();
+       trace-cmd-8328  [003]  1976.838851: funcgraph_exit:       + 11.297 us  |        }
+       trace-cmd-8328  [003]  1976.838851: funcgraph_exit:       + 11.628 us  |      }
+       trace-cmd-8328  [003]  1976.838851: funcgraph_entry:                   |      irq_exit() {
+       trace-cmd-8328  [003]  1976.838851: funcgraph_entry:                   |        irq_exit_rcu() {
+       trace-cmd-8328  [003]  1976.838852: funcgraph_entry:        0.099 us   |          irqtime_account_irq();
+       trace-cmd-8328  [003]  1976.838853: funcgraph_entry:        0.060 us   |          idle_cpu();
+       trace-cmd-8328  [003]  1976.838853: funcgraph_exit:         1.446 us   |        }
+       trace-cmd-8328  [003]  1976.838853: funcgraph_exit:         2.046 us   |      }
+       trace-cmd-8328  [003]  1976.838854: funcgraph_exit:       + 20.058 us  |    }
+       trace-cmd-8328  [003]  1976.838854: funcgraph_exit:       + 23.111 us  |  }
+       trace-cmd-8327  [000]  1976.839232: funcgraph_entry:        0.210 us   |  finish_task_switch();
+          direct-8330  [002]  1976.840064: funcgraph_entry:                   |  __x64_sys_write() {
+          direct-8330  [002]  1976.840065: funcgraph_entry:                   |    ksys_write() {
+          direct-8330  [002]  1976.840065: funcgraph_entry:                   |      __fdget_pos() {
+          direct-8330  [002]  1976.840065: funcgraph_entry:        0.049 us   |        __fget_light();
+          direct-8330  [002]  1976.840065: funcgraph_exit:         0.320 us   |      }
+          direct-8330  [002]  1976.840065: funcgraph_entry:                   |      vfs_write() {
+          direct-8330  [002]  1976.840065: funcgraph_entry:                   |        rw_verify_area() {
+          direct-8330  [002]  1976.840066: funcgraph_entry:                   |          security_file_permission() {
+          direct-8330  [002]  1976.840066: funcgraph_entry:                   |            selinux_file_permission() {
+          direct-8330  [002]  1976.840066: funcgraph_entry:                   |              __inode_security_revalidate() {
+          direct-8330  [002]  1976.840066: funcgraph_entry:                   |                _cond_resched() {
+          direct-8330  [002]  1976.840066: funcgraph_entry:        0.029 us   |                  rcu_all_qs();
+          direct-8330  [002]  1976.840066: funcgraph_exit:         0.215 us   |                }
+          direct-8330  [002]  1976.840066: funcgraph_exit:         0.399 us   |              }
+          direct-8330  [002]  1976.840066: funcgraph_entry:        0.030 us   |              avc_policy_seqno();
+          direct-8330  [002]  1976.840067: funcgraph_exit:         0.806 us   |            }
+          direct-8330  [002]  1976.840067: funcgraph_entry:        0.030 us   |            bpf_lsm_file_permission();
+          direct-8330  [002]  1976.840067: funcgraph_exit:         1.209 us   |          }
+          direct-8330  [002]  1976.840067: funcgraph_exit:         1.403 us   |        }
+          direct-8330  [002]  1976.840067: funcgraph_entry:                   |        __sb_start_write() {
+          direct-8330  [002]  1976.840067: funcgraph_entry:                   |          _cond_resched() {
+          direct-8330  [002]  1976.840067: funcgraph_entry:        0.027 us   |            rcu_all_qs();
+          direct-8330  [002]  1976.840067: funcgraph_exit:         0.210 us   |          }
+          direct-8330  [002]  1976.840068: funcgraph_exit:         0.401 us   |        }
+          direct-8330  [002]  1976.840068: funcgraph_entry:                   |        __vfs_write() {
+          direct-8330  [002]  1976.840068: funcgraph_entry:                   |          new_sync_write() {
+          direct-8330  [002]  1976.840068: funcgraph_entry:                   |            ext4_file_write_iter() {
+          direct-8330  [002]  1976.840068: funcgraph_entry:                   |              down_write() {
+          direct-8330  [002]  1976.840068: funcgraph_entry:                   |                _cond_resched() {
+          direct-8330  [002]  1976.840068: funcgraph_entry:        0.029 us   |                  rcu_all_qs();
+          direct-8330  [002]  1976.840068: funcgraph_exit:         0.210 us   |                }
+          direct-8330  [002]  1976.840068: funcgraph_exit:         0.399 us   |              }
+          direct-8330  [002]  1976.840069: funcgraph_entry:                   |              ext4_write_checks() {
+          direct-8330  [002]  1976.840069: funcgraph_entry:        0.041 us   |                generic_write_check_limits.isra.52();
+          direct-8330  [002]  1976.840069: funcgraph_exit:         0.312 us   |              }
+          direct-8330  [002]  1976.840069: funcgraph_entry:                   |              __generic_file_write_iter() {
+          direct-8330  [002]  1976.840069: funcgraph_entry:        0.039 us   |                file_remove_privs();
+          direct-8330  [002]  1976.840069: funcgraph_entry:                   |                file_update_time() {
+          direct-8330  [002]  1976.840069: funcgraph_entry:                   |                  current_time() {
+          direct-8330  [002]  1976.840070: funcgraph_entry:        0.029 us   |                    ktime_get_coarse_real_ts64();
+          direct-8330  [002]  1976.840070: funcgraph_entry:        0.028 us   |                    timestamp_truncate();
+          direct-8330  [002]  1976.840070: funcgraph_exit:         0.412 us   |                  }
+          direct-8330  [002]  1976.840070: funcgraph_exit:         0.626 us   |                }
+          direct-8330  [002]  1976.840070: funcgraph_entry:                   |                generic_file_direct_write() {
+          direct-8330  [002]  1976.840073: funcgraph_entry:                   |                smp_irq_work_interrupt() {
+          direct-8330  [002]  1976.840074: funcgraph_entry:                   |                  irq_enter() {
+          direct-8330  [002]  1976.840074: funcgraph_entry:                   |                    irq_enter_rcu() {
+          direct-8330  [002]  1976.840074: funcgraph_entry:        0.068 us   |                      irqtime_account_irq();
+          direct-8330  [002]  1976.840074: funcgraph_exit:         0.307 us   |                    }
+          direct-8330  [002]  1976.840074: funcgraph_exit:         0.547 us   |                  }
+          direct-8330  [002]  1976.840075: funcgraph_entry:                   |                  __wake_up() {
+          direct-8330  [002]  1976.840076: funcgraph_entry:                   |                    __wake_up_common_lock() {
+          direct-8330  [002]  1976.840076: funcgraph_entry:        0.032 us   |                      __lock_text_start();
+          direct-8330  [002]  1976.840076: funcgraph_entry:        0.029 us   |                      __wake_up_common();
+          direct-8330  [002]  1976.840076: funcgraph_entry:        0.041 us   |                      _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840076: funcgraph_exit:         0.635 us   |                    }
+          direct-8330  [002]  1976.840076: funcgraph_exit:         0.829 us   |                  }
+          direct-8330  [002]  1976.840076: funcgraph_entry:                   |                  __wake_up() {
+          direct-8330  [002]  1976.840077: funcgraph_entry:                   |                    __wake_up_common_lock() {
+          direct-8330  [002]  1976.840077: funcgraph_entry:        0.032 us   |                      __lock_text_start();
+          direct-8330  [002]  1976.840077: funcgraph_entry:                   |                      __wake_up_common() {
+          direct-8330  [002]  1976.840077: funcgraph_entry:                   |                        autoremove_wake_function() {
+          direct-8330  [002]  1976.840077: funcgraph_entry:                   |                          default_wake_function() {
+          direct-8330  [002]  1976.840077: funcgraph_entry:                   |                            try_to_wake_up() {
+          direct-8330  [002]  1976.840077: funcgraph_entry:        0.069 us   |                              __lock_text_start();
+          direct-8330  [002]  1976.840078: funcgraph_entry:                   |                              select_task_rq_fair() {
+          direct-8330  [002]  1976.840078: funcgraph_entry:        0.104 us   |                                available_idle_cpu();
+          direct-8330  [002]  1976.840078: funcgraph_exit:         0.330 us   |                              }
+          direct-8330  [002]  1976.840078: funcgraph_entry:                   |                              ttwu_queue_wakelist() {
+          direct-8330  [002]  1976.840078: funcgraph_entry:                   |                                __smp_call_single_queue() {
+          direct-8330  [002]  1976.840078: funcgraph_entry:                   |                                  send_call_function_single_ipi() {
+          direct-8330  [002]  1976.840079: funcgraph_entry:                   |                                    native_send_call_func_single_ipi() {
+          direct-8330  [002]  1976.840079: funcgraph_entry:        2.138 us   |                                      x2apic_send_IPI();
+          direct-8330  [002]  1976.840081: funcgraph_exit:         2.363 us   |                                    }
+          direct-8330  [002]  1976.840081: funcgraph_exit:         2.596 us   |                                  }
+          direct-8330  [002]  1976.840081: funcgraph_exit:         2.837 us   |                                }
+          direct-8330  [002]  1976.840081: funcgraph_exit:         3.161 us   |                              }
+          direct-8330  [002]  1976.840081: funcgraph_entry:        0.042 us   |                              _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840082: funcgraph_exit:         4.380 us   |                            }
+          direct-8330  [002]  1976.840082: funcgraph_exit:         4.562 us   |                          }
+          direct-8330  [002]  1976.840082: funcgraph_exit:         4.764 us   |                        }
+          direct-8330  [002]  1976.840082: funcgraph_exit:         5.044 us   |                      }
+          direct-8330  [002]  1976.840082: funcgraph_entry:        0.041 us   |                      _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840082: funcgraph_exit:         5.622 us   |                    }
+          direct-8330  [002]  1976.840082: funcgraph_exit:         5.800 us   |                  }
+          direct-8330  [002]  1976.840082: funcgraph_entry:                   |                  irq_exit() {
+          direct-8330  [002]  1976.840083: funcgraph_entry:                   |                    irq_exit_rcu() {
+          direct-8330  [002]  1976.840083: funcgraph_entry:        0.054 us   |                      irqtime_account_irq();
+          direct-8330  [002]  1976.840083: funcgraph_entry:        0.029 us   |                      idle_cpu();
+          direct-8330  [002]  1976.840083: funcgraph_exit:         0.438 us   |                    }
+          direct-8330  [002]  1976.840083: funcgraph_exit:         0.623 us   |                  }
+          direct-8330  [002]  1976.840083: funcgraph_exit:         9.649 us   |                }
+          direct-8330  [002]  1976.840084: funcgraph_entry:                   |                  filemap_write_and_wait_range() {
+          direct-8330  [002]  1976.840084: funcgraph_entry:        0.042 us   |                    filemap_check_errors();
+          direct-8330  [002]  1976.840084: funcgraph_exit:         0.439 us   |                  }
+          direct-8330  [002]  1976.840084: funcgraph_entry:        0.088 us   |                  invalidate_inode_pages2_range();
+          direct-8330  [002]  1976.840085: funcgraph_entry:                   |                  ext4_direct_IO() {
+          direct-8330  [002]  1976.840085: funcgraph_entry:                   |                    __ext4_journal_start_sb() {
+          direct-8330  [002]  1976.840085: funcgraph_entry:                   |                      ext4_journal_check_start() {
+          direct-8330  [002]  1976.840085: funcgraph_entry:                   |                        _cond_resched() {
+          direct-8330  [002]  1976.840085: funcgraph_entry:        0.029 us   |                          rcu_all_qs();
+          direct-8330  [002]  1976.840085: funcgraph_exit:         0.217 us   |                        }
+          direct-8330  [002]  1976.840085: funcgraph_exit:         0.405 us   |                      }
+          direct-8330  [002]  1976.840085: funcgraph_entry:                   |                      jbd2__journal_start() {
+          direct-8330  [002]  1976.840086: funcgraph_entry:                   |                        kmem_cache_alloc() {
+          direct-8330  [002]  1976.840086: funcgraph_entry:                   |                          _cond_resched() {
+          direct-8330  [002]  1976.840086: funcgraph_entry:        0.029 us   |                            rcu_all_qs();
+          direct-8330  [002]  1976.840086: funcgraph_exit:         0.211 us   |                          }
+          direct-8330  [002]  1976.840086: funcgraph_entry:        0.029 us   |                          should_failslab();
+          direct-8330  [002]  1976.840086: funcgraph_exit:         0.635 us   |                        }
+          direct-8330  [002]  1976.840086: funcgraph_entry:                   |                        start_this_handle() {
+          direct-8330  [002]  1976.840086: funcgraph_entry:        0.032 us   |                          _raw_read_lock();
+          direct-8330  [002]  1976.840087: funcgraph_entry:        0.036 us   |                          add_transaction_credits();
+          direct-8330  [002]  1976.840087: funcgraph_exit:         0.429 us   |                        }
+          direct-8330  [002]  1976.840087: funcgraph_exit:         1.422 us   |                      }
+          direct-8330  [002]  1976.840087: funcgraph_exit:         2.172 us   |                    }
+          direct-8330  [002]  1976.840087: funcgraph_entry:                   |                    ext4_orphan_add() {
+          direct-8330  [002]  1976.840087: funcgraph_entry:        0.030 us   |                      is_bad_inode();
+          direct-8330  [002]  1976.840087: funcgraph_entry:                   |                      __ext4_journal_get_write_access() {
+          direct-8330  [002]  1976.840087: funcgraph_entry:                   |                        _cond_resched() {
+          direct-8330  [002]  1976.840088: funcgraph_entry:        0.030 us   |                          rcu_all_qs();
+          direct-8330  [002]  1976.840088: funcgraph_exit:         0.213 us   |                        }
+          direct-8330  [002]  1976.840088: funcgraph_entry:                   |                        jbd2_journal_get_write_access() {
+          direct-8330  [002]  1976.840088: funcgraph_entry:        0.058 us   |                          jbd2_write_access_granted();
+          direct-8330  [002]  1976.840088: funcgraph_exit:         0.250 us   |                        }
+          direct-8330  [002]  1976.840088: funcgraph_exit:         0.801 us   |                      }
+          direct-8330  [002]  1976.840088: funcgraph_entry:                   |                      ext4_reserve_inode_write() {
+          direct-8330  [002]  1976.840088: funcgraph_entry:                   |                        __ext4_get_inode_loc() {
+          direct-8330  [002]  1976.840089: funcgraph_entry:        0.039 us   |                          ext4_get_group_desc();
+          direct-8330  [002]  1976.840089: funcgraph_entry:        0.030 us   |                          ext4_inode_table();
+          direct-8330  [002]  1976.840089: funcgraph_entry:                   |                          __getblk_gfp() {
+          direct-8330  [002]  1976.840089: funcgraph_entry:                   |                            __find_get_block() {
+          direct-8330  [002]  1976.840089: funcgraph_entry:        0.035 us   |                              mark_page_accessed();
+          direct-8330  [002]  1976.840090: funcgraph_exit:         0.245 us   |                            }
+          direct-8330  [002]  1976.840090: funcgraph_entry:                   |                            _cond_resched() {
+          direct-8330  [002]  1976.840090: funcgraph_entry:        0.029 us   |                              rcu_all_qs();
+          direct-8330  [002]  1976.840090: funcgraph_exit:         0.214 us   |                            }
+          direct-8330  [002]  1976.840090: funcgraph_exit:         1.150 us   |                          }
+          direct-8330  [002]  1976.840090: funcgraph_exit:         1.730 us   |                        }
+          direct-8330  [002]  1976.840090: funcgraph_entry:                   |                        __ext4_journal_get_write_access() {
+          direct-8330  [002]  1976.840090: funcgraph_entry:                   |                          _cond_resched() {
+          direct-8330  [002]  1976.840091: funcgraph_entry:        0.028 us   |                            rcu_all_qs();
+          direct-8330  [002]  1976.840091: funcgraph_exit:         0.211 us   |                          }
+          direct-8330  [002]  1976.840091: funcgraph_entry:                   |                          jbd2_journal_get_write_access() {
+          direct-8330  [002]  1976.840091: funcgraph_entry:        0.032 us   |                            jbd2_write_access_granted();
+          direct-8330  [002]  1976.840091: funcgraph_exit:         0.223 us   |                          }
+          direct-8330  [002]  1976.840091: funcgraph_exit:         0.775 us   |                        }
+          direct-8330  [002]  1976.840091: funcgraph_exit:         2.855 us   |                      }
+          direct-8330  [002]  1976.840091: funcgraph_entry:                   |                      mutex_lock() {
+          direct-8330  [002]  1976.840091: funcgraph_entry:                   |                        _cond_resched() {
+          direct-8330  [002]  1976.840092: funcgraph_entry:        0.028 us   |                          rcu_all_qs();
+          direct-8330  [002]  1976.840092: funcgraph_exit:         0.216 us   |                        }
+          direct-8330  [002]  1976.840092: funcgraph_exit:         0.402 us   |                      }
+          direct-8330  [002]  1976.840092: funcgraph_entry:        0.033 us   |                      mutex_unlock();
+          direct-8330  [002]  1976.840092: funcgraph_entry:                   |                      __ext4_handle_dirty_super() {
+          direct-8330  [002]  1976.840092: funcgraph_entry:                   |                        ext4_superblock_csum_set() {
+          direct-8330  [002]  1976.840092: funcgraph_entry:                   |                          crypto_shash_update() {
+          direct-8330  [002]  1976.840092: funcgraph_entry:                   |                            crc32c_pcl_intel_update() {
+          direct-8330  [002]  1976.840093: funcgraph_entry:        0.029 us   |                              irq_fpu_usable();
+          direct-8330  [002]  1976.840093: funcgraph_entry:                   |                              kernel_fpu_begin_mask() {
+          direct-8330  [002]  1976.840093: funcgraph_entry:        0.029 us   |                                irq_fpu_usable();
+          direct-8330  [002]  1976.840093: funcgraph_entry:        0.057 us   |                                save_fpregs_to_fpstate();
+          direct-8330  [002]  1976.840093: funcgraph_exit:         0.436 us   |                              }
+          direct-8330  [002]  1976.840093: funcgraph_entry:        0.030 us   |                              kernel_fpu_end();
+          direct-8330  [002]  1976.840094: funcgraph_exit:         1.077 us   |                            }
+          direct-8330  [002]  1976.840094: funcgraph_exit:         1.286 us   |                          }
+          direct-8330  [002]  1976.840094: funcgraph_exit:         1.478 us   |                        }
+          direct-8330  [002]  1976.840094: funcgraph_entry:        0.036 us   |                        jbd2_journal_dirty_metadata();
+          direct-8330  [002]  1976.840094: funcgraph_exit:         1.856 us   |                      }
+          direct-8330  [002]  1976.840094: funcgraph_entry:                   |                      ext4_mark_iloc_dirty() {
+          direct-8330  [002]  1976.840094: funcgraph_entry:                   |                        ext4_do_update_inode() {
+          direct-8330  [002]  1976.840094: funcgraph_entry:        0.033 us   |                          _raw_spin_lock();
+          direct-8330  [002]  1976.840095: funcgraph_entry:                   |                          from_kuid() {
+          direct-8330  [002]  1976.840095: funcgraph_entry:        0.028 us   |                            map_id_up();
+          direct-8330  [002]  1976.840095: funcgraph_exit:         0.206 us   |                          }
+          direct-8330  [002]  1976.840095: funcgraph_entry:                   |                          from_kgid() {
+          direct-8330  [002]  1976.840095: funcgraph_entry:        0.031 us   |                            map_id_up();
+          direct-8330  [002]  1976.840095: funcgraph_exit:         0.207 us   |                          }
+          direct-8330  [002]  1976.840095: funcgraph_entry:                   |                          from_kprojid() {
+          direct-8330  [002]  1976.840095: funcgraph_entry:        0.030 us   |                            map_id_up();
+          direct-8330  [002]  1976.840096: funcgraph_exit:         0.209 us   |                          }
+          direct-8330  [002]  1976.840096: funcgraph_entry:                   |                          ext4_inode_csum_set() {
+          direct-8330  [002]  1976.840096: funcgraph_entry:                   |                            ext4_inode_csum.isra.71() {
+          direct-8330  [002]  1976.840096: funcgraph_entry:                   |                              crypto_shash_update() {
+          direct-8330  [002]  1976.840096: funcgraph_entry:        0.043 us   |                                crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840096: funcgraph_exit:         0.238 us   |                              }
+          direct-8330  [002]  1976.840096: funcgraph_entry:                   |                              crypto_shash_update() {
+          direct-8330  [002]  1976.840096: funcgraph_entry:        0.038 us   |                                crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840097: funcgraph_exit:         0.231 us   |                              }
+          direct-8330  [002]  1976.840097: funcgraph_entry:                   |                              crypto_shash_update() {
+          direct-8330  [002]  1976.840097: funcgraph_entry:        0.033 us   |                                crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840097: funcgraph_exit:         0.227 us   |                              }
+          direct-8330  [002]  1976.840097: funcgraph_entry:                   |                              crypto_shash_update() {
+          direct-8330  [002]  1976.840097: funcgraph_entry:        0.030 us   |                                crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840097: funcgraph_exit:         0.226 us   |                              }
+          direct-8330  [002]  1976.840097: funcgraph_entry:                   |                              crypto_shash_update() {
+          direct-8330  [002]  1976.840098: funcgraph_entry:        0.029 us   |                                crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840098: funcgraph_exit:         0.223 us   |                              }
+          direct-8330  [002]  1976.840098: funcgraph_entry:                   |                              crypto_shash_update() {
+          direct-8330  [002]  1976.840098: funcgraph_entry:        0.044 us   |                                crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840098: funcgraph_exit:         0.238 us   |                              }
+          direct-8330  [002]  1976.840098: funcgraph_exit:         2.384 us   |                            }
+          direct-8330  [002]  1976.840098: funcgraph_exit:         2.593 us   |                          }
+          direct-8330  [002]  1976.840098: funcgraph_entry:                   |                          __ext4_handle_dirty_metadata() {
+          direct-8330  [002]  1976.840099: funcgraph_entry:                   |                            _cond_resched() {
+          direct-8330  [002]  1976.840099: funcgraph_entry:        0.031 us   |                              rcu_all_qs();
+          direct-8330  [002]  1976.840099: funcgraph_exit:         0.215 us   |                            }
+          direct-8330  [002]  1976.840099: funcgraph_entry:        0.036 us   |                            jbd2_journal_dirty_metadata();
+          direct-8330  [002]  1976.840099: funcgraph_exit:         0.605 us   |                          }
+          direct-8330  [002]  1976.840099: funcgraph_entry:        0.033 us   |                          __brelse();
+          direct-8330  [002]  1976.840102: funcgraph_entry:                   |                          smp_irq_work_interrupt() {
+          direct-8330  [002]  1976.840102: funcgraph_entry:                   |                            irq_enter() {
+          direct-8330  [002]  1976.840102: funcgraph_entry:                   |                              irq_enter_rcu() {
+          direct-8330  [002]  1976.840102: funcgraph_entry:        0.044 us   |                                irqtime_account_irq();
+          direct-8330  [002]  1976.840102: funcgraph_exit:         0.241 us   |                              }
+          direct-8330  [002]  1976.840102: funcgraph_exit:         0.440 us   |                            }
+          direct-8330  [002]  1976.840103: funcgraph_entry:                   |                            __wake_up() {
+          direct-8330  [002]  1976.840103: funcgraph_entry:                   |                              __wake_up_common_lock() {
+          direct-8330  [002]  1976.840103: funcgraph_entry:        0.031 us   |                                __lock_text_start();
+          direct-8330  [002]  1976.840104: funcgraph_entry:        0.029 us   |                                __wake_up_common();
+          direct-8330  [002]  1976.840104: funcgraph_entry:        0.043 us   |                                _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840104: funcgraph_exit:         0.923 us   |                              }
+          direct-8330  [002]  1976.840104: funcgraph_exit:         1.116 us   |                            }
+          direct-8330  [002]  1976.840105: funcgraph_entry:                   |                            __wake_up() {
+          direct-8330  [002]  1976.840105: funcgraph_entry:                   |                              __wake_up_common_lock() {
+          direct-8330  [002]  1976.840105: funcgraph_entry:        0.033 us   |                                __lock_text_start();
+          direct-8330  [002]  1976.840105: funcgraph_entry:        0.028 us   |                                __wake_up_common();
+          direct-8330  [002]  1976.840105: funcgraph_entry:        0.043 us   |                                _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840105: funcgraph_exit:         0.607 us   |                              }
+          direct-8330  [002]  1976.840105: funcgraph_exit:         0.787 us   |                            }
+          direct-8330  [002]  1976.840106: funcgraph_entry:                   |                            irq_exit() {
+          direct-8330  [002]  1976.840106: funcgraph_entry:                   |                              irq_exit_rcu() {
+          direct-8330  [002]  1976.840106: funcgraph_entry:        0.053 us   |                                irqtime_account_irq();
+          direct-8330  [002]  1976.840106: funcgraph_entry:        0.032 us   |                                idle_cpu();
+          direct-8330  [002]  1976.840106: funcgraph_exit:         0.437 us   |                              }
+          direct-8330  [002]  1976.840106: funcgraph_exit:         0.621 us   |                            }
+          direct-8330  [002]  1976.840106: funcgraph_exit:         4.567 us   |                          }
+          direct-8330  [002]  1976.840107: funcgraph_exit:       + 12.187 us  |                        }
+          direct-8330  [002]  1976.840107: funcgraph_exit:       + 12.380 us  |                      }
+          direct-8330  [002]  1976.840107: funcgraph_exit:       + 19.518 us  |                    }
+          direct-8330  [002]  1976.840107: funcgraph_entry:                   |                    down_write() {
+          direct-8330  [002]  1976.840107: funcgraph_entry:                   |                      _cond_resched() {
+          direct-8330  [002]  1976.840107: funcgraph_entry:        0.029 us   |                        rcu_all_qs();
+          direct-8330  [002]  1976.840107: funcgraph_exit:         0.218 us   |                      }
+          direct-8330  [002]  1976.840107: funcgraph_exit:         0.408 us   |                    }
+          direct-8330  [002]  1976.840107: funcgraph_entry:        0.031 us   |                    up_write();
+          direct-8330  [002]  1976.840108: funcgraph_entry:                   |                    __ext4_journal_stop() {
+          direct-8330  [002]  1976.840108: funcgraph_entry:                   |                      jbd2_journal_stop() {
+          direct-8330  [002]  1976.840108: funcgraph_entry:                   |                        stop_this_handle() {
+          direct-8330  [002]  1976.840108: funcgraph_entry:                   |                          __wake_up() {
+          direct-8330  [002]  1976.840108: funcgraph_entry:                   |                            __wake_up_common_lock() {
+          direct-8330  [002]  1976.840108: funcgraph_entry:        0.034 us   |                              __lock_text_start();
+          direct-8330  [002]  1976.840108: funcgraph_entry:        0.030 us   |                              __wake_up_common();
+          direct-8330  [002]  1976.840108: funcgraph_entry:        0.042 us   |                              _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840109: funcgraph_exit:         0.609 us   |                            }
+          direct-8330  [002]  1976.840109: funcgraph_exit:         0.791 us   |                          }
+          direct-8330  [002]  1976.840109: funcgraph_exit:         0.996 us   |                        }
+          direct-8330  [002]  1976.840109: funcgraph_entry:        0.045 us   |                        kmem_cache_free();
+          direct-8330  [002]  1976.840109: funcgraph_exit:         1.391 us   |                      }
+          direct-8330  [002]  1976.840109: funcgraph_exit:         1.591 us   |                    }
+          direct-8330  [002]  1976.840109: funcgraph_entry:        0.334 us   |                    __blockdev_direct_IO();
+          direct-8330  [002]  1976.840110: funcgraph_entry:                   |                    wake_up_bit() {
+          direct-8330  [002]  1976.840110: funcgraph_entry:        0.045 us   |                      __wake_up_bit();
+          direct-8330  [002]  1976.840110: funcgraph_exit:         0.223 us   |                    }
+          direct-8330  [002]  1976.840110: funcgraph_entry:                   |                    down_write() {
+          direct-8330  [002]  1976.840110: funcgraph_entry:                   |                      _cond_resched() {
+          direct-8330  [002]  1976.840110: funcgraph_entry:        0.029 us   |                        rcu_all_qs();
+          direct-8330  [002]  1976.840111: funcgraph_exit:         0.212 us   |                      }
+          direct-8330  [002]  1976.840111: funcgraph_exit:         0.398 us   |                    }
+          direct-8330  [002]  1976.840111: funcgraph_entry:                   |                    truncate_inode_pages() {
+          direct-8330  [002]  1976.840111: funcgraph_entry:        0.055 us   |                      truncate_inode_pages_range();
+          direct-8330  [002]  1976.840111: funcgraph_exit:         0.232 us   |                    }
+          direct-8330  [002]  1976.840111: funcgraph_entry:                   |                    ext4_truncate() {
+          direct-8330  [002]  1976.840111: funcgraph_entry:        0.034 us   |                      ext4_can_truncate();
+          direct-8330  [002]  1976.840112: funcgraph_entry:                   |                      ext4_writepage_trans_blocks() {
+          direct-8330  [002]  1976.840112: funcgraph_entry:        0.029 us   |                        jbd2_journal_blocks_per_page();
+          direct-8330  [002]  1976.840112: funcgraph_entry:                   |                        ext4_meta_trans_blocks() {
+          direct-8330  [002]  1976.840112: funcgraph_entry:        0.036 us   |                          ext4_ext_index_trans_blocks();
+          direct-8330  [002]  1976.840112: funcgraph_exit:         0.223 us   |                        }
+          direct-8330  [002]  1976.840112: funcgraph_exit:         0.614 us   |                      }
+          direct-8330  [002]  1976.840112: funcgraph_entry:                   |                      __ext4_journal_start_sb() {
+          direct-8330  [002]  1976.840112: funcgraph_entry:                   |                        ext4_journal_check_start() {
+          direct-8330  [002]  1976.840112: funcgraph_entry:                   |                          _cond_resched() {
+          direct-8330  [002]  1976.840113: funcgraph_entry:        0.028 us   |                            rcu_all_qs();
+          direct-8330  [002]  1976.840113: funcgraph_exit:         0.216 us   |                          }
+          direct-8330  [002]  1976.840113: funcgraph_exit:         0.402 us   |                        }
+          direct-8330  [002]  1976.840113: funcgraph_entry:                   |                        jbd2__journal_start() {
+          direct-8330  [002]  1976.840113: funcgraph_entry:                   |                          kmem_cache_alloc() {
+          direct-8330  [002]  1976.840113: funcgraph_entry:                   |                            _cond_resched() {
+          direct-8330  [002]  1976.840113: funcgraph_entry:        0.028 us   |                              rcu_all_qs();
+          direct-8330  [002]  1976.840113: funcgraph_exit:         0.212 us   |                            }
+          direct-8330  [002]  1976.840114: funcgraph_entry:        0.029 us   |                            should_failslab();
+          direct-8330  [002]  1976.840114: funcgraph_exit:         0.607 us   |                          }
+          direct-8330  [002]  1976.840114: funcgraph_entry:                   |                          start_this_handle() {
+          direct-8330  [002]  1976.840114: funcgraph_entry:        0.030 us   |                            _raw_read_lock();
+          direct-8330  [002]  1976.840114: funcgraph_entry:        0.035 us   |                            add_transaction_credits();
+          direct-8330  [002]  1976.840114: funcgraph_exit:         0.426 us   |                          }
+          direct-8330  [002]  1976.840114: funcgraph_exit:         1.391 us   |                        }
+          direct-8330  [002]  1976.840115: funcgraph_exit:         2.135 us   |                      }
+          direct-8330  [002]  1976.840115: funcgraph_entry:                   |                      ext4_orphan_add() {
+          direct-8330  [002]  1976.840115: funcgraph_entry:        0.028 us   |                        is_bad_inode();
+          direct-8330  [002]  1976.840115: funcgraph_exit:         0.222 us   |                      }
+          direct-8330  [002]  1976.840115: funcgraph_entry:                   |                      down_write() {
+          direct-8330  [002]  1976.840115: funcgraph_entry:                   |                        _cond_resched() {
+          direct-8330  [002]  1976.840115: funcgraph_entry:        0.029 us   |                          rcu_all_qs();
+          direct-8330  [002]  1976.840115: funcgraph_exit:         0.212 us   |                        }
+          direct-8330  [002]  1976.840116: funcgraph_exit:         0.400 us   |                      }
+          direct-8330  [002]  1976.840116: funcgraph_entry:                   |                      ext4_discard_preallocations() {
+          direct-8330  [002]  1976.840116: funcgraph_entry:        0.033 us   |                        _raw_spin_lock();
+          direct-8330  [002]  1976.840116: funcgraph_exit:         0.229 us   |                      }
+          direct-8330  [002]  1976.840116: funcgraph_entry:                   |                      ext4_ext_truncate() {
+          direct-8330  [002]  1976.840116: funcgraph_entry:                   |                        ext4_mark_inode_dirty() {
+          direct-8330  [002]  1976.840116: funcgraph_entry:                   |                          _cond_resched() {
+          direct-8330  [002]  1976.840117: funcgraph_entry:        0.030 us   |                            rcu_all_qs();
+          direct-8330  [002]  1976.840117: funcgraph_exit:         0.212 us   |                          }
+          direct-8330  [002]  1976.840117: funcgraph_entry:                   |                          ext4_reserve_inode_write() {
+          direct-8330  [002]  1976.840117: funcgraph_entry:                   |                            __ext4_get_inode_loc() {
+          direct-8330  [002]  1976.840117: funcgraph_entry:        0.031 us   |                              ext4_get_group_desc();
+          direct-8330  [002]  1976.840117: funcgraph_entry:        0.030 us   |                              ext4_inode_table();
+          direct-8330  [002]  1976.840117: funcgraph_entry:                   |                              __getblk_gfp() {
+          direct-8330  [002]  1976.840117: funcgraph_entry:                   |                                __find_get_block() {
+          direct-8330  [002]  1976.840118: funcgraph_entry:        0.031 us   |                                  mark_page_accessed();
+          direct-8330  [002]  1976.840118: funcgraph_exit:         0.236 us   |                                }
+          direct-8330  [002]  1976.840118: funcgraph_entry:                   |                                _cond_resched() {
+          direct-8330  [002]  1976.840118: funcgraph_entry:        0.029 us   |                                  rcu_all_qs();
+          direct-8330  [002]  1976.840118: funcgraph_exit:         0.212 us   |                                }
+          direct-8330  [002]  1976.840118: funcgraph_exit:         0.789 us   |                              }
+          direct-8330  [002]  1976.840118: funcgraph_exit:         1.358 us   |                            }
+          direct-8330  [002]  1976.840118: funcgraph_entry:                   |                            __ext4_journal_get_write_access() {
+          direct-8330  [002]  1976.840119: funcgraph_entry:                   |                              _cond_resched() {
+          direct-8330  [002]  1976.840119: funcgraph_entry:        0.028 us   |                                rcu_all_qs();
+          direct-8330  [002]  1976.840119: funcgraph_exit:         0.212 us   |                              }
+          direct-8330  [002]  1976.840119: funcgraph_entry:                   |                              jbd2_journal_get_write_access() {
+          direct-8330  [002]  1976.840119: funcgraph_entry:        0.032 us   |                                jbd2_write_access_granted();
+          direct-8330  [002]  1976.840119: funcgraph_exit:         0.217 us   |                              }
+          direct-8330  [002]  1976.840119: funcgraph_exit:         0.782 us   |                            }
+          direct-8330  [002]  1976.840119: funcgraph_exit:         2.481 us   |                          }
+          direct-8330  [002]  1976.840119: funcgraph_entry:                   |                          ext4_mark_iloc_dirty() {
+          direct-8330  [002]  1976.840120: funcgraph_entry:                   |                            ext4_do_update_inode() {
+          direct-8330  [002]  1976.840120: funcgraph_entry:        0.031 us   |                              _raw_spin_lock();
+          direct-8330  [002]  1976.840120: funcgraph_entry:                   |                              from_kuid() {
+          direct-8330  [002]  1976.840120: funcgraph_entry:        0.028 us   |                                map_id_up();
+          direct-8330  [002]  1976.840120: funcgraph_exit:         0.210 us   |                              }
+          direct-8330  [002]  1976.840120: funcgraph_entry:                   |                              from_kgid() {
+          direct-8330  [002]  1976.840120: funcgraph_entry:        0.028 us   |                                map_id_up();
+          direct-8330  [002]  1976.840120: funcgraph_exit:         0.209 us   |                              }
+          direct-8330  [002]  1976.840121: funcgraph_entry:                   |                              from_kprojid() {
+          direct-8330  [002]  1976.840121: funcgraph_entry:        0.032 us   |                                map_id_up();
+          direct-8330  [002]  1976.840121: funcgraph_exit:         0.209 us   |                              }
+          direct-8330  [002]  1976.840121: funcgraph_entry:                   |                              ext4_inode_csum_set() {
+          direct-8330  [002]  1976.840121: funcgraph_entry:                   |                                ext4_inode_csum.isra.71() {
+          direct-8330  [002]  1976.840121: funcgraph_entry:                   |                                  crypto_shash_update() {
+          direct-8330  [002]  1976.840121: funcgraph_entry:        0.044 us   |                                    crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840121: funcgraph_exit:         0.246 us   |                                  }
+          direct-8330  [002]  1976.840122: funcgraph_entry:                   |                                  crypto_shash_update() {
+          direct-8330  [002]  1976.840122: funcgraph_entry:        0.031 us   |                                    crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840122: funcgraph_exit:         0.225 us   |                                  }
+          direct-8330  [002]  1976.840122: funcgraph_entry:                   |                                  crypto_shash_update() {
+          direct-8330  [002]  1976.840122: funcgraph_entry:        0.029 us   |                                    crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840122: funcgraph_exit:         0.224 us   |                                  }
+          direct-8330  [002]  1976.840122: funcgraph_entry:                   |                                  crypto_shash_update() {
+          direct-8330  [002]  1976.840122: funcgraph_entry:        0.030 us   |                                    crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840123: funcgraph_exit:         0.225 us   |                                  }
+          direct-8330  [002]  1976.840123: funcgraph_entry:                   |                                  crypto_shash_update() {
+          direct-8330  [002]  1976.840123: funcgraph_entry:        0.030 us   |                                    crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840123: funcgraph_exit:         0.225 us   |                                  }
+          direct-8330  [002]  1976.840123: funcgraph_entry:                   |                                  crypto_shash_update() {
+          direct-8330  [002]  1976.840123: funcgraph_entry:        0.044 us   |                                    crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840123: funcgraph_exit:         0.239 us   |                                  }
+          direct-8330  [002]  1976.840124: funcgraph_exit:         2.373 us   |                                }
+          direct-8330  [002]  1976.840124: funcgraph_exit:         2.572 us   |                              }
+          direct-8330  [002]  1976.840124: funcgraph_entry:                   |                              __ext4_handle_dirty_metadata() {
+          direct-8330  [002]  1976.840124: funcgraph_entry:                   |                                _cond_resched() {
+          direct-8330  [002]  1976.840124: funcgraph_entry:        0.028 us   |                                  rcu_all_qs();
+          direct-8330  [002]  1976.840124: funcgraph_exit:         0.212 us   |                                }
+          direct-8330  [002]  1976.840124: funcgraph_entry:        0.031 us   |                                jbd2_journal_dirty_metadata();
+          direct-8330  [002]  1976.840124: funcgraph_exit:         0.588 us   |                              }
+          direct-8330  [002]  1976.840124: funcgraph_entry:        0.030 us   |                              __brelse();
+          direct-8330  [002]  1976.840125: funcgraph_exit:         5.015 us   |                            }
+          direct-8330  [002]  1976.840125: funcgraph_exit:         5.197 us   |                          }
+          direct-8330  [002]  1976.840125: funcgraph_exit:         8.391 us   |                        }
+          direct-8330  [002]  1976.840125: funcgraph_entry:                   |                        ext4_es_remove_extent() {
+          direct-8330  [002]  1976.840125: funcgraph_entry:        0.035 us   |                          _raw_write_lock();
+          direct-8330  [002]  1976.840125: funcgraph_entry:                   |                          __es_remove_extent() {
+          direct-8330  [002]  1976.840125: funcgraph_entry:        0.029 us   |                            __es_tree_search.isra.16();
+          direct-8330  [002]  1976.840125: funcgraph_exit:         0.217 us   |                          }
+          direct-8330  [002]  1976.840126: funcgraph_exit:         0.605 us   |                        }
+          direct-8330  [002]  1976.840126: funcgraph_entry:                   |                        ext4_ext_remove_space() {
+          direct-8330  [002]  1976.840126: funcgraph_entry:                   |                          __ext4_journal_start_sb() {
+          direct-8330  [002]  1976.840126: funcgraph_entry:                   |                            ext4_journal_check_start() {
+          direct-8330  [002]  1976.840126: funcgraph_entry:                   |                              _cond_resched() {
+          direct-8330  [002]  1976.840126: funcgraph_entry:        0.029 us   |                                rcu_all_qs();
+          direct-8330  [002]  1976.840126: funcgraph_exit:         0.214 us   |                              }
+          direct-8330  [002]  1976.840126: funcgraph_exit:         0.398 us   |                            }
+          direct-8330  [002]  1976.840126: funcgraph_entry:        0.028 us   |                            jbd2__journal_start();
+          direct-8330  [002]  1976.840127: funcgraph_exit:         0.768 us   |                          }
+          direct-8330  [002]  1976.840127: funcgraph_entry:                   |                          __kmalloc() {
+          direct-8330  [002]  1976.840127: funcgraph_entry:        0.039 us   |                            kmalloc_slab();
+          direct-8330  [002]  1976.840127: funcgraph_entry:                   |                            _cond_resched() {
+          direct-8330  [002]  1976.840127: funcgraph_entry:        0.028 us   |                              rcu_all_qs();
+          direct-8330  [002]  1976.840127: funcgraph_exit:         0.213 us   |                            }
+          direct-8330  [002]  1976.840128: funcgraph_entry:        0.028 us   |                            should_failslab();
+          direct-8330  [002]  1976.840128: funcgraph_exit:         0.810 us   |                          }
+          direct-8330  [002]  1976.840128: funcgraph_entry:        0.045 us   |                          __ext4_ext_check();
+          direct-8330  [002]  1976.840128: funcgraph_entry:        0.051 us   |                          ext4_ext_rm_leaf();
+          direct-8330  [002]  1976.840128: funcgraph_entry:        0.036 us   |                          ext4_ext_get_access.isra.38();
+          direct-8330  [002]  1976.840128: funcgraph_entry:                   |                          __ext4_ext_dirty.isra.36() {
+          direct-8330  [002]  1976.840129: funcgraph_entry:                   |                            ext4_mark_inode_dirty() {
+          direct-8330  [002]  1976.840129: funcgraph_entry:                   |                              _cond_resched() {
+          direct-8330  [002]  1976.840129: funcgraph_entry:        0.028 us   |                                rcu_all_qs();
+          direct-8330  [002]  1976.840129: funcgraph_exit:         0.211 us   |                              }
+          direct-8330  [002]  1976.840129: funcgraph_entry:                   |                              ext4_reserve_inode_write() {
+          direct-8330  [002]  1976.840129: funcgraph_entry:                   |                                __ext4_get_inode_loc() {
+          direct-8330  [002]  1976.840129: funcgraph_entry:        0.028 us   |                                  ext4_get_group_desc();
+          direct-8330  [002]  1976.840129: funcgraph_entry:        0.030 us   |                                  ext4_inode_table();
+          direct-8330  [002]  1976.840130: funcgraph_entry:                   |                                  __getblk_gfp() {
+          direct-8330  [002]  1976.840130: funcgraph_entry:                   |                                    __find_get_block() {
+          direct-8330  [002]  1976.840130: funcgraph_entry:        0.032 us   |                                      mark_page_accessed();
+          direct-8330  [002]  1976.840130: funcgraph_exit:         0.221 us   |                                    }
+          direct-8330  [002]  1976.840130: funcgraph_entry:                   |                                    _cond_resched() {
+          direct-8330  [002]  1976.840130: funcgraph_entry:        0.029 us   |                                      rcu_all_qs();
+          direct-8330  [002]  1976.840130: funcgraph_exit:         0.210 us   |                                    }
+          direct-8330  [002]  1976.840130: funcgraph_exit:         0.779 us   |                                  }
+          direct-8330  [002]  1976.840131: funcgraph_exit:         1.346 us   |                                }
+          direct-8330  [002]  1976.840131: funcgraph_entry:                   |                                __ext4_journal_get_write_access() {
+          direct-8330  [002]  1976.840131: funcgraph_entry:                   |                                  _cond_resched() {
+          direct-8330  [002]  1976.840131: funcgraph_entry:        0.029 us   |                                    rcu_all_qs();
+          direct-8330  [002]  1976.840131: funcgraph_exit:         0.211 us   |                                  }
+          direct-8330  [002]  1976.840131: funcgraph_entry:                   |                                  jbd2_journal_get_write_access() {
+          direct-8330  [002]  1976.840131: funcgraph_entry:        0.033 us   |                                    jbd2_write_access_granted();
+          direct-8330  [002]  1976.840131: funcgraph_exit:         0.216 us   |                                  }
+          direct-8330  [002]  1976.840131: funcgraph_exit:         0.770 us   |                                }
+          direct-8330  [002]  1976.840132: funcgraph_exit:         2.456 us   |                              }
+          direct-8330  [002]  1976.840132: funcgraph_entry:                   |                              ext4_mark_iloc_dirty() {
+          direct-8330  [002]  1976.840132: funcgraph_entry:                   |                                ext4_do_update_inode() {
+          direct-8330  [002]  1976.840132: funcgraph_entry:        0.031 us   |                                  _raw_spin_lock();
+          direct-8330  [002]  1976.840132: funcgraph_entry:                   |                                  from_kuid() {
+          direct-8330  [002]  1976.840132: funcgraph_entry:        0.028 us   |                                    map_id_up();
+          direct-8330  [002]  1976.840132: funcgraph_exit:         0.247 us   |                                  }
+          direct-8330  [002]  1976.840132: funcgraph_entry:                   |                                  from_kgid() {
+          direct-8330  [002]  1976.840132: funcgraph_entry:        0.029 us   |                                    map_id_up();
+          direct-8330  [002]  1976.840133: funcgraph_exit:         0.206 us   |                                  }
+          direct-8330  [002]  1976.840133: funcgraph_entry:                   |                                  from_kprojid() {
+          direct-8330  [002]  1976.840133: funcgraph_entry:        0.029 us   |                                    map_id_up();
+          direct-8330  [002]  1976.840133: funcgraph_exit:         0.207 us   |                                  }
+          direct-8330  [002]  1976.840133: funcgraph_entry:                   |                                  ext4_inode_csum_set() {
+          direct-8330  [002]  1976.840133: funcgraph_entry:                   |                                    ext4_inode_csum.isra.71() {
+          direct-8330  [002]  1976.840133: funcgraph_entry:                   |                                      crypto_shash_update() {
+          direct-8330  [002]  1976.840133: funcgraph_entry:        0.037 us   |                                        crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840134: funcgraph_exit:         0.234 us   |                                      }
+          direct-8330  [002]  1976.840134: funcgraph_entry:                   |                                      crypto_shash_update() {
+          direct-8330  [002]  1976.840134: funcgraph_entry:        0.036 us   |                                        crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840134: funcgraph_exit:         0.230 us   |                                      }
+          direct-8330  [002]  1976.840134: funcgraph_entry:                   |                                      crypto_shash_update() {
+          direct-8330  [002]  1976.840134: funcgraph_entry:        0.029 us   |                                        crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840134: funcgraph_exit:         0.223 us   |                                      }
+          direct-8330  [002]  1976.840135: funcgraph_entry:                   |                                      crypto_shash_update() {
+          direct-8330  [002]  1976.840135: funcgraph_entry:        0.029 us   |                                        crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840135: funcgraph_exit:         0.287 us   |                                      }
+          direct-8330  [002]  1976.840135: funcgraph_entry:                   |                                      crypto_shash_update() {
+          direct-8330  [002]  1976.840135: funcgraph_entry:        0.030 us   |                                        crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840136: funcgraph_exit:         0.585 us   |                                      }
+          direct-8330  [002]  1976.840136: funcgraph_entry:                   |                                      crypto_shash_update() {
+          direct-8330  [002]  1976.840136: funcgraph_entry:        0.044 us   |                                        crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840136: funcgraph_exit:         0.237 us   |                                      }
+          direct-8330  [002]  1976.840136: funcgraph_exit:         3.097 us   |                                    }
+          direct-8330  [002]  1976.840137: funcgraph_exit:         3.285 us   |                                  }
+          direct-8330  [002]  1976.840137: funcgraph_entry:                   |                                  __ext4_handle_dirty_metadata() {
+          direct-8330  [002]  1976.840137: funcgraph_entry:                   |                                    _cond_resched() {
+          direct-8330  [002]  1976.840137: funcgraph_entry:        0.028 us   |                                      rcu_all_qs();
+          direct-8330  [002]  1976.840137: funcgraph_exit:         0.210 us   |                                    }
+          direct-8330  [002]  1976.840137: funcgraph_entry:        0.030 us   |                                    jbd2_journal_dirty_metadata();
+          direct-8330  [002]  1976.840137: funcgraph_exit:         0.580 us   |                                  }
+          direct-8330  [002]  1976.840137: funcgraph_entry:        0.031 us   |                                  __brelse();
+          direct-8330  [002]  1976.840138: funcgraph_exit:         5.755 us   |                                }
+          direct-8330  [002]  1976.840138: funcgraph_exit:         5.938 us   |                              }
+          direct-8330  [002]  1976.840138: funcgraph_exit:         9.098 us   |                            }
+          direct-8330  [002]  1976.840138: funcgraph_exit:         9.285 us   |                          }
+          direct-8330  [002]  1976.840138: funcgraph_entry:        0.034 us   |                          ext4_ext_drop_refs();
+          direct-8330  [002]  1976.840138: funcgraph_entry:        0.041 us   |                          kfree();
+          direct-8330  [002]  1976.840138: funcgraph_entry:                   |                          __ext4_journal_stop() {
+          direct-8330  [002]  1976.840139: funcgraph_entry:        0.035 us   |                            jbd2_journal_stop();
+          direct-8330  [002]  1976.840139: funcgraph_exit:         0.219 us   |                          }
+          direct-8330  [002]  1976.840139: funcgraph_exit:       + 13.151 us  |                        }
+          direct-8330  [002]  1976.840139: funcgraph_exit:       + 22.645 us  |                      }
+          direct-8330  [002]  1976.840139: funcgraph_entry:        0.031 us   |                      up_write();
+          direct-8330  [002]  1976.840139: funcgraph_entry:                   |                      ext4_orphan_del() {
+          direct-8330  [002]  1976.840139: funcgraph_entry:                   |                        ext4_reserve_inode_write() {
+          direct-8330  [002]  1976.840139: funcgraph_entry:                   |                          __ext4_get_inode_loc() {
+          direct-8330  [002]  1976.840140: funcgraph_entry:        0.030 us   |                            ext4_get_group_desc();
+          direct-8330  [002]  1976.840140: funcgraph_entry:        0.029 us   |                            ext4_inode_table();
+          direct-8330  [002]  1976.840140: funcgraph_entry:                   |                            __getblk_gfp() {
+          direct-8330  [002]  1976.840140: funcgraph_entry:                   |                              __find_get_block() {
+          direct-8330  [002]  1976.840140: funcgraph_entry:        0.030 us   |                                mark_page_accessed();
+          direct-8330  [002]  1976.840140: funcgraph_exit:         0.221 us   |                              }
+          direct-8330  [002]  1976.840140: funcgraph_entry:                   |                              _cond_resched() {
+          direct-8330  [002]  1976.840140: funcgraph_entry:        0.028 us   |                                rcu_all_qs();
+          direct-8330  [002]  1976.840141: funcgraph_exit:         0.211 us   |                              }
+          direct-8330  [002]  1976.840141: funcgraph_exit:         0.775 us   |                            }
+          direct-8330  [002]  1976.840141: funcgraph_exit:         1.340 us   |                          }
+          direct-8330  [002]  1976.840141: funcgraph_entry:                   |                          __ext4_journal_get_write_access() {
+          direct-8330  [002]  1976.840141: funcgraph_entry:                   |                            _cond_resched() {
+          direct-8330  [002]  1976.840141: funcgraph_entry:        0.029 us   |                              rcu_all_qs();
+          direct-8330  [002]  1976.840141: funcgraph_exit:         0.213 us   |                            }
+          direct-8330  [002]  1976.840141: funcgraph_entry:                   |                            jbd2_journal_get_write_access() {
+          direct-8330  [002]  1976.840142: funcgraph_entry:        0.032 us   |                              jbd2_write_access_granted();
+          direct-8330  [002]  1976.840142: funcgraph_exit:         0.217 us   |                            }
+          direct-8330  [002]  1976.840142: funcgraph_exit:         0.781 us   |                          }
+          direct-8330  [002]  1976.840142: funcgraph_exit:         2.464 us   |                        }
+          direct-8330  [002]  1976.840142: funcgraph_entry:                   |                        mutex_lock() {
+          direct-8330  [002]  1976.840142: funcgraph_entry:                   |                          _cond_resched() {
+          direct-8330  [002]  1976.840142: funcgraph_entry:        0.029 us   |                            rcu_all_qs();
+          direct-8330  [002]  1976.840142: funcgraph_exit:         0.213 us   |                          }
+          direct-8330  [002]  1976.840142: funcgraph_exit:         0.400 us   |                        }
+          direct-8330  [002]  1976.840143: funcgraph_entry:                   |                        __ext4_journal_get_write_access() {
+          direct-8330  [002]  1976.840143: funcgraph_entry:                   |                          _cond_resched() {
+          direct-8330  [002]  1976.840143: funcgraph_entry:        0.028 us   |                            rcu_all_qs();
+          direct-8330  [002]  1976.840143: funcgraph_exit:         0.212 us   |                          }
+          direct-8330  [002]  1976.840143: funcgraph_entry:                   |                          jbd2_journal_get_write_access() {
+          direct-8330  [002]  1976.840143: funcgraph_entry:        0.033 us   |                            jbd2_write_access_granted();
+          direct-8330  [002]  1976.840143: funcgraph_exit:         0.219 us   |                          }
+          direct-8330  [002]  1976.840143: funcgraph_exit:         0.773 us   |                        }
+          direct-8330  [002]  1976.840143: funcgraph_entry:        0.032 us   |                        mutex_unlock();
+          direct-8330  [002]  1976.840144: funcgraph_entry:                   |                        __ext4_handle_dirty_super() {
+          direct-8330  [002]  1976.840144: funcgraph_entry:                   |                          ext4_superblock_csum_set() {
+          direct-8330  [002]  1976.840144: funcgraph_entry:                   |                            crypto_shash_update() {
+          direct-8330  [002]  1976.840144: funcgraph_entry:                   |                              crc32c_pcl_intel_update() {
+          direct-8330  [002]  1976.840144: funcgraph_entry:        0.029 us   |                                irq_fpu_usable();
+          direct-8330  [002]  1976.840144: funcgraph_entry:                   |                                kernel_fpu_begin_mask() {
+          direct-8330  [002]  1976.840144: funcgraph_entry:        0.027 us   |                                  irq_fpu_usable();
+          direct-8330  [002]  1976.840145: funcgraph_exit:         0.225 us   |                                }
+          direct-8330  [002]  1976.840145: funcgraph_entry:        0.028 us   |                                kernel_fpu_end();
+          direct-8330  [002]  1976.840145: funcgraph_exit:         0.843 us   |                              }
+          direct-8330  [002]  1976.840145: funcgraph_exit:         1.037 us   |                            }
+          direct-8330  [002]  1976.840145: funcgraph_exit:         1.224 us   |                          }
+          direct-8330  [002]  1976.840145: funcgraph_entry:        0.029 us   |                          jbd2_journal_dirty_metadata();
+          direct-8330  [002]  1976.840145: funcgraph_exit:         1.600 us   |                        }
+          direct-8330  [002]  1976.840145: funcgraph_entry:                   |                        ext4_mark_iloc_dirty() {
+          direct-8330  [002]  1976.840146: funcgraph_entry:                   |                          ext4_do_update_inode() {
+          direct-8330  [002]  1976.840146: funcgraph_entry:        0.031 us   |                            _raw_spin_lock();
+          direct-8330  [002]  1976.840146: funcgraph_entry:                   |                            from_kuid() {
+          direct-8330  [002]  1976.840146: funcgraph_entry:        0.029 us   |                              map_id_up();
+          direct-8330  [002]  1976.840146: funcgraph_exit:         0.208 us   |                            }
+          direct-8330  [002]  1976.840146: funcgraph_entry:                   |                            from_kgid() {
+          direct-8330  [002]  1976.840146: funcgraph_entry:        0.032 us   |                              map_id_up();
+          direct-8330  [002]  1976.840146: funcgraph_exit:         0.208 us   |                            }
+          direct-8330  [002]  1976.840147: funcgraph_entry:                   |                            from_kprojid() {
+          direct-8330  [002]  1976.840147: funcgraph_entry:        0.029 us   |                              map_id_up();
+          direct-8330  [002]  1976.840147: funcgraph_exit:         0.208 us   |                            }
+          direct-8330  [002]  1976.840147: funcgraph_entry:                   |                            ext4_inode_csum_set() {
+          direct-8330  [002]  1976.840147: funcgraph_entry:                   |                              ext4_inode_csum.isra.71() {
+          direct-8330  [002]  1976.840147: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840147: funcgraph_entry:        0.044 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840147: funcgraph_exit:         0.239 us   |                                }
+          direct-8330  [002]  1976.840148: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840148: funcgraph_entry:        0.028 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840148: funcgraph_exit:         0.225 us   |                                }
+          direct-8330  [002]  1976.840148: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840148: funcgraph_entry:        0.029 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840148: funcgraph_exit:         0.223 us   |                                }
+          direct-8330  [002]  1976.840148: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840148: funcgraph_entry:        0.029 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840149: funcgraph_exit:         0.223 us   |                                }
+          direct-8330  [002]  1976.840149: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840149: funcgraph_entry:        0.030 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840149: funcgraph_exit:         0.224 us   |                                }
+          direct-8330  [002]  1976.840149: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840149: funcgraph_entry:        0.038 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840149: funcgraph_exit:         0.232 us   |                                }
+          direct-8330  [002]  1976.840150: funcgraph_exit:         2.461 us   |                              }
+          direct-8330  [002]  1976.840150: funcgraph_exit:         2.648 us   |                            }
+          direct-8330  [002]  1976.840150: funcgraph_entry:                   |                            __ext4_handle_dirty_metadata() {
+          direct-8330  [002]  1976.840150: funcgraph_entry:                   |                              _cond_resched() {
+          direct-8330  [002]  1976.840150: funcgraph_entry:        0.029 us   |                                rcu_all_qs();
+          direct-8330  [002]  1976.840150: funcgraph_exit:         0.213 us   |                              }
+          direct-8330  [002]  1976.840150: funcgraph_entry:        0.028 us   |                              jbd2_journal_dirty_metadata();
+          direct-8330  [002]  1976.840150: funcgraph_exit:         0.584 us   |                            }
+          direct-8330  [002]  1976.840150: funcgraph_entry:        0.032 us   |                            __brelse();
+          direct-8330  [002]  1976.840151: funcgraph_exit:         5.081 us   |                          }
+          direct-8330  [002]  1976.840151: funcgraph_exit:         5.266 us   |                        }
+          direct-8330  [002]  1976.840151: funcgraph_exit:       + 11.528 us  |                      }
+          direct-8330  [002]  1976.840151: funcgraph_entry:                   |                      current_time() {
+          direct-8330  [002]  1976.840151: funcgraph_entry:        0.029 us   |                        ktime_get_coarse_real_ts64();
+          direct-8330  [002]  1976.840151: funcgraph_entry:        0.028 us   |                        timestamp_truncate();
+          direct-8330  [002]  1976.840151: funcgraph_exit:         0.404 us   |                      }
+          direct-8330  [002]  1976.840152: funcgraph_entry:                   |                      ext4_mark_inode_dirty() {
+          direct-8330  [002]  1976.840152: funcgraph_entry:                   |                        _cond_resched() {
+          direct-8330  [002]  1976.840152: funcgraph_entry:        0.029 us   |                          rcu_all_qs();
+          direct-8330  [002]  1976.840152: funcgraph_exit:         0.211 us   |                        }
+          direct-8330  [002]  1976.840152: funcgraph_entry:                   |                        ext4_reserve_inode_write() {
+          direct-8330  [002]  1976.840152: funcgraph_entry:                   |                          __ext4_get_inode_loc() {
+          direct-8330  [002]  1976.840152: funcgraph_entry:        0.029 us   |                            ext4_get_group_desc();
+          direct-8330  [002]  1976.840152: funcgraph_entry:        0.028 us   |                            ext4_inode_table();
+          direct-8330  [002]  1976.840153: funcgraph_entry:                   |                            __getblk_gfp() {
+          direct-8330  [002]  1976.840153: funcgraph_entry:                   |                              __find_get_block() {
+          direct-8330  [002]  1976.840153: funcgraph_entry:        0.030 us   |                                mark_page_accessed();
+          direct-8330  [002]  1976.840153: funcgraph_exit:         0.229 us   |                              }
+          direct-8330  [002]  1976.840153: funcgraph_entry:                   |                              _cond_resched() {
+          direct-8330  [002]  1976.840153: funcgraph_entry:        0.028 us   |                                rcu_all_qs();
+          direct-8330  [002]  1976.840153: funcgraph_exit:         0.210 us   |                              }
+          direct-8330  [002]  1976.840154: funcgraph_exit:         0.781 us   |                            }
+          direct-8330  [002]  1976.840154: funcgraph_exit:         1.468 us   |                          }
+          direct-8330  [002]  1976.840154: funcgraph_entry:                   |                          __ext4_journal_get_write_access() {
+          direct-8330  [002]  1976.840154: funcgraph_entry:                   |                            _cond_resched() {
+          direct-8330  [002]  1976.840154: funcgraph_entry:        0.030 us   |                              rcu_all_qs();
+          direct-8330  [002]  1976.840154: funcgraph_exit:         0.209 us   |                            }
+          direct-8330  [002]  1976.840154: funcgraph_entry:                   |                            jbd2_journal_get_write_access() {
+          direct-8330  [002]  1976.840154: funcgraph_entry:        0.033 us   |                              jbd2_write_access_granted();
+          direct-8330  [002]  1976.840154: funcgraph_exit:         0.220 us   |                            }
+          direct-8330  [002]  1976.840155: funcgraph_exit:         0.773 us   |                          }
+          direct-8330  [002]  1976.840155: funcgraph_exit:         2.587 us   |                        }
+          direct-8330  [002]  1976.840155: funcgraph_entry:                   |                        ext4_mark_iloc_dirty() {
+          direct-8330  [002]  1976.840155: funcgraph_entry:                   |                          ext4_do_update_inode() {
+          direct-8330  [002]  1976.840155: funcgraph_entry:        0.032 us   |                            _raw_spin_lock();
+          direct-8330  [002]  1976.840156: funcgraph_entry:                   |                            from_kuid() {
+          direct-8330  [002]  1976.840156: funcgraph_entry:        0.029 us   |                              map_id_up();
+          direct-8330  [002]  1976.840156: funcgraph_exit:         0.208 us   |                            }
+          direct-8330  [002]  1976.840156: funcgraph_entry:                   |                            from_kgid() {
+          direct-8330  [002]  1976.840156: funcgraph_entry:        0.030 us   |                              map_id_up();
+          direct-8330  [002]  1976.840156: funcgraph_exit:         0.209 us   |                            }
+          direct-8330  [002]  1976.840156: funcgraph_entry:                   |                            from_kprojid() {
+          direct-8330  [002]  1976.840156: funcgraph_entry:        0.030 us   |                              map_id_up();
+          direct-8330  [002]  1976.840157: funcgraph_exit:         0.207 us   |                            }
+          direct-8330  [002]  1976.840157: funcgraph_entry:                   |                            ext4_inode_csum_set() {
+          direct-8330  [002]  1976.840157: funcgraph_entry:                   |                              ext4_inode_csum.isra.71() {
+          direct-8330  [002]  1976.840157: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840157: funcgraph_entry:        0.038 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840157: funcgraph_exit:         0.231 us   |                                }
+          direct-8330  [002]  1976.840157: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840157: funcgraph_entry:        0.029 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840158: funcgraph_exit:         0.223 us   |                                }
+          direct-8330  [002]  1976.840158: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840158: funcgraph_entry:        0.028 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840158: funcgraph_exit:         0.224 us   |                                }
+          direct-8330  [002]  1976.840158: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840158: funcgraph_entry:        0.029 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840158: funcgraph_exit:         0.226 us   |                                }
+          direct-8330  [002]  1976.840158: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840159: funcgraph_entry:        0.028 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840159: funcgraph_exit:         0.233 us   |                                }
+          direct-8330  [002]  1976.840159: funcgraph_entry:                   |                                crypto_shash_update() {
+          direct-8330  [002]  1976.840159: funcgraph_entry:        0.039 us   |                                  crc32c_pcl_intel_update();
+          direct-8330  [002]  1976.840159: funcgraph_exit:         0.231 us   |                                }
+          direct-8330  [002]  1976.840159: funcgraph_exit:         2.347 us   |                              }
+          direct-8330  [002]  1976.840159: funcgraph_exit:         2.533 us   |                            }
+          direct-8330  [002]  1976.840159: funcgraph_entry:                   |                            __ext4_handle_dirty_metadata() {
+          direct-8330  [002]  1976.840160: funcgraph_entry:                   |                              _cond_resched() {
+          direct-8330  [002]  1976.840160: funcgraph_entry:        0.028 us   |                                rcu_all_qs();
+          direct-8330  [002]  1976.840160: funcgraph_exit:         0.212 us   |                              }
+          direct-8330  [002]  1976.840160: funcgraph_entry:        0.035 us   |                              jbd2_journal_dirty_metadata();
+          direct-8330  [002]  1976.840160: funcgraph_exit:         0.587 us   |                            }
+          direct-8330  [002]  1976.840160: funcgraph_entry:        0.031 us   |                            __brelse();
+          direct-8330  [002]  1976.840160: funcgraph_exit:         5.355 us   |                          }
+          direct-8330  [002]  1976.840161: funcgraph_exit:         5.577 us   |                        }
+          direct-8330  [002]  1976.840161: funcgraph_exit:         8.985 us   |                      }
+          direct-8330  [002]  1976.840161: funcgraph_entry:                   |                      __ext4_journal_stop() {
+          direct-8330  [002]  1976.840161: funcgraph_entry:                   |                        jbd2_journal_stop() {
+          direct-8330  [002]  1976.840161: funcgraph_entry:                   |                          stop_this_handle() {
+          direct-8330  [002]  1976.840161: funcgraph_entry:                   |                            __wake_up() {
+          direct-8330  [002]  1976.840161: funcgraph_entry:                   |                              __wake_up_common_lock() {
+          direct-8330  [002]  1976.840161: funcgraph_entry:        0.031 us   |                                __lock_text_start();
+          direct-8330  [002]  1976.840162: funcgraph_entry:        0.030 us   |                                __wake_up_common();
+          direct-8330  [002]  1976.840162: funcgraph_entry:        0.041 us   |                                _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840162: funcgraph_exit:         0.603 us   |                              }
+          direct-8330  [002]  1976.840162: funcgraph_exit:         0.779 us   |                            }
+          direct-8330  [002]  1976.840162: funcgraph_exit:         0.976 us   |                          }
+          direct-8330  [002]  1976.840162: funcgraph_entry:        0.039 us   |                          kmem_cache_free();
+          direct-8330  [002]  1976.840162: funcgraph_exit:         1.369 us   |                        }
+          direct-8330  [002]  1976.840163: funcgraph_exit:         1.552 us   |                      }
+          direct-8330  [002]  1976.840163: funcgraph_exit:       + 51.343 us  |                    }
+          direct-8330  [002]  1976.840163: funcgraph_entry:        0.031 us   |                    up_write();
+          direct-8330  [002]  1976.840163: funcgraph_entry:                   |                    __ext4_journal_start_sb() {
+          direct-8330  [002]  1976.840163: funcgraph_entry:                   |                      ext4_journal_check_start() {
+          direct-8330  [002]  1976.840163: funcgraph_entry:                   |                        _cond_resched() {
+          direct-8330  [002]  1976.840163: funcgraph_entry:        0.027 us   |                          rcu_all_qs();
+          direct-8330  [002]  1976.840163: funcgraph_exit:         0.214 us   |                        }
+          direct-8330  [002]  1976.840163: funcgraph_exit:         0.399 us   |                      }
+          direct-8330  [002]  1976.840164: funcgraph_entry:                   |                      jbd2__journal_start() {
+          direct-8330  [002]  1976.840164: funcgraph_entry:                   |                        kmem_cache_alloc() {
+          direct-8330  [002]  1976.840164: funcgraph_entry:                   |                          _cond_resched() {
+          direct-8330  [002]  1976.840164: funcgraph_entry:        0.028 us   |                            rcu_all_qs();
+          direct-8330  [002]  1976.840164: funcgraph_exit:         0.228 us   |                          }
+          direct-8330  [002]  1976.840164: funcgraph_entry:        0.028 us   |                          should_failslab();
+          direct-8330  [002]  1976.840164: funcgraph_exit:         0.750 us   |                        }
+          direct-8330  [002]  1976.840165: funcgraph_entry:                   |                        start_this_handle() {
+          direct-8330  [002]  1976.840165: funcgraph_entry:        0.032 us   |                          _raw_read_lock();
+          direct-8330  [002]  1976.840165: funcgraph_entry:        0.033 us   |                          add_transaction_credits();
+          direct-8330  [002]  1976.840165: funcgraph_exit:         0.422 us   |                        }
+          direct-8330  [002]  1976.840165: funcgraph_exit:         1.524 us   |                      }
+          direct-8330  [002]  1976.840165: funcgraph_exit:         2.263 us   |                    }
+          direct-8330  [002]  1976.840165: funcgraph_entry:        0.038 us   |                    ext4_orphan_del();
+          direct-8330  [002]  1976.840166: funcgraph_entry:                   |                    __ext4_journal_stop() {
+          direct-8330  [002]  1976.840166: funcgraph_entry:                   |                      jbd2_journal_stop() {
+          direct-8330  [002]  1976.840166: funcgraph_entry:                   |                        stop_this_handle() {
+          direct-8330  [002]  1976.840166: funcgraph_entry:                   |                          __wake_up() {
+          direct-8330  [002]  1976.840166: funcgraph_entry:                   |                            __wake_up_common_lock() {
+          direct-8330  [002]  1976.840166: funcgraph_entry:        0.034 us   |                              __lock_text_start();
+          direct-8330  [002]  1976.840166: funcgraph_entry:        0.031 us   |                              __wake_up_common();
+          direct-8330  [002]  1976.840167: funcgraph_entry:        0.044 us   |                              _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840167: funcgraph_exit:         1.196 us   |                            }
+          direct-8330  [002]  1976.840167: funcgraph_exit:         1.373 us   |                          }
+          direct-8330  [002]  1976.840167: funcgraph_exit:         1.567 us   |                        }
+          direct-8330  [002]  1976.840167: funcgraph_entry:        0.036 us   |                        kmem_cache_free();
+          direct-8330  [002]  1976.840168: funcgraph_exit:         1.944 us   |                      }
+          direct-8330  [002]  1976.840168: funcgraph_exit:         2.127 us   |                    }
+          direct-8330  [002]  1976.840168: funcgraph_exit:       + 83.141 us  |                  }
+          direct-8330  [002]  1976.840168: funcgraph_exit:       + 84.672 us  |                }
+          direct-8330  [002]  1976.840168: funcgraph_exit:       + 99.044 us  |              }
+          direct-8330  [002]  1976.840168: funcgraph_entry:        0.033 us   |              up_write();
+          direct-8330  [002]  1976.840168: funcgraph_exit:       ! 100.507 us |            }
+          direct-8330  [002]  1976.840169: funcgraph_exit:       ! 100.766 us |          }
+          direct-8330  [002]  1976.840169: funcgraph_exit:       ! 100.974 us |        }
+          direct-8330  [002]  1976.840169: funcgraph_entry:        0.033 us   |        __sb_end_write();
+          direct-8330  [002]  1976.840169: funcgraph_exit:       ! 103.541 us |      }
+          direct-8330  [002]  1976.840169: funcgraph_exit:       ! 104.289 us |    }
+          direct-8330  [002]  1976.840169: funcgraph_exit:       ! 104.602 us |  }
+          direct-8330  [002]  1976.840194: funcgraph_entry:                   |  __x64_sys_write() {
+          direct-8330  [002]  1976.840194: funcgraph_entry:                   |    ksys_write() {
+          direct-8330  [002]  1976.840194: funcgraph_entry:                   |      __fdget_pos() {
+          direct-8330  [002]  1976.840194: funcgraph_entry:        0.220 us   |        __fget_light();
+          direct-8330  [002]  1976.840195: funcgraph_exit:         0.438 us   |      }
+          direct-8330  [002]  1976.840195: funcgraph_entry:                   |      vfs_write() {
+          direct-8330  [002]  1976.840195: funcgraph_entry:                   |        rw_verify_area() {
+          direct-8330  [002]  1976.840195: funcgraph_entry:                   |          security_file_permission() {
+          direct-8330  [002]  1976.840195: funcgraph_entry:                   |            selinux_file_permission() {
+          direct-8330  [002]  1976.840195: funcgraph_entry:                   |              __inode_security_revalidate() {
+          direct-8330  [002]  1976.840195: funcgraph_entry:                   |                _cond_resched() {
+          direct-8330  [002]  1976.840195: funcgraph_entry:        0.030 us   |                  rcu_all_qs();
+          direct-8330  [002]  1976.840196: funcgraph_exit:         0.223 us   |                }
+          direct-8330  [002]  1976.840196: funcgraph_exit:         0.704 us   |              }
+          direct-8330  [002]  1976.840196: funcgraph_entry:        0.031 us   |              avc_policy_seqno();
+          direct-8330  [002]  1976.840196: funcgraph_exit:         1.225 us   |            }
+          direct-8330  [002]  1976.840196: funcgraph_entry:        0.032 us   |            bpf_lsm_file_permission();
+          direct-8330  [002]  1976.840197: funcgraph_exit:         1.664 us   |          }
+          direct-8330  [002]  1976.840197: funcgraph_exit:         1.852 us   |        }
+          direct-8330  [002]  1976.840197: funcgraph_entry:                   |        __vfs_write() {
+          direct-8330  [002]  1976.840197: funcgraph_entry:                   |          tty_write() {
+          direct-8330  [002]  1976.840197: funcgraph_entry:        0.121 us   |            tty_paranoia_check();
+          direct-8330  [002]  1976.840198: funcgraph_entry:                   |            tty_ldisc_ref_wait() {
+          direct-8330  [002]  1976.840198: funcgraph_entry:                   |              ldsem_down_read() {
+          direct-8330  [002]  1976.840198: funcgraph_entry:                   |                _cond_resched() {
+          direct-8330  [002]  1976.840198: funcgraph_entry:        0.029 us   |                  rcu_all_qs();
+          direct-8330  [002]  1976.840198: funcgraph_exit:         0.211 us   |                }
+          direct-8330  [002]  1976.840198: funcgraph_exit:         0.399 us   |              }
+          direct-8330  [002]  1976.840198: funcgraph_exit:         0.690 us   |            }
+          direct-8330  [002]  1976.840199: funcgraph_entry:                   |            tty_write_lock() {
+          direct-8330  [002]  1976.840199: funcgraph_entry:        0.081 us   |              mutex_trylock();
+          direct-8330  [002]  1976.840199: funcgraph_exit:         0.273 us   |            }
+          direct-8330  [002]  1976.840199: funcgraph_entry:                   |            __check_object_size() {
+          direct-8330  [002]  1976.840199: funcgraph_entry:        0.050 us   |              __virt_addr_valid();
+          direct-8330  [002]  1976.840199: funcgraph_entry:        0.044 us   |              __check_heap_object();
+          direct-8330  [002]  1976.840200: funcgraph_entry:        0.036 us   |              check_stack_object();
+          direct-8330  [002]  1976.840200: funcgraph_exit:         0.779 us   |            }
+          direct-8330  [002]  1976.840200: funcgraph_entry:                   |            n_tty_write() {
+          direct-8330  [002]  1976.840200: funcgraph_entry:                   |              down_read() {
+          direct-8330  [002]  1976.840200: funcgraph_entry:                   |                _cond_resched() {
+          direct-8330  [002]  1976.840200: funcgraph_entry:        0.028 us   |                  rcu_all_qs();
+          direct-8330  [002]  1976.840201: funcgraph_exit:         0.212 us   |                }
+          direct-8330  [002]  1976.840201: funcgraph_exit:         0.396 us   |              }
+          direct-8330  [002]  1976.840201: funcgraph_entry:        0.170 us   |              process_echoes();
+          direct-8330  [002]  1976.840201: funcgraph_entry:                   |              add_wait_queue() {
+          direct-8330  [002]  1976.840201: funcgraph_entry:        0.031 us   |                __lock_text_start();
+          direct-8330  [002]  1976.840201: funcgraph_entry:        0.042 us   |                _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840202: funcgraph_exit:         0.418 us   |              }
+          direct-8330  [002]  1976.840202: funcgraph_entry:        0.028 us   |              tty_hung_up_p();
+          direct-8330  [002]  1976.840202: funcgraph_entry:                   |              mutex_lock() {
+          direct-8330  [002]  1976.840202: funcgraph_entry:                   |                _cond_resched() {
+          direct-8330  [002]  1976.840202: funcgraph_entry:        0.029 us   |                  rcu_all_qs();
+          direct-8330  [002]  1976.840202: funcgraph_exit:         0.211 us   |                }
+          direct-8330  [002]  1976.840202: funcgraph_exit:         0.412 us   |              }
+          direct-8330  [002]  1976.840202: funcgraph_entry:                   |              tty_write_room() {
+          direct-8330  [002]  1976.840203: funcgraph_entry:                   |                pty_write_room() {
+          direct-8330  [002]  1976.840203: funcgraph_entry:        0.056 us   |                  tty_buffer_space_avail();
+          direct-8330  [002]  1976.840203: funcgraph_exit:         0.311 us   |                }
+          direct-8330  [002]  1976.840203: funcgraph_exit:         0.530 us   |              }
+          direct-8330  [002]  1976.840204: funcgraph_entry:                   |              pty_write() {
+          direct-8330  [002]  1976.840204: funcgraph_entry:                   |                tty_insert_flip_string_and_push_buffer() {
+          direct-8330  [002]  1976.840204: funcgraph_entry:        0.037 us   |                  __lock_text_start();
+          direct-8330  [002]  1976.840204: funcgraph_entry:                   |                  tty_insert_flip_string_fixed_flag.part.8() {
+          direct-8330  [002]  1976.840204: funcgraph_entry:        0.128 us   |                    __tty_buffer_request_room();
+          direct-8330  [002]  1976.840204: funcgraph_exit:         0.338 us   |                  }
+          direct-8330  [002]  1976.840204: funcgraph_entry:        0.042 us   |                  _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840205: funcgraph_entry:                   |                  queue_work_on() {
+          direct-8330  [002]  1976.840205: funcgraph_entry:                   |                    __queue_work() {
+          direct-8330  [002]  1976.840205: funcgraph_entry:        0.382 us   |                      get_work_pool();
+          direct-8330  [002]  1976.840206: funcgraph_entry:        0.119 us   |                      _raw_spin_lock();
+          direct-8330  [002]  1976.840206: funcgraph_entry:                   |                      insert_work() {
+          direct-8330  [002]  1976.840206: funcgraph_entry:        0.030 us   |                        get_pwq.isra.26();
+          direct-8330  [002]  1976.840206: funcgraph_entry:                   |                        wake_up_process() {
+          direct-8330  [002]  1976.840206: funcgraph_entry:                   |                          try_to_wake_up() {
+          direct-8330  [002]  1976.840207: funcgraph_entry:        0.068 us   |                            __lock_text_start();
+          direct-8330  [002]  1976.840208: funcgraph_entry:                   |                            select_task_rq_fair() {
+          direct-8330  [002]  1976.840208: funcgraph_entry:        0.039 us   |                              available_idle_cpu();
+          direct-8330  [002]  1976.840208: funcgraph_exit:         0.312 us   |                            }
+          direct-8330  [002]  1976.840209: funcgraph_entry:        0.219 us   |                            kthread_is_per_cpu();
+          direct-8330  [002]  1976.840209: funcgraph_entry:        0.035 us   |                            ttwu_queue_wakelist();
+          direct-8330  [002]  1976.840209: funcgraph_entry:        0.030 us   |                            _raw_spin_lock();
+          direct-8330  [002]  1976.840209: funcgraph_entry:                   |                            update_rq_clock() {
+          direct-8330  [002]  1976.840210: funcgraph_entry:        0.124 us   |                              update_irq_load_avg();
+          direct-8330  [002]  1976.840210: funcgraph_exit:         0.340 us   |                            }
+          direct-8330  [002]  1976.840210: funcgraph_entry:                   |                            ttwu_do_activate() {
+          direct-8330  [002]  1976.840216: funcgraph_entry:                   |                              enqueue_task_fair() {
+          direct-8330  [002]  1976.840216: funcgraph_entry:                   |                                enqueue_entity() {
+          direct-8330  [002]  1976.840217: funcgraph_entry:                   |                                  update_curr() {
+          direct-8330  [002]  1976.840217: funcgraph_entry:        0.040 us   |                                    update_min_vruntime();
+          direct-8330  [002]  1976.840217: funcgraph_entry:        0.072 us   |                                    cpuacct_charge();
+          direct-8330  [002]  1976.840217: funcgraph_exit:         0.558 us   |                                  }
+          direct-8330  [002]  1976.840217: funcgraph_entry:        0.068 us   |                                  __update_load_avg_se();
+          direct-8330  [002]  1976.840218: funcgraph_entry:        0.039 us   |                                  __update_load_avg_cfs_rq();
+          direct-8330  [002]  1976.840218: funcgraph_entry:        0.030 us   |                                  update_cfs_group();
+          direct-8330  [002]  1976.840218: funcgraph_entry:        0.052 us   |                                  place_entity();
+          direct-8330  [002]  1976.840218: funcgraph_entry:        0.066 us   |                                  __enqueue_entity();
+          direct-8330  [002]  1976.840219: funcgraph_exit:         2.055 us   |                                }
+          direct-8330  [002]  1976.840219: funcgraph_entry:        0.031 us   |                                hrtick_update();
+          direct-8330  [002]  1976.840219: funcgraph_exit:         2.672 us   |                              }
+          direct-8330  [002]  1976.840219: funcgraph_entry:                   |                              check_preempt_curr() {
+          direct-8330  [002]  1976.840219: funcgraph_entry:                   |                                check_preempt_wakeup() {
+          direct-8330  [002]  1976.840219: funcgraph_entry:        0.036 us   |                                  update_curr();
+          direct-8330  [002]  1976.840220: funcgraph_entry:        0.032 us   |                                  wakeup_preempt_entity.isra.71();
+          direct-8330  [002]  1976.840220: funcgraph_exit:         0.465 us   |                                }
+          direct-8330  [002]  1976.840220: funcgraph_exit:         0.709 us   |                              }
+          direct-8330  [002]  1976.840220: funcgraph_exit:       + 10.277 us  |                            }
+          direct-8330  [002]  1976.840220: funcgraph_entry:        0.047 us   |                            _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840221: funcgraph_exit:       + 14.087 us  |                          }
+          direct-8330  [002]  1976.840221: funcgraph_exit:       + 14.276 us  |                        }
+          direct-8330  [002]  1976.840221: funcgraph_exit:       + 15.005 us  |                      }
+          direct-8330  [002]  1976.840221: funcgraph_exit:       + 16.172 us  |                    }
+          direct-8330  [002]  1976.840222: funcgraph_entry:                   |                    smp_apic_timer_interrupt() {
+          direct-8330  [002]  1976.840222: funcgraph_entry:                   |                      irq_enter() {
+          direct-8330  [002]  1976.840223: funcgraph_entry:                   |                        irq_enter_rcu() {
+          direct-8330  [002]  1976.840223: funcgraph_entry:        0.057 us   |                          irqtime_account_irq();
+          direct-8330  [002]  1976.840223: funcgraph_exit:         0.244 us   |                        }
+          direct-8330  [002]  1976.840223: funcgraph_exit:         0.436 us   |                      }
+          direct-8330  [002]  1976.840224: funcgraph_entry:                   |                      hrtimer_interrupt() {
+          direct-8330  [002]  1976.840224: funcgraph_entry:        0.032 us   |                        __lock_text_start();
+          direct-8330  [002]  1976.840224: funcgraph_entry:        0.127 us   |                        ktime_get_update_offsets_now();
+          direct-8330  [002]  1976.840225: funcgraph_entry:                   |                        __hrtimer_run_queues() {
+          direct-8330  [002]  1976.840225: funcgraph_entry:        0.169 us   |                          __remove_hrtimer();
+          direct-8330  [002]  1976.840225: funcgraph_entry:        0.041 us   |                          _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840225: funcgraph_entry:                   |                          tick_sched_timer() {
+          direct-8330  [002]  1976.840225: funcgraph_entry:        0.044 us   |                            ktime_get();
+          direct-8330  [002]  1976.840226: funcgraph_entry:        0.037 us   |                            tick_sched_do_timer();
+          direct-8330  [002]  1976.840226: funcgraph_entry:                   |                            tick_sched_handle() {
+          direct-8330  [002]  1976.840226: funcgraph_entry:                   |                              update_process_times() {
+          direct-8330  [002]  1976.840226: funcgraph_entry:                   |                                account_process_tick() {
+          direct-8330  [002]  1976.840226: funcgraph_entry:                   |                                  irqtime_account_process_tick.isra.15() {
+          direct-8330  [002]  1976.840226: funcgraph_entry:                   |                                    account_system_index_time() {
+          direct-8330  [002]  1976.840226: funcgraph_entry:        0.037 us   |                                      cpuacct_account_field();
+          direct-8330  [002]  1976.840227: funcgraph_entry:                   |                                      acct_account_cputime() {
+          direct-8330  [002]  1976.840227: funcgraph_entry:        0.083 us   |                                        __acct_update_integrals();
+          direct-8330  [002]  1976.840227: funcgraph_exit:         0.264 us   |                                      }
+          direct-8330  [002]  1976.840227: funcgraph_exit:         0.721 us   |                                    }
+          direct-8330  [002]  1976.840227: funcgraph_exit:         0.903 us   |                                  }
+          direct-8330  [002]  1976.840227: funcgraph_exit:         1.090 us   |                                }
+          direct-8330  [002]  1976.840227: funcgraph_entry:                   |                                run_local_timers() {
+          direct-8330  [002]  1976.840227: funcgraph_entry:        0.029 us   |                                  hrtimer_run_queues();
+          direct-8330  [002]  1976.840228: funcgraph_exit:         0.237 us   |                                }
+          direct-8330  [002]  1976.840228: funcgraph_entry:                   |                                rcu_sched_clock_irq() {
+          direct-8330  [002]  1976.840228: funcgraph_entry:        0.032 us   |                                  rcu_is_cpu_rrupt_from_idle();
+          direct-8330  [002]  1976.840228: funcgraph_entry:        0.035 us   |                                  rcu_is_cpu_rrupt_from_idle();
+          direct-8330  [002]  1976.840228: funcgraph_entry:                   |                                  invoke_rcu_core() {
+          direct-8330  [002]  1976.840228: funcgraph_entry:        0.041 us   |                                    raise_softirq();
+          direct-8330  [002]  1976.840229: funcgraph_exit:         0.247 us   |                                  }
+          direct-8330  [002]  1976.840229: funcgraph_exit:         0.894 us   |                                }
+          direct-8330  [002]  1976.840229: funcgraph_entry:                   |                                scheduler_tick() {
+          direct-8330  [002]  1976.840229: funcgraph_entry:        0.028 us   |                                  arch_scale_freq_tick();
+          direct-8330  [002]  1976.840229: funcgraph_entry:        0.033 us   |                                  _raw_spin_lock();
+          direct-8330  [002]  1976.840229: funcgraph_entry:        0.056 us   |                                  update_rq_clock();
+          direct-8330  [002]  1976.840230: funcgraph_entry:                   |                                  task_tick_fair() {
+          direct-8330  [002]  1976.840230: funcgraph_entry:                   |                                    update_curr() {
+          direct-8330  [002]  1976.840230: funcgraph_entry:        0.032 us   |                                      update_min_vruntime();
+          direct-8330  [002]  1976.840230: funcgraph_entry:        0.032 us   |                                      cpuacct_charge();
+          direct-8330  [002]  1976.840230: funcgraph_exit:         0.411 us   |                                    }
+          direct-8330  [002]  1976.840230: funcgraph_entry:        0.085 us   |                                    __update_load_avg_se();
+          direct-8330  [002]  1976.840230: funcgraph_entry:        0.041 us   |                                    __update_load_avg_cfs_rq();
+          direct-8330  [002]  1976.840231: funcgraph_entry:        0.029 us   |                                    update_cfs_group();
+          direct-8330  [002]  1976.840231: funcgraph_entry:        0.087 us   |                                    hrtimer_active();
+          direct-8330  [002]  1976.840231: funcgraph_entry:                   |                                    sched_slice() {
+          direct-8330  [002]  1976.840231: funcgraph_entry:        0.059 us   |                                      __calc_delta();
+          direct-8330  [002]  1976.840231: funcgraph_exit:         0.249 us   |                                    }
+          direct-8330  [002]  1976.840232: funcgraph_exit:         1.922 us   |                                  }
+          direct-8330  [002]  1976.840232: funcgraph_entry:        0.036 us   |                                  calc_global_load_tick();
+          direct-8330  [002]  1976.840232: funcgraph_entry:                   |                                  trigger_load_balance() {
+          direct-8330  [002]  1976.840232: funcgraph_entry:        0.029 us   |                                    nohz_balance_exit_idle();
+          direct-8330  [002]  1976.840232: funcgraph_exit:         0.215 us   |                                  }
+          direct-8330  [002]  1976.840232: funcgraph_exit:         3.354 us   |                                }
+          direct-8330  [002]  1976.840232: funcgraph_entry:        0.149 us   |                                run_posix_cpu_timers();
+          direct-8330  [002]  1976.840233: funcgraph_exit:         6.579 us   |                              }
+          direct-8330  [002]  1976.840233: funcgraph_entry:        0.042 us   |                              profile_tick();
+          direct-8330  [002]  1976.840233: funcgraph_exit:         6.965 us   |                            }
+          direct-8330  [002]  1976.840233: funcgraph_entry:        0.028 us   |                            hrtimer_forward();
+          direct-8330  [002]  1976.840233: funcgraph_exit:         7.768 us   |                          }
+          direct-8330  [002]  1976.840233: funcgraph_entry:        0.033 us   |                          _raw_spin_lock_irq();
+          direct-8330  [002]  1976.840234: funcgraph_entry:        0.193 us   |                          enqueue_hrtimer();
+          direct-8330  [002]  1976.840234: funcgraph_exit:         9.142 us   |                        }
+          direct-8330  [002]  1976.840234: funcgraph_entry:                   |                        hrtimer_update_next_event() {
+          direct-8330  [002]  1976.840234: funcgraph_entry:                   |                          __hrtimer_get_next_event() {
+          direct-8330  [002]  1976.840234: funcgraph_entry:        0.031 us   |                            __hrtimer_next_event_base();
+          direct-8330  [002]  1976.840234: funcgraph_exit:         0.225 us   |                          }
+          direct-8330  [002]  1976.840234: funcgraph_entry:                   |                          __hrtimer_get_next_event() {
+          direct-8330  [002]  1976.840235: funcgraph_entry:        0.041 us   |                            __hrtimer_next_event_base();
+          direct-8330  [002]  1976.840235: funcgraph_exit:         0.229 us   |                          }
+          direct-8330  [002]  1976.840235: funcgraph_exit:         0.803 us   |                        }
+          direct-8330  [002]  1976.840235: funcgraph_entry:        0.042 us   |                        _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840235: funcgraph_entry:                   |                        tick_program_event() {
+          direct-8330  [002]  1976.840235: funcgraph_entry:                   |                          clockevents_program_event() {
+          direct-8330  [002]  1976.840236: funcgraph_entry:        0.048 us   |                            ktime_get();
+          direct-8330  [002]  1976.840236: funcgraph_entry:        1.402 us   |                            lapic_next_event();
+          direct-8330  [002]  1976.840237: funcgraph_exit:         1.893 us   |                          }
+          direct-8330  [002]  1976.840237: funcgraph_exit:         2.084 us   |                        }
+          direct-8330  [002]  1976.840238: funcgraph_exit:       + 13.506 us  |                      }
+          direct-8330  [002]  1976.840238: funcgraph_entry:                   |                      irq_exit() {
+          direct-8330  [002]  1976.840238: funcgraph_entry:                   |                        irq_exit_rcu() {
+          direct-8330  [002]  1976.840238: funcgraph_entry:        0.046 us   |                          irqtime_account_irq();
+          direct-8330  [002]  1976.840238: funcgraph_entry:                   |                          __softirqentry_text_start() {
+          direct-8330  [002]  1976.840238: funcgraph_entry:        0.043 us   |                            irqtime_account_irq();
+          direct-8330  [002]  1976.840239: funcgraph_entry:                   |                            rcu_core_si() {
+          direct-8330  [002]  1976.840239: funcgraph_entry:                   |                              rcu_core() {
+          direct-8330  [002]  1976.840239: funcgraph_entry:        0.075 us   |                                note_gp_changes();
+          direct-8330  [002]  1976.840239: funcgraph_entry:                   |                                rcu_report_qs_rdp() {
+          direct-8330  [002]  1976.840240: funcgraph_entry:        0.031 us   |                                  __lock_text_start();
+          direct-8330  [002]  1976.840240: funcgraph_entry:                   |                                  rcu_accelerate_cbs() {
+          direct-8330  [002]  1976.840240: funcgraph_entry:        0.039 us   |                                    rcu_segcblist_pend_cbs();
+          direct-8330  [002]  1976.840240: funcgraph_entry:        0.225 us   |                                    rcu_segcblist_accelerate();
+          direct-8330  [002]  1976.840240: funcgraph_entry:        0.048 us   |                                    rcu_start_this_gp();
+          direct-8330  [002]  1976.840241: funcgraph_exit:         0.825 us   |                                  }
+          direct-8330  [002]  1976.840241: funcgraph_entry:        0.030 us   |                                  rcu_disable_urgency_upon_qs();
+          direct-8330  [002]  1976.840241: funcgraph_entry:                   |                                  rcu_report_qs_rnp() {
+          direct-8330  [002]  1976.840241: funcgraph_entry:        0.041 us   |                                    _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840241: funcgraph_exit:         0.244 us   |                                  }
+          direct-8330  [002]  1976.840241: funcgraph_exit:         1.825 us   |                                }
+          direct-8330  [002]  1976.840241: funcgraph_entry:        0.028 us   |                                rcu_segcblist_ready_cbs();
+          direct-8330  [002]  1976.840242: funcgraph_entry:        0.038 us   |                                do_nocb_deferred_wakeup();
+          direct-8330  [002]  1976.840242: funcgraph_exit:         2.951 us   |                              }
+          direct-8330  [002]  1976.840242: funcgraph_exit:         3.320 us   |                            }
+          direct-8330  [002]  1976.840242: funcgraph_entry:        0.056 us   |                            irqtime_account_irq();
+          direct-8330  [002]  1976.840242: funcgraph_exit:         4.053 us   |                          }
+          direct-8330  [002]  1976.840242: funcgraph_entry:        0.028 us   |                          idle_cpu();
+          direct-8330  [002]  1976.840243: funcgraph_exit:         4.687 us   |                        }
+          direct-8330  [002]  1976.840243: funcgraph_exit:         4.879 us   |                      }
+          direct-8330  [002]  1976.840243: funcgraph_exit:       + 20.340 us  |                    }
+          direct-8330  [002]  1976.840243: funcgraph_exit:       + 38.150 us  |                  }
+          direct-8330  [002]  1976.840243: funcgraph_exit:       + 39.255 us  |                }
+          direct-8330  [002]  1976.840243: funcgraph_exit:       + 39.517 us  |              }
+          direct-8330  [002]  1976.840243: funcgraph_entry:        0.047 us   |              mutex_unlock();
+          direct-8330  [002]  1976.840243: funcgraph_entry:                   |              mutex_lock() {
+          direct-8330  [002]  1976.840244: funcgraph_entry:                   |                _cond_resched() {
+          direct-8330  [002]  1976.840244: funcgraph_entry:        0.028 us   |                  rcu_all_qs();
+          direct-8330  [002]  1976.840244: funcgraph_exit:         0.228 us   |                }
+          direct-8330  [002]  1976.840244: funcgraph_exit:         0.413 us   |              }
+          direct-8330  [002]  1976.840244: funcgraph_entry:                   |              tty_write_room() {
+          direct-8330  [002]  1976.840244: funcgraph_entry:                   |                pty_write_room() {
+          direct-8330  [002]  1976.840244: funcgraph_entry:        0.040 us   |                  tty_buffer_space_avail();
+          direct-8330  [002]  1976.840244: funcgraph_exit:         0.278 us   |                }
+          direct-8330  [002]  1976.840245: funcgraph_exit:         0.481 us   |              }
+          direct-8330  [002]  1976.840245: funcgraph_entry:                   |              do_output_char() {
+          direct-8330  [002]  1976.840245: funcgraph_entry:                   |                pty_write() {
+          direct-8330  [002]  1976.840245: funcgraph_entry:                   |                  tty_insert_flip_string_and_push_buffer() {
+          direct-8330  [002]  1976.840245: funcgraph_entry:        0.032 us   |                    __lock_text_start();
+          direct-8330  [002]  1976.840245: funcgraph_entry:                   |                    tty_insert_flip_string_fixed_flag.part.8() {
+          direct-8330  [002]  1976.840245: funcgraph_entry:        0.051 us   |                      __tty_buffer_request_room();
+          direct-8330  [002]  1976.840246: funcgraph_exit:         0.353 us   |                    }
+          direct-8330  [002]  1976.840246: funcgraph_entry:        0.043 us   |                    _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840246: funcgraph_entry:        0.043 us   |                    queue_work_on();
+          direct-8330  [002]  1976.840246: funcgraph_exit:         1.130 us   |                  }
+          direct-8330  [002]  1976.840246: funcgraph_exit:         1.318 us   |                }
+          direct-8330  [002]  1976.840246: funcgraph_exit:         1.532 us   |              }
+          direct-8330  [002]  1976.840246: funcgraph_entry:        0.033 us   |              mutex_unlock();
+          direct-8330  [002]  1976.840247: funcgraph_entry:                   |              remove_wait_queue() {
+          direct-8330  [002]  1976.840247: funcgraph_entry:        0.034 us   |                __lock_text_start();
+          direct-8330  [002]  1976.840247: funcgraph_entry:        0.044 us   |                _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840247: funcgraph_exit:         0.415 us   |              }
+          direct-8330  [002]  1976.840247: funcgraph_entry:        0.032 us   |              up_read();
+          direct-8330  [002]  1976.840247: funcgraph_exit:       + 47.194 us  |            }
+          direct-8330  [002]  1976.840248: funcgraph_entry:        0.029 us   |            get_seconds();
+          direct-8330  [002]  1976.840248: funcgraph_entry:                   |            tty_write_unlock() {
+          direct-8330  [002]  1976.840248: funcgraph_entry:        0.033 us   |              mutex_unlock();
+          direct-8330  [002]  1976.840248: funcgraph_entry:                   |              __wake_up() {
+          direct-8330  [002]  1976.840248: funcgraph_entry:                   |                __wake_up_common_lock() {
+          direct-8330  [002]  1976.840248: funcgraph_entry:        0.034 us   |                  __lock_text_start();
+          direct-8330  [002]  1976.840248: funcgraph_entry:        0.030 us   |                  __wake_up_common();
+          direct-8330  [002]  1976.840249: funcgraph_entry:        0.046 us   |                  _raw_spin_unlock_irqrestore();
+          direct-8330  [002]  1976.840249: funcgraph_exit:         0.610 us   |                }
+          direct-8330  [002]  1976.840249: funcgraph_exit:         0.788 us   |              }
+          direct-8330  [002]  1976.840249: funcgraph_exit:         1.158 us   |            }
+          direct-8330  [002]  1976.840249: funcgraph_entry:                   |            tty_ldisc_deref() {
+          direct-8330  [002]  1976.840249: funcgraph_entry:        0.031 us   |              ldsem_up_read();
+          direct-8330  [002]  1976.840250: funcgraph_exit:         0.273 us   |            }
+          direct-8330  [002]  1976.840250: funcgraph_exit:       + 52.534 us  |          }
+          direct-8330  [002]  1976.840250: funcgraph_exit:       + 52.965 us  |        }
+          direct-8330  [002]  1976.840250: funcgraph_entry:        0.132 us   |        __fsnotify_parent();
+          direct-8330  [002]  1976.840250: funcgraph_entry:        0.118 us   |        fsnotify();
+          direct-8330  [002]  1976.840251: funcgraph_exit:       + 55.774 us  |      }
+          direct-8330  [002]  1976.840251: funcgraph_exit:       + 56.609 us  |    }
+          direct-8330  [002]  1976.840251: funcgraph_exit:       + 56.802 us  |  }
+ gnome-terminal--6620  [003]  1976.840330: funcgraph_entry:        0.184 us   |  finish_task_switch();
+ gnome-terminal--6620  [003]  1976.840344: funcgraph_entry:                   |  __x64_sys_write() {
+ gnome-terminal--6620  [003]  1976.840345: funcgraph_entry:                   |    ksys_write() {
+ gnome-terminal--6620  [003]  1976.840345: funcgraph_entry:                   |      __fdget_pos() {
+ gnome-terminal--6620  [003]  1976.840345: funcgraph_entry:        0.118 us   |        __fget_light();
+ gnome-terminal--6620  [003]  1976.840345: funcgraph_exit:         0.563 us   |      }
+ gnome-terminal--6620  [003]  1976.840346: funcgraph_entry:                   |      vfs_write() {
+ gnome-terminal--6620  [003]  1976.840346: funcgraph_entry:                   |        rw_verify_area() {
+ gnome-terminal--6620  [003]  1976.840346: funcgraph_entry:                   |          security_file_permission() {
+ gnome-terminal--6620  [003]  1976.840346: funcgraph_entry:                   |            selinux_file_permission() {
+ gnome-terminal--6620  [003]  1976.840346: funcgraph_entry:                   |              __inode_security_revalidate() {
+ gnome-terminal--6620  [003]  1976.840347: funcgraph_entry:                   |                _cond_resched() {
+ gnome-terminal--6620  [003]  1976.840347: funcgraph_entry:        0.053 us   |                  rcu_all_qs();
+ gnome-terminal--6620  [003]  1976.840347: funcgraph_exit:         0.384 us   |                }
+ gnome-terminal--6620  [003]  1976.840347: funcgraph_exit:         0.784 us   |              }
+ gnome-terminal--6620  [003]  1976.840348: funcgraph_entry:                   |              file_has_perm() {
+ gnome-terminal--6620  [003]  1976.840348: funcgraph_entry:        0.048 us   |                bpf_fd_pass();
+ gnome-terminal--6620  [003]  1976.840348: funcgraph_entry:        0.053 us   |                inode_has_perm();
+ gnome-terminal--6620  [003]  1976.840348: funcgraph_exit:         0.768 us   |              }
+ gnome-terminal--6620  [003]  1976.840349: funcgraph_exit:         2.286 us   |            }
+ gnome-terminal--6620  [003]  1976.840349: funcgraph_entry:        0.048 us   |            bpf_lsm_file_permission();
+ gnome-terminal--6620  [003]  1976.840349: funcgraph_exit:         3.015 us   |          }
+ gnome-terminal--6620  [003]  1976.840349: funcgraph_exit:         3.347 us   |        }
+ gnome-terminal--6620  [003]  1976.840349: funcgraph_entry:                   |        __vfs_write() {
+ gnome-terminal--6620  [003]  1976.840350: funcgraph_entry:                   |          eventfd_write() {
+ gnome-terminal--6620  [003]  1976.840350: funcgraph_entry:        0.059 us   |            _raw_spin_lock_irq();
+ gnome-terminal--6620  [003]  1976.840351: funcgraph_exit:         0.484 us   |          }
+ gnome-terminal--6620  [003]  1976.840351: funcgraph_exit:         1.039 us   |        }
+ gnome-terminal--6620  [003]  1976.840351: funcgraph_entry:        0.146 us   |        __fsnotify_parent();
+ gnome-terminal--6620  [003]  1976.840351: funcgraph_entry:        0.092 us   |        fsnotify();
+ gnome-terminal--6620  [003]  1976.840352: funcgraph_exit:         5.912 us   |      }
+ gnome-terminal--6620  [003]  1976.840352: funcgraph_entry:                   |      fput() {
+ gnome-terminal--6620  [003]  1976.840352: funcgraph_entry:        0.057 us   |        fput_many();
+ gnome-terminal--6620  [003]  1976.840352: funcgraph_exit:         0.387 us   |      }
+ gnome-terminal--6620  [003]  1976.840353: funcgraph_exit:         7.801 us   |    }
+ gnome-terminal--6620  [003]  1976.840353: funcgraph_exit:         8.165 us   |  }
+ gnome-terminal--6620  [003]  1976.840366: funcgraph_entry:                   |  __x64_sys_write() {
+ gnome-terminal--6620  [003]  1976.840367: funcgraph_entry:                   |    ksys_write() {
+ gnome-terminal--6620  [003]  1976.840367: funcgraph_entry:                   |      __fdget_pos() {
+ gnome-terminal--6620  [003]  1976.840367: funcgraph_entry:        0.071 us   |        __fget_light();
+ gnome-terminal--6620  [003]  1976.840367: funcgraph_exit:         0.423 us   |      }
+ gnome-terminal--6620  [003]  1976.840367: funcgraph_entry:                   |      vfs_write() {
+ gnome-terminal--6620  [003]  1976.840368: funcgraph_entry:                   |        rw_verify_area() {
+ gnome-terminal--6620  [003]  1976.840368: funcgraph_entry:                   |          security_file_permission() {
+ gnome-terminal--6620  [003]  1976.840368: funcgraph_entry:                   |            selinux_file_permission() {
+ gnome-terminal--6620  [003]  1976.840368: funcgraph_entry:                   |              __inode_security_revalidate() {
+ gnome-terminal--6620  [003]  1976.840368: funcgraph_entry:                   |                _cond_resched() {
+ gnome-terminal--6620  [003]  1976.840368: funcgraph_entry:        0.048 us   |                  rcu_all_qs();
+ gnome-terminal--6620  [003]  1976.840369: funcgraph_exit:         0.378 us   |                }
+ gnome-terminal--6620  [003]  1976.840369: funcgraph_exit:         0.719 us   |              }
+ gnome-terminal--6620  [003]  1976.840369: funcgraph_entry:                   |              file_has_perm() {
+ gnome-terminal--6620  [003]  1976.840369: funcgraph_entry:        0.047 us   |                bpf_fd_pass();
+ gnome-terminal--6620  [003]  1976.840370: funcgraph_entry:        0.053 us   |                inode_has_perm();
+ gnome-terminal--6620  [003]  1976.840370: funcgraph_exit:         0.718 us   |              }
+ gnome-terminal--6620  [003]  1976.840370: funcgraph_exit:         2.064 us   |            }
+ gnome-terminal--6620  [003]  1976.840370: funcgraph_entry:        0.047 us   |            bpf_lsm_file_permission();
+ gnome-terminal--6620  [003]  1976.840371: funcgraph_exit:         2.762 us   |          }
+ gnome-terminal--6620  [003]  1976.840371: funcgraph_exit:         3.095 us   |        }
+ gnome-terminal--6620  [003]  1976.840371: funcgraph_entry:                   |        __vfs_write() {
+ gnome-terminal--6620  [003]  1976.840371: funcgraph_entry:                   |          eventfd_write() {
+ gnome-terminal--6620  [003]  1976.840371: funcgraph_entry:        0.060 us   |            _raw_spin_lock_irq();
+ gnome-terminal--6620  [003]  1976.840378: funcgraph_entry:                   |            smp_irq_work_interrupt() {
+ gnome-terminal--6620  [003]  1976.840379: funcgraph_entry:                   |              irq_enter() {
+ gnome-terminal--6620  [003]  1976.840379: funcgraph_entry:                   |                irq_enter_rcu() {
+ gnome-terminal--6620  [003]  1976.840379: funcgraph_entry:        0.093 us   |                  irqtime_account_irq();
+ gnome-terminal--6620  [003]  1976.840379: funcgraph_exit:         0.455 us   |                }
+ gnome-terminal--6620  [003]  1976.840380: funcgraph_exit:         0.823 us   |              }
+ gnome-terminal--6620  [003]  1976.840382: funcgraph_entry:                   |              __wake_up() {
+ gnome-terminal--6620  [003]  1976.840382: funcgraph_entry:                   |                __wake_up_common_lock() {
+ gnome-terminal--6620  [003]  1976.840383: funcgraph_entry:        0.060 us   |                  __lock_text_start();
+ gnome-terminal--6620  [003]  1976.840383: funcgraph_entry:        0.049 us   |                  __wake_up_common();
+ gnome-terminal--6620  [003]  1976.840383: funcgraph_entry:        0.068 us   |                  _raw_spin_unlock_irqrestore();
+ gnome-terminal--6620  [003]  1976.840384: funcgraph_exit:         1.093 us   |                }
+ gnome-terminal--6620  [003]  1976.840384: funcgraph_exit:         1.435 us   |              }
+ gnome-terminal--6620  [003]  1976.840384: funcgraph_entry:                   |              __wake_up() {
+ gnome-terminal--6620  [003]  1976.840384: funcgraph_entry:                   |                __wake_up_common_lock() {
+ gnome-terminal--6620  [003]  1976.840384: funcgraph_entry:        0.061 us   |                  __lock_text_start();
+ gnome-terminal--6620  [003]  1976.840385: funcgraph_entry:                   |                  __wake_up_common() {
+ gnome-terminal--6620  [003]  1976.840385: funcgraph_entry:                   |                    autoremove_wake_function() {
+ gnome-terminal--6620  [003]  1976.840385: funcgraph_entry:                   |                      default_wake_function() {
+ gnome-terminal--6620  [003]  1976.840385: funcgraph_entry:                   |                        try_to_wake_up() {
+ gnome-terminal--6620  [003]  1976.840385: funcgraph_entry:        0.162 us   |                          __lock_text_start();
+ gnome-terminal--6620  [003]  1976.840386: funcgraph_entry:                   |                          select_task_rq_fair() {
+ gnome-terminal--6620  [003]  1976.840386: funcgraph_entry:        0.115 us   |                            available_idle_cpu();
+ gnome-terminal--6620  [003]  1976.840387: funcgraph_exit:         0.503 us   |                          }
+ gnome-terminal--6620  [003]  1976.840387: funcgraph_entry:                   |                          ttwu_queue_wakelist() {
+ gnome-terminal--6620  [003]  1976.840387: funcgraph_entry:                   |                            __smp_call_single_queue() {
+ gnome-terminal--6620  [003]  1976.840387: funcgraph_entry:                   |                              send_call_function_single_ipi() {
+ gnome-terminal--6620  [003]  1976.840388: funcgraph_entry:                   |                                native_send_call_func_single_ipi() {
+ gnome-terminal--6620  [003]  1976.840388: funcgraph_entry:        4.358 us   |                                  x2apic_send_IPI();
+ gnome-terminal--6620  [003]  1976.840393: funcgraph_exit:         4.827 us   |                                }
+ gnome-terminal--6620  [003]  1976.840393: funcgraph_exit:         5.213 us   |                              }
+ gnome-terminal--6620  [003]  1976.840393: funcgraph_exit:         5.627 us   |                            }
+ gnome-terminal--6620  [003]  1976.840393: funcgraph_exit:         6.169 us   |                          }
+ gnome-terminal--6620  [003]  1976.840393: funcgraph_entry:        0.088 us   |                          _raw_spin_unlock_irqrestore();
+ gnome-terminal--6620  [003]  1976.840394: funcgraph_exit:         8.306 us   |                        }
+ gnome-terminal--6620  [003]  1976.840394: funcgraph_exit:         8.674 us   |                      }
+ gnome-terminal--6620  [003]  1976.840394: funcgraph_exit:         9.078 us   |                    }
+ gnome-terminal--6620  [003]  1976.840394: funcgraph_exit:         9.525 us   |                  }
+ gnome-terminal--6620  [003]  1976.840394: funcgraph_entry:        0.069 us   |                  _raw_spin_unlock_irqrestore();
+ gnome-terminal--6620  [003]  1976.840395: funcgraph_exit:       + 10.566 us  |                }
+ gnome-terminal--6620  [003]  1976.840395: funcgraph_exit:       + 10.897 us  |              }
+ gnome-terminal--6620  [003]  1976.840395: funcgraph_entry:                   |              irq_exit() {
+ gnome-terminal--6620  [003]  1976.840395: funcgraph_entry:                   |                irq_exit_rcu() {
+ gnome-terminal--6620  [003]  1976.840396: funcgraph_entry:        0.089 us   |                  irqtime_account_irq();
+ gnome-terminal--6620  [003]  1976.840396: funcgraph_entry:        0.060 us   |                  idle_cpu();
+ gnome-terminal--6620  [003]  1976.840396: funcgraph_exit:         0.796 us   |                }
+ gnome-terminal--6620  [003]  1976.840397: funcgraph_exit:         1.172 us   |              }
+ gnome-terminal--6620  [003]  1976.840397: funcgraph_exit:       + 18.192 us  |            }
+ gnome-terminal--6620  [003]  1976.840397: funcgraph_exit:       + 25.730 us  |          }
+ gnome-terminal--6620  [003]  1976.840397: funcgraph_exit:       + 26.078 us  |        }
+ gnome-terminal--6620  [003]  1976.840397: funcgraph_entry:        0.063 us   |        __fsnotify_parent();
+ gnome-terminal--6620  [003]  1976.840398: funcgraph_entry:        0.077 us   |        fsnotify();
+ gnome-terminal--6620  [003]  1976.840398: funcgraph_exit:       + 30.616 us  |      }
+ gnome-terminal--6620  [003]  1976.840398: funcgraph_entry:                   |      fput() {
+ gnome-terminal--6620  [003]  1976.840399: funcgraph_entry:        0.059 us   |        fput_many();
+ gnome-terminal--6620  [003]  1976.840399: funcgraph_exit:         0.393 us   |      }
+ gnome-terminal--6620  [003]  1976.840399: funcgraph_exit:       + 32.388 us  |    }
+ gnome-terminal--6620  [003]  1976.840399: funcgraph_exit:       + 32.733 us  |  }
+           <...>-8323  [000]  1976.840502: funcgraph_entry:        0.178 us   |  finish_task_switch();
+           <...>-8323  [000]  1976.840528: funcgraph_entry:                   |  __x64_sys_write() {
+           <...>-8323  [000]  1976.840528: funcgraph_entry:                   |    ksys_write() {
+           <...>-8323  [000]  1976.840528: funcgraph_entry:                   |      __fdget_pos() {
+           <...>-8323  [000]  1976.840528: funcgraph_entry:        0.546 us   |        __fget_light();
+           <...>-8323  [000]  1976.840529: funcgraph_entry:                   |        mutex_lock() {
+           <...>-8323  [000]  1976.840529: funcgraph_entry:                   |          _cond_resched() {
+           <...>-8323  [000]  1976.840529: funcgraph_entry:        0.048 us   |            rcu_all_qs();
+           <...>-8323  [000]  1976.840530: funcgraph_exit:         0.403 us   |          }
+           <...>-8323  [000]  1976.840530: funcgraph_exit:         0.749 us   |        }
+           <...>-8323  [000]  1976.840530: funcgraph_exit:         2.000 us   |      }
+           <...>-8323  [000]  1976.840530: funcgraph_entry:                   |      vfs_write() {
+           <...>-8323  [000]  1976.840530: funcgraph_entry:                   |        rw_verify_area() {
+           <...>-8323  [000]  1976.840531: funcgraph_entry:                   |          security_file_permission() {
+           <...>-8323  [000]  1976.840531: funcgraph_entry:                   |            selinux_file_permission() {
+           <...>-8323  [000]  1976.840531: funcgraph_entry:                   |              __inode_security_revalidate() {
+           <...>-8323  [000]  1976.840531: funcgraph_entry:                   |                _cond_resched() {
+           <...>-8323  [000]  1976.840531: funcgraph_entry:        0.047 us   |                  rcu_all_qs();
+           <...>-8323  [000]  1976.840532: funcgraph_exit:         0.392 us   |                }
+           <...>-8323  [000]  1976.840532: funcgraph_exit:         0.791 us   |              }
+           <...>-8323  [000]  1976.840532: funcgraph_entry:        0.048 us   |              avc_policy_seqno();
+           <...>-8323  [000]  1976.840532: funcgraph_exit:         1.489 us   |            }
+           <...>-8323  [000]  1976.840533: funcgraph_entry:        0.047 us   |            bpf_lsm_file_permission();
+           <...>-8323  [000]  1976.840533: funcgraph_exit:         2.237 us   |          }
+           <...>-8323  [000]  1976.840533: funcgraph_exit:         2.582 us   |        }
+           <...>-8323  [000]  1976.840533: funcgraph_entry:                   |        __sb_start_write() {
+           <...>-8323  [000]  1976.840534: funcgraph_entry:                   |          _cond_resched() {
+           <...>-8323  [000]  1976.840534: funcgraph_entry:        0.047 us   |            rcu_all_qs();
+           <...>-8323  [000]  1976.840534: funcgraph_exit:         0.380 us   |          }
+           <...>-8323  [000]  1976.840534: funcgraph_exit:         0.775 us   |        }
+           <...>-8323  [000]  1976.840534: funcgraph_entry:                   |        __vfs_write() {
+           <...>-8323  [000]  1976.840535: funcgraph_entry:                   |          __check_object_size() {
+           <...>-8323  [000]  1976.840535: funcgraph_entry:        0.071 us   |            __virt_addr_valid();
+           <...>-8323  [000]  1976.840535: funcgraph_entry:        0.048 us   |            check_stack_object();
+           <...>-8323  [000]  1976.840536: funcgraph_exit:         0.769 us   |          }
+           <...>-8323  [000]  1976.840536: funcgraph_entry:                   |          mutex_lock() {
+           <...>-8323  [000]  1976.840536: funcgraph_entry:                   |            _cond_resched() {
+           <...>-8323  [000]  1976.840536: funcgraph_entry:        0.047 us   |              rcu_all_qs();
+           <...>-8323  [000]  1976.840537: funcgraph_exit:         0.378 us   |            }
+           <...>-8323  [000]  1976.840537: funcgraph_exit:         0.721 us   |          }

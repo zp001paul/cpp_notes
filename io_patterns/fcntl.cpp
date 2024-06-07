@@ -1,13 +1,34 @@
+#include <cstdio>
 #include <cstring>
 #include <fcntl.h>
 #include <format>
 #include <iostream>
+#include <strings.h>
 #include <unistd.h>
+
+bool add_direct_flag(int fd) {
+  int flags;
+  flags = fcntl(fd, F_GETFL);
+  if (flags < 0) {
+    std::cerr << "failed to get flags\n";
+    return false;
+  }
+
+  flags |= O_DIRECT; // 加上O_DIRECT标记
+
+  int ret;
+  ret = fcntl(fd, F_SETFL, flags);
+  if (ret < 0) {
+    std::cerr << "failed to set flags\n";
+    return false;
+  }
+  return true;
+}
 
 int main(int argc, char *argv[]) {
   const char *file_name{"/mnt/ext4/hello.txt"};
 
-  int fd = open(file_name, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+  int fd = open(file_name, O_RDWR | O_CREAT | O_TRUNC, 0644);
   if (fd < 0) {
     std::cerr << std::format("failed to open file: {}, error: {}\n", file_name,
                              std::strerror(errno));
@@ -20,12 +41,13 @@ int main(int argc, char *argv[]) {
                              std::strerror(errno));
   }
 
-  close(fd);
+  // 注意这里并没有调用fsync()
 
-  fd = open(file_name, O_DIRECT | O_RDONLY);
-  if (fd < 0) {
-    std::cerr << std::format("failed to open file directly: {}, error: {}\n",
-                             file_name, std::strerror(errno));
+  if (!add_direct_flag(fd))
+    return 1;
+
+  if (lseek(fd, 0, SEEK_SET) < 0) {
+    std::cerr << "failed to lseek()\n";
     return 1;
   }
 

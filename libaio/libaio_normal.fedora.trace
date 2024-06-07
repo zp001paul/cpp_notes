@@ -1,0 +1,440 @@
+cpus=12
+           a.out-4255  [001]   207.489613: funcgraph_entry:                   |  __x64_sys_io_submit() {
+           a.out-4255  [001]   207.489613: funcgraph_entry:                   |    lookup_ioctx() {
+           a.out-4255  [001]   207.489614: funcgraph_entry:                   |      lock_mm_and_find_vma() {
+           a.out-4255  [001]   207.489614: funcgraph_entry:        0.139 us   |        down_read_trylock();
+           a.out-4255  [001]   207.489614: funcgraph_entry:                   |        find_vma() {
+           a.out-4255  [001]   207.489615: funcgraph_entry:        0.106 us   |          __rcu_read_lock();
+           a.out-4255  [001]   207.489615: funcgraph_entry:        0.111 us   |          __rcu_read_unlock();
+           a.out-4255  [001]   207.489615: funcgraph_exit:         0.805 us   |        }
+           a.out-4255  [001]   207.489615: funcgraph_exit:         1.441 us   |      }
+           a.out-4255  [001]   207.489615: funcgraph_entry:                   |      handle_mm_fault() {
+           a.out-4255  [001]   207.489616: funcgraph_entry:                   |        __handle_mm_fault() {
+           a.out-4255  [001]   207.489616: funcgraph_entry:                   |          pte_offset_map_nolock() {
+           a.out-4255  [001]   207.489616: funcgraph_entry:                   |            __pte_offset_map() {
+           a.out-4255  [001]   207.489616: funcgraph_entry:        0.102 us   |              __rcu_read_lock();
+           a.out-4255  [001]   207.489616: funcgraph_exit:         0.301 us   |            }
+           a.out-4255  [001]   207.489616: funcgraph_exit:         0.493 us   |          }
+           a.out-4255  [001]   207.489617: funcgraph_entry:        0.106 us   |          __rcu_read_unlock();
+           a.out-4255  [001]   207.489617: funcgraph_entry:                   |          do_fault() {
+           a.out-4255  [001]   207.489617: funcgraph_entry:        0.102 us   |            __rcu_read_lock();
+           a.out-4255  [001]   207.489617: funcgraph_entry:                   |            filemap_map_pages() {
+           a.out-4255  [001]   207.489617: funcgraph_entry:        0.103 us   |              __rcu_read_lock();
+           a.out-4255  [001]   207.489617: funcgraph_entry:        0.314 us   |              next_uptodate_folio();
+           a.out-4255  [001]   207.489618: funcgraph_entry:                   |              __pte_offset_map_lock() {
+           a.out-4255  [001]   207.489618: funcgraph_entry:                   |                __pte_offset_map() {
+           a.out-4255  [001]   207.489618: funcgraph_entry:        0.105 us   |                  __rcu_read_lock();
+           a.out-4255  [001]   207.489618: funcgraph_exit:         0.289 us   |                }
+           a.out-4255  [001]   207.489618: funcgraph_entry:        0.186 us   |                _raw_spin_lock();
+           a.out-4255  [001]   207.489619: funcgraph_exit:         0.762 us   |              }
+           a.out-4255  [001]   207.489619: funcgraph_entry:                   |              set_pte_range() {
+           a.out-4255  [001]   207.489619: funcgraph_entry:                   |                folio_add_file_rmap_ptes() {
+           a.out-4255  [001]   207.489619: funcgraph_entry:                   |                  __lruvec_stat_mod_folio() {
+           a.out-4255  [001]   207.489619: funcgraph_entry:        0.104 us   |                    __rcu_read_lock();
+           a.out-4255  [001]   207.489619: funcgraph_entry:                   |                    __mod_lruvec_state() {
+           a.out-4255  [001]   207.489619: funcgraph_entry:        0.106 us   |                      __mod_node_page_state();
+           a.out-4255  [001]   207.489620: funcgraph_entry:                   |                      __mod_memcg_lruvec_state() {
+           a.out-4255  [001]   207.489620: funcgraph_entry:        0.149 us   |                        cgroup_rstat_updated();
+           a.out-4255  [001]   207.489620: funcgraph_exit:         0.660 us   |                      }
+           a.out-4255  [001]   207.489620: funcgraph_exit:         1.028 us   |                    }
+           a.out-4255  [001]   207.489620: funcgraph_entry:        0.101 us   |                    __rcu_read_unlock();
+           a.out-4255  [001]   207.489621: funcgraph_exit:         1.665 us   |                  }
+           a.out-4255  [001]   207.489621: funcgraph_exit:         1.895 us   |                }
+           a.out-4255  [001]   207.489621: funcgraph_exit:         2.155 us   |              }
+           a.out-4255  [001]   207.489621: funcgraph_entry:        0.138 us   |              next_uptodate_folio();
+           a.out-4255  [001]   207.489621: funcgraph_entry:        0.105 us   |              _raw_spin_unlock();
+           a.out-4255  [001]   207.489621: funcgraph_entry:        0.099 us   |              __rcu_read_unlock();
+           a.out-4255  [001]   207.489622: funcgraph_entry:        0.102 us   |              __rcu_read_unlock();
+           a.out-4255  [001]   207.489622: funcgraph_exit:         4.607 us   |            }
+           a.out-4255  [001]   207.489622: funcgraph_entry:        0.108 us   |            __rcu_read_unlock();
+           a.out-4255  [001]   207.489622: funcgraph_exit:         5.311 us   |          }
+           a.out-4255  [001]   207.489622: funcgraph_exit:         6.532 us   |        }
+           a.out-4255  [001]   207.489622: funcgraph_entry:        0.104 us   |        __rcu_read_lock();
+           a.out-4255  [001]   207.489622: funcgraph_entry:        0.101 us   |        mem_cgroup_from_task();
+           a.out-4255  [001]   207.489623: funcgraph_entry:                   |        __count_memcg_events() {
+           a.out-4255  [001]   207.489623: funcgraph_entry:        0.101 us   |          cgroup_rstat_updated();
+           a.out-4255  [001]   207.489623: funcgraph_exit:         0.375 us   |        }
+           a.out-4255  [001]   207.489623: funcgraph_entry:        0.108 us   |        __rcu_read_unlock();
+           a.out-4255  [001]   207.489623: funcgraph_exit:         7.903 us   |      }
+           a.out-4255  [001]   207.489623: funcgraph_entry:        0.102 us   |      up_read();
+           a.out-4255  [001]   207.489624: funcgraph_entry:        0.101 us   |      __rcu_read_lock();
+           a.out-4255  [001]   207.489624: funcgraph_entry:        0.100 us   |      __rcu_read_lock();
+           a.out-4255  [001]   207.489624: funcgraph_entry:        0.097 us   |      __rcu_read_unlock();
+           a.out-4255  [001]   207.489624: funcgraph_entry:        0.104 us   |      __rcu_read_unlock();
+           a.out-4255  [001]   207.489625: funcgraph_exit:       + 11.230 us  |    }
+           a.out-4255  [001]   207.489625: funcgraph_entry:                   |    io_submit_one() {
+           a.out-4255  [001]   207.489625: funcgraph_entry:                   |      kmem_cache_alloc() {
+           a.out-4255  [001]   207.489625: funcgraph_entry:        0.101 us   |        __cond_resched();
+           a.out-4255  [001]   207.489626: funcgraph_entry:        0.104 us   |        should_failslab.constprop.0();
+           a.out-4255  [001]   207.489626: funcgraph_entry:                   |        ___slab_alloc() {
+           a.out-4255  [001]   207.489626: funcgraph_entry:        0.103 us   |          mempolicy_slab_node();
+           a.out-4255  [001]   207.489626: funcgraph_entry:                   |          allocate_slab() {
+           a.out-4255  [001]   207.489626: funcgraph_entry:                   |            __alloc_pages() {
+           a.out-4255  [001]   207.489626: funcgraph_entry:        0.100 us   |              __cond_resched();
+           a.out-4255  [001]   207.489627: funcgraph_entry:        0.100 us   |              should_fail_alloc_page();
+           a.out-4255  [001]   207.489627: funcgraph_entry:                   |              get_page_from_freelist() {
+           a.out-4255  [001]   207.489627: funcgraph_entry:        0.105 us   |                _raw_spin_trylock();
+           a.out-4255  [001]   207.489627: funcgraph_entry:        0.105 us   |                _raw_spin_unlock();
+           a.out-4255  [001]   207.489628: funcgraph_exit:         0.931 us   |              }
+           a.out-4255  [001]   207.489628: funcgraph_exit:         1.519 us   |            }
+           a.out-4255  [001]   207.489628: funcgraph_entry:        0.116 us   |            mod_node_page_state();
+           a.out-4255  [001]   207.489628: funcgraph_entry:                   |            __get_random_u32_below() {
+           a.out-4255  [001]   207.489628: funcgraph_entry:        0.126 us   |              get_random_u32();
+           a.out-4255  [001]   207.489628: funcgraph_exit:         0.313 us   |            }
+           a.out-4255  [001]   207.489629: funcgraph_entry:        0.103 us   |            setup_object();
+           a.out-4255  [001]   207.489629: funcgraph_entry:        0.104 us   |            setup_object();
+           a.out-4255  [001]   207.489629: funcgraph_entry:        0.100 us   |            setup_object();
+           a.out-4255  [001]   207.489629: funcgraph_entry:        0.101 us   |            setup_object();
+           a.out-4255  [001]   207.489629: funcgraph_entry:        0.100 us   |            setup_object();
+           a.out-4255  [001]   207.489630: funcgraph_entry:        0.100 us   |            setup_object();
+           a.out-4255  [001]   207.489630: funcgraph_entry:        0.101 us   |            setup_object();
+           a.out-4255  [001]   207.489630: funcgraph_entry:        0.099 us   |            setup_object();
+           a.out-4255  [001]   207.489630: funcgraph_entry:        0.101 us   |            setup_object();
+           a.out-4255  [001]   207.489630: funcgraph_entry:        0.100 us   |            setup_object();
+           a.out-4255  [001]   207.489631: funcgraph_entry:        0.102 us   |            setup_object();
+           a.out-4255  [001]   207.489631: funcgraph_entry:        0.103 us   |            setup_object();
+           a.out-4255  [001]   207.489631: funcgraph_entry:        0.102 us   |            setup_object();
+           a.out-4255  [001]   207.489631: funcgraph_entry:        0.099 us   |            setup_object();
+           a.out-4255  [001]   207.489631: funcgraph_entry:        0.099 us   |            setup_object();
+           a.out-4255  [001]   207.489632: funcgraph_entry:        0.100 us   |            setup_object();
+           a.out-4255  [001]   207.489632: funcgraph_entry:        0.099 us   |            setup_object();
+           a.out-4255  [001]   207.489632: funcgraph_entry:        0.100 us   |            setup_object();
+           a.out-4255  [001]   207.489632: funcgraph_entry:        0.101 us   |            setup_object();
+           a.out-4255  [001]   207.489632: funcgraph_entry:        0.102 us   |            setup_object();
+           a.out-4255  [001]   207.489633: funcgraph_entry:        0.922 us   |            setup_object();
+           a.out-4255  [001]   207.489633: funcgraph_exit:         7.223 us   |          }
+           a.out-4255  [001]   207.489634: funcgraph_exit:         7.785 us   |        }
+           a.out-4255  [001]   207.489634: funcgraph_exit:         8.510 us   |      }
+           a.out-4255  [001]   207.489634: funcgraph_entry:        0.138 us   |      __get_reqs_available();
+           a.out-4255  [001]   207.489634: funcgraph_entry:        0.108 us   |      __rcu_read_lock();
+           a.out-4255  [001]   207.489634: funcgraph_entry:        0.107 us   |      __rcu_read_unlock();
+           a.out-4255  [001]   207.489634: funcgraph_entry:                   |      fget() {
+           a.out-4255  [001]   207.489635: funcgraph_entry:        0.103 us   |        __rcu_read_lock();
+           a.out-4255  [001]   207.489635: funcgraph_entry:        0.101 us   |        __rcu_read_unlock();
+           a.out-4255  [001]   207.489635: funcgraph_exit:         0.492 us   |      }
+           a.out-4255  [001]   207.489635: funcgraph_entry:                   |      aio_write() {
+           a.out-4255  [001]   207.489635: funcgraph_entry:        0.118 us   |        aio_prep_rw();
+           a.out-4255  [001]   207.489635: funcgraph_entry:                   |        rw_verify_area() {
+           a.out-4255  [001]   207.489635: funcgraph_entry:                   |          security_file_permission() {
+           a.out-4255  [001]   207.489636: funcgraph_entry:                   |            selinux_file_permission() {
+           a.out-4255  [001]   207.489636: funcgraph_entry:                   |              inode_security() {
+           a.out-4255  [001]   207.489636: funcgraph_entry:        0.101 us   |                __cond_resched();
+           a.out-4255  [001]   207.489636: funcgraph_exit:         0.302 us   |              }
+           a.out-4255  [001]   207.489636: funcgraph_entry:        0.105 us   |              avc_policy_seqno();
+           a.out-4255  [001]   207.489636: funcgraph_exit:         0.744 us   |            }
+           a.out-4255  [001]   207.489636: funcgraph_entry:        0.102 us   |            bpf_lsm_file_permission();
+           a.out-4255  [001]   207.489637: funcgraph_exit:         1.177 us   |          }
+           a.out-4255  [001]   207.489637: funcgraph_exit:         1.367 us   |        }
+           a.out-4255  [001]   207.489637: funcgraph_entry:        0.102 us   |        __cond_resched();
+           a.out-4255  [001]   207.489637: funcgraph_entry:                   |        ext4_file_write_iter() {
+           a.out-4255  [001]   207.489637: funcgraph_entry:                   |          ext4_buffered_write_iter() {
+           a.out-4255  [001]   207.489637: funcgraph_entry:                   |            down_write() {
+           a.out-4255  [001]   207.489637: funcgraph_entry:        0.100 us   |              __cond_resched();
+           a.out-4255  [001]   207.489638: funcgraph_exit:         0.292 us   |            }
+           a.out-4255  [001]   207.489638: funcgraph_entry:                   |            ext4_generic_write_checks() {
+           a.out-4255  [001]   207.489638: funcgraph_entry:                   |              generic_write_checks() {
+           a.out-4255  [001]   207.489638: funcgraph_entry:        0.189 us   |                generic_write_check_limits();
+           a.out-4255  [001]   207.489638: funcgraph_exit:         0.606 us   |              }
+           a.out-4255  [001]   207.489638: funcgraph_exit:         0.802 us   |            }
+           a.out-4255  [001]   207.489639: funcgraph_entry:                   |            file_modified() {
+           a.out-4255  [001]   207.489639: funcgraph_entry:                   |              __file_remove_privs() {
+           a.out-4255  [001]   207.489639: funcgraph_entry:        0.118 us   |                setattr_should_drop_suidgid();
+           a.out-4255  [001]   207.489639: funcgraph_entry:                   |                security_inode_need_killpriv() {
+           a.out-4255  [001]   207.489639: funcgraph_entry:                   |                  cap_inode_need_killpriv() {
+           a.out-4255  [001]   207.489639: funcgraph_entry:                   |                    __vfs_getxattr() {
+           a.out-4255  [001]   207.489639: funcgraph_entry:        0.147 us   |                      xattr_resolve_name();
+           a.out-4255  [001]   207.489640: funcgraph_entry:                   |                      ext4_xattr_security_get() {
+           a.out-4255  [001]   207.489640: funcgraph_entry:                   |                        ext4_xattr_get() {
+           a.out-4255  [001]   207.489640: funcgraph_entry:                   |                          down_read() {
+           a.out-4255  [001]   207.489640: funcgraph_entry:        0.206 us   |                            __cond_resched();
+           a.out-4255  [001]   207.489640: funcgraph_exit:         0.407 us   |                          }
+           a.out-4255  [001]   207.489640: funcgraph_entry:                   |                          ext4_xattr_ibody_get() {
+           a.out-4255  [001]   207.489640: funcgraph_entry:                   |                            ext4_get_inode_loc() {
+           a.out-4255  [001]   207.489640: funcgraph_entry:                   |                              __ext4_get_inode_loc() {
+           a.out-4255  [001]   207.489641: funcgraph_entry:                   |                                ext4_get_group_desc() {
+           a.out-4255  [001]   207.489641: funcgraph_entry:        0.103 us   |                                  __rcu_read_lock();
+           a.out-4255  [001]   207.489641: funcgraph_entry:        0.106 us   |                                  __rcu_read_unlock();
+           a.out-4255  [001]   207.489641: funcgraph_exit:         0.480 us   |                                }
+           a.out-4255  [001]   207.489641: funcgraph_entry:        0.106 us   |                                ext4_inode_table();
+           a.out-4255  [001]   207.489641: funcgraph_entry:                   |                                bdev_getblk() {
+           a.out-4255  [001]   207.489641: funcgraph_entry:                   |                                  __find_get_block() {
+           a.out-4255  [001]   207.489642: funcgraph_entry:        0.099 us   |                                    housekeeping_test_cpu();
+           a.out-4255  [001]   207.489642: funcgraph_entry:        0.101 us   |                                    housekeeping_test_cpu();
+           a.out-4255  [001]   207.489642: funcgraph_entry:        0.119 us   |                                    cpuset_cpu_is_isolated();
+           a.out-4255  [001]   207.489642: funcgraph_entry:        0.103 us   |                                    folio_mark_accessed();
+           a.out-4255  [001]   207.489642: funcgraph_exit:         0.917 us   |                                  }
+           a.out-4255  [001]   207.489642: funcgraph_entry:        0.104 us   |                                  __cond_resched();
+           a.out-4255  [001]   207.489643: funcgraph_exit:         1.290 us   |                                }
+           a.out-4255  [001]   207.489643: funcgraph_exit:         2.273 us   |                              }
+           a.out-4255  [001]   207.489643: funcgraph_exit:         2.457 us   |                            }
+           a.out-4255  [001]   207.489643: funcgraph_entry:        0.126 us   |                            check_xattrs();
+           a.out-4255  [001]   207.489643: funcgraph_entry:        0.109 us   |                            xattr_find_entry();
+           a.out-4255  [001]   207.489643: funcgraph_entry:        0.105 us   |                            __brelse();
+           a.out-4255  [001]   207.489643: funcgraph_exit:         3.260 us   |                          }
+           a.out-4255  [001]   207.489644: funcgraph_entry:        0.105 us   |                          up_read();
+           a.out-4255  [001]   207.489644: funcgraph_exit:         4.185 us   |                        }
+           a.out-4255  [001]   207.489644: funcgraph_exit:         4.359 us   |                      }
+           a.out-4255  [001]   207.489644: funcgraph_exit:         4.806 us   |                    }
+           a.out-4255  [001]   207.489644: funcgraph_exit:         4.988 us   |                  }
+           a.out-4255  [001]   207.489644: funcgraph_entry:        0.102 us   |                  bpf_lsm_inode_need_killpriv();
+           a.out-4255  [001]   207.489644: funcgraph_exit:         5.398 us   |                }
+           a.out-4255  [001]   207.489644: funcgraph_exit:         5.819 us   |              }
+           a.out-4255  [001]   207.489645: funcgraph_entry:                   |              inode_needs_update_time() {
+           a.out-4255  [001]   207.489645: funcgraph_entry:        0.101 us   |                ktime_get_coarse_real_ts64();
+           a.out-4255  [001]   207.489645: funcgraph_entry:        0.110 us   |                timestamp_truncate();
+           a.out-4255  [001]   207.489645: funcgraph_exit:         0.505 us   |              }
+           a.out-4255  [001]   207.489645: funcgraph_exit:         6.599 us   |            }
+           a.out-4255  [001]   207.489645: funcgraph_entry:                   |            generic_perform_write() {
+           a.out-4255  [001]   207.489645: funcgraph_entry:        0.123 us   |              fault_in_readable();
+           a.out-4255  [001]   207.489646: funcgraph_entry:                   |              ext4_da_write_begin() {
+           a.out-4255  [001]   207.489646: funcgraph_entry:        0.118 us   |                ext4_nonda_switch();
+           a.out-4255  [001]   207.489646: funcgraph_entry:                   |                __filemap_get_folio() {
+           a.out-4255  [001]   207.489646: funcgraph_entry:                   |                  filemap_get_entry() {
+           a.out-4255  [001]   207.489646: funcgraph_entry:        0.105 us   |                    __rcu_read_lock();
+           a.out-4255  [001]   207.489646: funcgraph_entry:        0.105 us   |                    __rcu_read_unlock();
+           a.out-4255  [001]   207.489647: funcgraph_exit:         0.505 us   |                  }
+           a.out-4255  [001]   207.489647: funcgraph_entry:        0.102 us   |                  inode_to_bdi();
+           a.out-4255  [001]   207.489647: funcgraph_entry:                   |                  filemap_alloc_folio() {
+           a.out-4255  [001]   207.489647: funcgraph_entry:                   |                    folio_alloc() {
+           a.out-4255  [001]   207.489647: funcgraph_entry:                   |                      alloc_pages_mpol() {
+           a.out-4255  [001]   207.489647: funcgraph_entry:        0.127 us   |                        policy_nodemask();
+           a.out-4255  [001]   207.489648: funcgraph_entry:                   |                        __alloc_pages() {
+           a.out-4255  [001]   207.489648: funcgraph_entry:        0.102 us   |                          __cond_resched();
+           a.out-4255  [001]   207.489648: funcgraph_entry:        0.104 us   |                          should_fail_alloc_page();
+           a.out-4255  [001]   207.489648: funcgraph_entry:                   |                          get_page_from_freelist() {
+           a.out-4255  [001]   207.489648: funcgraph_entry:                   |                            node_dirty_ok() {
+           a.out-4255  [001]   207.489648: funcgraph_entry:        0.101 us   |                              node_page_state();
+           a.out-4255  [001]   207.489649: funcgraph_entry:        0.102 us   |                              node_page_state();
+           a.out-4255  [001]   207.489649: funcgraph_entry:        0.102 us   |                              node_page_state();
+           a.out-4255  [001]   207.489649: funcgraph_entry:        0.103 us   |                              node_page_state();
+           a.out-4255  [001]   207.489649: funcgraph_exit:         0.996 us   |                            }
+           a.out-4255  [001]   207.489649: funcgraph_entry:        0.108 us   |                            _raw_spin_trylock();
+           a.out-4255  [001]   207.489650: funcgraph_entry:        0.107 us   |                            _raw_spin_unlock();
+           a.out-4255  [001]   207.489650: funcgraph_exit:         1.758 us   |                          }
+           a.out-4255  [001]   207.489650: funcgraph_exit:         2.325 us   |                        }
+           a.out-4255  [001]   207.489650: funcgraph_exit:         2.734 us   |                      }
+           a.out-4255  [001]   207.489650: funcgraph_exit:         2.944 us   |                    }
+           a.out-4255  [001]   207.489650: funcgraph_exit:         3.152 us   |                  }
+           a.out-4255  [001]   207.489650: funcgraph_entry:                   |                  filemap_add_folio() {
+           a.out-4255  [001]   207.489650: funcgraph_entry:                   |                    __filemap_add_folio() {
+           a.out-4255  [001]   207.489650: funcgraph_entry:                   |                      __mem_cgroup_charge() {
+           a.out-4255  [001]   207.489650: funcgraph_entry:                   |                        get_mem_cgroup_from_mm() {
+           a.out-4255  [001]   207.489651: funcgraph_entry:        0.104 us   |                          __rcu_read_lock();
+           a.out-4255  [001]   207.489651: funcgraph_entry:        0.103 us   |                          __rcu_read_lock();
+           a.out-4255  [001]   207.489651: funcgraph_entry:        0.283 us   |                          __rcu_read_unlock();
+           a.out-4255  [001]   207.489651: funcgraph_entry:        0.100 us   |                          __rcu_read_unlock();
+           a.out-4255  [001]   207.489652: funcgraph_exit:         1.086 us   |                        }
+           a.out-4255  [001]   207.489652: funcgraph_entry:        0.129 us   |                        try_charge_memcg();
+           a.out-4255  [001]   207.489652: funcgraph_entry:                   |                        mem_cgroup_commit_charge() {
+           a.out-4255  [001]   207.489652: funcgraph_entry:        0.103 us   |                          __rcu_read_lock();
+           a.out-4255  [001]   207.489652: funcgraph_entry:        0.099 us   |                          __rcu_read_unlock();
+           a.out-4255  [001]   207.489652: funcgraph_entry:                   |                          __count_memcg_events() {
+           a.out-4255  [001]   207.489653: funcgraph_entry:        0.099 us   |                            cgroup_rstat_updated();
+           a.out-4255  [001]   207.489653: funcgraph_exit:         0.339 us   |                          }
+           a.out-4255  [001]   207.489653: funcgraph_entry:                   |                          memcg_check_events() {
+           a.out-4255  [001]   207.489653: funcgraph_entry:                   |                            __mem_cgroup_threshold() {
+           a.out-4255  [001]   207.489653: funcgraph_entry:        0.100 us   |                              __rcu_read_lock();
+           a.out-4255  [001]   207.489653: funcgraph_entry:        0.101 us   |                              __rcu_read_unlock();
+           a.out-4255  [001]   207.489654: funcgraph_exit:         0.471 us   |                            }
+           a.out-4255  [001]   207.489654: funcgraph_entry:                   |                            __mem_cgroup_threshold() {
+           a.out-4255  [001]   207.489654: funcgraph_entry:        0.101 us   |                              __rcu_read_lock();
+           a.out-4255  [001]   207.489654: funcgraph_entry:        0.102 us   |                              __rcu_read_unlock();
+           a.out-4255  [001]   207.489654: funcgraph_exit:         0.468 us   |                            }
+           a.out-4255  [001]   207.489654: funcgraph_entry:                   |                            __mem_cgroup_threshold() {
+           a.out-4255  [001]   207.489654: funcgraph_entry:        0.100 us   |                              __rcu_read_lock();
+           a.out-4255  [001]   207.489654: funcgraph_entry:        0.103 us   |                              __rcu_read_unlock();
+           a.out-4255  [001]   207.489655: funcgraph_exit:         0.496 us   |                            }
+           a.out-4255  [001]   207.489655: funcgraph_entry:                   |                            __mem_cgroup_threshold() {
+           a.out-4255  [001]   207.489655: funcgraph_entry:        0.102 us   |                              __rcu_read_lock();
+           a.out-4255  [001]   207.489655: funcgraph_entry:        0.101 us   |                              __rcu_read_unlock();
+           a.out-4255  [001]   207.489655: funcgraph_exit:         0.468 us   |                            }
+           a.out-4255  [001]   207.489655: funcgraph_entry:                   |                            __mem_cgroup_threshold() {
+           a.out-4255  [001]   207.489655: funcgraph_entry:        0.101 us   |                              __rcu_read_lock();
+           a.out-4255  [001]   207.489656: funcgraph_entry:        0.102 us   |                              __rcu_read_unlock();
+           a.out-4255  [001]   207.489656: funcgraph_exit:         0.504 us   |                            }
+           a.out-4255  [001]   207.489656: funcgraph_entry:                   |                            __mem_cgroup_threshold() {
+           a.out-4255  [001]   207.489656: funcgraph_entry:        0.103 us   |                              __rcu_read_lock();
+           a.out-4255  [001]   207.489656: funcgraph_entry:        0.103 us   |                              __rcu_read_unlock();
+           a.out-4255  [001]   207.489656: funcgraph_exit:         0.471 us   |                            }
+           a.out-4255  [001]   207.489656: funcgraph_exit:         3.608 us   |                          }
+           a.out-4255  [001]   207.489657: funcgraph_exit:         4.650 us   |                        }
+           a.out-4255  [001]   207.489657: funcgraph_entry:        0.103 us   |                        __rcu_read_lock();
+           a.out-4255  [001]   207.489657: funcgraph_entry:        0.102 us   |                        __rcu_read_unlock();
+           a.out-4255  [001]   207.489657: funcgraph_exit:         6.618 us   |                      }
+           a.out-4255  [001]   207.489657: funcgraph_entry:        0.106 us   |                      __rcu_read_lock();
+           a.out-4255  [001]   207.489657: funcgraph_entry:        0.103 us   |                      __rcu_read_unlock();
+           a.out-4255  [001]   207.489658: funcgraph_entry:        0.109 us   |                      _raw_spin_lock_irq();
+           a.out-4255  [001]   207.489658: funcgraph_entry:                   |                      __lruvec_stat_mod_folio() {
+           a.out-4255  [001]   207.489658: funcgraph_entry:        0.098 us   |                        __rcu_read_lock();
+           a.out-4255  [001]   207.489658: funcgraph_entry:                   |                        __mod_lruvec_state() {
+           a.out-4255  [001]   207.489658: funcgraph_entry:        0.103 us   |                          __mod_node_page_state();
+           a.out-4255  [001]   207.489658: funcgraph_entry:                   |                          __mod_memcg_lruvec_state() {
+           a.out-4255  [001]   207.489659: funcgraph_entry:        0.101 us   |                            cgroup_rstat_updated();
+           a.out-4255  [001]   207.489659: funcgraph_exit:         0.309 us   |                          }
+           a.out-4255  [001]   207.489659: funcgraph_exit:         0.671 us   |                        }
+           a.out-4255  [001]   207.489659: funcgraph_entry:        0.100 us   |                        __rcu_read_unlock();
+           a.out-4255  [001]   207.489659: funcgraph_exit:         1.226 us   |                      }
+           a.out-4255  [001]   207.489659: funcgraph_entry:        0.116 us   |                      _raw_spin_unlock_irq();
+           a.out-4255  [001]   207.489659: funcgraph_exit:         9.206 us   |                    }
+           a.out-4255  [001]   207.489660: funcgraph_entry:        0.138 us   |                    folio_add_lru();
+           a.out-4255  [001]   207.489660: funcgraph_exit:         9.616 us   |                  }
+           a.out-4255  [001]   207.489660: funcgraph_exit:       + 13.871 us  |                }
+           a.out-4255  [001]   207.489660: funcgraph_entry:                   |                folio_wait_stable() {
+           a.out-4255  [001]   207.489660: funcgraph_entry:        0.113 us   |                  folio_mapping();
+           a.out-4255  [001]   207.489660: funcgraph_exit:         0.302 us   |                }
+           a.out-4255  [001]   207.489660: funcgraph_entry:                   |                ext4_block_write_begin() {
+           a.out-4255  [001]   207.489661: funcgraph_entry:                   |                  create_empty_buffers() {
+           a.out-4255  [001]   207.489661: funcgraph_entry:                   |                    folio_alloc_buffers() {
+           a.out-4255  [001]   207.489661: funcgraph_entry:                   |                      alloc_buffer_head() {
+           a.out-4255  [001]   207.489661: funcgraph_entry:                   |                        kmem_cache_alloc() {
+           a.out-4255  [001]   207.489661: funcgraph_entry:        0.099 us   |                          __cond_resched();
+           a.out-4255  [001]   207.489661: funcgraph_entry:        0.102 us   |                          should_failslab.constprop.0();
+           a.out-4255  [001]   207.489661: funcgraph_entry:        0.135 us   |                          obj_cgroup_charge();
+           a.out-4255  [001]   207.489662: funcgraph_entry:                   |                          __memcg_slab_post_alloc_hook() {
+           a.out-4255  [001]   207.489662: funcgraph_entry:        0.099 us   |                            __rcu_read_lock();
+           a.out-4255  [001]   207.489662: funcgraph_entry:        0.100 us   |                            __rcu_read_unlock();
+           a.out-4255  [001]   207.489662: funcgraph_entry:        0.136 us   |                            mod_objcg_state();
+           a.out-4255  [001]   207.489663: funcgraph_exit:         0.869 us   |                          }
+           a.out-4255  [001]   207.489663: funcgraph_exit:         1.858 us   |                        }
+           a.out-4255  [001]   207.489663: funcgraph_exit:         2.051 us   |                      }
+           a.out-4255  [001]   207.489663: funcgraph_exit:         2.291 us   |                    }
+           a.out-4255  [001]   207.489663: funcgraph_entry:        0.110 us   |                    _raw_spin_lock();
+           a.out-4255  [001]   207.489663: funcgraph_entry:        0.105 us   |                    _raw_spin_unlock();
+           a.out-4255  [001]   207.489663: funcgraph_exit:         2.876 us   |                  }
+           a.out-4255  [001]   207.489664: funcgraph_entry:                   |                  ext4_da_get_block_prep() {
+           a.out-4255  [001]   207.489664: funcgraph_entry:                   |                    ext4_es_lookup_extent() {
+           a.out-4255  [001]   207.489665: funcgraph_entry:        0.869 us   |                      _raw_read_lock();
+           a.out-4255  [001]   207.489665: funcgraph_entry:        0.115 us   |                      _raw_read_unlock();
+           a.out-4255  [001]   207.489665: funcgraph_exit:         1.324 us   |                    }
+           a.out-4255  [001]   207.489665: funcgraph_entry:                   |                    down_read() {
+           a.out-4255  [001]   207.489665: funcgraph_entry:        0.108 us   |                      __cond_resched();
+           a.out-4255  [001]   207.489665: funcgraph_exit:         0.309 us   |                    }
+           a.out-4255  [001]   207.489665: funcgraph_entry:                   |                    ext4_ext_map_blocks() {
+           a.out-4255  [001]   207.489666: funcgraph_entry:                   |                      ext4_find_extent() {
+           a.out-4255  [001]   207.489666: funcgraph_entry:                   |                        __kmalloc() {
+           a.out-4255  [001]   207.489666: funcgraph_entry:        0.102 us   |                          __cond_resched();
+           a.out-4255  [001]   207.489666: funcgraph_entry:        0.101 us   |                          should_failslab.constprop.0();
+           a.out-4255  [001]   207.489666: funcgraph_exit:         0.501 us   |                        }
+           a.out-4255  [001]   207.489666: funcgraph_entry:        0.106 us   |                        ext4_cache_extents();
+           a.out-4255  [001]   207.489667: funcgraph_exit:         0.948 us   |                      }
+           a.out-4255  [001]   207.489667: funcgraph_entry:                   |                      ext4_es_find_extent_range() {
+           a.out-4255  [001]   207.489667: funcgraph_entry:        0.105 us   |                        _raw_read_lock();
+           a.out-4255  [001]   207.489667: funcgraph_entry:                   |                        __es_find_extent_range() {
+           a.out-4255  [001]   207.489667: funcgraph_entry:        0.109 us   |                          __es_tree_search.isra.0();
+           a.out-4255  [001]   207.489667: funcgraph_exit:         0.302 us   |                        }
+           a.out-4255  [001]   207.489668: funcgraph_entry:        0.107 us   |                        _raw_read_unlock();
+           a.out-4255  [001]   207.489668: funcgraph_exit:         0.886 us   |                      }
+           a.out-4255  [001]   207.489668: funcgraph_entry:                   |                      ext4_es_insert_extent() {
+           a.out-4255  [001]   207.489668: funcgraph_entry:        0.106 us   |                        _raw_write_lock();
+           a.out-4255  [001]   207.489668: funcgraph_entry:                   |                        __es_remove_extent() {
+           a.out-4255  [001]   207.489668: funcgraph_entry:        0.101 us   |                          __es_tree_search.isra.0();
+           a.out-4255  [001]   207.489668: funcgraph_exit:         0.309 us   |                        }
+           a.out-4255  [001]   207.489669: funcgraph_entry:                   |                        __es_insert_extent() {
+           a.out-4255  [001]   207.489669: funcgraph_entry:                   |                          kmem_cache_alloc() {
+           a.out-4255  [001]   207.489669: funcgraph_entry:        0.101 us   |                            should_failslab.constprop.0();
+           a.out-4255  [001]   207.489669: funcgraph_exit:         0.405 us   |                          }
+           a.out-4255  [001]   207.489669: funcgraph_entry:        0.105 us   |                          _raw_spin_lock();
+           a.out-4255  [001]   207.489669: funcgraph_entry:        0.105 us   |                          _raw_spin_unlock();
+           a.out-4255  [001]   207.489670: funcgraph_exit:         1.051 us   |                        }
+           a.out-4255  [001]   207.489670: funcgraph_entry:        0.102 us   |                        _raw_write_unlock();
+           a.out-4255  [001]   207.489670: funcgraph_exit:         2.064 us   |                      }
+           a.out-4255  [001]   207.489670: funcgraph_entry:        0.121 us   |                      kfree();
+           a.out-4255  [001]   207.489670: funcgraph_exit:         4.744 us   |                    }
+           a.out-4255  [001]   207.489670: funcgraph_entry:        0.106 us   |                    up_read();
+           a.out-4255  [001]   207.489671: funcgraph_entry:                   |                    down_write() {
+           a.out-4255  [001]   207.489671: funcgraph_entry:        0.100 us   |                      __cond_resched();
+           a.out-4255  [001]   207.489671: funcgraph_exit:         0.294 us   |                    }
+           a.out-4255  [001]   207.489671: funcgraph_entry:                   |                    ext4_da_reserve_space() {
+           a.out-4255  [001]   207.489671: funcgraph_entry:                   |                      __dquot_alloc_space() {
+           a.out-4255  [001]   207.489671: funcgraph_entry:        0.105 us   |                        _raw_spin_lock();
+           a.out-4255  [001]   207.489671: funcgraph_entry:        0.100 us   |                        ext4_get_reserved_space();
+           a.out-4255  [001]   207.489672: funcgraph_entry:        0.105 us   |                        _raw_spin_unlock();
+           a.out-4255  [001]   207.489672: funcgraph_exit:         0.797 us   |                      }
+           a.out-4255  [001]   207.489672: funcgraph_entry:        0.110 us   |                      _raw_spin_lock();
+           a.out-4255  [001]   207.489672: funcgraph_entry:                   |                      ext4_claim_free_clusters() {
+           a.out-4255  [001]   207.489672: funcgraph_entry:        0.110 us   |                        ext4_has_free_clusters();
+           a.out-4255  [001]   207.489672: funcgraph_exit:         0.298 us   |                      }
+           a.out-4255  [001]   207.489672: funcgraph_entry:        0.106 us   |                      _raw_spin_unlock();
+           a.out-4255  [001]   207.489673: funcgraph_exit:         1.773 us   |                    }
+           a.out-4255  [001]   207.489673: funcgraph_entry:                   |                    ext4_es_insert_delayed_block() {
+           a.out-4255  [001]   207.489673: funcgraph_entry:        0.105 us   |                      _raw_write_lock();
+           a.out-4255  [001]   207.489673: funcgraph_entry:                   |                      __es_remove_extent() {
+           a.out-4255  [001]   207.489673: funcgraph_entry:        0.108 us   |                        __es_tree_search.isra.0();
+           a.out-4255  [001]   207.489673: funcgraph_exit:         0.302 us   |                      }
+           a.out-4255  [001]   207.489674: funcgraph_entry:                   |                      __es_insert_extent() {
+           a.out-4255  [001]   207.489674: funcgraph_entry:        0.104 us   |                        ext4_es_can_be_merged.isra.0();
+           a.out-4255  [001]   207.489674: funcgraph_entry:                   |                        kmem_cache_alloc() {
+           a.out-4255  [001]   207.489674: funcgraph_entry:        0.103 us   |                          should_failslab.constprop.0();
+           a.out-4255  [001]   207.489674: funcgraph_exit:         0.301 us   |                        }
+           a.out-4255  [001]   207.489674: funcgraph_exit:         0.730 us   |                      }
+           a.out-4255  [001]   207.489674: funcgraph_entry:        0.103 us   |                      _raw_write_unlock();
+           a.out-4255  [001]   207.489675: funcgraph_exit:         1.891 us   |                    }
+           a.out-4255  [001]   207.489675: funcgraph_entry:        0.105 us   |                    up_write();
+           a.out-4255  [001]   207.489675: funcgraph_exit:       + 11.473 us  |                  }
+           a.out-4255  [001]   207.489675: funcgraph_exit:       + 15.079 us  |                }
+           a.out-4255  [001]   207.489676: funcgraph_exit:       + 29.878 us  |              }
+           a.out-4255  [001]   207.489676: funcgraph_entry:                   |              ext4_da_write_end() {
+           a.out-4255  [001]   207.489676: funcgraph_entry:                   |                block_write_end() {
+           a.out-4255  [001]   207.489676: funcgraph_entry:                   |                  __block_commit_write() {
+           a.out-4255  [001]   207.489676: funcgraph_entry:                   |                    mark_buffer_dirty() {
+           a.out-4255  [001]   207.489676: funcgraph_entry:                   |                      folio_memcg_lock() {
+           a.out-4255  [001]   207.489676: funcgraph_entry:        0.104 us   |                        __rcu_read_lock();
+           a.out-4255  [001]   207.489677: funcgraph_exit:         0.315 us   |                      }
+           a.out-4255  [001]   207.489677: funcgraph_entry:                   |                      __folio_mark_dirty() {
+           a.out-4255  [001]   207.489677: funcgraph_entry:        0.113 us   |                        _raw_spin_lock_irqsave();
+           a.out-4255  [001]   207.489677: funcgraph_entry:        0.102 us   |                        inode_to_bdi();
+           a.out-4255  [001]   207.489677: funcgraph_entry:                   |                        __lruvec_stat_mod_folio() {
+           a.out-4255  [001]   207.489677: funcgraph_entry:        0.101 us   |                          __rcu_read_lock();
+           a.out-4255  [001]   207.489677: funcgraph_entry:                   |                          __mod_lruvec_state() {
+           a.out-4255  [001]   207.489678: funcgraph_entry:        0.101 us   |                            __mod_node_page_state();
+           a.out-4255  [001]   207.489678: funcgraph_entry:                   |                            __mod_memcg_lruvec_state() {
+           a.out-4255  [001]   207.489678: funcgraph_entry:        0.101 us   |                              cgroup_rstat_updated();
+           a.out-4255  [001]   207.489678: funcgraph_exit:         0.309 us   |                            }
+           a.out-4255  [001]   207.489678: funcgraph_exit:         0.674 us   |                          }
+           a.out-4255  [001]   207.489678: funcgraph_entry:        0.104 us   |                          __rcu_read_unlock();
+           a.out-4255  [001]   207.489678: funcgraph_exit:         1.231 us   |                        }
+           a.out-4255  [001]   207.489678: funcgraph_entry:        0.100 us   |                        __mod_zone_page_state();
+           a.out-4255  [001]   207.489679: funcgraph_entry:        0.102 us   |                        __mod_node_page_state();
+           a.out-4255  [001]   207.489679: funcgraph_entry:        0.107 us   |                        _raw_spin_unlock_irqrestore();
+           a.out-4255  [001]   207.489679: funcgraph_exit:         2.452 us   |                      }
+           a.out-4255  [001]   207.489679: funcgraph_entry:                   |                      folio_memcg_unlock() {
+           a.out-4255  [001]   207.489679: funcgraph_entry:        0.102 us   |                        __rcu_read_unlock();
+           a.out-4255  [001]   207.489679: funcgraph_exit:         0.290 us   |                      }
+           a.out-4255  [001]   207.489680: funcgraph_entry:        0.128 us   |                      __mark_inode_dirty();
+           a.out-4255  [001]   207.489680: funcgraph_exit:         3.664 us   |                    }
+           a.out-4255  [001]   207.489680: funcgraph_exit:         3.868 us   |                  }
+           a.out-4255  [001]   207.489680: funcgraph_exit:         4.053 us   |                }
+           a.out-4255  [001]   207.489680: funcgraph_entry:        0.104 us   |                folio_unlock();
+           a.out-4255  [001]   207.489680: funcgraph_exit:         4.496 us   |              }
+           a.out-4255  [001]   207.489680: funcgraph_entry:        0.100 us   |              __cond_resched();
+           a.out-4255  [001]   207.489681: funcgraph_entry:                   |              balance_dirty_pages_ratelimited() {
+           a.out-4255  [001]   207.489681: funcgraph_entry:                   |                balance_dirty_pages_ratelimited_flags() {
+           a.out-4255  [001]   207.489681: funcgraph_entry:        0.101 us   |                  inode_to_bdi();
+           a.out-4255  [001]   207.489681: funcgraph_entry:        0.103 us   |                  inode_to_bdi();
+           a.out-4255  [001]   207.489681: funcgraph_entry:        0.105 us   |                  __rcu_read_lock();
+           a.out-4255  [001]   207.489681: funcgraph_entry:        0.101 us   |                  __rcu_read_lock();
+           a.out-4255  [001]   207.489682: funcgraph_entry:        0.103 us   |                  __rcu_read_unlock();
+           a.out-4255  [001]   207.489682: funcgraph_entry:        0.100 us   |                  __rcu_read_unlock();
+           a.out-4255  [001]   207.489682: funcgraph_entry:        0.101 us   |                  __rcu_read_lock();
+           a.out-4255  [001]   207.489682: funcgraph_entry:        0.099 us   |                  __rcu_read_unlock();
+           a.out-4255  [001]   207.489682: funcgraph_exit:         1.676 us   |                }
+           a.out-4255  [001]   207.489682: funcgraph_exit:         1.865 us   |              }
+           a.out-4255  [001]   207.489682: funcgraph_exit:       + 37.281 us  |            }
+           a.out-4255  [001]   207.489683: funcgraph_entry:        0.108 us   |            up_write();
+           a.out-4255  [001]   207.489683: funcgraph_exit:       + 45.641 us  |          }
+           a.out-4255  [001]   207.489683: funcgraph_exit:       + 45.830 us  |        }
+           a.out-4255  [001]   207.489683: funcgraph_entry:        0.136 us   |        aio_complete_rw();
+           a.out-4255  [001]   207.489683: funcgraph_entry:        0.110 us   |        kfree();
+           a.out-4255  [001]   207.489684: funcgraph_exit:       + 48.554 us  |      }
+           a.out-4255  [001]   207.489684: funcgraph_entry:                   |      aio_complete() {
+           a.out-4255  [001]   207.489684: funcgraph_entry:        0.121 us   |        _raw_spin_lock_irqsave();
+           a.out-4255  [001]   207.489684: funcgraph_entry:        0.104 us   |        _raw_spin_unlock_irqrestore();
+           a.out-4255  [001]   207.489684: funcgraph_exit:         0.528 us   |      }
+           a.out-4255  [001]   207.489684: funcgraph_entry:        0.105 us   |      fput();
+           a.out-4255  [001]   207.489685: funcgraph_entry:        0.105 us   |      __rcu_read_lock();
+           a.out-4255  [001]   207.489685: funcgraph_entry:        0.102 us   |      __rcu_read_unlock();
+           a.out-4255  [001]   207.489685: funcgraph_entry:        0.113 us   |      kmem_cache_free();
+           a.out-4255  [001]   207.489685: funcgraph_exit:       + 60.261 us  |    }
+           a.out-4255  [001]   207.489685: funcgraph_entry:        0.102 us   |    __rcu_read_lock();
+           a.out-4255  [001]   207.489685: funcgraph_entry:        0.101 us   |    __rcu_read_unlock();
+           a.out-4255  [001]   207.489686: funcgraph_exit:       + 73.311 us  |  }

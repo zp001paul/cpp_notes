@@ -1,0 +1,54 @@
+CPU 0 is empty
+CPU 2 is empty
+CPU 3 is empty
+cpus=4
+   libaio_direct-6186  [001]   343.778171: funcgraph_entry:                   |  __x64_sys_io_submit() {
+   libaio_direct-6186  [001]   343.778175: funcgraph_entry:                   |  smp_irq_work_interrupt() {
+   libaio_direct-6186  [001]   343.778175: funcgraph_entry:                   |    irq_enter() {
+   libaio_direct-6186  [001]   343.778175: funcgraph_entry:                   |      irq_enter_rcu() {
+   libaio_direct-6186  [001]   343.778175: funcgraph_entry:        0.107 us   |        irqtime_account_irq();
+   libaio_direct-6186  [001]   343.778176: funcgraph_exit:         0.432 us   |      }
+   libaio_direct-6186  [001]   343.778176: funcgraph_exit:         0.639 us   |    }
+   libaio_direct-6186  [001]   343.778177: funcgraph_entry:                   |    __wake_up() {
+   libaio_direct-6186  [001]   343.778177: funcgraph_entry:                   |      __wake_up_common_lock() {
+   libaio_direct-6186  [001]   343.778177: funcgraph_entry:        0.034 us   |        _raw_spin_lock_irqsave();
+   libaio_direct-6186  [001]   343.778177: funcgraph_entry:        0.058 us   |        __wake_up_common();
+   libaio_direct-6186  [001]   343.778177: funcgraph_entry:        0.041 us   |        _raw_spin_unlock_irqrestore();
+   libaio_direct-6186  [001]   343.778177: funcgraph_exit:         0.677 us   |      }
+   libaio_direct-6186  [001]   343.778178: funcgraph_exit:         0.872 us   |    }
+   libaio_direct-6186  [001]   343.778178: funcgraph_entry:                   |    __wake_up() {
+   libaio_direct-6186  [001]   343.778178: funcgraph_entry:                   |      __wake_up_common_lock() {
+   libaio_direct-6186  [001]   343.778178: funcgraph_entry:        0.033 us   |        _raw_spin_lock_irqsave();
+   libaio_direct-6186  [001]   343.778178: funcgraph_entry:                   |        __wake_up_common() {
+   libaio_direct-6186  [001]   343.778178: funcgraph_entry:                   |          autoremove_wake_function() {
+   libaio_direct-6186  [001]   343.778178: funcgraph_entry:                   |            default_wake_function() {
+   libaio_direct-6186  [001]   343.778178: funcgraph_entry:                   |              try_to_wake_up() {
+   libaio_direct-6186  [001]   343.778179: funcgraph_entry:        0.077 us   |                _raw_spin_lock_irqsave();
+   libaio_direct-6186  [001]   343.778179: funcgraph_entry:                   |                select_task_rq_fair() {
+   libaio_direct-6186  [001]   343.778179: funcgraph_entry:        0.145 us   |                  available_idle_cpu();
+   libaio_direct-6186  [001]   343.778179: funcgraph_exit:         0.428 us   |                }
+   libaio_direct-6186  [001]   343.778180: funcgraph_entry:                   |                ttwu_queue_wakelist() {
+   libaio_direct-6186  [001]   343.778180: funcgraph_entry:                   |                  __smp_call_single_queue() {
+   libaio_direct-6186  [001]   343.778180: funcgraph_entry:                   |                    send_call_function_single_ipi() {
+   libaio_direct-6186  [001]   343.778180: funcgraph_entry:                   |                      native_send_call_func_single_ipi() {
+   libaio_direct-6186  [001]   343.778180: funcgraph_entry:        2.024 us   |                        x2apic_send_IPI();
+   libaio_direct-6186  [001]   343.778182: funcgraph_exit:         2.230 us   |                      }
+   libaio_direct-6186  [001]   343.778182: funcgraph_exit:         2.463 us   |                    }
+   libaio_direct-6186  [001]   343.778183: funcgraph_exit:         2.701 us   |                  }
+   libaio_direct-6186  [001]   343.778183: funcgraph_exit:         3.024 us   |                }
+   libaio_direct-6186  [001]   343.778183: funcgraph_entry:        0.042 us   |                _raw_spin_unlock_irqrestore();
+   libaio_direct-6186  [001]   343.778183: funcgraph_exit:         4.406 us   |              }
+   libaio_direct-6186  [001]   343.778183: funcgraph_exit:         4.589 us   |            }
+   libaio_direct-6186  [001]   343.778183: funcgraph_exit:         4.791 us   |          }
+   libaio_direct-6186  [001]   343.778183: funcgraph_exit:         5.140 us   |        }
+   libaio_direct-6186  [001]   343.778183: funcgraph_entry:        0.041 us   |        _raw_spin_unlock_irqrestore();
+   libaio_direct-6186  [001]   343.778184: funcgraph_exit:         5.723 us   |      }
+   libaio_direct-6186  [001]   343.778184: funcgraph_exit:         5.906 us   |    }
+   libaio_direct-6186  [001]   343.778184: funcgraph_entry:                   |    irq_exit() {
+   libaio_direct-6186  [001]   343.778184: funcgraph_entry:                   |      irq_exit_rcu() {
+   libaio_direct-6186  [001]   343.778184: funcgraph_entry:        0.062 us   |        irqtime_account_irq();
+   libaio_direct-6186  [001]   343.778184: funcgraph_entry:        0.031 us   |        idle_cpu();
+   libaio_direct-6186  [001]   343.778184: funcgraph_exit:         0.460 us   |      }
+   libaio_direct-6186  [001]   343.778185: funcgraph_exit:         0.651 us   |    }
+   libaio_direct-6186  [001]   343.778185: funcgraph_exit:         9.842 us   |  }
+   libaio_direct-6186  [001]   343.778410: funcgraph_exit:       ! 224.825 us |  }

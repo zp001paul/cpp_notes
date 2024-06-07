@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 int main(int argc, char *argv[]) {
-  const char *file_name{"/tmp/tmp.txt"};
+  const char *file_name{"/mnt/ext4/hello.txt"};
 
   int fd = open(file_name, O_SYNC | O_WRONLY | O_CREAT | O_TRUNC, 0644);
   if (fd < 0) {

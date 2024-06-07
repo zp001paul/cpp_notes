@@ -1,0 +1,1178 @@
+CPU 1 is empty
+cpus=2
+   libaio_direct-4830  [000]  3208.454039: funcgraph_entry:                   |  sys_io_submit() {
+   libaio_direct-4830  [000]  3208.454040: funcgraph_entry:                   |    do_io_submit() {
+   libaio_direct-4830  [000]  3208.454041: funcgraph_entry:        0.043 us   |      lookup_ioctx();
+   libaio_direct-4830  [000]  3208.454041: funcgraph_entry:        0.035 us   |      blk_start_plug();
+   libaio_direct-4830  [000]  3208.454041: funcgraph_entry:                   |      __check_object_size() {
+   libaio_direct-4830  [000]  3208.454041: funcgraph_entry:        0.028 us   |        static_key_enabled();
+   libaio_direct-4830  [000]  3208.454042: funcgraph_entry:        0.034 us   |        __virt_addr_valid();
+   libaio_direct-4830  [000]  3208.454042: funcgraph_entry:        0.039 us   |        check_stack_object();
+   libaio_direct-4830  [000]  3208.454042: funcgraph_exit:         0.623 us   |      }
+   libaio_direct-4830  [000]  3208.454042: funcgraph_entry:                   |      kmem_cache_alloc() {
+   libaio_direct-4830  [000]  3208.454042: funcgraph_entry:        0.027 us   |        _cond_resched();
+   libaio_direct-4830  [000]  3208.454042: funcgraph_exit:         0.304 us   |      }
+   libaio_direct-4830  [000]  3208.454043: funcgraph_entry:        0.037 us   |      fget();
+   libaio_direct-4830  [000]  3208.454043: funcgraph_entry:                   |      rw_verify_area() {
+   libaio_direct-4830  [000]  3208.454043: funcgraph_entry:                   |        security_file_permission() {
+   libaio_direct-4830  [000]  3208.454043: funcgraph_entry:                   |          selinux_file_permission() {
+   libaio_direct-4830  [000]  3208.454043: funcgraph_entry:                   |            __inode_security_revalidate() {
+   libaio_direct-4830  [000]  3208.454043: funcgraph_entry:        0.029 us   |              _cond_resched();
+   libaio_direct-4830  [000]  3208.454043: funcgraph_exit:         0.213 us   |            }
+   libaio_direct-4830  [000]  3208.454043: funcgraph_entry:        0.026 us   |            avc_policy_seqno();
+   libaio_direct-4830  [000]  3208.454044: funcgraph_exit:         0.590 us   |          }
+   libaio_direct-4830  [000]  3208.454044: funcgraph_exit:         0.801 us   |        }
+   libaio_direct-4830  [000]  3208.454044: funcgraph_exit:         0.986 us   |      }
+   libaio_direct-4830  [000]  3208.454044: funcgraph_entry:        0.032 us   |      __sb_start_write();
+   libaio_direct-4830  [000]  3208.454044: funcgraph_entry:                   |      ext4_file_write() {
+   libaio_direct-4830  [000]  3208.454044: funcgraph_entry:        0.127 us   |        ext4_write_checks.isra.8();
+   libaio_direct-4830  [000]  3208.454045: funcgraph_entry:                   |        mutex_lock() {
+   libaio_direct-4830  [000]  3208.454045: funcgraph_entry:        0.027 us   |          _cond_resched();
+   libaio_direct-4830  [000]  3208.454045: funcgraph_exit:         0.217 us   |        }
+   libaio_direct-4830  [000]  3208.454045: funcgraph_entry:        0.027 us   |        blk_start_plug();
+   libaio_direct-4830  [000]  3208.454045: funcgraph_entry:                   |        __generic_file_aio_write() {
+   libaio_direct-4830  [000]  3208.454045: funcgraph_entry:        0.030 us   |          generic_segment_checks();
+   libaio_direct-4830  [000]  3208.454045: funcgraph_entry:        0.033 us   |          file_remove_privs();
+   libaio_direct-4830  [000]  3208.454046: funcgraph_entry:                   |          file_update_time() {
+   libaio_direct-4830  [000]  3208.454046: funcgraph_entry:                   |            current_fs_time() {
+   libaio_direct-4830  [000]  3208.454046: funcgraph_entry:        0.026 us   |              current_kernel_time();
+   libaio_direct-4830  [000]  3208.454046: funcgraph_exit:         0.214 us   |            }
+   libaio_direct-4830  [000]  3208.454046: funcgraph_exit:         0.431 us   |          }
+   libaio_direct-4830  [000]  3208.454046: funcgraph_entry:                   |          generic_file_direct_write() {
+   libaio_direct-4830  [000]  3208.454046: funcgraph_entry:                   |            filemap_write_and_wait_range() {
+   libaio_direct-4830  [000]  3208.454047: funcgraph_entry:        0.036 us   |              filemap_check_errors();
+   libaio_direct-4830  [000]  3208.454047: funcgraph_exit:         0.306 us   |            }
+   libaio_direct-4830  [000]  3208.454047: funcgraph_entry:                   |            ext4_direct_IO() {
+   libaio_direct-4830  [000]  3208.454047: funcgraph_entry:                   |              ext4_ind_direct_IO() {
+   libaio_direct-4830  [000]  3208.454048: funcgraph_entry:                   |                __ext4_journal_start_sb() {
+   libaio_direct-4830  [000]  3208.454048: funcgraph_entry:                   |                  ext4_journal_check_start() {
+   libaio_direct-4830  [000]  3208.454048: funcgraph_entry:        0.027 us   |                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454048: funcgraph_exit:         0.211 us   |                  }
+   libaio_direct-4830  [000]  3208.454048: funcgraph_entry:                   |                  jbd2__journal_start() {
+   libaio_direct-4830  [000]  3208.454048: funcgraph_entry:                   |                    kmem_cache_alloc() {
+   libaio_direct-4830  [000]  3208.454048: funcgraph_entry:        0.026 us   |                      _cond_resched();
+   libaio_direct-4830  [000]  3208.454048: funcgraph_exit:         0.225 us   |                    }
+   libaio_direct-4830  [000]  3208.454048: funcgraph_entry:                   |                    start_this_handle() {
+   libaio_direct-4830  [000]  3208.454049: funcgraph_entry:        0.029 us   |                      _raw_read_lock();
+   libaio_direct-4830  [000]  3208.454049: funcgraph_entry:        0.046 us   |                      add_transaction_credits();
+   libaio_direct-4830  [000]  3208.454049: funcgraph_exit:         0.458 us   |                    }
+   libaio_direct-4830  [000]  3208.454049: funcgraph_exit:         1.056 us   |                  }
+   libaio_direct-4830  [000]  3208.454049: funcgraph_exit:         1.609 us   |                }
+   libaio_direct-4830  [000]  3208.454049: funcgraph_entry:                   |                ext4_orphan_add() {
+   libaio_direct-4830  [000]  3208.454049: funcgraph_entry:        0.027 us   |                  is_bad_inode();
+   libaio_direct-4830  [000]  3208.454050: funcgraph_entry:                   |                  __ext4_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454050: funcgraph_entry:        0.026 us   |                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454050: funcgraph_entry:                   |                    jbd2_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454050: funcgraph_entry:        0.046 us   |                      jbd2_journal_add_journal_head();
+   libaio_direct-4830  [000]  3208.454050: funcgraph_entry:                   |                      do_get_write_access() {
+   libaio_direct-4830  [000]  3208.454050: funcgraph_entry:        0.029 us   |                        _cond_resched();
+   libaio_direct-4830  [000]  3208.454050: funcgraph_entry:                   |                        unlock_buffer() {
+   libaio_direct-4830  [000]  3208.454051: funcgraph_entry:        0.026 us   |                          __smp_mb__after_atomic();
+   libaio_direct-4830  [000]  3208.454051: funcgraph_entry:                   |                          wake_up_bit() {
+   libaio_direct-4830  [000]  3208.454051: funcgraph_entry:        0.039 us   |                            bit_waitqueue();
+   libaio_direct-4830  [000]  3208.454051: funcgraph_entry:        0.025 us   |                            __wake_up_bit();
+   libaio_direct-4830  [000]  3208.454051: funcgraph_exit:         0.404 us   |                          }
+   libaio_direct-4830  [000]  3208.454051: funcgraph_exit:         0.768 us   |                        }
+   libaio_direct-4830  [000]  3208.454051: funcgraph_entry:        0.035 us   |                        jbd2_journal_cancel_revoke();
+   libaio_direct-4830  [000]  3208.454052: funcgraph_exit:         1.363 us   |                      }
+   libaio_direct-4830  [000]  3208.454052: funcgraph_entry:        0.037 us   |                      jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454052: funcgraph_exit:         2.355 us   |                    }
+   libaio_direct-4830  [000]  3208.454052: funcgraph_exit:         2.729 us   |                  }
+   libaio_direct-4830  [000]  3208.454052: funcgraph_entry:                   |                  ext4_reserve_inode_write() {
+   libaio_direct-4830  [000]  3208.454053: funcgraph_entry:                   |                    ext4_get_inode_loc() {
+   libaio_direct-4830  [000]  3208.454053: funcgraph_entry:                   |                      __ext4_get_inode_loc() {
+   libaio_direct-4830  [000]  3208.454053: funcgraph_entry:        0.032 us   |                        ext4_get_group_desc();
+   libaio_direct-4830  [000]  3208.454053: funcgraph_entry:        0.029 us   |                        ext4_inode_table();
+   libaio_direct-4830  [000]  3208.454053: funcgraph_entry:                   |                        __getblk() {
+   libaio_direct-4830  [000]  3208.454053: funcgraph_entry:                   |                          __find_get_block() {
+   libaio_direct-4830  [000]  3208.454053: funcgraph_entry:        0.028 us   |                            mark_page_accessed();
+   libaio_direct-4830  [000]  3208.454054: funcgraph_exit:         0.231 us   |                          }
+   libaio_direct-4830  [000]  3208.454054: funcgraph_entry:        0.026 us   |                          _cond_resched();
+   libaio_direct-4830  [000]  3208.454054: funcgraph_exit:         0.600 us   |                        }
+   libaio_direct-4830  [000]  3208.454054: funcgraph_exit:         1.162 us   |                      }
+   libaio_direct-4830  [000]  3208.454054: funcgraph_exit:         1.346 us   |                    }
+   libaio_direct-4830  [000]  3208.454054: funcgraph_entry:                   |                    __ext4_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454054: funcgraph_entry:        0.026 us   |                      _cond_resched();
+   libaio_direct-4830  [000]  3208.454054: funcgraph_entry:                   |                      jbd2_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454054: funcgraph_entry:        0.037 us   |                        jbd2_journal_add_journal_head();
+   libaio_direct-4830  [000]  3208.454055: funcgraph_entry:                   |                        do_get_write_access() {
+   libaio_direct-4830  [000]  3208.454055: funcgraph_entry:        0.027 us   |                          _cond_resched();
+   libaio_direct-4830  [000]  3208.454055: funcgraph_entry:                   |                          unlock_buffer() {
+   libaio_direct-4830  [000]  3208.454055: funcgraph_entry:        0.025 us   |                            __smp_mb__after_atomic();
+   libaio_direct-4830  [000]  3208.454055: funcgraph_entry:                   |                            wake_up_bit() {
+   libaio_direct-4830  [000]  3208.454055: funcgraph_entry:        0.030 us   |                              bit_waitqueue();
+   libaio_direct-4830  [000]  3208.454055: funcgraph_entry:        0.028 us   |                              __wake_up_bit();
+   libaio_direct-4830  [000]  3208.454056: funcgraph_exit:         0.395 us   |                            }
+   libaio_direct-4830  [000]  3208.454056: funcgraph_exit:         0.762 us   |                          }
+   libaio_direct-4830  [000]  3208.454056: funcgraph_entry:        0.033 us   |                          jbd2_journal_cancel_revoke();
+   libaio_direct-4830  [000]  3208.454056: funcgraph_exit:         1.348 us   |                        }
+   libaio_direct-4830  [000]  3208.454056: funcgraph_entry:        0.035 us   |                        jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454056: funcgraph_exit:         1.924 us   |                      }
+   libaio_direct-4830  [000]  3208.454056: funcgraph_exit:         2.286 us   |                    }
+   libaio_direct-4830  [000]  3208.454057: funcgraph_exit:         3.978 us   |                  }
+   libaio_direct-4830  [000]  3208.454057: funcgraph_entry:                   |                  mutex_lock() {
+   libaio_direct-4830  [000]  3208.454057: funcgraph_entry:        0.026 us   |                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454057: funcgraph_exit:         0.216 us   |                  }
+   libaio_direct-4830  [000]  3208.454057: funcgraph_entry:        0.031 us   |                  mutex_unlock();
+   libaio_direct-4830  [000]  3208.454057: funcgraph_entry:                   |                  __ext4_handle_dirty_super() {
+   libaio_direct-4830  [000]  3208.454057: funcgraph_entry:        0.036 us   |                    ext4_superblock_csum_set();
+   libaio_direct-4830  [000]  3208.454057: funcgraph_entry:                   |                    jbd2_journal_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454058: funcgraph_entry:        0.037 us   |                      jbd2_journal_grab_journal_head();
+   libaio_direct-4830  [000]  3208.454058: funcgraph_entry:        0.035 us   |                      jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454058: funcgraph_exit:         0.447 us   |                    }
+   libaio_direct-4830  [000]  3208.454058: funcgraph_exit:         0.831 us   |                  }
+   libaio_direct-4830  [000]  3208.454058: funcgraph_entry:                   |                  ext4_mark_iloc_dirty() {
+   libaio_direct-4830  [000]  3208.454058: funcgraph_entry:        0.035 us   |                    _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454058: funcgraph_entry:        0.031 us   |                    ext4_get_inode_flags();
+   libaio_direct-4830  [000]  3208.454059: funcgraph_entry:                   |                    from_kuid() {
+   libaio_direct-4830  [000]  3208.454059: funcgraph_entry:        0.029 us   |                      map_id_up();
+   libaio_direct-4830  [000]  3208.454059: funcgraph_exit:         0.210 us   |                    }
+   libaio_direct-4830  [000]  3208.454059: funcgraph_entry:                   |                    from_kgid() {
+   libaio_direct-4830  [000]  3208.454059: funcgraph_entry:        0.026 us   |                      map_id_up();
+   libaio_direct-4830  [000]  3208.454059: funcgraph_exit:         0.209 us   |                    }
+   libaio_direct-4830  [000]  3208.454059: funcgraph_entry:                   |                    __ext4_handle_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454060: funcgraph_entry:        0.028 us   |                      _cond_resched();
+   libaio_direct-4830  [000]  3208.454060: funcgraph_entry:                   |                      jbd2_journal_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454060: funcgraph_entry:        0.037 us   |                        jbd2_journal_grab_journal_head();
+   libaio_direct-4830  [000]  3208.454060: funcgraph_entry:        0.036 us   |                        jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454060: funcgraph_exit:         0.418 us   |                      }
+   libaio_direct-4830  [000]  3208.454060: funcgraph_exit:         0.800 us   |                    }
+   libaio_direct-4830  [000]  3208.454060: funcgraph_entry:                   |                    __brelse() {
+   libaio_direct-4830  [000]  3208.454060: funcgraph_entry:        0.027 us   |                      __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.454061: funcgraph_exit:         0.214 us   |                    }
+   libaio_direct-4830  [000]  3208.454061: funcgraph_entry:        0.026 us   |                    __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.454061: funcgraph_exit:         2.725 us   |                  }
+   libaio_direct-4830  [000]  3208.454061: funcgraph_exit:       + 11.708 us  |                }
+   libaio_direct-4830  [000]  3208.454061: funcgraph_entry:                   |                down_write() {
+   libaio_direct-4830  [000]  3208.454061: funcgraph_entry:        0.026 us   |                  _cond_resched();
+   libaio_direct-4830  [000]  3208.454061: funcgraph_exit:         0.216 us   |                }
+   libaio_direct-4830  [000]  3208.454062: funcgraph_entry:        0.031 us   |                up_write();
+   libaio_direct-4830  [000]  3208.454062: funcgraph_entry:                   |                __ext4_journal_stop() {
+   libaio_direct-4830  [000]  3208.454062: funcgraph_entry:                   |                  jbd2_journal_stop() {
+   libaio_direct-4830  [000]  3208.454062: funcgraph_entry:                   |                    __wake_up() {
+   libaio_direct-4830  [000]  3208.454062: funcgraph_entry:                   |                      __wake_up_common_lock() {
+   libaio_direct-4830  [000]  3208.454062: funcgraph_entry:        0.034 us   |                        _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.454063: funcgraph_entry:        0.036 us   |                        __wake_up_common();
+   libaio_direct-4830  [000]  3208.454063: funcgraph_entry:        0.039 us   |                        _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.454063: funcgraph_exit:         0.635 us   |                      }
+   libaio_direct-4830  [000]  3208.454063: funcgraph_exit:         0.816 us   |                    }
+   libaio_direct-4830  [000]  3208.454063: funcgraph_entry:        0.041 us   |                    kmem_cache_free();
+   libaio_direct-4830  [000]  3208.454063: funcgraph_exit:         1.228 us   |                  }
+   libaio_direct-4830  [000]  3208.454064: funcgraph_exit:         1.657 us   |                }
+   libaio_direct-4830  [000]  3208.454064: funcgraph_entry:                   |                __blockdev_direct_IO() {
+   libaio_direct-4830  [000]  3208.454064: funcgraph_entry:                   |                  kmem_cache_alloc() {
+   libaio_direct-4830  [000]  3208.454064: funcgraph_entry:        0.027 us   |                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454065: funcgraph_exit:         0.443 us   |                  }
+   libaio_direct-4830  [000]  3208.454065: funcgraph_entry:        0.029 us   |                  blk_start_plug();
+   libaio_direct-4830  [000]  3208.454065: funcgraph_entry:                   |                  get_user_pages_fast() {
+   libaio_direct-4830  [000]  3208.454065: funcgraph_entry:                   |                    gup_pud_range() {
+   libaio_direct-4830  [000]  3208.454066: funcgraph_entry:        0.160 us   |                      gup_pte_range();
+   libaio_direct-4830  [000]  3208.454066: funcgraph_exit:         0.448 us   |                    }
+   libaio_direct-4830  [000]  3208.454066: funcgraph_exit:         0.798 us   |                  }
+   libaio_direct-4830  [000]  3208.454066: funcgraph_entry:                   |                  ext4_get_block() {
+   libaio_direct-4830  [000]  3208.454066: funcgraph_entry:                   |                    _ext4_get_block() {
+   libaio_direct-4830  [000]  3208.454067: funcgraph_entry:                   |                      ext4_meta_trans_blocks() {
+   libaio_direct-4830  [000]  3208.454067: funcgraph_entry:        0.033 us   |                        ext4_ext_index_trans_blocks();
+   libaio_direct-4830  [000]  3208.454067: funcgraph_exit:         0.218 us   |                      }
+   libaio_direct-4830  [000]  3208.454067: funcgraph_entry:                   |                      __ext4_journal_start_sb() {
+   libaio_direct-4830  [000]  3208.454067: funcgraph_entry:                   |                        ext4_journal_check_start() {
+   libaio_direct-4830  [000]  3208.454067: funcgraph_entry:        0.028 us   |                          _cond_resched();
+   libaio_direct-4830  [000]  3208.454067: funcgraph_exit:         0.213 us   |                        }
+   libaio_direct-4830  [000]  3208.454067: funcgraph_entry:                   |                        jbd2__journal_start() {
+   libaio_direct-4830  [000]  3208.454067: funcgraph_entry:                   |                          kmem_cache_alloc() {
+   libaio_direct-4830  [000]  3208.454068: funcgraph_entry:        0.027 us   |                            _cond_resched();
+   libaio_direct-4830  [000]  3208.454068: funcgraph_exit:         0.244 us   |                          }
+   libaio_direct-4830  [000]  3208.454068: funcgraph_entry:                   |                          start_this_handle() {
+   libaio_direct-4830  [000]  3208.454068: funcgraph_entry:        0.030 us   |                            _raw_read_lock();
+   libaio_direct-4830  [000]  3208.454068: funcgraph_entry:        0.034 us   |                            add_transaction_credits();
+   libaio_direct-4830  [000]  3208.454068: funcgraph_exit:         0.421 us   |                          }
+   libaio_direct-4830  [000]  3208.454068: funcgraph_exit:         1.011 us   |                        }
+   libaio_direct-4830  [000]  3208.454069: funcgraph_exit:         1.568 us   |                      }
+   libaio_direct-4830  [000]  3208.454069: funcgraph_entry:                   |                      ext4_map_blocks() {
+   libaio_direct-4830  [000]  3208.454069: funcgraph_entry:                   |                        ext4_es_lookup_extent() {
+   libaio_direct-4830  [000]  3208.454069: funcgraph_entry:        0.033 us   |                          _raw_read_lock();
+   libaio_direct-4830  [000]  3208.454069: funcgraph_exit:         0.232 us   |                        }
+   libaio_direct-4830  [000]  3208.454069: funcgraph_entry:                   |                        down_read() {
+   libaio_direct-4830  [000]  3208.454069: funcgraph_entry:        0.026 us   |                          _cond_resched();
+   libaio_direct-4830  [000]  3208.454069: funcgraph_exit:         0.215 us   |                        }
+   libaio_direct-4830  [000]  3208.454070: funcgraph_entry:                   |                        ext4_ext_map_blocks() {
+   libaio_direct-4830  [000]  3208.454070: funcgraph_entry:                   |                          ext4_ext_find_extent() {
+   libaio_direct-4830  [000]  3208.454070: funcgraph_entry:                   |                            __kmalloc() {
+   libaio_direct-4830  [000]  3208.454070: funcgraph_entry:        0.049 us   |                              kmalloc_slab();
+   libaio_direct-4830  [000]  3208.454070: funcgraph_entry:        0.025 us   |                              _cond_resched();
+   libaio_direct-4830  [000]  3208.454071: funcgraph_exit:         0.613 us   |                            }
+   libaio_direct-4830  [000]  3208.454071: funcgraph_exit:         0.944 us   |                          }
+   libaio_direct-4830  [000]  3208.454071: funcgraph_entry:                   |                          ext4_ext_put_gap_in_cache() {
+   libaio_direct-4830  [000]  3208.454071: funcgraph_entry:                   |                            ext4_es_find_delayed_extent_range() {
+   libaio_direct-4830  [000]  3208.454071: funcgraph_entry:        0.030 us   |                              _raw_read_lock();
+   libaio_direct-4830  [000]  3208.454071: funcgraph_entry:        0.027 us   |                              __es_tree_search();
+   libaio_direct-4830  [000]  3208.454072: funcgraph_exit:         0.410 us   |                            }
+   libaio_direct-4830  [000]  3208.454072: funcgraph_entry:                   |                            ext4_es_insert_extent() {
+   libaio_direct-4830  [000]  3208.454072: funcgraph_entry:        0.029 us   |                              _raw_write_lock();
+   libaio_direct-4830  [000]  3208.454072: funcgraph_entry:                   |                              __es_remove_extent() {
+   libaio_direct-4830  [000]  3208.454072: funcgraph_entry:        0.026 us   |                                __es_tree_search();
+   libaio_direct-4830  [000]  3208.454072: funcgraph_exit:         0.269 us   |                              }
+   libaio_direct-4830  [000]  3208.454072: funcgraph_entry:                   |                              __es_insert_extent() {
+   libaio_direct-4830  [000]  3208.454073: funcgraph_entry:        0.048 us   |                                kmem_cache_alloc();
+   libaio_direct-4830  [000]  3208.454073: funcgraph_entry:        0.035 us   |                                _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454073: funcgraph_exit:         0.487 us   |                              }
+   libaio_direct-4830  [000]  3208.454073: funcgraph_exit:         1.290 us   |                            }
+   libaio_direct-4830  [000]  3208.454073: funcgraph_exit:         2.054 us   |                          }
+   libaio_direct-4830  [000]  3208.454073: funcgraph_entry:        0.033 us   |                          ext4_ext_drop_refs();
+   libaio_direct-4830  [000]  3208.454073: funcgraph_entry:        0.117 us   |                          kfree();
+   libaio_direct-4830  [000]  3208.454074: funcgraph_exit:         4.094 us   |                        }
+   libaio_direct-4830  [000]  3208.454074: funcgraph_entry:        0.032 us   |                        up_read();
+   libaio_direct-4830  [000]  3208.454074: funcgraph_entry:                   |                        down_write() {
+   libaio_direct-4830  [000]  3208.454074: funcgraph_entry:        0.025 us   |                          _cond_resched();
+   libaio_direct-4830  [000]  3208.454075: funcgraph_exit:         0.212 us   |                        }
+   libaio_direct-4830  [000]  3208.454075: funcgraph_entry:                   |                        ext4_ext_map_blocks() {
+   libaio_direct-4830  [000]  3208.454075: funcgraph_entry:                   |                          ext4_ext_find_extent() {
+   libaio_direct-4830  [000]  3208.454075: funcgraph_entry:                   |                            __kmalloc() {
+   libaio_direct-4830  [000]  3208.454075: funcgraph_entry:        0.025 us   |                              kmalloc_slab();
+   libaio_direct-4830  [000]  3208.454075: funcgraph_entry:        0.027 us   |                              _cond_resched();
+   libaio_direct-4830  [000]  3208.454075: funcgraph_exit:         0.411 us   |                            }
+   libaio_direct-4830  [000]  3208.454075: funcgraph_exit:         0.600 us   |                          }
+   libaio_direct-4830  [000]  3208.454075: funcgraph_entry:        0.033 us   |                          ext4_ext_search_right();
+   libaio_direct-4830  [000]  3208.454076: funcgraph_entry:                   |                          ext4_ext_find_goal() {
+   libaio_direct-4830  [000]  3208.454076: funcgraph_entry:        0.034 us   |                            ext4_inode_to_goal_block();
+   libaio_direct-4830  [000]  3208.454076: funcgraph_exit:         0.243 us   |                          }
+   libaio_direct-4830  [000]  3208.454076: funcgraph_entry:                   |                          ext4_mb_new_blocks() {
+   libaio_direct-4830  [000]  3208.454076: funcgraph_entry:        0.027 us   |                            _cond_resched();
+   libaio_direct-4830  [000]  3208.454077: funcgraph_entry:                   |                            ext4_claim_free_clusters() {
+   libaio_direct-4830  [000]  3208.454077: funcgraph_entry:        0.038 us   |                              ext4_has_free_clusters();
+   libaio_direct-4830  [000]  3208.454077: funcgraph_exit:         0.239 us   |                            }
+   libaio_direct-4830  [000]  3208.454077: funcgraph_entry:                   |                            __dquot_alloc_space() {
+   libaio_direct-4830  [000]  3208.454077: funcgraph_entry:        0.027 us   |                              dquot_active.isra.8();
+   libaio_direct-4830  [000]  3208.454077: funcgraph_entry:                   |                              inode_add_bytes() {
+   libaio_direct-4830  [000]  3208.454077: funcgraph_entry:        0.030 us   |                                _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454078: funcgraph_exit:         0.225 us   |                              }
+   libaio_direct-4830  [000]  3208.454078: funcgraph_exit:         0.610 us   |                            }
+   libaio_direct-4830  [000]  3208.454078: funcgraph_entry:                   |                            __mark_inode_dirty() {
+   libaio_direct-4830  [000]  3208.454078: funcgraph_entry:                   |                              ext4_dirty_inode() {
+   libaio_direct-4830  [000]  3208.454078: funcgraph_entry:                   |                                __ext4_journal_start_sb() {
+   libaio_direct-4830  [000]  3208.454078: funcgraph_entry:                   |                                  ext4_journal_check_start() {
+   libaio_direct-4830  [000]  3208.454078: funcgraph_entry:        0.027 us   |                                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454078: funcgraph_exit:         0.213 us   |                                  }
+   libaio_direct-4830  [000]  3208.454078: funcgraph_entry:        0.037 us   |                                  jbd2__journal_start();
+   libaio_direct-4830  [000]  3208.454079: funcgraph_exit:         0.592 us   |                                }
+   libaio_direct-4830  [000]  3208.454079: funcgraph_entry:                   |                                ext4_mark_inode_dirty() {
+   libaio_direct-4830  [000]  3208.454079: funcgraph_entry:        0.025 us   |                                  _cond_resched();
+   libaio_direct-4830  [000]  3208.454079: funcgraph_entry:                   |                                  ext4_reserve_inode_write() {
+   libaio_direct-4830  [000]  3208.454079: funcgraph_entry:                   |                                    ext4_get_inode_loc() {
+   libaio_direct-4830  [000]  3208.454079: funcgraph_entry:                   |                                      __ext4_get_inode_loc() {
+   libaio_direct-4830  [000]  3208.454079: funcgraph_entry:        0.031 us   |                                        ext4_get_group_desc();
+   libaio_direct-4830  [000]  3208.454079: funcgraph_entry:        0.027 us   |                                        ext4_inode_table();
+   libaio_direct-4830  [000]  3208.454080: funcgraph_entry:                   |                                        __getblk() {
+   libaio_direct-4830  [000]  3208.454080: funcgraph_entry:                   |                                          __find_get_block() {
+   libaio_direct-4830  [000]  3208.454080: funcgraph_entry:        0.025 us   |                                            mark_page_accessed();
+   libaio_direct-4830  [000]  3208.454080: funcgraph_exit:         0.214 us   |                                          }
+   libaio_direct-4830  [000]  3208.454080: funcgraph_entry:        0.027 us   |                                          _cond_resched();
+   libaio_direct-4830  [000]  3208.454080: funcgraph_exit:         0.587 us   |                                        }
+   libaio_direct-4830  [000]  3208.454080: funcgraph_exit:         1.147 us   |                                      }
+   libaio_direct-4830  [000]  3208.454081: funcgraph_exit:         1.329 us   |                                    }
+   libaio_direct-4830  [000]  3208.454081: funcgraph_entry:                   |                                    __ext4_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454081: funcgraph_entry:        0.027 us   |                                      _cond_resched();
+   libaio_direct-4830  [000]  3208.454081: funcgraph_entry:                   |                                      jbd2_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454081: funcgraph_entry:        0.036 us   |                                        jbd2_journal_add_journal_head();
+   libaio_direct-4830  [000]  3208.454081: funcgraph_entry:                   |                                        do_get_write_access() {
+   libaio_direct-4830  [000]  3208.454081: funcgraph_entry:        0.027 us   |                                          _cond_resched();
+   libaio_direct-4830  [000]  3208.454081: funcgraph_entry:                   |                                          unlock_buffer() {
+   libaio_direct-4830  [000]  3208.454082: funcgraph_entry:        0.026 us   |                                            __smp_mb__after_atomic();
+   libaio_direct-4830  [000]  3208.454082: funcgraph_entry:                   |                                            wake_up_bit() {
+   libaio_direct-4830  [000]  3208.454082: funcgraph_entry:        0.030 us   |                                              bit_waitqueue();
+   libaio_direct-4830  [000]  3208.454082: funcgraph_entry:        0.026 us   |                                              __wake_up_bit();
+   libaio_direct-4830  [000]  3208.454082: funcgraph_exit:         0.398 us   |                                            }
+   libaio_direct-4830  [000]  3208.454082: funcgraph_exit:         0.768 us   |                                          }
+   libaio_direct-4830  [000]  3208.454082: funcgraph_entry:        0.033 us   |                                          jbd2_journal_cancel_revoke();
+   libaio_direct-4830  [000]  3208.454083: funcgraph_exit:         1.340 us   |                                        }
+   libaio_direct-4830  [000]  3208.454083: funcgraph_entry:        0.035 us   |                                        jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454083: funcgraph_exit:         1.913 us   |                                      }
+   libaio_direct-4830  [000]  3208.454083: funcgraph_exit:         2.274 us   |                                    }
+   libaio_direct-4830  [000]  3208.454083: funcgraph_exit:         3.945 us   |                                  }
+   libaio_direct-4830  [000]  3208.454083: funcgraph_entry:                   |                                  ext4_mark_iloc_dirty() {
+   libaio_direct-4830  [000]  3208.454083: funcgraph_entry:        0.030 us   |                                    _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454083: funcgraph_entry:        0.031 us   |                                    ext4_get_inode_flags();
+   libaio_direct-4830  [000]  3208.454084: funcgraph_entry:                   |                                    from_kuid() {
+   libaio_direct-4830  [000]  3208.454084: funcgraph_entry:        0.028 us   |                                      map_id_up();
+   libaio_direct-4830  [000]  3208.454084: funcgraph_exit:         0.212 us   |                                    }
+   libaio_direct-4830  [000]  3208.454084: funcgraph_entry:                   |                                    from_kgid() {
+   libaio_direct-4830  [000]  3208.454084: funcgraph_entry:        0.025 us   |                                      map_id_up();
+   libaio_direct-4830  [000]  3208.454084: funcgraph_exit:         0.210 us   |                                    }
+   libaio_direct-4830  [000]  3208.454084: funcgraph_entry:                   |                                    __ext4_handle_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454084: funcgraph_entry:        0.026 us   |                                      _cond_resched();
+   libaio_direct-4830  [000]  3208.454085: funcgraph_entry:                   |                                      jbd2_journal_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454085: funcgraph_entry:        0.036 us   |                                        jbd2_journal_grab_journal_head();
+   libaio_direct-4830  [000]  3208.454085: funcgraph_entry:        0.036 us   |                                        jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454085: funcgraph_exit:         0.417 us   |                                      }
+   libaio_direct-4830  [000]  3208.454085: funcgraph_exit:         0.966 us   |                                    }
+   libaio_direct-4830  [000]  3208.454085: funcgraph_entry:                   |                                    __brelse() {
+   libaio_direct-4830  [000]  3208.454086: funcgraph_entry:        0.026 us   |                                      __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.454086: funcgraph_exit:         0.214 us   |                                    }
+   libaio_direct-4830  [000]  3208.454086: funcgraph_entry:        0.026 us   |                                    __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.454086: funcgraph_exit:         2.862 us   |                                  }
+   libaio_direct-4830  [000]  3208.454086: funcgraph_exit:         7.340 us   |                                }
+   libaio_direct-4830  [000]  3208.454086: funcgraph_entry:                   |                                __ext4_journal_stop() {
+   libaio_direct-4830  [000]  3208.454086: funcgraph_entry:        0.036 us   |                                  jbd2_journal_stop();
+   libaio_direct-4830  [000]  3208.454087: funcgraph_exit:         0.220 us   |                                }
+   libaio_direct-4830  [000]  3208.454087: funcgraph_exit:         8.658 us   |                              }
+   libaio_direct-4830  [000]  3208.454087: funcgraph_exit:         8.865 us   |                            }
+   libaio_direct-4830  [000]  3208.454087: funcgraph_entry:                   |                            kmem_cache_alloc() {
+   libaio_direct-4830  [000]  3208.454087: funcgraph_entry:        0.027 us   |                              _cond_resched();
+   libaio_direct-4830  [000]  3208.454087: funcgraph_exit:         0.339 us   |                            }
+   libaio_direct-4830  [000]  3208.454087: funcgraph_entry:                   |                            ext4_mb_initialize_context() {
+   libaio_direct-4830  [000]  3208.454087: funcgraph_entry:        0.030 us   |                              ext4_get_group_no_and_offset();
+   libaio_direct-4830  [000]  3208.454088: funcgraph_entry:                   |                              mutex_lock() {
+   libaio_direct-4830  [000]  3208.454088: funcgraph_entry:        0.026 us   |                                _cond_resched();
+   libaio_direct-4830  [000]  3208.454088: funcgraph_exit:         0.211 us   |                              }
+   libaio_direct-4830  [000]  3208.454088: funcgraph_exit:         0.587 us   |                            }
+   libaio_direct-4830  [000]  3208.454088: funcgraph_entry:                   |                            ext4_mb_use_preallocated() {
+   libaio_direct-4830  [000]  3208.454088: funcgraph_entry:        0.119 us   |                              _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454089: funcgraph_entry:        0.031 us   |                              ext4_get_group_no_and_offset();
+   libaio_direct-4830  [000]  3208.454089: funcgraph_exit:         0.599 us   |                            }
+   libaio_direct-4830  [000]  3208.454089: funcgraph_entry:                   |                            ext4_mb_mark_diskspace_used() {
+   libaio_direct-4830  [000]  3208.454089: funcgraph_entry:                   |                              ext4_read_block_bitmap() {
+   libaio_direct-4830  [000]  3208.454089: funcgraph_entry:                   |                                ext4_read_block_bitmap_nowait() {
+   libaio_direct-4830  [000]  3208.454089: funcgraph_entry:        0.028 us   |                                  ext4_get_group_desc();
+   libaio_direct-4830  [000]  3208.454089: funcgraph_entry:        0.028 us   |                                  ext4_block_bitmap();
+   libaio_direct-4830  [000]  3208.454089: funcgraph_entry:                   |                                  __getblk() {
+   libaio_direct-4830  [000]  3208.454090: funcgraph_entry:                   |                                    __find_get_block() {
+   libaio_direct-4830  [000]  3208.454090: funcgraph_entry:        0.030 us   |                                      mark_page_accessed();
+   libaio_direct-4830  [000]  3208.454090: funcgraph_exit:         0.228 us   |                                    }
+   libaio_direct-4830  [000]  3208.454090: funcgraph_entry:        0.027 us   |                                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454090: funcgraph_exit:         0.595 us   |                                  }
+   libaio_direct-4830  [000]  3208.454090: funcgraph_entry:        0.034 us   |                                  ext4_validate_block_bitmap();
+   libaio_direct-4830  [000]  3208.454090: funcgraph_exit:         1.352 us   |                                }
+   libaio_direct-4830  [000]  3208.454091: funcgraph_entry:        0.026 us   |                                ext4_wait_block_bitmap();
+   libaio_direct-4830  [000]  3208.454091: funcgraph_exit:         1.718 us   |                              }
+   libaio_direct-4830  [000]  3208.454091: funcgraph_entry:                   |                              __ext4_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454091: funcgraph_entry:        0.024 us   |                                _cond_resched();
+   libaio_direct-4830  [000]  3208.454091: funcgraph_entry:                   |                                jbd2_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454091: funcgraph_entry:        0.035 us   |                                  jbd2_journal_add_journal_head();
+   libaio_direct-4830  [000]  3208.454091: funcgraph_entry:                   |                                  do_get_write_access() {
+   libaio_direct-4830  [000]  3208.454091: funcgraph_entry:        0.026 us   |                                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454092: funcgraph_entry:                   |                                    unlock_buffer() {
+   libaio_direct-4830  [000]  3208.454092: funcgraph_entry:        0.026 us   |                                      __smp_mb__after_atomic();
+   libaio_direct-4830  [000]  3208.454092: funcgraph_entry:                   |                                      wake_up_bit() {
+   libaio_direct-4830  [000]  3208.454092: funcgraph_entry:        0.034 us   |                                        bit_waitqueue();
+   libaio_direct-4830  [000]  3208.454092: funcgraph_entry:        0.027 us   |                                        __wake_up_bit();
+   libaio_direct-4830  [000]  3208.454092: funcgraph_exit:         0.398 us   |                                      }
+   libaio_direct-4830  [000]  3208.454093: funcgraph_exit:         0.769 us   |                                    }
+   libaio_direct-4830  [000]  3208.454093: funcgraph_entry:        0.035 us   |                                    jbd2_journal_cancel_revoke();
+   libaio_direct-4830  [000]  3208.454093: funcgraph_exit:         1.338 us   |                                  }
+   libaio_direct-4830  [000]  3208.454093: funcgraph_entry:        0.035 us   |                                  jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454093: funcgraph_exit:         1.906 us   |                                }
+   libaio_direct-4830  [000]  3208.454093: funcgraph_exit:         2.279 us   |                              }
+   libaio_direct-4830  [000]  3208.454093: funcgraph_entry:        0.031 us   |                              ext4_get_group_desc();
+   libaio_direct-4830  [000]  3208.454093: funcgraph_entry:        0.034 us   |                              ext4_free_group_clusters();
+   libaio_direct-4830  [000]  3208.454094: funcgraph_entry:                   |                              __ext4_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454094: funcgraph_entry:        0.026 us   |                                _cond_resched();
+   libaio_direct-4830  [000]  3208.454094: funcgraph_entry:                   |                                jbd2_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454094: funcgraph_entry:        0.040 us   |                                  jbd2_journal_add_journal_head();
+   libaio_direct-4830  [000]  3208.454094: funcgraph_entry:                   |                                  do_get_write_access() {
+   libaio_direct-4830  [000]  3208.454094: funcgraph_entry:        0.025 us   |                                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454094: funcgraph_entry:                   |                                    unlock_buffer() {
+   libaio_direct-4830  [000]  3208.454095: funcgraph_entry:        0.026 us   |                                      __smp_mb__after_atomic();
+   libaio_direct-4830  [000]  3208.454095: funcgraph_entry:                   |                                      wake_up_bit() {
+   libaio_direct-4830  [000]  3208.454095: funcgraph_entry:        0.030 us   |                                        bit_waitqueue();
+   libaio_direct-4830  [000]  3208.454095: funcgraph_entry:        0.027 us   |                                        __wake_up_bit();
+   libaio_direct-4830  [000]  3208.454095: funcgraph_exit:         0.398 us   |                                      }
+   libaio_direct-4830  [000]  3208.454095: funcgraph_exit:         0.872 us   |                                    }
+   libaio_direct-4830  [000]  3208.454096: funcgraph_entry:        0.035 us   |                                    jbd2_journal_cancel_revoke();
+   libaio_direct-4830  [000]  3208.454096: funcgraph_exit:         1.449 us   |                                  }
+   libaio_direct-4830  [000]  3208.454096: funcgraph_entry:        0.038 us   |                                  jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454096: funcgraph_exit:         2.029 us   |                                }
+   libaio_direct-4830  [000]  3208.454096: funcgraph_exit:         2.391 us   |                              }
+   libaio_direct-4830  [000]  3208.454096: funcgraph_entry:        0.027 us   |                              ext4_data_block_valid();
+   libaio_direct-4830  [000]  3208.454096: funcgraph_entry:        0.045 us   |                              _raw_spin_trylock();
+   libaio_direct-4830  [000]  3208.454097: funcgraph_entry:        0.036 us   |                              ext4_set_bits();
+   libaio_direct-4830  [000]  3208.454097: funcgraph_entry:        0.026 us   |                              ext4_free_group_clusters();
+   libaio_direct-4830  [000]  3208.454097: funcgraph_entry:        0.034 us   |                              ext4_free_group_clusters_set();
+   libaio_direct-4830  [000]  3208.454097: funcgraph_entry:        0.040 us   |                              ext4_block_bitmap_csum_set();
+   libaio_direct-4830  [000]  3208.454097: funcgraph_entry:                   |                              ext4_group_desc_csum_set() {
+   libaio_direct-4830  [000]  3208.454097: funcgraph_entry:        0.126 us   |                                ext4_group_desc_csum();
+   libaio_direct-4830  [000]  3208.454098: funcgraph_exit:         0.320 us   |                              }
+   libaio_direct-4830  [000]  3208.454098: funcgraph_entry:                   |                              __ext4_handle_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454098: funcgraph_entry:        0.027 us   |                                _cond_resched();
+   libaio_direct-4830  [000]  3208.454098: funcgraph_entry:                   |                                jbd2_journal_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454098: funcgraph_entry:        0.037 us   |                                  jbd2_journal_grab_journal_head();
+   libaio_direct-4830  [000]  3208.454098: funcgraph_entry:        0.037 us   |                                  jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454099: funcgraph_exit:         0.428 us   |                                }
+   libaio_direct-4830  [000]  3208.454099: funcgraph_exit:         0.804 us   |                              }
+   libaio_direct-4830  [000]  3208.454099: funcgraph_entry:                   |                              __ext4_handle_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454099: funcgraph_entry:        0.025 us   |                                _cond_resched();
+   libaio_direct-4830  [000]  3208.454099: funcgraph_entry:                   |                                jbd2_journal_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454099: funcgraph_entry:        0.037 us   |                                  jbd2_journal_grab_journal_head();
+   libaio_direct-4830  [000]  3208.454099: funcgraph_entry:        0.038 us   |                                  jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454100: funcgraph_exit:         0.419 us   |                                }
+   libaio_direct-4830  [000]  3208.454100: funcgraph_exit:         0.790 us   |                              }
+   libaio_direct-4830  [000]  3208.454100: funcgraph_entry:                   |                              __brelse() {
+   libaio_direct-4830  [000]  3208.454100: funcgraph_entry:        0.026 us   |                                __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.454100: funcgraph_exit:         0.213 us   |                              }
+   libaio_direct-4830  [000]  3208.454100: funcgraph_exit:       + 11.266 us  |                            }
+   libaio_direct-4830  [000]  3208.454100: funcgraph_entry:        0.030 us   |                            _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454100: funcgraph_entry:        0.028 us   |                            _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454101: funcgraph_entry:        0.029 us   |                            _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454101: funcgraph_entry:        0.030 us   |                            _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454101: funcgraph_entry:        0.030 us   |                            mutex_unlock();
+   libaio_direct-4830  [000]  3208.454101: funcgraph_entry:        0.123 us   |                            kmem_cache_free();
+   libaio_direct-4830  [000]  3208.454102: funcgraph_exit:       + 25.278 us  |                          }
+   libaio_direct-4830  [000]  3208.454102: funcgraph_entry:                   |                          ext4_ext_insert_extent() {
+   libaio_direct-4830  [000]  3208.454102: funcgraph_entry:                   |                            ext4_ext_try_to_merge() {
+   libaio_direct-4830  [000]  3208.454102: funcgraph_entry:        0.037 us   |                              ext4_ext_try_to_merge_right();
+   libaio_direct-4830  [000]  3208.454102: funcgraph_exit:         0.225 us   |                            }
+   libaio_direct-4830  [000]  3208.454103: funcgraph_entry:        0.033 us   |                            ext4_ext_correct_indexes();
+   libaio_direct-4830  [000]  3208.454103: funcgraph_entry:                   |                            __ext4_ext_dirty() {
+   libaio_direct-4830  [000]  3208.454103: funcgraph_entry:                   |                              ext4_mark_inode_dirty() {
+   libaio_direct-4830  [000]  3208.454103: funcgraph_entry:        0.027 us   |                                _cond_resched();
+   libaio_direct-4830  [000]  3208.454103: funcgraph_entry:                   |                                ext4_reserve_inode_write() {
+   libaio_direct-4830  [000]  3208.454103: funcgraph_entry:                   |                                  ext4_get_inode_loc() {
+   libaio_direct-4830  [000]  3208.454103: funcgraph_entry:                   |                                    __ext4_get_inode_loc() {
+   libaio_direct-4830  [000]  3208.454103: funcgraph_entry:        0.027 us   |                                      ext4_get_group_desc();
+   libaio_direct-4830  [000]  3208.454104: funcgraph_entry:        0.029 us   |                                      ext4_inode_table();
+   libaio_direct-4830  [000]  3208.454104: funcgraph_entry:                   |                                      __getblk() {
+   libaio_direct-4830  [000]  3208.454104: funcgraph_entry:                   |                                        __find_get_block() {
+   libaio_direct-4830  [000]  3208.454104: funcgraph_entry:        0.028 us   |                                          mark_page_accessed();
+   libaio_direct-4830  [000]  3208.454104: funcgraph_exit:         0.225 us   |                                        }
+   libaio_direct-4830  [000]  3208.454104: funcgraph_entry:        0.025 us   |                                        _cond_resched();
+   libaio_direct-4830  [000]  3208.454104: funcgraph_exit:         0.597 us   |                                      }
+   libaio_direct-4830  [000]  3208.454105: funcgraph_exit:         1.163 us   |                                    }
+   libaio_direct-4830  [000]  3208.454105: funcgraph_exit:         1.349 us   |                                  }
+   libaio_direct-4830  [000]  3208.454105: funcgraph_entry:                   |                                  __ext4_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454105: funcgraph_entry:        0.025 us   |                                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454105: funcgraph_entry:                   |                                    jbd2_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.454105: funcgraph_entry:        0.037 us   |                                      jbd2_journal_add_journal_head();
+   libaio_direct-4830  [000]  3208.454105: funcgraph_entry:                   |                                      do_get_write_access() {
+   libaio_direct-4830  [000]  3208.454105: funcgraph_entry:        0.026 us   |                                        _cond_resched();
+   libaio_direct-4830  [000]  3208.454106: funcgraph_entry:                   |                                        unlock_buffer() {
+   libaio_direct-4830  [000]  3208.454106: funcgraph_entry:        0.025 us   |                                          __smp_mb__after_atomic();
+   libaio_direct-4830  [000]  3208.454106: funcgraph_entry:                   |                                          wake_up_bit() {
+   libaio_direct-4830  [000]  3208.454106: funcgraph_entry:        0.030 us   |                                            bit_waitqueue();
+   libaio_direct-4830  [000]  3208.454106: funcgraph_entry:        0.025 us   |                                            __wake_up_bit();
+   libaio_direct-4830  [000]  3208.454106: funcgraph_exit:         0.402 us   |                                          }
+   libaio_direct-4830  [000]  3208.454106: funcgraph_exit:         0.779 us   |                                        }
+   libaio_direct-4830  [000]  3208.454107: funcgraph_entry:        0.035 us   |                                        jbd2_journal_cancel_revoke();
+   libaio_direct-4830  [000]  3208.454107: funcgraph_exit:         1.357 us   |                                      }
+   libaio_direct-4830  [000]  3208.454107: funcgraph_entry:        0.036 us   |                                      jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454107: funcgraph_exit:         2.028 us   |                                    }
+   libaio_direct-4830  [000]  3208.454107: funcgraph_exit:         2.406 us   |                                  }
+   libaio_direct-4830  [000]  3208.454107: funcgraph_exit:         4.097 us   |                                }
+   libaio_direct-4830  [000]  3208.454107: funcgraph_entry:                   |                                ext4_mark_iloc_dirty() {
+   libaio_direct-4830  [000]  3208.454107: funcgraph_entry:        0.029 us   |                                  _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454108: funcgraph_entry:        0.030 us   |                                  ext4_get_inode_flags();
+   libaio_direct-4830  [000]  3208.454108: funcgraph_entry:                   |                                  from_kuid() {
+   libaio_direct-4830  [000]  3208.454108: funcgraph_entry:        0.026 us   |                                    map_id_up();
+   libaio_direct-4830  [000]  3208.454108: funcgraph_exit:         0.210 us   |                                  }
+   libaio_direct-4830  [000]  3208.454108: funcgraph_entry:                   |                                  from_kgid() {
+   libaio_direct-4830  [000]  3208.454108: funcgraph_entry:        0.027 us   |                                    map_id_up();
+   libaio_direct-4830  [000]  3208.454108: funcgraph_exit:         0.212 us   |                                  }
+   libaio_direct-4830  [000]  3208.454109: funcgraph_entry:                   |                                  __ext4_handle_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454109: funcgraph_entry:        0.026 us   |                                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454109: funcgraph_entry:                   |                                    jbd2_journal_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.454109: funcgraph_entry:        0.036 us   |                                      jbd2_journal_grab_journal_head();
+   libaio_direct-4830  [000]  3208.454109: funcgraph_entry:        0.037 us   |                                      jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.454109: funcgraph_exit:         0.419 us   |                                    }
+   libaio_direct-4830  [000]  3208.454109: funcgraph_exit:         0.802 us   |                                  }
+   libaio_direct-4830  [000]  3208.454110: funcgraph_entry:                   |                                  __brelse() {
+   libaio_direct-4830  [000]  3208.454110: funcgraph_entry:        0.026 us   |                                    __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.454110: funcgraph_exit:         0.210 us   |                                  }
+   libaio_direct-4830  [000]  3208.454110: funcgraph_entry:        0.026 us   |                                  __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.454110: funcgraph_exit:         2.677 us   |                                }
+   libaio_direct-4830  [000]  3208.454110: funcgraph_exit:         7.302 us   |                              }
+   libaio_direct-4830  [000]  3208.454110: funcgraph_exit:         7.490 us   |                            }
+   libaio_direct-4830  [000]  3208.454110: funcgraph_exit:         8.544 us   |                          }
+   libaio_direct-4830  [000]  3208.454111: funcgraph_entry:        0.033 us   |                          ext4_ext_drop_refs();
+   libaio_direct-4830  [000]  3208.454111: funcgraph_entry:        0.033 us   |                          kfree();
+   libaio_direct-4830  [000]  3208.454111: funcgraph_exit:       + 36.202 us  |                        }
+   libaio_direct-4830  [000]  3208.454111: funcgraph_entry:                   |                        ext4_es_insert_extent() {
+   libaio_direct-4830  [000]  3208.454111: funcgraph_entry:        0.030 us   |                          _raw_write_lock();
+   libaio_direct-4830  [000]  3208.454111: funcgraph_entry:                   |                          __es_remove_extent() {
+   libaio_direct-4830  [000]  3208.454111: funcgraph_entry:        0.050 us   |                            __es_tree_search();
+   libaio_direct-4830  [000]  3208.454112: funcgraph_exit:         0.247 us   |                          }
+   libaio_direct-4830  [000]  3208.454112: funcgraph_entry:                   |                          __es_insert_extent() {
+   libaio_direct-4830  [000]  3208.454112: funcgraph_entry:        0.027 us   |                            ext4_es_can_be_merged();
+   libaio_direct-4830  [000]  3208.454112: funcgraph_entry:        0.042 us   |                            kmem_cache_alloc();
+   libaio_direct-4830  [000]  3208.454112: funcgraph_exit:         0.450 us   |                          }
+   libaio_direct-4830  [000]  3208.454112: funcgraph_exit:         1.233 us   |                        }
+   libaio_direct-4830  [000]  3208.454112: funcgraph_entry:        0.031 us   |                        up_write();
+   libaio_direct-4830  [000]  3208.454113: funcgraph_entry:        0.029 us   |                        ext4_data_block_valid();
+   libaio_direct-4830  [000]  3208.454113: funcgraph_entry:                   |                        jbd2_journal_file_inode() {
+   libaio_direct-4830  [000]  3208.454113: funcgraph_entry:        0.028 us   |                          _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454113: funcgraph_exit:         0.234 us   |                        }
+   libaio_direct-4830  [000]  3208.454113: funcgraph_exit:       + 44.626 us  |                      }
+   libaio_direct-4830  [000]  3208.454113: funcgraph_entry:                   |                      __ext4_journal_stop() {
+   libaio_direct-4830  [000]  3208.454113: funcgraph_entry:                   |                        jbd2_journal_stop() {
+   libaio_direct-4830  [000]  3208.454114: funcgraph_entry:                   |                          __wake_up() {
+   libaio_direct-4830  [000]  3208.454114: funcgraph_entry:                   |                            __wake_up_common_lock() {
+   libaio_direct-4830  [000]  3208.454114: funcgraph_entry:        0.031 us   |                              _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.454114: funcgraph_entry:        0.027 us   |                              __wake_up_common();
+   libaio_direct-4830  [000]  3208.454114: funcgraph_entry:        0.042 us   |                              _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.454114: funcgraph_exit:         0.598 us   |                            }
+   libaio_direct-4830  [000]  3208.454114: funcgraph_exit:         0.779 us   |                          }
+   libaio_direct-4830  [000]  3208.454115: funcgraph_entry:        0.035 us   |                          kmem_cache_free();
+   libaio_direct-4830  [000]  3208.454115: funcgraph_exit:         1.177 us   |                        }
+   libaio_direct-4830  [000]  3208.454115: funcgraph_exit:         1.357 us   |                      }
+   libaio_direct-4830  [000]  3208.454115: funcgraph_entry:        0.032 us   |                      ext4_update_bh_state();
+   libaio_direct-4830  [000]  3208.454115: funcgraph_exit:       + 48.749 us  |                    }
+   libaio_direct-4830  [000]  3208.454115: funcgraph_exit:       + 48.928 us  |                  }
+   libaio_direct-4830  [000]  3208.454116: funcgraph_entry:                   |                  unmap_underlying_metadata() {
+   libaio_direct-4830  [000]  3208.454116: funcgraph_entry:        0.026 us   |                    _cond_resched();
+   libaio_direct-4830  [000]  3208.454116: funcgraph_entry:                   |                    __find_get_block_slow() {
+   libaio_direct-4830  [000]  3208.454116: funcgraph_entry:                   |                      find_get_page() {
+   libaio_direct-4830  [000]  3208.454116: funcgraph_entry:        0.134 us   |                        __find_get_page();
+   libaio_direct-4830  [000]  3208.454116: funcgraph_exit:         0.312 us   |                      }
+   libaio_direct-4830  [000]  3208.454116: funcgraph_exit:         0.604 us   |                    }
+   libaio_direct-4830  [000]  3208.454117: funcgraph_exit:         0.984 us   |                  }
+   libaio_direct-4830  [000]  3208.454117: funcgraph_entry:        0.033 us   |                  put_page();
+   libaio_direct-4830  [000]  3208.454117: funcgraph_entry:        0.030 us   |                  bio_get_nr_vecs();
+   libaio_direct-4830  [000]  3208.454118: funcgraph_entry:                   |                  bio_alloc_bioset() {
+   libaio_direct-4830  [000]  3208.454118: funcgraph_entry:                   |                    mempool_alloc() {
+   libaio_direct-4830  [000]  3208.454118: funcgraph_entry:        0.026 us   |                      _cond_resched();
+   libaio_direct-4830  [000]  3208.454118: funcgraph_entry:                   |                      mempool_alloc_slab() {
+   libaio_direct-4830  [000]  3208.454118: funcgraph_entry:        0.047 us   |                        kmem_cache_alloc();
+   libaio_direct-4830  [000]  3208.454118: funcgraph_exit:         0.227 us   |                      }
+   libaio_direct-4830  [000]  3208.454119: funcgraph_exit:         0.708 us   |                    }
+   libaio_direct-4830  [000]  3208.454119: funcgraph_entry:        0.025 us   |                    bio_init_aux();
+   libaio_direct-4830  [000]  3208.454119: funcgraph_exit:         1.182 us   |                  }
+   libaio_direct-4830  [000]  3208.454119: funcgraph_entry:                   |                  bio_add_page() {
+   libaio_direct-4830  [000]  3208.454119: funcgraph_entry:                   |                    __bio_add_page() {
+   libaio_direct-4830  [000]  3208.454119: funcgraph_entry:                   |                      dm_merge_bvec() {
+   libaio_direct-4830  [000]  3208.454120: funcgraph_entry:        0.473 us   |                        dm_table_find_target();
+   libaio_direct-4830  [000]  3208.454120: funcgraph_entry:        0.032 us   |                        max_io_len();
+   libaio_direct-4830  [000]  3208.454121: funcgraph_entry:        0.562 us   |                        linear_merge();
+   libaio_direct-4830  [000]  3208.454121: funcgraph_exit:         1.890 us   |                      }
+   libaio_direct-4830  [000]  3208.454121: funcgraph_exit:         2.239 us   |                    }
+   libaio_direct-4830  [000]  3208.454121: funcgraph_exit:         2.469 us   |                  }
+   libaio_direct-4830  [000]  3208.454122: funcgraph_entry:        0.029 us   |                  put_page();
+   libaio_direct-4830  [000]  3208.454122: funcgraph_entry:                   |                  bio_add_page() {
+   libaio_direct-4830  [000]  3208.454122: funcgraph_entry:                   |                    __bio_add_page() {
+   libaio_direct-4830  [000]  3208.454122: funcgraph_entry:                   |                      dm_merge_bvec() {
+   libaio_direct-4830  [000]  3208.454122: funcgraph_entry:        0.035 us   |                        dm_table_find_target();
+   libaio_direct-4830  [000]  3208.454122: funcgraph_entry:        0.027 us   |                        max_io_len();
+   libaio_direct-4830  [000]  3208.454123: funcgraph_entry:        0.032 us   |                        linear_merge();
+   libaio_direct-4830  [000]  3208.454123: funcgraph_exit:         0.603 us   |                      }
+   libaio_direct-4830  [000]  3208.454123: funcgraph_exit:         0.909 us   |                    }
+   libaio_direct-4830  [000]  3208.454123: funcgraph_exit:         1.096 us   |                  }
+   libaio_direct-4830  [000]  3208.454123: funcgraph_entry:                   |                  put_page() {
+   libaio_direct-4830  [000]  3208.454367: funcgraph_entry:                   |                  smp_apic_timer_interrupt() {
+   libaio_direct-4830  [000]  3208.454367: funcgraph_entry:                   |                    irq_enter() {
+   libaio_direct-4830  [000]  3208.454367: funcgraph_entry:        0.055 us   |                      rcu_irq_enter();
+   libaio_direct-4830  [000]  3208.454368: funcgraph_exit:         0.294 us   |                    }
+   libaio_direct-4830  [000]  3208.454368: funcgraph_entry:        0.040 us   |                    exit_idle();
+   libaio_direct-4830  [000]  3208.454369: funcgraph_entry:                   |                    local_apic_timer_interrupt() {
+   libaio_direct-4830  [000]  3208.454369: funcgraph_entry:                   |                      hrtimer_interrupt() {
+   libaio_direct-4830  [000]  3208.454370: funcgraph_entry:        0.081 us   |                        _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454370: funcgraph_entry:        0.089 us   |                        ktime_get_update_offsets_now();
+   libaio_direct-4830  [000]  3208.454370: funcgraph_entry:                   |                        __hrtimer_run_queues() {
+   libaio_direct-4830  [000]  3208.454370: funcgraph_entry:        0.105 us   |                          __remove_hrtimer();
+   libaio_direct-4830  [000]  3208.454371: funcgraph_entry:                   |                          tick_sched_timer() {
+   libaio_direct-4830  [000]  3208.454371: funcgraph_entry:        0.055 us   |                            ktime_get();
+   libaio_direct-4830  [000]  3208.454371: funcgraph_entry:        0.025 us   |                            tick_sched_do_timer();
+   libaio_direct-4830  [000]  3208.454371: funcgraph_entry:                   |                            tick_sched_handle() {
+   libaio_direct-4830  [000]  3208.454371: funcgraph_entry:                   |                              update_process_times() {
+   libaio_direct-4830  [000]  3208.454371: funcgraph_entry:                   |                                account_process_tick() {
+   libaio_direct-4830  [000]  3208.454371: funcgraph_entry:                   |                                  account_system_time() {
+   libaio_direct-4830  [000]  3208.454372: funcgraph_entry:        0.046 us   |                                    cpuacct_account_field();
+   libaio_direct-4830  [000]  3208.454372: funcgraph_entry:                   |                                    acct_account_cputime() {
+   libaio_direct-4830  [000]  3208.454372: funcgraph_entry:        0.282 us   |                                      __acct_update_integrals();
+   libaio_direct-4830  [000]  3208.454372: funcgraph_exit:         0.465 us   |                                    }
+   libaio_direct-4830  [000]  3208.454372: funcgraph_exit:         0.956 us   |                                  }
+   libaio_direct-4830  [000]  3208.454372: funcgraph_exit:         1.157 us   |                                }
+   libaio_direct-4830  [000]  3208.454373: funcgraph_entry:        0.028 us   |                                hrtimer_run_queues();
+   libaio_direct-4830  [000]  3208.454373: funcgraph_entry:        0.043 us   |                                raise_softirq();
+   libaio_direct-4830  [000]  3208.454373: funcgraph_entry:                   |                                rcu_check_callbacks() {
+   libaio_direct-4830  [000]  3208.454373: funcgraph_entry:        0.046 us   |                                  cpu_needs_another_gp();
+   libaio_direct-4830  [000]  3208.454373: funcgraph_entry:                   |                                  invoke_rcu_core() {
+   libaio_direct-4830  [000]  3208.454374: funcgraph_entry:        0.035 us   |                                    raise_softirq();
+   libaio_direct-4830  [000]  3208.454374: funcgraph_exit:         0.273 us   |                                  }
+   libaio_direct-4830  [000]  3208.454374: funcgraph_exit:         0.828 us   |                                }
+   libaio_direct-4830  [000]  3208.454374: funcgraph_entry:                   |                                scheduler_tick() {
+   libaio_direct-4830  [000]  3208.454374: funcgraph_entry:        0.031 us   |                                  _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454374: funcgraph_entry:        0.057 us   |                                  update_rq_clock.part.77();
+   libaio_direct-4830  [000]  3208.454375: funcgraph_entry:        0.077 us   |                                  __update_cpu_load();
+   libaio_direct-4830  [000]  3208.454375: funcgraph_entry:                   |                                  task_tick_fair() {
+   libaio_direct-4830  [000]  3208.454375: funcgraph_entry:                   |                                    update_curr() {
+   libaio_direct-4830  [000]  3208.454375: funcgraph_entry:        0.046 us   |                                      update_min_vruntime();
+   libaio_direct-4830  [000]  3208.454375: funcgraph_entry:        0.072 us   |                                      cpuacct_charge();
+   libaio_direct-4830  [000]  3208.454376: funcgraph_exit:         0.477 us   |                                    }
+   libaio_direct-4830  [000]  3208.454376: funcgraph_entry:        0.045 us   |                                    update_cfs_rq_blocked_load();
+   libaio_direct-4830  [000]  3208.454376: funcgraph_entry:        0.042 us   |                                    update_cfs_shares();
+   libaio_direct-4830  [000]  3208.454376: funcgraph_entry:        0.037 us   |                                    hrtimer_active();
+   libaio_direct-4830  [000]  3208.454376: funcgraph_entry:                   |                                    sched_slice.isra.55() {
+   libaio_direct-4830  [000]  3208.454376: funcgraph_entry:        0.057 us   |                                      __calc_delta();
+   libaio_direct-4830  [000]  3208.454377: funcgraph_exit:         0.272 us   |                                    }
+   libaio_direct-4830  [000]  3208.454377: funcgraph_exit:         1.811 us   |                                  }
+   libaio_direct-4830  [000]  3208.454377: funcgraph_entry:                   |                                  trigger_load_balance() {
+   libaio_direct-4830  [000]  3208.454377: funcgraph_entry:        0.029 us   |                                    idle_cpu();
+   libaio_direct-4830  [000]  3208.454377: funcgraph_exit:         0.230 us   |                                  }
+   libaio_direct-4830  [000]  3208.454377: funcgraph_exit:         3.241 us   |                                }
+   libaio_direct-4830  [000]  3208.454377: funcgraph_entry:                   |                                run_posix_cpu_timers() {
+   libaio_direct-4830  [000]  3208.454377: funcgraph_entry:                   |                                  task_cputime() {
+   libaio_direct-4830  [000]  3208.454378: funcgraph_entry:        0.067 us   |                                    fetch_task_cputime();
+   libaio_direct-4830  [000]  3208.454378: funcgraph_exit:         0.254 us   |                                  }
+   libaio_direct-4830  [000]  3208.454378: funcgraph_exit:         0.447 us   |                                }
+   libaio_direct-4830  [000]  3208.454378: funcgraph_exit:         6.777 us   |                              }
+   libaio_direct-4830  [000]  3208.454378: funcgraph_entry:        0.050 us   |                              profile_tick();
+   libaio_direct-4830  [000]  3208.454378: funcgraph_exit:         7.180 us   |                            }
+   libaio_direct-4830  [000]  3208.454378: funcgraph_entry:        0.035 us   |                            hrtimer_forward();
+   libaio_direct-4830  [000]  3208.454379: funcgraph_exit:         7.977 us   |                          }
+   libaio_direct-4830  [000]  3208.454379: funcgraph_entry:        0.029 us   |                          _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454379: funcgraph_entry:        0.248 us   |                          enqueue_hrtimer();
+   libaio_direct-4830  [000]  3208.454379: funcgraph_exit:         9.128 us   |                        }
+   libaio_direct-4830  [000]  3208.454379: funcgraph_entry:        0.042 us   |                        __hrtimer_get_next_event();
+   libaio_direct-4830  [000]  3208.454380: funcgraph_entry:                   |                        tick_program_event() {
+   libaio_direct-4830  [000]  3208.454380: funcgraph_entry:                   |                          clockevents_program_event() {
+   libaio_direct-4830  [000]  3208.454380: funcgraph_entry:        0.050 us   |                            ktime_get();
+   libaio_direct-4830  [000]  3208.454380: funcgraph_entry:        1.517 us   |                            lapic_next_event();
+   libaio_direct-4830  [000]  3208.454382: funcgraph_exit:         1.973 us   |                          }
+   libaio_direct-4830  [000]  3208.454382: funcgraph_exit:         2.170 us   |                        }
+   libaio_direct-4830  [000]  3208.454382: funcgraph_exit:       + 12.437 us  |                      }
+   libaio_direct-4830  [000]  3208.454382: funcgraph_exit:       + 12.661 us  |                    }
+   libaio_direct-4830  [000]  3208.454382: funcgraph_entry:                   |                    irq_exit() {
+   libaio_direct-4830  [000]  3208.454382: funcgraph_entry:                   |                      do_softirq() {
+   libaio_direct-4830  [000]  3208.454382: funcgraph_entry:                   |                        __do_softirq() {
+   libaio_direct-4830  [000]  3208.454383: funcgraph_entry:        0.026 us   |                          msecs_to_jiffies();
+   libaio_direct-4830  [000]  3208.454383: funcgraph_entry:        0.050 us   |                          run_timer_softirq();
+   libaio_direct-4830  [000]  3208.454383: funcgraph_entry:        0.027 us   |                          rcu_bh_qs();
+   libaio_direct-4830  [000]  3208.454383: funcgraph_entry:                   |                          rcu_process_callbacks() {
+   libaio_direct-4830  [000]  3208.454383: funcgraph_entry:        0.041 us   |                            rcu_process_gp_end();
+   libaio_direct-4830  [000]  3208.454384: funcgraph_entry:        0.041 us   |                            check_for_new_grace_period.isra.26();
+   libaio_direct-4830  [000]  3208.454384: funcgraph_entry:        0.034 us   |                            cpu_needs_another_gp();
+   libaio_direct-4830  [000]  3208.454384: funcgraph_entry:        0.038 us   |                            rcu_process_gp_end();
+   libaio_direct-4830  [000]  3208.454384: funcgraph_entry:        0.034 us   |                            check_for_new_grace_period.isra.26();
+   libaio_direct-4830  [000]  3208.454384: funcgraph_entry:        0.030 us   |                            _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.454385: funcgraph_entry:                   |                            rcu_accelerate_cbs() {
+   libaio_direct-4830  [000]  3208.454385: funcgraph_entry:        0.048 us   |                              rcu_start_future_gp();
+   libaio_direct-4830  [000]  3208.454385: funcgraph_exit:         0.278 us   |                            }
+   libaio_direct-4830  [000]  3208.454385: funcgraph_entry:                   |                            rcu_report_qs_rnp() {
+   libaio_direct-4830  [000]  3208.454385: funcgraph_entry:        0.040 us   |                              _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.454385: funcgraph_exit:         0.239 us   |                            }
+   libaio_direct-4830  [000]  3208.454385: funcgraph_entry:        0.032 us   |                            cpu_needs_another_gp();
+   libaio_direct-4830  [000]  3208.454386: funcgraph_exit:         2.329 us   |                          }
+   libaio_direct-4830  [000]  3208.454386: funcgraph_entry:        0.025 us   |                          rcu_bh_qs();
+   libaio_direct-4830  [000]  3208.454386: funcgraph_entry:        0.028 us   |                          __local_bh_enable();
+   libaio_direct-4830  [000]  3208.454386: funcgraph_exit:         3.656 us   |                        }
+   libaio_direct-4830  [000]  3208.454386: funcgraph_exit:         3.898 us   |                      }
+   libaio_direct-4830  [000]  3208.454386: funcgraph_entry:        0.030 us   |                      idle_cpu();
+   libaio_direct-4830  [000]  3208.454387: funcgraph_entry:        0.036 us   |                      rcu_irq_exit();
+   libaio_direct-4830  [000]  3208.454387: funcgraph_exit:         4.684 us   |                    }
+   libaio_direct-4830  [000]  3208.454387: funcgraph_exit:       + 19.839 us  |                  }
+   libaio_direct-4830  [000]  3208.454387: funcgraph_exit:         0.143 us   |                  }
+   libaio_direct-4830  [000]  3208.454388: funcgraph_entry:        0.052 us   |                  _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.454388: funcgraph_entry:        0.040 us   |                  _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.454388: funcgraph_entry:                   |                  submit_bio() {
+   libaio_direct-4830  [000]  3208.454388: funcgraph_entry:                   |                    generic_make_request() {
+   libaio_direct-4830  [000]  3208.454388: funcgraph_entry:        0.290 us   |                      blk_queue_enter();
+   libaio_direct-4830  [000]  3208.454389: funcgraph_entry:                   |                      generic_make_request_checks() {
+   libaio_direct-4830  [000]  3208.454389: funcgraph_entry:        0.026 us   |                        _cond_resched();
+   libaio_direct-4830  [000]  3208.454389: funcgraph_entry:                   |                        create_task_io_context() {
+   libaio_direct-4830  [000]  3208.454390: funcgraph_entry:        0.371 us   |                          kmem_cache_alloc_node();
+   libaio_direct-4830  [000]  3208.454390: funcgraph_entry:        0.031 us   |                          _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454390: funcgraph_exit:         0.868 us   |                        }
+   libaio_direct-4830  [000]  3208.454390: funcgraph_entry:                   |                        blk_throtl_bio() {
+   libaio_direct-4830  [000]  3208.454391: funcgraph_entry:        0.047 us   |                          throtl_update_dispatch_stats();
+   libaio_direct-4830  [000]  3208.454392: funcgraph_exit:         0.953 us   |                        }
+   libaio_direct-4830  [000]  3208.454392: funcgraph_exit:         2.734 us   |                      }
+   libaio_direct-4830  [000]  3208.454392: funcgraph_entry:                   |                      dm_make_request() {
+   libaio_direct-4830  [000]  3208.454392: funcgraph_entry:        0.168 us   |                        __srcu_read_lock();
+   libaio_direct-4830  [000]  3208.454392: funcgraph_entry:                   |                        __split_and_process_bio() {
+   libaio_direct-4830  [000]  3208.454393: funcgraph_entry:                   |                          mempool_alloc() {
+   libaio_direct-4830  [000]  3208.454393: funcgraph_entry:        0.026 us   |                            _cond_resched();
+   libaio_direct-4830  [000]  3208.454393: funcgraph_entry:                   |                            mempool_alloc_slab() {
+   libaio_direct-4830  [000]  3208.454393: funcgraph_entry:        0.546 us   |                              kmem_cache_alloc();
+   libaio_direct-4830  [000]  3208.454394: funcgraph_exit:         0.728 us   |                            }
+   libaio_direct-4830  [000]  3208.454394: funcgraph_exit:         1.258 us   |                          }
+   libaio_direct-4830  [000]  3208.454394: funcgraph_entry:                   |                          part_round_stats() {
+   libaio_direct-4830  [000]  3208.454394: funcgraph_entry:        0.043 us   |                            part_in_flight();
+   libaio_direct-4830  [000]  3208.454394: funcgraph_entry:        0.030 us   |                            part_round_stats_single.isra.44();
+   libaio_direct-4830  [000]  3208.454395: funcgraph_exit:         0.500 us   |                          }
+   libaio_direct-4830  [000]  3208.454395: funcgraph_entry:        0.057 us   |                          dm_table_find_target();
+   libaio_direct-4830  [000]  3208.454395: funcgraph_entry:        0.026 us   |                          max_io_len();
+   libaio_direct-4830  [000]  3208.454395: funcgraph_entry:                   |                          __clone_and_map_data_bio() {
+   libaio_direct-4830  [000]  3208.454395: funcgraph_entry:                   |                            bio_alloc_bioset() {
+   libaio_direct-4830  [000]  3208.454396: funcgraph_entry:                   |                              mempool_alloc() {
+   libaio_direct-4830  [000]  3208.454396: funcgraph_entry:        0.027 us   |                                _cond_resched();
+   libaio_direct-4830  [000]  3208.454396: funcgraph_entry:                   |                                mempool_alloc_slab() {
+   libaio_direct-4830  [000]  3208.454396: funcgraph_entry:        0.060 us   |                                  kmem_cache_alloc();
+   libaio_direct-4830  [000]  3208.454396: funcgraph_exit:         0.243 us   |                                }
+   libaio_direct-4830  [000]  3208.454396: funcgraph_exit:         0.615 us   |                              }
+   libaio_direct-4830  [000]  3208.454396: funcgraph_entry:        0.026 us   |                              bio_init_aux();
+   libaio_direct-4830  [000]  3208.454396: funcgraph_exit:         1.142 us   |                            }
+   libaio_direct-4830  [000]  3208.454397: funcgraph_entry:        0.052 us   |                            __bio_clone();
+   libaio_direct-4830  [000]  3208.454397: funcgraph_entry:                   |                            __map_bio() {
+   libaio_direct-4830  [000]  3208.454397: funcgraph_entry:        0.026 us   |                              blk_start_plug();
+   libaio_direct-4830  [000]  3208.454397: funcgraph_entry:        0.061 us   |                              linear_map();
+   libaio_direct-4830  [000]  3208.454397: funcgraph_entry:                   |                              blk_finish_plug() {
+   libaio_direct-4830  [000]  3208.454397: funcgraph_entry:        0.047 us   |                                blk_flush_plug_list();
+   libaio_direct-4830  [000]  3208.454398: funcgraph_exit:         0.245 us   |                              }
+   libaio_direct-4830  [000]  3208.454398: funcgraph_entry:                   |                              generic_make_request() {
+   libaio_direct-4830  [000]  3208.454398: funcgraph_entry:        0.246 us   |                                blk_queue_enter();
+   libaio_direct-4830  [000]  3208.454398: funcgraph_entry:                   |                                generic_make_request_checks() {
+   libaio_direct-4830  [000]  3208.454398: funcgraph_entry:        0.026 us   |                                  _cond_resched();
+   libaio_direct-4830  [000]  3208.454399: funcgraph_entry:                   |                                  blk_throtl_bio() {
+   libaio_direct-4830  [000]  3208.454400: funcgraph_entry:        0.041 us   |                                    throtl_update_dispatch_stats();
+   libaio_direct-4830  [000]  3208.454400: funcgraph_exit:         0.851 us   |                                  }
+   libaio_direct-4830  [000]  3208.454400: funcgraph_exit:         1.422 us   |                                }
+   libaio_direct-4830  [000]  3208.454400: funcgraph_exit:         2.025 us   |                              }
+   libaio_direct-4830  [000]  3208.454400: funcgraph_exit:         3.190 us   |                            }
+   libaio_direct-4830  [000]  3208.454400: funcgraph_exit:         4.972 us   |                          }
+   libaio_direct-4830  [000]  3208.454400: funcgraph_entry:        0.038 us   |                          dec_pending();
+   libaio_direct-4830  [000]  3208.454401: funcgraph_exit:         8.058 us   |                        }
+   libaio_direct-4830  [000]  3208.454401: funcgraph_entry:        0.030 us   |                        __srcu_read_unlock();
+   libaio_direct-4830  [000]  3208.454401: funcgraph_exit:         8.889 us   |                      }
+   libaio_direct-4830  [000]  3208.454401: funcgraph_entry:        0.037 us   |                      blk_queue_enter();
+   libaio_direct-4830  [000]  3208.454401: funcgraph_entry:                   |                      blk_queue_bio() {
+   libaio_direct-4830  [000]  3208.454401: funcgraph_entry:        0.032 us   |                        blk_queue_bounce();
+   libaio_direct-4830  [000]  3208.454402: funcgraph_entry:        0.056 us   |                        bio_integrity_enabled();
+   libaio_direct-4830  [000]  3208.454402: funcgraph_entry:        0.029 us   |                        blk_attempt_plug_merge();
+   libaio_direct-4830  [000]  3208.454402: funcgraph_entry:        0.030 us   |                        _raw_spin_lock_irq();
+   libaio_direct-4830  [000]  3208.454402: funcgraph_entry:                   |                        elv_merge() {
+   libaio_direct-4830  [000]  3208.454403: funcgraph_entry:        0.279 us   |                          elv_rqhash_find();
+   libaio_direct-4830  [000]  3208.454403: funcgraph_entry:                   |                          deadline_merge() {
+   libaio_direct-4830  [000]  3208.454404: funcgraph_entry:        0.148 us   |                            elv_rb_find();
+   libaio_direct-4830  [000]  3208.454404: funcgraph_exit:         0.593 us   |                          }
+   libaio_direct-4830  [000]  3208.454404: funcgraph_exit:         1.581 us   |                        }
+   libaio_direct-4830  [000]  3208.454404: funcgraph_entry:                   |                        get_request() {
+   libaio_direct-4830  [000]  3208.454405: funcgraph_entry:        0.040 us   |                          elv_may_queue();
+   libaio_direct-4830  [000]  3208.454405: funcgraph_entry:                   |                          mempool_alloc() {
+   libaio_direct-4830  [000]  3208.454405: funcgraph_entry:        0.026 us   |                            _cond_resched();
+   libaio_direct-4830  [000]  3208.454405: funcgraph_entry:                   |                            alloc_request_simple() {
+   libaio_direct-4830  [000]  3208.454406: funcgraph_entry:        0.378 us   |                              kmem_cache_alloc_node();
+   libaio_direct-4830  [000]  3208.454406: funcgraph_exit:         0.560 us   |                            }
+   libaio_direct-4830  [000]  3208.454406: funcgraph_exit:         1.194 us   |                          }
+   libaio_direct-4830  [000]  3208.454406: funcgraph_entry:        0.071 us   |                          blk_rq_init();
+   libaio_direct-4830  [000]  3208.454406: funcgraph_entry:        0.033 us   |                          elv_set_request();
+   libaio_direct-4830  [000]  3208.454407: funcgraph_exit:         2.481 us   |                        }
+   libaio_direct-4830  [000]  3208.454407: funcgraph_entry:                   |                        init_request_from_bio() {
+   libaio_direct-4830  [000]  3208.454407: funcgraph_entry:                   |                          blk_rq_bio_prep() {
+   libaio_direct-4830  [000]  3208.454407: funcgraph_entry:                   |                            blk_recount_segments() {
+   libaio_direct-4830  [000]  3208.454407: funcgraph_entry:        0.090 us   |                              __blk_recalc_rq_segments();
+   libaio_direct-4830  [000]  3208.454408: funcgraph_exit:         0.343 us   |                            }
+   libaio_direct-4830  [000]  3208.454408: funcgraph_exit:         0.545 us   |                          }
+   libaio_direct-4830  [000]  3208.454408: funcgraph_exit:         0.738 us   |                        }
+   libaio_direct-4830  [000]  3208.454408: funcgraph_entry:                   |                        blk_account_io_start() {
+   libaio_direct-4830  [000]  3208.454408: funcgraph_entry:        0.304 us   |                          disk_map_sector_rcu();
+   libaio_direct-4830  [000]  3208.454409: funcgraph_entry:                   |                          part_round_stats() {
+   libaio_direct-4830  [000]  3208.454409: funcgraph_entry:        0.027 us   |                            part_in_flight();
+   libaio_direct-4830  [000]  3208.454409: funcgraph_entry:        0.030 us   |                            part_round_stats_single.isra.44();
+   libaio_direct-4830  [000]  3208.454409: funcgraph_exit:         0.434 us   |                          }
+   libaio_direct-4830  [000]  3208.454409: funcgraph_entry:        0.040 us   |                          part_inc_in_flight();
+   libaio_direct-4830  [000]  3208.454410: funcgraph_exit:         1.493 us   |                        }
+   libaio_direct-4830  [000]  3208.454410: funcgraph_exit:         8.270 us   |                      }
+   libaio_direct-4830  [000]  3208.454410: funcgraph_exit:       + 21.508 us  |                    }
+   libaio_direct-4830  [000]  3208.454410: funcgraph_exit:       + 21.731 us  |                  }
+   libaio_direct-4830  [000]  3208.454410: funcgraph_entry:                   |                  blk_finish_plug() {
+   libaio_direct-4830  [000]  3208.454410: funcgraph_entry:        0.039 us   |                    blk_flush_plug_list();
+   libaio_direct-4830  [000]  3208.454410: funcgraph_exit:         0.244 us   |                  }
+   libaio_direct-4830  [000]  3208.454410: funcgraph_entry:        0.038 us   |                  _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.454411: funcgraph_entry:        0.039 us   |                  _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.454411: funcgraph_entry:                   |                  io_schedule() {
+   libaio_direct-4830  [000]  3208.454411: funcgraph_entry:                   |                    io_schedule_timeout() {
+   libaio_direct-4830  [000]  3208.454411: funcgraph_entry:                   |                      blk_flush_plug_list() {
+   libaio_direct-4830  [000]  3208.454411: funcgraph_entry:        0.034 us   |                        plug_rq_cmp();
+   libaio_direct-4830  [000]  3208.454411: funcgraph_entry:        0.030 us   |                        _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454412: funcgraph_entry:                   |                        __elv_add_request() {
+   libaio_direct-4830  [000]  3208.454412: funcgraph_entry:                   |                          elv_attempt_insert_merge() {
+   libaio_direct-4830  [000]  3208.454412: funcgraph_entry:        0.034 us   |                            elv_rqhash_find();
+   libaio_direct-4830  [000]  3208.454412: funcgraph_exit:         0.239 us   |                          }
+   libaio_direct-4830  [000]  3208.454412: funcgraph_entry:        0.128 us   |                          elv_rqhash_add();
+   libaio_direct-4830  [000]  3208.454412: funcgraph_entry:                   |                          deadline_add_request() {
+   libaio_direct-4830  [000]  3208.454413: funcgraph_entry:        0.038 us   |                            elv_rb_add();
+   libaio_direct-4830  [000]  3208.454413: funcgraph_exit:         0.237 us   |                          }
+   libaio_direct-4830  [000]  3208.454413: funcgraph_exit:         1.234 us   |                        }
+   libaio_direct-4830  [000]  3208.454413: funcgraph_entry:                   |                        queue_unplugged() {
+   libaio_direct-4830  [000]  3208.454413: funcgraph_entry:                   |                          __blk_run_queue() {
+   libaio_direct-4830  [000]  3208.454413: funcgraph_entry:                   |                            scsi_request_fn() {
+   libaio_direct-4830  [000]  3208.454414: funcgraph_entry:                   |                              blk_peek_request() {
+   libaio_direct-4830  [000]  3208.454414: funcgraph_entry:                   |                                deadline_dispatch_requests() {
+   libaio_direct-4830  [000]  3208.454414: funcgraph_entry:                   |                                  deadline_remove_request.isra.6() {
+   libaio_direct-4830  [000]  3208.454414: funcgraph_entry:        0.063 us   |                                    elv_rb_del();
+   libaio_direct-4830  [000]  3208.454414: funcgraph_exit:         0.276 us   |                                  }
+   libaio_direct-4830  [000]  3208.454414: funcgraph_entry:                   |                                  elv_dispatch_add_tail() {
+   libaio_direct-4830  [000]  3208.454414: funcgraph_entry:        0.034 us   |                                    elv_rqhash_del.part.6();
+   libaio_direct-4830  [000]  3208.454415: funcgraph_exit:         0.237 us   |                                  }
+   libaio_direct-4830  [000]  3208.454415: funcgraph_exit:         0.912 us   |                                }
+   libaio_direct-4830  [000]  3208.454415: funcgraph_entry:                   |                                scsi_prep_fn() {
+   libaio_direct-4830  [000]  3208.454415: funcgraph_entry:        0.133 us   |                                  scsi_prep_state_check();
+   libaio_direct-4830  [000]  3208.454416: funcgraph_entry:        0.271 us   |                                  get_device();
+   libaio_direct-4830  [000]  3208.454416: funcgraph_entry:                   |                                  scsi_get_command() {
+   libaio_direct-4830  [000]  3208.454416: funcgraph_entry:                   |                                    __scsi_get_command() {
+   libaio_direct-4830  [000]  3208.454416: funcgraph_entry:                   |                                      scsi_host_alloc_command() {
+   libaio_direct-4830  [000]  3208.454417: funcgraph_entry:        0.609 us   |                                        kmem_cache_alloc();
+   libaio_direct-4830  [000]  3208.454418: funcgraph_entry:        0.200 us   |                                        kmem_cache_alloc();
+   libaio_direct-4830  [000]  3208.454418: funcgraph_exit:         1.532 us   |                                      }
+   libaio_direct-4830  [000]  3208.454418: funcgraph_exit:         1.775 us   |                                    }
+   libaio_direct-4830  [000]  3208.454418: funcgraph_entry:        0.027 us   |                                    init_timer_key();
+   libaio_direct-4830  [000]  3208.454419: funcgraph_entry:        0.029 us   |                                    _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.454419: funcgraph_entry:        0.042 us   |                                    _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.454419: funcgraph_exit:         2.843 us   |                                  }
+   libaio_direct-4830  [000]  3208.454419: funcgraph_entry:                   |                                  scsi_setup_cmnd() {
+   libaio_direct-4830  [000]  3208.454420: funcgraph_entry:                   |                                    sd_init_command() {
+   libaio_direct-4830  [000]  3208.454420: funcgraph_entry:                   |                                      sd_setup_read_write_cmnd() {
+   libaio_direct-4830  [000]  3208.454420: funcgraph_entry:                   |                                        scsi_init_io() {
+   libaio_direct-4830  [000]  3208.454420: funcgraph_entry:                   |                                          scsi_init_sgtable() {
+   libaio_direct-4830  [000]  3208.454420: funcgraph_entry:                   |                                            mempool_alloc() {
+   libaio_direct-4830  [000]  3208.454421: funcgraph_entry:                   |                                              mempool_alloc_slab() {
+   libaio_direct-4830  [000]  3208.454421: funcgraph_entry:        0.030 us   |                                                kmem_cache_alloc();
+   libaio_direct-4830  [000]  3208.454421: funcgraph_exit:         0.218 us   |                                              }
+   libaio_direct-4830  [000]  3208.454421: funcgraph_exit:         0.645 us   |                                            }
+   libaio_direct-4830  [000]  3208.454421: funcgraph_entry:                   |                                            blk_rq_map_sg() {
+   libaio_direct-4830  [000]  3208.454421: funcgraph_entry:        0.043 us   |                                              __blk_segment_map_sg();
+   libaio_direct-4830  [000]  3208.454421: funcgraph_entry:        0.054 us   |                                              __blk_segment_map_sg();
+   libaio_direct-4830  [000]  3208.454422: funcgraph_exit:         0.456 us   |                                            }
+   libaio_direct-4830  [000]  3208.454422: funcgraph_exit:         1.754 us   |                                          }
+   libaio_direct-4830  [000]  3208.454422: funcgraph_exit:         2.013 us   |                                        }
+   libaio_direct-4830  [000]  3208.454422: funcgraph_exit:         2.486 us   |                                      }
+   libaio_direct-4830  [000]  3208.454422: funcgraph_exit:         2.670 us   |                                    }
+   libaio_direct-4830  [000]  3208.454422: funcgraph_exit:         3.289 us   |                                  }
+   libaio_direct-4830  [000]  3208.454423: funcgraph_exit:         7.480 us   |                                }
+   libaio_direct-4830  [000]  3208.454423: funcgraph_exit:         8.923 us   |                              }
+   libaio_direct-4830  [000]  3208.454423: funcgraph_entry:                   |                              blk_queue_start_tag() {
+   libaio_direct-4830  [000]  3208.454424: funcgraph_entry:                   |                                blk_start_request() {
+   libaio_direct-4830  [000]  3208.454424: funcgraph_entry:        0.059 us   |                                  blk_dequeue_request();
+   libaio_direct-4830  [000]  3208.454424: funcgraph_entry:                   |                                  blk_add_timer() {
+   libaio_direct-4830  [000]  3208.454424: funcgraph_entry:        0.026 us   |                                    round_jiffies_up();
+   libaio_direct-4830  [000]  3208.454424: funcgraph_entry:        0.027 us   |                                    round_jiffies_up();
+   libaio_direct-4830  [000]  3208.454424: funcgraph_entry:                   |                                    mod_timer() {
+   libaio_direct-4830  [000]  3208.454424: funcgraph_entry:                   |                                      lock_timer_base.isra.38() {
+   libaio_direct-4830  [000]  3208.454425: funcgraph_entry:        0.091 us   |                                        _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.454425: funcgraph_exit:         0.269 us   |                                      }
+   libaio_direct-4830  [000]  3208.454425: funcgraph_entry:        0.032 us   |                                      detach_if_pending();
+   libaio_direct-4830  [000]  3208.454425: funcgraph_entry:        0.060 us   |                                      get_nohz_timer_target();
+   libaio_direct-4830  [000]  3208.454425: funcgraph_entry:        0.030 us   |                                      _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454426: funcgraph_entry:                   |                                      internal_add_timer() {
+   libaio_direct-4830  [000]  3208.454426: funcgraph_entry:        0.127 us   |                                        __internal_add_timer();
+   libaio_direct-4830  [000]  3208.454426: funcgraph_entry:        0.032 us   |                                        wake_up_nohz_cpu();
+   libaio_direct-4830  [000]  3208.454426: funcgraph_exit:         0.510 us   |                                      }
+   libaio_direct-4830  [000]  3208.454426: funcgraph_entry:        0.039 us   |                                      _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.454426: funcgraph_exit:         2.001 us   |                                    }
+   libaio_direct-4830  [000]  3208.454427: funcgraph_exit:         2.626 us   |                                  }
+   libaio_direct-4830  [000]  3208.454427: funcgraph_exit:         3.040 us   |                                }
+   libaio_direct-4830  [000]  3208.454427: funcgraph_exit:         3.902 us   |                              }
+   libaio_direct-4830  [000]  3208.454427: funcgraph_entry:        0.137 us   |                              scsi_init_cmd_errh();
+   libaio_direct-4830  [000]  3208.454428: funcgraph_entry:                   |                              scsi_dispatch_cmd() {
+   libaio_direct-4830  [000]  3208.454428: funcgraph_entry:        0.026 us   |                                scsi_log_send();
+   libaio_direct-4830  [000]  3208.454428: funcgraph_entry:                   |                                ata_scsi_queuecmd() {
+   libaio_direct-4830  [000]  3208.454428: funcgraph_entry:        0.108 us   |                                  _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.454429: funcgraph_entry:                   |                                  ata_scsi_find_dev() {
+   libaio_direct-4830  [000]  3208.454429: funcgraph_entry:                   |                                    __ata_scsi_find_dev() {
+   libaio_direct-4830  [000]  3208.454429: funcgraph_entry:        0.163 us   |                                      ata_find_dev.part.17();
+   libaio_direct-4830  [000]  3208.454429: funcgraph_exit:         0.491 us   |                                    }
+   libaio_direct-4830  [000]  3208.454430: funcgraph_exit:         0.823 us   |                                  }
+   libaio_direct-4830  [000]  3208.454430: funcgraph_entry:        0.035 us   |                                  ata_qc_new_init();
+   libaio_direct-4830  [000]  3208.454430: funcgraph_entry:        0.027 us   |                                  ata_sg_init();
+   libaio_direct-4830  [000]  3208.454430: funcgraph_entry:                   |                                  ata_scsi_rw_xlat() {
+   libaio_direct-4830  [000]  3208.454431: funcgraph_entry:        0.047 us   |                                    ata_build_rw_tf();
+   libaio_direct-4830  [000]  3208.454431: funcgraph_exit:         0.452 us   |                                  }
+   libaio_direct-4830  [000]  3208.454431: funcgraph_entry:                   |                                  ahci_pmp_qc_defer() {
+   libaio_direct-4830  [000]  3208.454432: funcgraph_entry:        0.149 us   |                                    ata_std_qc_defer();
+   libaio_direct-4830  [000]  3208.454432: funcgraph_exit:         0.429 us   |                                  }
+   libaio_direct-4830  [000]  3208.454432: funcgraph_entry:                   |                                  ata_qc_issue() {
+   libaio_direct-4830  [000]  3208.454433: funcgraph_entry:                   |                                    ahci_qc_prep() {
+   libaio_direct-4830  [000]  3208.454433: funcgraph_entry:        0.121 us   |                                      ata_tf_to_fis();
+   libaio_direct-4830  [000]  3208.454434: funcgraph_exit:         0.431 us   |                                    }
+   libaio_direct-4830  [000]  3208.454434: funcgraph_entry:      + 17.896 us  |                                    ahci_qc_issue();
+   libaio_direct-4830  [000]  3208.454452: funcgraph_exit:       + 19.816 us  |                                  }
+   libaio_direct-4830  [000]  3208.454452: funcgraph_entry:        0.041 us   |                                  _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.454452: funcgraph_exit:       + 23.976 us  |                                }
+   libaio_direct-4830  [000]  3208.454452: funcgraph_exit:       + 24.637 us  |                              }
+   libaio_direct-4830  [000]  3208.454452: funcgraph_entry:        0.031 us   |                              _raw_spin_lock_irq();
+   libaio_direct-4830  [000]  3208.454453: funcgraph_entry:                   |                              blk_peek_request() {
+   libaio_direct-4830  [000]  3208.454453: funcgraph_entry:        0.041 us   |                                deadline_dispatch_requests();
+   libaio_direct-4830  [000]  3208.454453: funcgraph_exit:         0.263 us   |                              }
+   libaio_direct-4830  [000]  3208.454453: funcgraph_exit:       + 39.666 us  |                            }
+   libaio_direct-4830  [000]  3208.454453: funcgraph_exit:       + 40.017 us  |                          }
+   libaio_direct-4830  [000]  3208.454453: funcgraph_exit:       + 40.208 us  |                        }
+   libaio_direct-4830  [000]  3208.454453: funcgraph_exit:       + 42.277 us  |                      }
+   libaio_direct-4830  [000]  3208.454454: funcgraph_entry:                   |                      __delayacct_blkio_start() {
+   libaio_direct-4830  [000]  3208.454454: funcgraph_entry:        0.153 us   |                        ktime_get_ts64();
+   libaio_direct-4830  [000]  3208.454454: funcgraph_exit:         0.349 us   |                      }
+   libaio_direct-4830  [000]  3208.454454: funcgraph_entry:                   |                      schedule_timeout() {
+   libaio_direct-4830  [000]  3208.454454: funcgraph_entry:                   |                        schedule() {
+   libaio_direct-4830  [000]  3208.454454: funcgraph_entry:                   |                          __schedule() {
+   libaio_direct-4830  [000]  3208.454455: funcgraph_entry:        0.027 us   |                            rcu_note_context_switch();
+   libaio_direct-4830  [000]  3208.454455: funcgraph_entry:        0.083 us   |                            _raw_spin_lock_irq();
+   libaio_direct-4830  [000]  3208.454455: funcgraph_entry:                   |                            deactivate_task() {
+   libaio_direct-4830  [000]  3208.454455: funcgraph_entry:        0.043 us   |                              update_rq_clock.part.77();
+   libaio_direct-4830  [000]  3208.454455: funcgraph_entry:                   |                              dequeue_task_fair() {
+   libaio_direct-4830  [000]  3208.454460: funcgraph_entry:                   |                                dequeue_entity() {
+   libaio_direct-4830  [000]  3208.454460: funcgraph_entry:                   |                                  update_curr() {
+   libaio_direct-4830  [000]  3208.454461: funcgraph_entry:        0.041 us   |                                    update_min_vruntime();
+   libaio_direct-4830  [000]  3208.454461: funcgraph_entry:        0.066 us   |                                    cpuacct_charge();
+   libaio_direct-4830  [000]  3208.454461: funcgraph_exit:         0.583 us   |                                  }
+   libaio_direct-4830  [000]  3208.454461: funcgraph_entry:        0.032 us   |                                  update_cfs_rq_blocked_load();
+   libaio_direct-4830  [000]  3208.454461: funcgraph_entry:        0.030 us   |                                  clear_buddies();
+   libaio_direct-4830  [000]  3208.454462: funcgraph_entry:        0.063 us   |                                  account_entity_dequeue();
+   libaio_direct-4830  [000]  3208.454462: funcgraph_entry:        0.035 us   |                                  update_min_vruntime();
+   libaio_direct-4830  [000]  3208.454462: funcgraph_entry:        0.033 us   |                                  update_cfs_shares();
+   libaio_direct-4830  [000]  3208.454462: funcgraph_exit:         1.888 us   |                                }
+   libaio_direct-4830  [000]  3208.454462: funcgraph_entry:        0.030 us   |                                hrtick_update();
+   libaio_direct-4830  [000]  3208.454463: funcgraph_exit:         2.422 us   |                              }
+   libaio_direct-4830  [000]  3208.454463: funcgraph_exit:         7.712 us   |                            }
+   libaio_direct-4830  [000]  3208.454463: funcgraph_entry:                   |                            pick_next_task_fair() {
+   libaio_direct-4830  [000]  3208.454463: funcgraph_entry:                   |                              update_blocked_averages() {
+   libaio_direct-4830  [000]  3208.454463: funcgraph_entry:        0.034 us   |                                _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.454464: funcgraph_entry:                   |                                update_rq_clock() {
+   libaio_direct-4830  [000]  3208.454464: funcgraph_entry:        0.045 us   |                                  update_rq_clock.part.77();
+   libaio_direct-4830  [000]  3208.454464: funcgraph_exit:         0.264 us   |                                }
+   libaio_direct-4830  [000]  3208.454464: funcgraph_entry:        0.034 us   |                                update_cfs_rq_blocked_load();
+   libaio_direct-4830  [000]  3208.454464: funcgraph_entry:        0.042 us   |                                _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.454464: funcgraph_exit:         1.168 us   |                              }
+   libaio_direct-4830  [000]  3208.454465: funcgraph_entry:                   |                              load_balance() {
+   libaio_direct-4830  [000]  3208.454465: funcgraph_entry:                   |                                find_busiest_group() {
+   libaio_direct-4830  [000]  3208.454465: funcgraph_entry:                   |                                  update_group_power() {
+   libaio_direct-4830  [000]  3208.454465: funcgraph_entry:        0.030 us   |                                    msecs_to_jiffies();
+   libaio_direct-4830  [000]  3208.454465: funcgraph_entry:        0.030 us   |                                    arch_scale_freq_power();
+   libaio_direct-4830  [000]  3208.454466: funcgraph_exit:         0.518 us   |                                  }
+   libaio_direct-4830  [000]  3208.454466: funcgraph_entry:        0.033 us   |                                  target_load();
+   libaio_direct-4830  [000]  3208.454466: funcgraph_entry:        0.029 us   |                                  idle_cpu();
+   libaio_direct-4830  [000]  3208.454466: funcgraph_entry:        0.075 us   |                                  source_load();
+   libaio_direct-4830  [000]  3208.454467: funcgraph_entry:        0.073 us   |                                  idle_cpu();
+   libaio_direct-4830  [000]  3208.454467: funcgraph_exit:         2.077 us   |                                }
+   libaio_direct-4830  [000]  3208.454467: funcgraph_exit:         2.529 us   |                              }
+   libaio_direct-4830  [000]  3208.454467: funcgraph_entry:        0.030 us   |                              msecs_to_jiffies();
+   libaio_direct-4830  [000]  3208.454468: funcgraph_entry:        0.034 us   |                              _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.454468: funcgraph_exit:         4.794 us   |                            }
+   libaio_direct-4830  [000]  3208.454468: funcgraph_entry:                   |                            pick_next_task_idle() {
+   libaio_direct-4830  [000]  3208.454468: funcgraph_entry:                   |                              put_prev_task_fair() {
+   libaio_direct-4830  [000]  3208.454468: funcgraph_entry:                   |                                put_prev_entity() {
+   libaio_direct-4830  [000]  3208.454468: funcgraph_entry:        0.031 us   |                                  check_cfs_rq_runtime();
+   libaio_direct-4830  [000]  3208.454468: funcgraph_exit:         0.236 us   |                                }
+   libaio_direct-4830  [000]  3208.454469: funcgraph_exit:         0.444 us   |                              }
+   libaio_direct-4830  [000]  3208.454469: funcgraph_exit:         0.659 us   |                            }
+   libaio_direct-4830  [000]  3208.455077: funcgraph_entry:        0.105 us   |                            __switch_to_xtra();
+   libaio_direct-4830  [000]  3208.455078: funcgraph_entry:        0.046 us   |                            finish_task_switch();
+   libaio_direct-4830  [000]  3208.455078: funcgraph_exit:       ! 623.747 us |                          }
+   libaio_direct-4830  [000]  3208.455078: funcgraph_exit:       ! 623.963 us |                        }
+   libaio_direct-4830  [000]  3208.455078: funcgraph_exit:       ! 624.210 us |                      }
+   libaio_direct-4830  [000]  3208.455079: funcgraph_entry:                   |                      __delayacct_blkio_end() {
+   libaio_direct-4830  [000]  3208.455079: funcgraph_entry:                   |                        delayacct_end() {
+   libaio_direct-4830  [000]  3208.455079: funcgraph_entry:        0.059 us   |                          ktime_get_ts64();
+   libaio_direct-4830  [000]  3208.455079: funcgraph_entry:        0.038 us   |                          set_normalized_timespec();
+   libaio_direct-4830  [000]  3208.455080: funcgraph_entry:        0.031 us   |                          _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.455080: funcgraph_entry:        0.041 us   |                          _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.455080: funcgraph_exit:         1.044 us   |                        }
+   libaio_direct-4830  [000]  3208.455080: funcgraph_exit:         1.503 us   |                      }
+   libaio_direct-4830  [000]  3208.455080: funcgraph_exit:       ! 669.241 us |                    }
+   libaio_direct-4830  [000]  3208.455080: funcgraph_exit:       ! 669.423 us |                  }
+   libaio_direct-4830  [000]  3208.455080: funcgraph_entry:        0.143 us   |                  _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.455081: funcgraph_entry:        0.039 us   |                  _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.455081: funcgraph_entry:                   |                  dio_bio_complete() {
+   libaio_direct-4830  [000]  3208.455081: funcgraph_entry:        0.144 us   |                    put_page();
+   libaio_direct-4830  [000]  3208.455082: funcgraph_entry:        0.071 us   |                    put_page();
+   libaio_direct-4830  [000]  3208.455082: funcgraph_entry:                   |                    bio_put() {
+   libaio_direct-4830  [000]  3208.455082: funcgraph_entry:        0.034 us   |                      bio_disassociate_task();
+   libaio_direct-4830  [000]  3208.455082: funcgraph_entry:                   |                      mempool_free() {
+   libaio_direct-4830  [000]  3208.455083: funcgraph_entry:                   |                        mempool_free_slab() {
+   libaio_direct-4830  [000]  3208.455083: funcgraph_entry:        0.083 us   |                          kmem_cache_free();
+   libaio_direct-4830  [000]  3208.455083: funcgraph_exit:         0.265 us   |                        }
+   libaio_direct-4830  [000]  3208.455083: funcgraph_exit:         0.613 us   |                      }
+   libaio_direct-4830  [000]  3208.455083: funcgraph_exit:         1.260 us   |                    }
+   libaio_direct-4830  [000]  3208.455083: funcgraph_exit:         2.160 us   |                  }
+   libaio_direct-4830  [000]  3208.455083: funcgraph_entry:        0.032 us   |                  _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.455084: funcgraph_entry:        0.038 us   |                  _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.455084: funcgraph_entry:        0.031 us   |                  _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.455084: funcgraph_entry:        0.041 us   |                  _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.455084: funcgraph_entry:                   |                  dio_complete() {
+   libaio_direct-4830  [000]  3208.455085: funcgraph_entry:                   |                    wake_up_bit() {
+   libaio_direct-4830  [000]  3208.455085: funcgraph_entry:        0.148 us   |                      bit_waitqueue();
+   libaio_direct-4830  [000]  3208.455085: funcgraph_entry:        0.142 us   |                      __wake_up_bit();
+   libaio_direct-4830  [000]  3208.455086: funcgraph_exit:         0.643 us   |                    }
+   libaio_direct-4830  [000]  3208.455086: funcgraph_entry:        0.230 us   |                    kmem_cache_free();
+   libaio_direct-4830  [000]  3208.455086: funcgraph_exit:         1.785 us   |                  }
+   libaio_direct-4830  [000]  3208.455086: funcgraph_exit:       # 1022.566 us |                }
+   libaio_direct-4830  [000]  3208.455086: funcgraph_entry:                   |                __ext4_journal_start_sb() {
+   libaio_direct-4830  [000]  3208.455087: funcgraph_entry:                   |                  ext4_journal_check_start() {
+   libaio_direct-4830  [000]  3208.455087: funcgraph_entry:        0.026 us   |                    _cond_resched();
+   libaio_direct-4830  [000]  3208.455087: funcgraph_exit:         0.328 us   |                  }
+   libaio_direct-4830  [000]  3208.455087: funcgraph_entry:                   |                  jbd2__journal_start() {
+   libaio_direct-4830  [000]  3208.455087: funcgraph_entry:                   |                    kmem_cache_alloc() {
+   libaio_direct-4830  [000]  3208.455087: funcgraph_entry:        0.026 us   |                      _cond_resched();
+   libaio_direct-4830  [000]  3208.455088: funcgraph_exit:         0.690 us   |                    }
+   libaio_direct-4830  [000]  3208.455088: funcgraph_entry:                   |                    start_this_handle() {
+   libaio_direct-4830  [000]  3208.455088: funcgraph_entry:        0.030 us   |                      _raw_read_lock();
+   libaio_direct-4830  [000]  3208.455088: funcgraph_entry:        0.166 us   |                      add_transaction_credits();
+   libaio_direct-4830  [000]  3208.455089: funcgraph_exit:         0.661 us   |                    }
+   libaio_direct-4830  [000]  3208.455089: funcgraph_exit:         1.822 us   |                  }
+   libaio_direct-4830  [000]  3208.455089: funcgraph_exit:         2.490 us   |                }
+   libaio_direct-4830  [000]  3208.455089: funcgraph_entry:                   |                ext4_orphan_del() {
+   libaio_direct-4830  [000]  3208.455089: funcgraph_entry:                   |                  ext4_reserve_inode_write() {
+   libaio_direct-4830  [000]  3208.455090: funcgraph_entry:                   |                    ext4_get_inode_loc() {
+   libaio_direct-4830  [000]  3208.455090: funcgraph_entry:                   |                      __ext4_get_inode_loc() {
+   libaio_direct-4830  [000]  3208.455090: funcgraph_entry:        0.221 us   |                        ext4_get_group_desc();
+   libaio_direct-4830  [000]  3208.455090: funcgraph_entry:        0.145 us   |                        ext4_inode_table();
+   libaio_direct-4830  [000]  3208.455091: funcgraph_entry:                   |                        __getblk() {
+   libaio_direct-4830  [000]  3208.455091: funcgraph_entry:                   |                          __find_get_block() {
+   libaio_direct-4830  [000]  3208.455091: funcgraph_entry:        0.087 us   |                            mark_page_accessed();
+   libaio_direct-4830  [000]  3208.455091: funcgraph_exit:         0.292 us   |                          }
+   libaio_direct-4830  [000]  3208.455091: funcgraph_entry:        0.028 us   |                          _cond_resched();
+   libaio_direct-4830  [000]  3208.455091: funcgraph_exit:         0.656 us   |                        }
+   libaio_direct-4830  [000]  3208.455091: funcgraph_exit:         1.708 us   |                      }
+   libaio_direct-4830  [000]  3208.455092: funcgraph_exit:         1.908 us   |                    }
+   libaio_direct-4830  [000]  3208.455092: funcgraph_entry:                   |                    __ext4_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.455092: funcgraph_entry:        0.028 us   |                      _cond_resched();
+   libaio_direct-4830  [000]  3208.455092: funcgraph_entry:                   |                      jbd2_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.455092: funcgraph_entry:        0.043 us   |                        jbd2_journal_add_journal_head();
+   libaio_direct-4830  [000]  3208.455092: funcgraph_entry:                   |                        do_get_write_access() {
+   libaio_direct-4830  [000]  3208.455092: funcgraph_entry:        0.027 us   |                          _cond_resched();
+   libaio_direct-4830  [000]  3208.455093: funcgraph_entry:                   |                          unlock_buffer() {
+   libaio_direct-4830  [000]  3208.455093: funcgraph_entry:        0.026 us   |                            __smp_mb__after_atomic();
+   libaio_direct-4830  [000]  3208.455093: funcgraph_entry:                   |                            wake_up_bit() {
+   libaio_direct-4830  [000]  3208.455093: funcgraph_entry:        0.051 us   |                              bit_waitqueue();
+   libaio_direct-4830  [000]  3208.455093: funcgraph_entry:        0.112 us   |                              __wake_up_bit();
+   libaio_direct-4830  [000]  3208.455094: funcgraph_exit:         0.640 us   |                            }
+   libaio_direct-4830  [000]  3208.455094: funcgraph_exit:         1.066 us   |                          }
+   libaio_direct-4830  [000]  3208.455094: funcgraph_entry:        0.038 us   |                          jbd2_journal_cancel_revoke();
+   libaio_direct-4830  [000]  3208.455094: funcgraph_exit:         1.694 us   |                        }
+   libaio_direct-4830  [000]  3208.455094: funcgraph_entry:        0.038 us   |                        jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.455094: funcgraph_exit:         2.285 us   |                      }
+   libaio_direct-4830  [000]  3208.455094: funcgraph_exit:         2.641 us   |                    }
+   libaio_direct-4830  [000]  3208.455094: funcgraph_exit:         4.901 us   |                  }
+   libaio_direct-4830  [000]  3208.455095: funcgraph_entry:                   |                  mutex_lock() {
+   libaio_direct-4830  [000]  3208.455095: funcgraph_entry:        0.027 us   |                    _cond_resched();
+   libaio_direct-4830  [000]  3208.455095: funcgraph_exit:         0.214 us   |                  }
+   libaio_direct-4830  [000]  3208.455095: funcgraph_entry:                   |                  __ext4_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.455095: funcgraph_entry:        0.026 us   |                    _cond_resched();
+   libaio_direct-4830  [000]  3208.455095: funcgraph_entry:                   |                    jbd2_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.455095: funcgraph_entry:        0.110 us   |                      jbd2_journal_add_journal_head();
+   libaio_direct-4830  [000]  3208.455096: funcgraph_entry:                   |                      do_get_write_access() {
+   libaio_direct-4830  [000]  3208.455096: funcgraph_entry:        0.027 us   |                        _cond_resched();
+   libaio_direct-4830  [000]  3208.455096: funcgraph_entry:                   |                        unlock_buffer() {
+   libaio_direct-4830  [000]  3208.455096: funcgraph_entry:        0.027 us   |                          __smp_mb__after_atomic();
+   libaio_direct-4830  [000]  3208.455096: funcgraph_entry:                   |                          wake_up_bit() {
+   libaio_direct-4830  [000]  3208.455096: funcgraph_entry:        0.029 us   |                            bit_waitqueue();
+   libaio_direct-4830  [000]  3208.455096: funcgraph_entry:        0.112 us   |                            __wake_up_bit();
+   libaio_direct-4830  [000]  3208.455097: funcgraph_exit:         0.487 us   |                          }
+   libaio_direct-4830  [000]  3208.455097: funcgraph_exit:         0.857 us   |                        }
+   libaio_direct-4830  [000]  3208.455097: funcgraph_entry:        0.034 us   |                        jbd2_journal_cancel_revoke();
+   libaio_direct-4830  [000]  3208.455097: funcgraph_exit:         1.442 us   |                      }
+   libaio_direct-4830  [000]  3208.455097: funcgraph_entry:        0.035 us   |                      jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.455097: funcgraph_exit:         2.080 us   |                    }
+   libaio_direct-4830  [000]  3208.455098: funcgraph_exit:         2.448 us   |                  }
+   libaio_direct-4830  [000]  3208.455098: funcgraph_entry:        0.030 us   |                  mutex_unlock();
+   libaio_direct-4830  [000]  3208.455098: funcgraph_entry:                   |                  __ext4_handle_dirty_super() {
+   libaio_direct-4830  [000]  3208.455098: funcgraph_entry:        0.104 us   |                    ext4_superblock_csum_set();
+   libaio_direct-4830  [000]  3208.455098: funcgraph_entry:                   |                    jbd2_journal_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.455098: funcgraph_entry:        0.037 us   |                      jbd2_journal_grab_journal_head();
+   libaio_direct-4830  [000]  3208.455099: funcgraph_entry:        0.036 us   |                      jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.455099: funcgraph_exit:         0.497 us   |                    }
+   libaio_direct-4830  [000]  3208.455099: funcgraph_exit:         0.958 us   |                  }
+   libaio_direct-4830  [000]  3208.455099: funcgraph_entry:                   |                  ext4_mark_iloc_dirty() {
+   libaio_direct-4830  [000]  3208.455099: funcgraph_entry:        0.032 us   |                    _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.455099: funcgraph_entry:        0.031 us   |                    ext4_get_inode_flags();
+   libaio_direct-4830  [000]  3208.455100: funcgraph_entry:                   |                    from_kuid() {
+   libaio_direct-4830  [000]  3208.455100: funcgraph_entry:        0.063 us   |                      map_id_up();
+   libaio_direct-4830  [000]  3208.455100: funcgraph_exit:         0.296 us   |                    }
+   libaio_direct-4830  [000]  3208.455100: funcgraph_entry:                   |                    from_kgid() {
+   libaio_direct-4830  [000]  3208.455100: funcgraph_entry:        0.027 us   |                      map_id_up();
+   libaio_direct-4830  [000]  3208.455100: funcgraph_exit:         0.210 us   |                    }
+   libaio_direct-4830  [000]  3208.455101: funcgraph_entry:                   |                    __ext4_handle_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.455101: funcgraph_entry:        0.025 us   |                      _cond_resched();
+   libaio_direct-4830  [000]  3208.455101: funcgraph_entry:                   |                      jbd2_journal_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.455101: funcgraph_entry:        0.037 us   |                        jbd2_journal_grab_journal_head();
+   libaio_direct-4830  [000]  3208.455101: funcgraph_entry:        0.036 us   |                        jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.455101: funcgraph_exit:         0.420 us   |                      }
+   libaio_direct-4830  [000]  3208.455101: funcgraph_exit:         0.870 us   |                    }
+   libaio_direct-4830  [000]  3208.455102: funcgraph_entry:                   |                    __brelse() {
+   libaio_direct-4830  [000]  3208.455102: funcgraph_entry:        0.026 us   |                      __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.455102: funcgraph_exit:         0.210 us   |                    }
+   libaio_direct-4830  [000]  3208.455102: funcgraph_entry:        0.027 us   |                    __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.455102: funcgraph_exit:         3.129 us   |                  }
+   libaio_direct-4830  [000]  3208.455102: funcgraph_exit:       + 12.877 us  |                }
+   libaio_direct-4830  [000]  3208.455102: funcgraph_entry:                   |                down_write() {
+   libaio_direct-4830  [000]  3208.455102: funcgraph_entry:        0.026 us   |                  _cond_resched();
+   libaio_direct-4830  [000]  3208.455103: funcgraph_exit:         0.226 us   |                }
+   libaio_direct-4830  [000]  3208.455103: funcgraph_entry:        0.030 us   |                up_write();
+   libaio_direct-4830  [000]  3208.455103: funcgraph_entry:                   |                ext4_mark_inode_dirty() {
+   libaio_direct-4830  [000]  3208.455103: funcgraph_entry:        0.026 us   |                  _cond_resched();
+   libaio_direct-4830  [000]  3208.455103: funcgraph_entry:                   |                  ext4_reserve_inode_write() {
+   libaio_direct-4830  [000]  3208.455103: funcgraph_entry:                   |                    ext4_get_inode_loc() {
+   libaio_direct-4830  [000]  3208.455103: funcgraph_entry:                   |                      __ext4_get_inode_loc() {
+   libaio_direct-4830  [000]  3208.455103: funcgraph_entry:        0.029 us   |                        ext4_get_group_desc();
+   libaio_direct-4830  [000]  3208.455104: funcgraph_entry:        0.026 us   |                        ext4_inode_table();
+   libaio_direct-4830  [000]  3208.455104: funcgraph_entry:                   |                        __getblk() {
+   libaio_direct-4830  [000]  3208.455104: funcgraph_entry:                   |                          __find_get_block() {
+   libaio_direct-4830  [000]  3208.455104: funcgraph_entry:        0.026 us   |                            mark_page_accessed();
+   libaio_direct-4830  [000]  3208.455104: funcgraph_exit:         0.221 us   |                          }
+   libaio_direct-4830  [000]  3208.455104: funcgraph_entry:        0.027 us   |                          _cond_resched();
+   libaio_direct-4830  [000]  3208.455105: funcgraph_exit:         0.711 us   |                        }
+   libaio_direct-4830  [000]  3208.455105: funcgraph_exit:         1.273 us   |                      }
+   libaio_direct-4830  [000]  3208.455105: funcgraph_exit:         1.453 us   |                    }
+   libaio_direct-4830  [000]  3208.455105: funcgraph_entry:                   |                    __ext4_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.455105: funcgraph_entry:        0.026 us   |                      _cond_resched();
+   libaio_direct-4830  [000]  3208.455105: funcgraph_entry:                   |                      jbd2_journal_get_write_access() {
+   libaio_direct-4830  [000]  3208.455105: funcgraph_entry:        0.036 us   |                        jbd2_journal_add_journal_head();
+   libaio_direct-4830  [000]  3208.455105: funcgraph_entry:                   |                        do_get_write_access() {
+   libaio_direct-4830  [000]  3208.455106: funcgraph_entry:        0.027 us   |                          _cond_resched();
+   libaio_direct-4830  [000]  3208.455106: funcgraph_entry:                   |                          unlock_buffer() {
+   libaio_direct-4830  [000]  3208.455106: funcgraph_entry:        0.026 us   |                            __smp_mb__after_atomic();
+   libaio_direct-4830  [000]  3208.455106: funcgraph_entry:                   |                            wake_up_bit() {
+   libaio_direct-4830  [000]  3208.455106: funcgraph_entry:        0.033 us   |                              bit_waitqueue();
+   libaio_direct-4830  [000]  3208.455106: funcgraph_entry:        0.027 us   |                              __wake_up_bit();
+   libaio_direct-4830  [000]  3208.455106: funcgraph_exit:         0.402 us   |                            }
+   libaio_direct-4830  [000]  3208.455107: funcgraph_exit:         0.764 us   |                          }
+   libaio_direct-4830  [000]  3208.455107: funcgraph_entry:        0.035 us   |                          jbd2_journal_cancel_revoke();
+   libaio_direct-4830  [000]  3208.455107: funcgraph_exit:         1.356 us   |                        }
+   libaio_direct-4830  [000]  3208.455107: funcgraph_entry:        0.036 us   |                        jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.455107: funcgraph_exit:         1.929 us   |                      }
+   libaio_direct-4830  [000]  3208.455107: funcgraph_exit:         2.291 us   |                    }
+   libaio_direct-4830  [000]  3208.455107: funcgraph_exit:         4.081 us   |                  }
+   libaio_direct-4830  [000]  3208.455108: funcgraph_entry:                   |                  ext4_mark_iloc_dirty() {
+   libaio_direct-4830  [000]  3208.455108: funcgraph_entry:        0.029 us   |                    _raw_spin_lock();
+   libaio_direct-4830  [000]  3208.455108: funcgraph_entry:        0.030 us   |                    ext4_get_inode_flags();
+   libaio_direct-4830  [000]  3208.455108: funcgraph_entry:                   |                    from_kuid() {
+   libaio_direct-4830  [000]  3208.455108: funcgraph_entry:        0.027 us   |                      map_id_up();
+   libaio_direct-4830  [000]  3208.455108: funcgraph_exit:         0.210 us   |                    }
+   libaio_direct-4830  [000]  3208.455108: funcgraph_entry:                   |                    from_kgid() {
+   libaio_direct-4830  [000]  3208.455108: funcgraph_entry:        0.027 us   |                      map_id_up();
+   libaio_direct-4830  [000]  3208.455109: funcgraph_exit:         0.209 us   |                    }
+   libaio_direct-4830  [000]  3208.455109: funcgraph_entry:                   |                    __ext4_handle_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.455109: funcgraph_entry:        0.024 us   |                      _cond_resched();
+   libaio_direct-4830  [000]  3208.455109: funcgraph_entry:                   |                      jbd2_journal_dirty_metadata() {
+   libaio_direct-4830  [000]  3208.455109: funcgraph_entry:        0.036 us   |                        jbd2_journal_grab_journal_head();
+   libaio_direct-4830  [000]  3208.455109: funcgraph_entry:        0.037 us   |                        jbd2_journal_put_journal_head();
+   libaio_direct-4830  [000]  3208.455110: funcgraph_exit:         0.418 us   |                      }
+   libaio_direct-4830  [000]  3208.455110: funcgraph_exit:         0.791 us   |                    }
+   libaio_direct-4830  [000]  3208.455110: funcgraph_entry:                   |                    __brelse() {
+   libaio_direct-4830  [000]  3208.455110: funcgraph_entry:        0.026 us   |                      __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.455110: funcgraph_exit:         0.212 us   |                    }
+   libaio_direct-4830  [000]  3208.455110: funcgraph_entry:        0.025 us   |                    __smp_mb__before_atomic();
+   libaio_direct-4830  [000]  3208.455110: funcgraph_exit:         2.672 us   |                  }
+   libaio_direct-4830  [000]  3208.455110: funcgraph_exit:         7.386 us   |                }
+   libaio_direct-4830  [000]  3208.455110: funcgraph_entry:                   |                __ext4_journal_stop() {
+   libaio_direct-4830  [000]  3208.455111: funcgraph_entry:                   |                  jbd2_journal_stop() {
+   libaio_direct-4830  [000]  3208.455111: funcgraph_entry:                   |                    __wake_up() {
+   libaio_direct-4830  [000]  3208.455111: funcgraph_entry:                   |                      __wake_up_common_lock() {
+   libaio_direct-4830  [000]  3208.455111: funcgraph_entry:        0.032 us   |                        _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.455111: funcgraph_entry:        0.036 us   |                        __wake_up_common();
+   libaio_direct-4830  [000]  3208.455111: funcgraph_entry:        0.039 us   |                        _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.455112: funcgraph_exit:         0.613 us   |                      }
+   libaio_direct-4830  [000]  3208.455112: funcgraph_exit:         0.808 us   |                    }
+   libaio_direct-4830  [000]  3208.455112: funcgraph_entry:        0.140 us   |                    kmem_cache_free();
+   libaio_direct-4830  [000]  3208.455112: funcgraph_exit:         1.414 us   |                  }
+   libaio_direct-4830  [000]  3208.455112: funcgraph_exit:         1.611 us   |                }
+   libaio_direct-4830  [000]  3208.455112: funcgraph_exit:       # 1064.813 us |              }
+   libaio_direct-4830  [000]  3208.455113: funcgraph_exit:       # 1065.279 us |            }
+   libaio_direct-4830  [000]  3208.455113: funcgraph_exit:       # 1066.271 us |          }
+   libaio_direct-4830  [000]  3208.455113: funcgraph_exit:       # 1067.629 us |        }
+   libaio_direct-4830  [000]  3208.455113: funcgraph_entry:        0.029 us   |        mutex_unlock();
+   libaio_direct-4830  [000]  3208.455113: funcgraph_entry:        0.071 us   |        generic_write_sync();
+   libaio_direct-4830  [000]  3208.455113: funcgraph_entry:                   |        blk_finish_plug() {
+   libaio_direct-4830  [000]  3208.455114: funcgraph_entry:        0.061 us   |          blk_flush_plug_list();
+   libaio_direct-4830  [000]  3208.455114: funcgraph_exit:         0.243 us   |        }
+   libaio_direct-4830  [000]  3208.455114: funcgraph_exit:       # 1069.626 us |      }
+   libaio_direct-4830  [000]  3208.455114: funcgraph_entry:        0.114 us   |      __sb_end_write();
+   libaio_direct-4830  [000]  3208.455114: funcgraph_entry:                   |      aio_complete() {
+   libaio_direct-4830  [000]  3208.455115: funcgraph_entry:        0.183 us   |        _raw_spin_lock_irqsave();
+   libaio_direct-4830  [000]  3208.455115: funcgraph_entry:        0.039 us   |        _raw_spin_unlock_irqrestore();
+   libaio_direct-4830  [000]  3208.455115: funcgraph_entry:        0.030 us   |        aio_put_req();
+   libaio_direct-4830  [000]  3208.455116: funcgraph_exit:         1.265 us   |      }
+   libaio_direct-4830  [000]  3208.455116: funcgraph_entry:                   |      aio_put_req() {
+   libaio_direct-4830  [000]  3208.455116: funcgraph_entry:        0.031 us   |        fput();
+   libaio_direct-4830  [000]  3208.455116: funcgraph_entry:        0.142 us   |        kmem_cache_free();
+   libaio_direct-4830  [000]  3208.455117: funcgraph_exit:         0.686 us   |      }
+   libaio_direct-4830  [000]  3208.455117: funcgraph_entry:                   |      blk_finish_plug() {
+   libaio_direct-4830  [000]  3208.455117: funcgraph_entry:        0.029 us   |        blk_flush_plug_list();
+   libaio_direct-4830  [000]  3208.455117: funcgraph_exit:         0.218 us   |      }
+   libaio_direct-4830  [000]  3208.455117: funcgraph_entry:        0.031 us   |      put_ioctx();
+   libaio_direct-4830  [000]  3208.455117: funcgraph_exit:       # 1076.682 us |    }
+   libaio_direct-4830  [000]  3208.455117: funcgraph_exit:       # 1076.954 us |  }
