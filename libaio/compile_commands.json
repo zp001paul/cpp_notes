@@ -1,0 +1,44 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-std=gnu11",
+      "-Wall",
+      "-o",
+      "libaio_normal",
+      "libaio_normal.c"
+    ],
+    "directory": "/home/zp001/Documents/cpp_notes/libaio",
+    "file": "/home/zp001/Documents/cpp_notes/libaio/libaio_normal.c",
+    "output": "/home/zp001/Documents/cpp_notes/libaio/libaio_normal"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-std=gnu11",
+      "-Wall",
+      "-o",
+      "libaio_direct",
+      "libaio_direct.c"
+    ],
+    "directory": "/home/zp001/Documents/cpp_notes/libaio",
+    "file": "/home/zp001/Documents/cpp_notes/libaio/libaio_direct.c",
+    "output": "/home/zp001/Documents/cpp_notes/libaio/libaio_direct"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-std=gnu11",
+      "-Wall",
+      "-o",
+      "libaio_fsync",
+      "libaio_fsync.c"
+    ],
+    "directory": "/home/zp001/Documents/cpp_notes/libaio",
+    "file": "/home/zp001/Documents/cpp_notes/libaio/libaio_fsync.c",
+    "output": "/home/zp001/Documents/cpp_notes/libaio/libaio_fsync"
+  }
+]
