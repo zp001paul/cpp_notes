@@ -29,4 +29,10 @@ struct aiocp_args {
     size_t io_size;
     FILE *log;
     bool debuglog;
+    int log_level;
 };
+
+#define AIOCP_LOG_ERROR 0
+#define AIOCP_LOG_WARN 1
+#define AIOCP_LOG_INFO 2
+#define AIOCP_LOG_DEBUG 3

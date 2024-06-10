@@ -1,12 +1,24 @@
 CC := gcc
 LDFLAGS := -laio -lpthread
-.PHONY : all clean
+CFLAGS := -std=gnu11 -c -g
 
-all: libaiocp.o libaiocp
+CAPPS := libaiocp
+COBJS := $(CAPPS:%=%.o)
 
-libaiocp.o: $(@:%.o=%.c) $(@:%.o=%.h)
-	$(CC) -c -g -o $@ $(@:%.o=%.c)
-libaiocp: $(@:%=%.o)
-	$(CC) $(LDFLAGS) -o $@ $(@:%=%.o)
+$(CAPPS): % : %.o
+	$(CC) $(LDFLAGS) -o $@ $^
+
+$(COBJS): %.o : %.c
+	gcc $(CFLAGS) -o $@ $^
+
+chunk_diff: % : %.o
+	$(CC) $(LDFLAGS) -lcrypto -o $@ $^
+
+chunk_diff.o: %.o : %.c
+	gcc $(CFLAGS) -o $@ $^
+
 clean:
-	rm -f libaiocp.o libaiocp
+	rm -f $(CAPPS) 
+	rm -f $(COBJS)
+	rm -f $(CPPAPPS) 
+	rm -f $(CPPOBJS)
