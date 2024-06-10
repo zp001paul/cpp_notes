@@ -9,14 +9,14 @@ misc.o: misc.cpp myconcept.hpp myprt.hpp myalgorithm.hpp
 	g++ $(CFLAGS) -o $@ $(@:%.o=%.cpp)
 
 # for generic cpp prog
-CPPAPPS := get_kernel_ver
-CPPOBJS := $(CAPPS:%=%.o)
+CPPAPPS := align
+CPPOBJS := $(CPPAPPS:%=%.o)
 
 $(CPPAPPS): % : %.o
 	g++ -o $@ $^
 
-$(CPPOBJS): %.o : %.c
-	g++ -std=c++20 -c -g -o $@ $^
+$(CPPOBJS): %.o : %.cpp
+	g++ -std=gnu++20 -c -g -o $@ $^
 
 # for generic c prog
 CAPPS := get_kernel_ver
@@ -34,8 +34,8 @@ $(COBJS): %.o : %.c
 clean:
 	rm -f *.o 
 	rm -f misc
-	rm -f get_kernel_ver
-
+	rm -f $(CPPAPPS)
+	rm -f $(CAPPS)
 
 # example codes:
 # get_kernel_ver: get_kernel_ver.o
