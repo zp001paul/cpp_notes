@@ -1,3 +1,10 @@
+# ToDo
+
+1. log_warning
+1. log_info
+1. copy file attr
+1. adaptive iodepth_submit
+
 # feature
 
 1. copy big file with multiple threads
