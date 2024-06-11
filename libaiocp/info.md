@@ -1,19 +1,19 @@
 # ToDo
 
-1. log_warning OK
-1. log_info OK
+1. 完善log_level功能
 1. copy file attr
 1. adaptive iodepth_submit / RWF_NOWAIT
 1. 创建几个好测参数
 1. 测一下性能
 1. userspace reap
-1. fallocate() OK
-1. fadvice() OK
-1. fsync() OK
 1. 处理好线程返回的ret
 1. C++调用C lib
 1. gflags
 1. gtest
+1. 分开读写两个io queue
+1. 回调模式
+1. 加上校验功能
+1. 把q_count++改到io_submit之前 OK
 
 # 要研究的东西
 
