@@ -11,8 +11,20 @@
 #include <string.h>
 #include <strings.h>
 #include <sys/stat.h>
+#include <threads.h>
 #include <time.h>
 #include <unistd.h>
+#ifdef __cplusplus
+#include <atomic>
+#else
+#include <stdatomic.h>
+#endif
+
+/*
+ * return code:
+ * 1. in main() context: positive value represent failure
+ * 1. in IO context: nagetive value represent failure
+ * */
 
 #define DIV_ROUND_UP(n, d) (((n) + (d) - 1) / (d))
 #define ALIGN_MASK(x, mask) (((x) + (mask)) & ~(mask))
@@ -22,6 +34,65 @@
 #define min2(a, b) ((a < b) ? (a) : (b))
 #define min3(a, b, c) (min2(min2(a, b), c))
 #define max2(a, b) ((a > b) ? (a) : (b))
+
+// struct aio_ring from kernel source fs/aio.c
+struct aio_ring {
+    unsigned id; /** kernel internal index number */
+    unsigned nr; /** number of io_events */
+    unsigned head;
+    unsigned tail;
+
+    unsigned magic;
+    unsigned compat_features;
+    unsigned incompat_features;
+    unsigned header_length; /** size of aio_ring */
+
+    struct io_event events[0];
+};
+
+#ifdef __cplusplus
+#define atomic_add(p, v) std::atomic_fetch_add(p, (v))
+#define atomic_sub(p, v) std::atomic_fetch_sub(p, (v))
+#define atomic_load_relaxed(p)                                                 \
+    std::atomic_load_explicit(p, std::memory_order_relaxed)
+#define atomic_load_acquire(p)                                                 \
+    std::atomic_load_explicit(p, std::memory_order_acquire)
+#define atomic_store_release(p, v)                                             \
+    std::atomic_store_explicit(p, (v), std::memory_order_release)
+#else
+#define atomic_add(p, v) atomic_fetch_add((_Atomic typeof(*(p)) *)(p), v)
+#define atomic_sub(p, v) atomic_fetch_sub((_Atomic typeof(*(p)) *)(p), v)
+#define atomic_load_relaxed(p)                                                 \
+    atomic_load_explicit((_Atomic typeof(*(p)) *)(p), memory_order_relaxed)
+#define atomic_load_acquire(p)                                                 \
+    atomic_load_explicit((_Atomic typeof(*(p)) *)(p), memory_order_acquire)
+#define atomic_store_release(p, v)                                             \
+    atomic_store_explicit((_Atomic typeof(*(p)) *)(p), (v),                    \
+                          memory_order_release)
+#endif
+
+static int user_io_getevents(io_context_t aio_ctx, unsigned int max,
+                             struct io_event *events) {
+    long i = 0;
+    unsigned head;
+    struct aio_ring *ring = (struct aio_ring *)aio_ctx;
+
+    while (i < max) {
+        head = ring->head;
+
+        if (head == ring->tail) {
+            /* There are no more completions */
+            break;
+        } else {
+            /* There is another completion to reap */
+            events[i] = ring->events[head];
+            atomic_store_release(&ring->head, (head + 1) % ring->nr);
+            i++;
+        }
+    }
+
+    return i;
+}
 
 #define LOGLINELEN 512
 FILE *glog = NULL;
@@ -63,11 +134,13 @@ void log_common(int errorno, int log_level, const char *fmt, ...) {
 }
 
 #define log_error(...) log_common(errno, AIOCP_LOG_ERROR, __VA_ARGS__);
-#define log_errno(errorno, ...)                                                \
-    log_common(errorno, AIOCP_LOG_ERROR, __VA_ARGS__);
 #define log_warn(...) log_common(0, AIOCP_LOG_WARN, __VA_ARGS__);
 #define log_info(...) log_common(0, AIOCP_LOG_INFO, __VA_ARGS__);
 #define log_debug(...) log_common(0, AIOCP_LOG_DEBUG, __VA_ARGS__);
+#define log_error_errno(errorno, ...)                                          \
+    log_common(errorno, AIOCP_LOG_ERROR, __VA_ARGS__);
+#define log_warn_errno(errorno, ...)                                           \
+    log_common(errorno, AIOCP_LOG_ERROR, __VA_ARGS__);
 
 struct thread_data {
     struct aiocp_args *arg;
@@ -136,6 +209,7 @@ struct io_mgr {
 
     // assistent virables
     size_t io_r_prepared;
+    struct thread_data *td;
 };
 
 void log_io_mgr(int log_level, int tid, struct io_mgr *iom) {
@@ -267,96 +341,106 @@ void free_thread_locals(struct io_mgr *data) {
     }
 }
 
-int init_io_mgr(struct io_mgr *iom, int cb_cnt, size_t io_size,
-                size_t total_size, io_context_t r_ctx, io_context_t w_ctx) {
+int init_io_mgr(struct io_mgr *iom, struct thread_data *td, io_context_t r_ctx,
+                io_context_t w_ctx) {
+
     bzero(iom, sizeof(struct io_mgr));
-    iom->cnt = cb_cnt;
-    iom->io_cnt_total = DIV_ROUND_UP(total_size, io_size);
+    iom->td = td;
+    iom->cnt = td->arg->iodepth;
+    iom->io_cnt_total = DIV_ROUND_UP(td->len, td->arg->io_size);
     iom->r_ctx = r_ctx;
     iom->w_ctx = w_ctx;
-    // data->io_r_in_q = 0;
-    // data->io_w_in_q = 0;
 
-    iom->r_cbs = malloc(sizeof(struct iocb *) * cb_cnt);
+    iom->r_cbs = malloc(sizeof(struct iocb *) * iom->cnt);
     if (iom->r_cbs == NULL) {
-        log_error("alloc_thread_locals() malloc() for r_cbs failed\n");
+        log_error("init_io_mgr() malloc() for r_cbs failed\n");
         goto err_out;
     }
-    iom->w_cbs = malloc(sizeof(struct iocb *) * cb_cnt);
+    iom->w_cbs = malloc(sizeof(struct iocb *) * iom->cnt);
     if (iom->w_cbs == NULL) {
-        log_error("alloc_thread_locals() malloc() for w_cbs failed\n");
+        log_error("init_io_mgr() malloc() for w_cbs failed\n");
         goto err_out;
     }
-    iom->buf = malloc(sizeof(char *) * cb_cnt);
+    iom->buf = malloc(sizeof(char *) * iom->cnt);
     if (iom->r_cbs == NULL) {
-        log_error("alloc_thread_locals() malloc() for buf failed\n");
+        log_error("init_io_mgr() malloc() for buf failed\n");
         goto err_out;
     }
 
     if (_alloc_arr_elems((void *)iom->r_cbs, sizeof(struct iocb *),
-                         sizeof(struct iocb), cb_cnt)) {
-        log_error(
-            "alloc_thread_locals() _alloc_arr_elems() for r_cbs failed\n");
+                         sizeof(struct iocb), iom->cnt)) {
+        log_error("init_io_mgr() _alloc_arr_elems() for r_cbs failed\n");
         goto err_out;
     }
     if (_alloc_arr_elems((void *)iom->w_cbs, sizeof(struct iocb *),
-                         sizeof(struct iocb), cb_cnt)) {
-        log_error(
-            "alloc_thread_locals() _alloc_arr_elems() for w_cbs failed\n");
+                         sizeof(struct iocb), iom->cnt)) {
+        log_error("init_io_mgr() _alloc_arr_elems() for w_cbs failed\n");
         goto err_out;
     }
-    if (_alloc_arr_elems((void *)iom->buf, sizeof(char *), io_size, cb_cnt)) {
-        log_error("alloc_thread_locals() _alloc_arr_elems() for buf failed\n");
+    if (_alloc_arr_elems((void *)iom->buf, sizeof(char *), td->arg->io_size,
+                         iom->cnt)) {
+        log_error("init_io_mgr() _alloc_arr_elems() for buf failed\n");
         goto err_out;
     }
 
-    iom->r_events = malloc(sizeof(struct io_event) * cb_cnt);
+    iom->r_events = malloc(sizeof(struct io_event) * iom->cnt);
     if (iom->r_cbs == NULL) {
-        log_error("alloc_thread_locals() malloc() for r_event failed\n");
+        log_error("init_io_mgr() malloc() for r_event failed\n");
         goto err_out;
     }
-    bzero(iom->r_events, sizeof(struct io_event) * cb_cnt);
+    bzero(iom->r_events, sizeof(struct io_event) * iom->cnt);
 
-    iom->w_events = malloc(sizeof(struct io_event) * cb_cnt);
+    iom->w_events = malloc(sizeof(struct io_event) * iom->cnt);
     if (iom->w_cbs == NULL) {
-        log_error("alloc_thread_locals() malloc() for w_event failed\n");
+        log_error("init_io_mgr() malloc() for w_event failed\n");
         goto err_out;
     }
-    bzero(iom->w_events, sizeof(struct io_event) * cb_cnt);
+    bzero(iom->w_events, sizeof(struct io_event) * iom->cnt);
 
-    iom->r_ctxs = malloc(sizeof(struct io_ctx) * cb_cnt);
+    iom->r_ctxs = malloc(sizeof(struct io_ctx) * iom->cnt);
     if (iom->r_ctxs == NULL) {
-        log_error("alloc_thread_locals() malloc() for r_ctxx failed\n");
+        log_error("init_io_mgr() malloc() for r_ctxx failed\n");
         goto err_out;
     }
-    bzero(iom->r_ctxs, sizeof(struct io_ctx) * cb_cnt);
+    bzero(iom->r_ctxs, sizeof(struct io_ctx) * iom->cnt);
 
-    iom->cb_status = malloc(sizeof(int8_t) * cb_cnt);
+    iom->cb_status = malloc(sizeof(int8_t) * iom->cnt);
     if (iom->cb_status == NULL) {
-        log_error("alloc_thread_locals() malloc() for cb_status failed\n");
+        log_error("init_io_mgr() malloc() for cb_status failed\n");
         goto err_out;
     }
-    bzero(iom->cb_status, sizeof(int8_t) * cb_cnt);
+    bzero(iom->cb_status, sizeof(int8_t) * iom->cnt);
 
-    iom->w_cbs_tmp = malloc(sizeof(struct iocb *) * cb_cnt);
+    iom->w_cbs_tmp = malloc(sizeof(struct iocb *) * iom->cnt);
     if (iom->w_cbs_tmp == NULL) {
-        log_error("alloc_thread_locals() malloc() for w_cbs_tmp failed\n");
+        log_error("init_io_mgr() malloc() for w_cbs_tmp failed\n");
         goto err_out;
     }
-    bzero(iom->w_cbs_tmp, sizeof(struct iocb *) * cb_cnt);
+    bzero(iom->w_cbs_tmp, sizeof(struct iocb *) * iom->cnt);
 
-    iom->r_cbs_tmp = malloc(sizeof(struct iocb *) * cb_cnt);
+    iom->r_cbs_tmp = malloc(sizeof(struct iocb *) * iom->cnt);
     if (iom->r_cbs_tmp == NULL) {
-        log_error("alloc_thread_locals() malloc() for r_cbs_tmp failed\n");
+        log_error("init_io_mgr() malloc() for r_cbs_tmp failed\n");
         goto err_out;
     }
-    bzero(iom->r_cbs_tmp, sizeof(struct iocb *) * cb_cnt);
+    bzero(iom->r_cbs_tmp, sizeof(struct iocb *) * iom->cnt);
     return 0;
 
 err_out:
     free_thread_locals(iom);
     return 9;
 }
+bool mgr_is_direct_io(struct io_mgr *iom);
+bool mgr_is_fsync_reap(struct io_mgr *iom);
+inline bool mgr_is_direct_io(struct io_mgr *iom) {
+    return iom->td->arg->fsync_mode == 0;
+}
+inline bool mgr_is_fsync_reap(struct io_mgr *iom) {
+    return iom->td->arg->fsync_mode == 1;
+}
+// inline bool mgr_is_fsync_last(struct io_mgr *iom) {
+//     return iom->td->arg->fsync_mode == 2;
+// }
 
 void mgr_read_prepare(struct io_mgr *iom, int idx_in_mgr, int src_fd,
                       size_t io_size, off_t offset, int i_r_cbs_tmp) {
@@ -370,7 +454,7 @@ void mgr_read_prepare(struct io_mgr *iom, int idx_in_mgr, int src_fd,
     iom->r_ctxs[idx_in_mgr].is_read_action = true;
     if (iom->cb_status[idx_in_mgr] != 0) {
         log_error("mgr_read_prepare() assert() failed\n");
-        log_io_mgr(AIOCP_LOG_ERROR, 88, iom);
+        log_io_mgr(AIOCP_LOG_ERROR, iom->td->tid, iom);
         exit(1);
     }
     iom->cb_status[idx_in_mgr] = 1;
@@ -385,35 +469,48 @@ void mgr_read_prepare(struct io_mgr *iom, int idx_in_mgr, int src_fd,
     iom->io_r_prepared++;
 }
 
-int mgr_read_reap(struct io_mgr *iom, int min_reap, int max_reap, int tid) {
+int mgr_read_reap(struct io_mgr *iom, int min_reap, int max_reap) {
     int r_cmpl = 0;
     log_debug("read reap begin: r_min_reap: %d, r_max_reap: %d, ret: %d\n",
               min_reap, max_reap, r_cmpl);
-    r_cmpl = io_getevents(iom->r_ctx, min_reap, max_reap, iom->r_events, NULL);
+retry:
+    if (iom->td->arg->reap_mode == 0) // normal kernel_space reap
+        r_cmpl =
+            io_getevents(iom->r_ctx, min_reap, max_reap, iom->r_events, NULL);
+    else // user_space reap
+        r_cmpl = user_io_getevents(iom->r_ctx, max_reap, iom->r_events);
     log_debug("read reap end: r_min_reap: %d, r_max_reap: %d, ret: %d\n",
               min_reap, max_reap, r_cmpl);
     if (r_cmpl < 0) {
-        log_errno(r_cmpl,
-                  "tid:%d, failed to io_getevents(), r_cmpl: %d, "
-                  "min_reap: %d\n",
-                  tid, r_cmpl, min_reap);
+        log_error_errno(r_cmpl,
+                        "tid:%d, failed to io_getevents(), r_cmpl: %d, "
+                        "min_reap: %d\n",
+                        iom->td->tid, r_cmpl, min_reap);
         return r_cmpl;
     } else if (0 <= r_cmpl && r_cmpl < min_reap) {
-        log_errno(r_cmpl,
-                  "tid:%d, io_getevents() failed to reap enough, r_cmpl: %d, "
-                  "min_reap: %d\n",
-                  tid, r_cmpl, min_reap);
-        return -EIO;
+        if (iom->td->arg->reap_mode == 1) {
+            // log_warn("tid:%d, io_getevents() not reap enough, r_cmpl: %d, "
+            //          "min_reap: %d, retry, r_q: %ld, w_q: %ld\n",
+            //          iom->td->tid, r_cmpl, min_reap, iom->io_r_in_q,
+            //          iom->io_w_in_q);
+            // goto retry;
+        } else {
+            log_error(
+                "tid:%d, io_getevents() failed to reap enough, r_cmpl: %d, "
+                "min_reap: %d\n",
+                iom->td->tid, r_cmpl, min_reap);
+            return -EIO;
+        }
     }
     for (int i = 0; i < r_cmpl; i++) {
         struct io_event *ev = &iom->r_events[i];
         struct io_ctx *c = ev->data;
         if (ev->res != c->io_size) {
             long res = (long)ev->res;
-            log_error("pread() failed, io_size: %lu, io_done_bytes: %ld , "
-                      "res2: %ld\n",
-                      c->io_size, (long)ev->res, (long)ev->res2);
             if (res < 0) {
+                log_error("pread() failed, io_size: %lu, res: %ld , "
+                          "res2: %ld\n",
+                          c->io_size, res, (long)ev->res2);
                 return res;
             }
         }
@@ -422,7 +519,7 @@ int mgr_read_reap(struct io_mgr *iom, int min_reap, int max_reap, int tid) {
             log_error("mgr_read_reap() assert() failed, ret cb_status: %d, "
                       "idx_in_mgr: %d\n",
                       iom->cb_status[c->idx_in_mgr], c->idx_in_mgr);
-            log_io_mgr(AIOCP_LOG_ERROR, 88, iom);
+            log_io_mgr(AIOCP_LOG_ERROR, iom->td->tid, iom);
             exit(1);
         }
         iom->cb_status[c->idx_in_mgr] = 2;
@@ -442,13 +539,18 @@ int mgr_write_prepare(struct io_mgr *iom, size_t w_submit_max, int dest_fd) {
                   w_submit_max);
         if (iom->cb_status[idx_mgr] != 2) {
             log_error("mgr_write_prepare() assert() failed\n");
-            log_io_mgr(AIOCP_LOG_ERROR, 88, iom);
+            log_io_mgr(AIOCP_LOG_ERROR, iom->td->tid, iom);
             exit(1);
         }
-        io_prep_pwrite(
-            iom->w_cbs[idx_mgr], dest_fd, iom->buf[idx_mgr],
-            iom->r_ctxs[idx_mgr].io_size, // always io_size for direct IO
-            iom->r_ctxs[idx_mgr].offset);
+        if (mgr_is_direct_io(iom)) {
+            iom->r_ctxs[idx_mgr].io_size = iom->td->arg->io_size;
+        } else {
+
+            iom->r_ctxs[idx_mgr].io_size = iom->r_ctxs[idx_mgr].io_done_bytes;
+        }
+        io_prep_pwrite(iom->w_cbs[idx_mgr], dest_fd, iom->buf[idx_mgr],
+                       iom->r_ctxs[idx_mgr].io_size,
+                       iom->r_ctxs[idx_mgr].offset);
         // copy w_cbs to w_cbs_tmp
         iom->w_cbs_tmp[i_w_cbs_tmp] = iom->w_cbs[idx_mgr];
         iom->cb_status[idx_mgr] = 3;
@@ -462,44 +564,68 @@ int mgr_write_prepare(struct io_mgr *iom, size_t w_submit_max, int dest_fd) {
     return w_prepared;
 }
 
-int mgr_write_reap(struct io_mgr *iom, int min_reap, int tid) {
+int mgr_write_reap(struct io_mgr *iom, int min_reap) {
     int w_cmpl = 0;
     // if only a small num of IOs in q
     int max_reap = max2(min_reap, iom->io_w_in_q);
-    w_cmpl = io_getevents(iom->w_ctx, min_reap, max_reap, iom->w_events, NULL);
+
+retry:
+    if (iom->td->arg->reap_mode == 0)
+        w_cmpl =
+            io_getevents(iom->w_ctx, min_reap, max_reap, iom->w_events, NULL);
+    else // user_space reap
+        w_cmpl = user_io_getevents(iom->w_ctx, max_reap, iom->w_events);
     log_debug("write reap: w_min_reap: %d, w_max_reap: %d, ret: %d\n", min_reap,
               iom->io_w_in_q, w_cmpl);
     if (w_cmpl < 0) {
-        log_errno(w_cmpl,
-                  "tid:%d, failed to io_getevents(), w_cmpl: %d, "
-                  "min_reap: %d\n",
-                  tid, w_cmpl, min_reap);
+        log_error_errno(w_cmpl,
+                        "tid:%d, failed to io_getevents(), w_cmpl: %d, "
+                        "min_reap: %d\n",
+                        iom->td->tid, w_cmpl, min_reap);
         return w_cmpl;
     } else if (0 <= w_cmpl && w_cmpl < min_reap) {
-        log_errno(w_cmpl,
-                  "tid:%d, io_getevents() failed to reap enough, w_cmpl: %d, "
-                  "min_reap: %d\n",
-                  tid, w_cmpl, min_reap);
-        iom->io_w_in_q -= w_cmpl;
-        return -EIO;
+        if (iom->td->arg->reap_mode == 1) {
+            // log_warn(
+            //     "tid:%d, io_getevents() failed to reap enough, w_cmpl: %d, "
+            //     "min_reap: %d\n",
+            //     iom->td->tid, w_cmpl, min_reap);
+
+            // goto retry;
+        } else {
+            log_error(
+                "tid:%d, io_getevents() failed to reap enough, w_cmpl: %d, "
+                "min_reap: %d\n",
+                iom->td->tid, w_cmpl, min_reap);
+            return -EIO;
+        }
     }
     for (int i = 0; i < w_cmpl; i++) {
         struct io_event *ev = &iom->w_events[i];
         struct io_ctx *c = ev->data;
         if (ev->res != c->io_size) {
-            long res = (long)ev->res;
-            log_error("pwrite() failed, io_size: %lu, io_done_bytes: %ld, "
-                      "res2: %ld\n",
-                      c->io_size, (long)ev->res, (long)ev->res2);
-            if (res < 0)
+            ssize_t res = (long)ev->res;
+            if (res < 0) {
+                log_error_errno(errno,
+                                "pwrite() failed, io_size: %lu, offset: %lu, "
+                                "io_done_bytes: %ld, "
+                                "res2: %ld\n",
+                                c->io_size, c->offset, (long)ev->res,
+                                (long)ev->res2);
+                return res;
+            } else {
+                log_error("pwrite() failed, io_size: %lu, offset: %lu, "
+                          "io_done_bytes: %ld, "
+                          "res2: %ld\n",
+                          c->io_size, c->offset, (long)ev->res, (long)ev->res2);
                 return -EIO;
+            }
         }
         c->io_done_bytes = ev->res;
         if (iom->cb_status[c->idx_in_mgr] != 3) {
             log_error("mgr_write_reap() assert() failed, ret cb_status: %d, "
                       "idx_in_mgr: %d\n",
                       iom->cb_status[c->idx_in_mgr], c->idx_in_mgr);
-            log_io_mgr(AIOCP_LOG_ERROR, 88, iom);
+            log_io_mgr(AIOCP_LOG_ERROR, iom->td->tid, iom);
             exit(1);
         }
         iom->cb_status[c->idx_in_mgr] = 0;
@@ -534,15 +660,15 @@ void *thread_main(void *data) {
     bzero(&r_ctx, sizeof(io_context_t));
     td->ret = io_setup(td->arg->iodepth, &r_ctx);
     if (td->ret) {
-        log_errno(td->ret, "tid:%d, failed to io_setup(%d) for read\n", td->tid,
-                  td->arg->iodepth);
+        log_error_errno(td->ret, "tid:%d, failed to io_setup(%d) for read\n",
+                        td->tid, td->arg->iodepth);
         return NULL;
     }
 
     td->ret = io_setup(td->arg->iodepth, &w_ctx);
     if (td->ret) {
-        log_errno(td->ret, "tid:%d, failed to io_setup(%d) for write\n",
-                  td->tid, td->arg->iodepth);
+        log_error_errno(td->ret, "tid:%d, failed to io_setup(%d) for write\n",
+                        td->tid, td->arg->iodepth);
         io_destroy(r_ctx);
         return NULL;
     }
@@ -550,8 +676,7 @@ void *thread_main(void *data) {
     log_aiocp_args(td->arg);
     log_thread_data(td);
 
-    if (init_io_mgr(&iom, td->arg->iodepth, td->arg->io_size, td->len, r_ctx,
-                    w_ctx)) {
+    if (init_io_mgr(&iom, td, r_ctx, w_ctx)) {
         log_error("tid:%d, failed to init_thread_locals()\n", td->tid);
         goto err_out1;
     }
@@ -592,10 +717,10 @@ void *thread_main(void *data) {
             log_debug("io_submit(%lu) for read\n", iom.io_r_prepared);
             ret = loop_io_submit(r_ctx, iom.io_r_prepared, iom.r_cbs_tmp);
             if (ret != iom.io_r_prepared) {
-                log_errno(ret,
-                          "tid:%d, failed to io_submit(), ret: %d, "
-                          "io_r_prepared: %lu\n",
-                          td->tid, ret, iom.io_r_prepared);
+                log_error_errno(ret,
+                                "tid:%d, failed to io_submit(), ret: %d, "
+                                "io_r_prepared: %lu\n",
+                                td->tid, ret, iom.io_r_prepared);
                 goto err_out1;
             }
 
@@ -615,7 +740,7 @@ void *thread_main(void *data) {
             // if only a small num of io in q
             int r_max_reap = max2(r_min_reap, iom.io_r_in_q);
             // reap IOs as least as we can
-            ret = mgr_read_reap(&iom, r_min_reap, r_max_reap, td->tid);
+            ret = mgr_read_reap(&iom, r_min_reap, r_max_reap);
             if (ret < 0)
                 goto err_out1;
             log_debug("round %d : slots after read reap\n", io_i);
@@ -633,10 +758,10 @@ void *thread_main(void *data) {
                 log_debug("io_submit(%d) for write\n", w_prepared);
                 ret = loop_io_submit(w_ctx, w_prepared, iom.w_cbs_tmp);
                 if (ret != w_prepared) {
-                    log_errno(ret,
-                              "tid:%d, failed to io_submit(), ret: %d, "
-                              "w_prepared: %lu\n",
-                              td->tid, ret, w_prepared);
+                    log_error_errno(ret,
+                                    "tid:%d, failed to io_submit(), ret: %d, "
+                                    "w_prepared: %lu\n",
+                                    td->tid, ret, w_prepared);
                     goto err_out1;
                 }
                 iom.io_w_in_q += w_prepared;
@@ -650,12 +775,20 @@ void *thread_main(void *data) {
                 io_i == iom.io_cnt_total - 1
                     ? iom.io_w_in_q
                     : min2(td->arg->iodepth_write_cmpl, iom.io_w_in_q);
-            ret = mgr_write_reap(&iom, w_min_reap, td->tid);
+            ret = mgr_write_reap(&iom, w_min_reap);
             if (ret < 0)
                 goto err_out1;
             log_debug("round %d : slots after write reap\n", io_i);
             log_io_mgr(AIOCP_LOG_DEBUG, td->tid, &iom);
             log_ioqueue(td->tid, &iom, "write reap");
+
+            if (mgr_is_fsync_reap(&iom)) {
+                ret = fsync(td->dest_fd);
+                if (ret < 0) {
+                    log_error_errno(errno, "failed to fsync() reap\n");
+                    goto err_out1;
+                }
+            }
         }
 
         int next_idx_mgr = (io_i + 1) % td->arg->iodepth;
@@ -688,10 +821,44 @@ void fill_thread_data(struct thread_data *td, struct aiocp_args *arg,
     td->len = file_size;
 }
 
+inline bool aiocp_is_buffered_io(struct aiocp_args *arg) {
+    return arg->fsync_mode == 1 || arg->fsync_mode == 2;
+}
+
+inline bool aiocp_is_direct_io(struct aiocp_args *arg) {
+    return arg->fsync_mode == 0;
+}
 int faiocp(int src_fd, int dest_fd, struct aiocp_args arg) {
     int ret;
+    int src_flag, dest_flag;
     glog = arg.log;
     glogdebug = arg.debuglog;
+
+    src_flag = fcntl(src_fd, F_GETFL);
+    if (src_flag < 0) {
+        log_error("cannot fcntl(src_fd, F_GETFL)\n");
+        return 1;
+    }
+    dest_flag = fcntl(dest_fd, F_GETFL);
+    if (dest_flag < 0) {
+        log_error("cannot fcntl(dest_fd, F_GETFL)\n");
+        return 1;
+    }
+    bool flag_valid = false;
+    if (aiocp_is_direct_io(&arg) && ((typeof(O_DIRECT))src_flag & O_DIRECT) &&
+        ((typeof(O_DIRECT))dest_flag & O_DIRECT))
+        flag_valid = true;
+    else if (aiocp_is_buffered_io(&arg) &&
+             ~((typeof(O_DIRECT))src_flag & O_DIRECT) &&
+             ~((typeof(O_DIRECT))dest_flag & O_DIRECT))
+        flag_valid = true;
+    if (!flag_valid) {
+        log_error("fd flag doesn't match with fsync_mode. src_flag: 0X%08X, "
+                  "dest_flag: 0X%08X, O_DIRECT: 0X%08X\n",
+                  (typeof(O_DIRECT))src_flag, (typeof(O_DIRECT))dest_flag,
+                  O_DIRECT);
+        return 1;
+    }
 
     struct stat src_stat;
     if (fstat(src_fd, &src_stat) < 0) {
@@ -703,6 +870,18 @@ int faiocp(int src_fd, int dest_fd, struct aiocp_args arg) {
     if (fallocate(dest_fd, 0, 0, src_stat.st_size) < 0) {
         log_error("connot fallocate(dest_fd)\n");
         return 1;
+    }
+
+    if (arg.thread_cnt < 2) {
+        ret = posix_fadvise(src_fd, 0, src_stat.st_size, POSIX_FADV_SEQUENTIAL);
+        if (ret < 0) {
+            log_warn_errno(ret, "posix_fadvise(srv_fd)\n");
+        }
+        ret =
+            posix_fadvise(dest_fd, 0, src_stat.st_size, POSIX_FADV_SEQUENTIAL);
+        if (ret < 0) {
+            log_warn_errno(ret, "posix_fadvise(dest_fd)\n");
+        }
     }
 
     if (arg.thread_cnt == 0) {
@@ -755,11 +934,22 @@ int faiocp(int src_fd, int dest_fd, struct aiocp_args arg) {
 
         free(tds);
         free(io_threads);
-        if (ftruncate(dest_fd, src_stat.st_size) < 0) {
+
+        if (arg.fsync_mode == 2) {
+            ret = fsync(dest_fd);
+            if (ret < 0) {
+                log_error_errno(errno, "failed to fsync() reap\n");
+                goto err_out1;
+            }
+        }
+
+        if (arg.fsync_mode == 0 && ftruncate(dest_fd, src_stat.st_size) < 0) {
             log_error("cannot ftruncate(dest_fd)\n");
             return 1;
         }
+
         return ret;
+
     err_out2:
         for (int tid = 0; tid < arg.thread_cnt; tid++) {
             if (io_threads[tid]) {
@@ -783,11 +973,13 @@ int main(int argc, char *argv[]) {
     const char *dest = "/mnt/ext4/dest.txt";
     int src_fd, dest_fd;
     src_fd = open(src, O_RDONLY | O_DIRECT);
+    // src_fd = open(src, O_RDONLY);
     if (src_fd < 0) {
         fprintf(stderr, "open() failed, error: %s\n", strerror(errno));
         return EXIT_FAILURE;
     }
-    dest_fd = open(dest, O_WRONLY | O_DIRECT | O_TRUNC | O_CREAT, 0644);
+    dest_fd = open(dest, O_DIRECT | O_WRONLY | O_TRUNC | O_CREAT, 0644);
+    // dest_fd = open(dest, O_WRONLY | O_TRUNC | O_CREAT, 0644);
     if (dest_fd < 0) {
         fprintf(stderr, "open() for write failed, error: %s\n",
                 strerror(errno));
@@ -797,15 +989,15 @@ int main(int argc, char *argv[]) {
     struct aiocp_args arg = {
         .debuglog = true,
         .log = stdout,
-        .io_size = 4096,
-        .iodepth = 16,
-        .iodepth_read_submit = 16,
+        .io_size = 1024 * 1024 * 4,
+        .iodepth = 4,
+        .iodepth_read_submit = 4,
         .iodepth_read_cmpl = 4,
-        .iodepth_write_submit = 16,
+        .iodepth_write_submit = 4,
         .iodepth_write_cmpl = 4,
-        .reap_mode = 0,
+        .reap_mode = 1,
         .fsync_mode = 0,
-        .thread_cnt = 2,
+        .thread_cnt = 0,
     };
 
     int ret = faiocp(src_fd, dest_fd, arg);

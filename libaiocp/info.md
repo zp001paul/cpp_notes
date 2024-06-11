@@ -4,15 +4,28 @@
 1. log_info OK
 1. copy file attr
 1. adaptive iodepth_submit / RWF_NOWAIT
+1. 创建几个好测参数
+1. 测一下性能
+1. userspace reap
+1. fallocate() OK
+1. fadvice() OK
+1. fsync() OK
+1. 处理好线程返回的ret
+1. C++调用C lib
+1. gflags
+1. gtest
+
+# 要研究的东西
+
+1. pthread相关函数
+1. posix_fadvise()
 
 # BUGS:
 
 1. BUG: fix sharding size align OK
 1. 还是会出现以下日志，不是哪里计数错了 OK
-   libaiocp : warn: tid:0, targeting iocb slot 0 not ready, status: 3, try to reap!
-   libaiocp : error: tid:0, no write io in queue! exiting!
 1. io线程提前退出，主线程没能退出 OK
-1. 完全顺利跑完，数据也不对
+1. 完全顺利跑完，数据也不对 OK
 
 # feature
 
