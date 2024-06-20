@@ -1,7 +1,7 @@
 CC := gcc
 CFLAGS := -std=gnu11 -Wall
 CLIBS := -laio
-PROGS := libaio_normal libaio_direct libaio_fsync
+PROGS := libaio_normal libaio_direct libaio_fsync libaio_2io
 
 .PNONY: all clean cp
 
