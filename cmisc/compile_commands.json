@@ -1,0 +1,15 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-std=gnu11",
+      "-o",
+      "atomic_arr",
+      "atomic_arr.c"
+    ],
+    "directory": "/home/zp001/Documents/cpp_notes/cmisc",
+    "file": "/home/zp001/Documents/cpp_notes/cmisc/atomic_arr.c",
+    "output": "/home/zp001/Documents/cpp_notes/cmisc/atomic_arr"
+  }
+]

@@ -1,12 +1,15 @@
-CFLAGS := -std=c11
-PROGS := direct
+CFLAGS := -std=gnu11
+PROGS := direct 
+MTPROGS := atomic_arr
 
-.PNONY: all clean
+.PNONY: all clean 
 
-all: $(PROGS)
+all: $(PROGS) $(MTPROGS)
 
 $(PROGS):%:%.c
 	gcc $(CFLAGS) -o $@ $@.c
+$(MTPROGS):%:%.c
+	gcc $(CFLAGS) -lpthread -o $@ $@.c
 
 clean:
 	rm -f $(PROGS)
