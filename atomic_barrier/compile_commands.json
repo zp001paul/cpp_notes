@@ -1,0 +1,15 @@
+[
+  {
+    "arguments": [
+      "/usr/lib64/ccache/gcc",
+      "-c",
+      "-std=gnu11",
+      "-o",
+      "atomic_arr",
+      "atomic_arr.c"
+    ],
+    "directory": "/home/zp001/MyRepos/cpp_notes/atomic_barrier",
+    "file": "/home/zp001/MyRepos/cpp_notes/atomic_barrier/atomic_arr.c",
+    "output": "/home/zp001/MyRepos/cpp_notes/atomic_barrier/atomic_arr"
+  }
+]
