@@ -5,6 +5,8 @@ https://www.cnblogs.com/fanguang/p/16643434.html # 上文的中文翻译，上�
 https://blog.csdn.net/weixin_45030965/article/details/132852641 # 网友好文
 https://cloud.tencent.com/developer/article/1801450 # 网友好文
 https://www.kernel.org/doc/html/latest/process/volatile-considered-harmful.html # linux不赞成使用volatile关键字
+https://lwn.net/Articles/233482/ # 上文的引用文，linus大神讲述为啥不用volatile
+https://cloud.tencent.com/developer/article/1801450 # 讲到观察编译器乱序
 
 # 编译器乱序
 

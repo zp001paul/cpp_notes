@@ -9,23 +9,6 @@ https://lwn.net/Articles/724198/ # 讲AIO和O_DIRECT的关系
 https://blog.csdn.net/yiyeguzhou100/article/details/106289024 # 内核源码调用路径
 https://github.com/littledan/linux-aio?tab=readme-ov-file # littledan
 
-# AIO的各种使用模式
-
-open模式
-
-1. 正常direct IO模式
-2. 异步fsync()
-
-prep模式
-
-1. 正常模式
-2. nowait
-
-reap模式
-
-1. 正常io_getevents()
-2. user reap
-3. epoll结合
 
 ## direct IO在哪里判断是否要等待？
 
