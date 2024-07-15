@@ -12,3 +12,40 @@ C++中，类型是很重要的，现代C++的代码很容易写出一个很长�
 typedef多了之后，连自己都不知道这玩意是什么了。
 
 # OOP or not
+
+
+
+## 不使用OOP
+
+
+
+### 使用全局函数代替ctor
+
+还可以利用boost.LEAF库
+
+
+
+# 异常
+
+## 尽量不使用异常
+
+
+
+## 可以使用异常的场景
+
+1. ctor。没办法，只能使用。
+2. 函数开始的不变式。invariant。
+3. 必须在程序release之后还要保留的assert的地方。
+
+
+
+## 不能使用异常的地方
+
+1. 最外面的catch{}里面不能抛异常
+
+
+
+## 谷歌
+
+![img](https://ask.qcloudimg.com/developer-images/article/1198598/5mfdn24fw6.png)
+
