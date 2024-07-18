@@ -1,0 +1,910 @@
+execve("./a.out", ["./a.out", "-t", "2"], 0x7ffe9fbe2e18 /* 72 vars */) = 0
+brk(NULL)                               = 0x758000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc9393ce20) = -1 EINVAL (Invalid argument)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=88835, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 88835, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f01fb711000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/lib/libboost_stacktrace_basic.so.1.85.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=22688, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f01fb70f000
+mmap(NULL, 20680, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f01fb709000
+mmap(0x7f01fb70a000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7f01fb70a000
+mmap(0x7f01fb70c000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f01fb70c000
+mmap(0x7f01fb70d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f01fb70d000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/lib/libboost_program_options.so.1.85.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=531704, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 427736, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f01fb6a0000
+mmap(0x7f01fb6b1000, 286720, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x7f01fb6b1000
+mmap(0x7f01fb6f7000, 57344, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x57000) = 0x7f01fb6f7000
+mmap(0x7f01fb705000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x64000) = 0x7f01fb705000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib64/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2494880, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 2437248, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f01fb400000
+mmap(0x7f01fb49c000, 1220608, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9c000) = 0x7f01fb49c000
+mmap(0x7f01fb5c6000, 507904, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c6000) = 0x7f01fb5c6000
+mmap(0x7f01fb642000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x242000) = 0x7f01fb642000
+mmap(0x7f01fb650000, 12416, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f01fb650000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=935968, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 917520, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f01fb31f000
+mmap(0x7f01fb32f000, 479232, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x10000) = 0x7f01fb32f000
+mmap(0x7f01fb3a4000, 368640, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x85000) = 0x7f01fb3a4000
+mmap(0x7f01fb3fe000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xde000) = 0x7f01fb3fe000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib64/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=149248, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 147912, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f01fb67b000
+mmap(0x7f01fb67e000, 114688, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f01fb67e000
+mmap(0x7f01fb69a000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1f000) = 0x7f01fb69a000
+mmap(0x7f01fb69e000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x22000) = 0x7f01fb69e000
+mmap(0x7f01fb69f000, 456, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f01fb69f000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \203\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2369656, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 1973104, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f01fb13d000
+mmap(0x7f01fb163000, 1441792, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7f01fb163000
+mmap(0x7f01fb2c3000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x186000) = 0x7f01fb2c3000
+mmap(0x7f01fb311000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d3000) = 0x7f01fb311000
+mmap(0x7f01fb317000, 31600, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f01fb317000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f01fb679000
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f01fb676000
+arch_prctl(ARCH_SET_FS, 0x7f01fb676740) = 0
+set_tid_address(0x7f01fb676a10)         = 7916
+set_robust_list(0x7f01fb676a20, 24)     = 0
+rseq(0x7f01fb677060, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f01fb311000, 16384, PROT_READ) = 0
+mprotect(0x7f01fb69e000, 4096, PROT_READ) = 0
+mprotect(0x7f01fb3fe000, 4096, PROT_READ) = 0
+mprotect(0x7f01fb642000, 53248, PROT_READ) = 0
+mprotect(0x7f01fb705000, 12288, PROT_READ) = 0
+mprotect(0x7f01fb70d000, 4096, PROT_READ) = 0
+mprotect(0x46a000, 4096, PROT_READ)     = 0
+mprotect(0x7f01fb759000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7f01fb711000, 88835)           = 0
+futex(0x7f01fb6506bc, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+getrandom("\x34\xfe\x1d\xc3\xdd\xdf\x8e\xec", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x758000
+brk(0x779000)                           = 0x779000
+getcwd("/home/zp001/MyRepos/cpp_notes/misc", 4096) = 35
+newfstatat(1, "", {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}, AT_EMPTY_PATH) = 0
+ioctl(1, TCGETS, 0x7ffc9393c860)        = -1 ENOTTY (Inappropriate ioctl for device)
+write(1, "itering path: \"/home/zp001/MyRep"..., 68) = 68
+rt_sigaction(SIGRT_1, {sa_handler=0x7f01fb1c89e0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7f01fb17b9a0}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f01fa800000
+mprotect(0x7f01fa801000, 8388608, PROT_READ|PROT_WRITE) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f01fb000990, parent_tid=0x7f01fb000990, exit_signal=0, stack=0x7f01fa800000, stack_size=0x7fff80, tls=0x7f01fb0006c0}strace: Process 7917 attached
+ => {parent_tid=[7917]}, 88) = 7917
+[pid  7917] rseq(0x7f01fb000fe0, 0x20, 0, 0x53053053 <unfinished ...>
+[pid  7916] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid  7917] <... rseq resumed>)         = 0
+[pid  7916] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid  7917] set_robust_list(0x7f01fb0009a0, 24 <unfinished ...>
+[pid  7916] mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+[pid  7917] <... set_robust_list resumed>) = 0
+[pid  7916] <... mmap resumed>)         = 0x7f01f9e00000
+[pid  7917] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid  7916] mprotect(0x7f01f9e01000, 8388608, PROT_READ|PROT_WRITE <unfinished ...>
+[pid  7917] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid  7916] <... mprotect resumed>)     = 0
+[pid  7916] rt_sigprocmask(SIG_BLOCK, ~[],  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/.",  <unfinished ...>
+[pid  7916] <... rt_sigprocmask resumed>[], 8) = 0
+[pid  7916] clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f01fa600990, parent_tid=0x7f01fa600990, exit_signal=0, stack=0x7f01f9e00000, stack_size=0x7fff80, tls=0x7f01fa6006c0} <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=1740, ...}, 0) = 0
+[pid  7917] openat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/.", O_RDONLY|O_CLOEXEC|O_DIRECTORYstrace: Process 7918 attached
+ <unfinished ...>
+[pid  7916] <... clone3 resumed> => {parent_tid=[7918]}, 88) = 7918
+[pid  7917] <... openat resumed>)       = 3
+[pid  7916] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid  7918] rseq(0x7f01fa600fe0, 0x20, 0, 0x53053053 <unfinished ...>
+[pid  7917] newfstatat(3, "",  <unfinished ...>
+[pid  7916] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid  7918] <... rseq resumed>)         = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=1740, ...}, AT_EMPTY_PATH) = 0
+[pid  7916] futex(0x7f01fb000990, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 7917, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+[pid  7918] set_robust_list(0x7f01fa6009a0, 24 <unfinished ...>
+[pid  7917] fcntl(3, F_GETFL <unfinished ...>
+[pid  7918] <... set_robust_list resumed>) = 0
+[pid  7917] <... fcntl resumed>)        = 0x18000 (flags O_RDONLY|O_LARGEFILE|O_DIRECTORY)
+[pid  7918] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid  7917] fcntl(3, F_SETFD, FD_CLOEXEC <unfinished ...>
+[pid  7918] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid  7917] <... fcntl resumed>)        = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/.",  <unfinished ...>
+[pid  7917] mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=1740, ...}, 0) = 0
+[pid  7917] <... mmap resumed>)         = 0x7f01f1e00000
+[pid  7918] openat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/.", O_RDONLY|O_CLOEXEC|O_DIRECTORY <unfinished ...>
+[pid  7917] munmap(0x7f01f1e00000, 35651584 <unfinished ...>
+[pid  7918] <... openat resumed>)       = 4
+[pid  7917] <... munmap resumed>)       = 0
+[pid  7918] newfstatat(4, "",  <unfinished ...>
+[pid  7917] munmap(0x7f01f8000000, 31457280 <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=1740, ...}, AT_EMPTY_PATH) = 0
+[pid  7917] <... munmap resumed>)       = 0
+[pid  7918] fcntl(4, F_GETFL <unfinished ...>
+[pid  7917] mprotect(0x7f01f4000000, 135168, PROT_READ|PROT_WRITE <unfinished ...>
+[pid  7918] <... fcntl resumed>)        = 0x18000 (flags O_RDONLY|O_LARGEFILE|O_DIRECTORY)
+[pid  7917] <... mprotect resumed>)     = 0
+[pid  7918] fcntl(4, F_SETFD, FD_CLOEXEC <unfinished ...>
+[pid  7917] getdents64(3,  <unfinished ...>
+[pid  7918] <... fcntl resumed>)        = 0
+[pid  7918] mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  7917] <... getdents64 resumed>0x7f01f4000ba0 /* 76 entries */, 32768) = 2680
+[pid  7918] <... mmap resumed>)         = 0x7f01ec000000
+[pid  7918] munmap(0x7f01f0000000, 67108864 <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache",  <unfinished ...>
+[pid  7918] <... munmap resumed>)       = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=12, ...}, 0) = 0
+[pid  7918] mprotect(0x7f01ec000000, 135168, PROT_READ|PROT_WRITE <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache",  <unfinished ...>
+[pid  7918] <... mprotect resumed>)     = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=12, ...}, 0) = 0
+[pid  7918] getdents64(4,  <unfinished ...>
+[pid  7917] futex(0x7f01fb6506c8, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+[pid  7918] <... getdents64 resumed>0x7f01ec000ba0 /* 76 entries */, 32768) = 2680
+[pid  7917] <... futex resumed>)        = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache", {st_mode=S_IFDIR|0755, st_size=12, ...}, 0) = 0
+[pid  7917] openat(3, ".cache", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_DIRECTORY <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache",  <unfinished ...>
+[pid  7917] <... openat resumed>)       = 5
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=12, ...}, 0) = 0
+[pid  7917] newfstatat(5, "",  <unfinished ...>
+[pid  7918] openat(4, ".cache", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_DIRECTORY <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=12, ...}, AT_EMPTY_PATH) = 0
+[pid  7918] <... openat resumed>)       = 6
+[pid  7917] fcntl(5, F_GETFL <unfinished ...>
+[pid  7918] newfstatat(6, "",  <unfinished ...>
+[pid  7917] <... fcntl resumed>)        = 0x38000 (flags O_RDONLY|O_LARGEFILE|O_NOFOLLOW|O_DIRECTORY)
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=12, ...}, AT_EMPTY_PATH) = 0
+[pid  7917] fcntl(5, F_SETFD, FD_CLOEXEC <unfinished ...>
+[pid  7918] fcntl(6, F_GETFL <unfinished ...>
+[pid  7917] <... fcntl resumed>)        = 0
+[pid  7918] <... fcntl resumed>)        = 0x38000 (flags O_RDONLY|O_LARGEFILE|O_NOFOLLOW|O_DIRECTORY)
+[pid  7917] getdents64(5,  <unfinished ...>
+[pid  7918] fcntl(6, F_SETFD, FD_CLOEXEC <unfinished ...>
+[pid  7917] <... getdents64 resumed>0x7f01f40098a0 /* 3 entries */, 32768) = 80
+[pid  7918] <... fcntl resumed>)        = 0
+[pid  7918] getdents64(6,  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd",  <unfinished ...>
+[pid  7918] <... getdents64 resumed>0x7f01ec0098a0 /* 3 entries */, 32768) = 80
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=10, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=10, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=10, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd",  <unfinished ...>
+[pid  7917] openat(5, "clangd", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_DIRECTORY <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=10, ...}, 0) = 0
+[pid  7917] <... openat resumed>)       = 7
+[pid  7918] openat(6, "clangd", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_DIRECTORY <unfinished ...>
+[pid  7917] newfstatat(7, "",  <unfinished ...>
+[pid  7918] <... openat resumed>)       = 8
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=10, ...}, AT_EMPTY_PATH) = 0
+[pid  7918] newfstatat(8, "",  <unfinished ...>
+[pid  7917] fcntl(7, F_GETFL <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=10, ...}, AT_EMPTY_PATH) = 0
+[pid  7917] <... fcntl resumed>)        = 0x38000 (flags O_RDONLY|O_LARGEFILE|O_NOFOLLOW|O_DIRECTORY)
+[pid  7918] fcntl(8, F_GETFL <unfinished ...>
+[pid  7917] fcntl(7, F_SETFD, FD_CLOEXEC <unfinished ...>
+[pid  7918] <... fcntl resumed>)        = 0x38000 (flags O_RDONLY|O_LARGEFILE|O_NOFOLLOW|O_DIRECTORY)
+[pid  7917] <... fcntl resumed>)        = 0
+[pid  7918] fcntl(8, F_SETFD, FD_CLOEXEC <unfinished ...>
+[pid  7917] getdents64(7,  <unfinished ...>
+[pid  7918] <... fcntl resumed>)        = 0
+[pid  7917] <... getdents64 resumed>0x7f01f4012090 /* 3 entries */, 32768) = 80
+[pid  7918] getdents64(8,  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index",  <unfinished ...>
+[pid  7918] <... getdents64 resumed>0x7f01ec012090 /* 3 entries */, 32768) = 80
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=256, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=256, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=256, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=256, ...}, 0) = 0
+[pid  7918] openat(8, "index", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_DIRECTORY <unfinished ...>
+[pid  7917] openat(7, "index", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_DIRECTORY <unfinished ...>
+[pid  7918] <... openat resumed>)       = 9
+[pid  7918] newfstatat(9, "",  <unfinished ...>
+[pid  7917] <... openat resumed>)       = 10
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=256, ...}, AT_EMPTY_PATH) = 0
+[pid  7917] newfstatat(10, "",  <unfinished ...>
+[pid  7918] fcntl(9, F_GETFL <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFDIR|0755, st_size=256, ...}, AT_EMPTY_PATH) = 0
+[pid  7918] <... fcntl resumed>)        = 0x38000 (flags O_RDONLY|O_LARGEFILE|O_NOFOLLOW|O_DIRECTORY)
+[pid  7918] fcntl(9, F_SETFD, FD_CLOEXEC <unfinished ...>
+[pid  7917] fcntl(10, F_GETFL <unfinished ...>
+[pid  7918] <... fcntl resumed>)        = 0
+[pid  7917] <... fcntl resumed>)        = 0x38000 (flags O_RDONLY|O_LARGEFILE|O_NOFOLLOW|O_DIRECTORY)
+[pid  7918] mprotect(0x7f01ec021000, 8192, PROT_READ|PROT_WRITE <unfinished ...>
+[pid  7917] fcntl(10, F_SETFD, FD_CLOEXEC <unfinished ...>
+[pid  7918] <... mprotect resumed>)     = 0
+[pid  7917] <... fcntl resumed>)        = 0
+[pid  7918] getdents64(9, 0x7f01ec01a830 /* 6 entries */, 32768) = 272
+[pid  7917] mprotect(0x7f01f4021000, 8192, PROT_READ|PROT_WRITE <unfinished ...>
+[pid  7918] mprotect(0x7f01ec023000, 4096, PROT_READ|PROT_WRITE <unfinished ...>
+[pid  7917] <... mprotect resumed>)     = 0
+[pid  7918] <... mprotect resumed>)     = 0
+[pid  7917] getdents64(10,  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/const.cpp.95CA139ADC4778CB.idx",  <unfinished ...>
+[pid  7917] <... getdents64 resumed>0x7f01f401a830 /* 6 entries */, 32768) = 272
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=544, ...}, 0) = 0
+[pid  7917] mprotect(0x7f01f4023000, 4096, PROT_READ|PROT_WRITE <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/const.cpp.95CA139ADC4778CB.idx",  <unfinished ...>
+[pid  7917] <... mprotect resumed>)     = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=544, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/const.cpp.95CA139ADC4778CB.idx",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/myconcept.hpp.3BCEB73BFE2AB713.idx",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=544, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=958, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/const.cpp.95CA139ADC4778CB.idx",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/myconcept.hpp.3BCEB73BFE2AB713.idx",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=544, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=958, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/myconcept.hpp.3BCEB73BFE2AB713.idx",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/myprt.hpp.7D1B99DB1BD67DEB.idx",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=958, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1044, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/myconcept.hpp.3BCEB73BFE2AB713.idx",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/myprt.hpp.7D1B99DB1BD67DEB.idx",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=958, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1044, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/myprt.hpp.7D1B99DB1BD67DEB.idx",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/raiiorder.cpp.09E4E5762266D595.idx",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1044, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1314, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/raiiorder.cpp.09E4E5762266D595.idx",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/myprt.hpp.7D1B99DB1BD67DEB.idx",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1314, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1044, ...}, 0) = 0
+[pid  7918] getdents64(9,  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/raiiorder.cpp.09E4E5762266D595.idx",  <unfinished ...>
+[pid  7918] <... getdents64 resumed>0x7f01ec01a830 /* 0 entries */, 32768) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1314, ...}, 0) = 0
+[pid  7918] close(9 <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.cache/clangd/index/raiiorder.cpp.09E4E5762266D595.idx",  <unfinished ...>
+[pid  7918] <... close resumed>)        = 0
+[pid  7918] getdents64(8,  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1314, ...}, 0) = 0
+[pid  7918] <... getdents64 resumed>0x7f01ec012090 /* 0 entries */, 32768) = 0
+[pid  7918] close(8 <unfinished ...>
+[pid  7917] getdents64(10,  <unfinished ...>
+[pid  7918] <... close resumed>)        = 0
+[pid  7917] <... getdents64 resumed>0x7f01f401a830 /* 0 entries */, 32768) = 0
+[pid  7918] getdents64(6,  <unfinished ...>
+[pid  7917] close(10 <unfinished ...>
+[pid  7918] <... getdents64 resumed>0x7f01ec0098a0 /* 0 entries */, 32768) = 0
+[pid  7917] <... close resumed>)        = 0
+[pid  7918] close(6 <unfinished ...>
+[pid  7917] getdents64(7,  <unfinished ...>
+[pid  7918] <... close resumed>)        = 0
+[pid  7917] <... getdents64 resumed>0x7f01f4012090 /* 0 entries */, 32768) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./any_variant.md",  <unfinished ...>
+[pid  7917] close(7 <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1186, ...}, 0) = 0
+[pid  7917] <... close resumed>)        = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./any_variant.md",  <unfinished ...>
+[pid  7917] getdents64(5,  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1186, ...}, 0) = 0
+[pid  7917] <... getdents64 resumed>0x7f01f40098a0 /* 0 entries */, 32768) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./compareable_mystruct.cpp",  <unfinished ...>
+[pid  7917] close(5 <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=338, ...}, 0) = 0
+[pid  7917] <... close resumed>)        = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./compareable_mystruct.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./any_variant.md",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=338, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1186, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./const.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./any_variant.md",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=236, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1186, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./const.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./compareable_mystruct.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=236, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=338, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./constexpr_vec.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./compareable_mystruct.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=373, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=338, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./constexpr_vec.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./const.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=373, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=236, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./customed_unordered_map.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./const.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=814, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=236, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./customed_unordered_map.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./constexpr_vec.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=814, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=373, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ducktype.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./constexpr_vec.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=676, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=373, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ducktype.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./customed_unordered_map.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=676, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=814, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./erase.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./customed_unordered_map.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1137, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=814, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./erase.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ducktype.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1137, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=676, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./friend.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ducktype.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=390, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=676, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./friend.cpp", {st_mode=S_IFREG|0644, st_size=390, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./erase.cpp",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./functional1.cpp",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1137, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=463, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./functional1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./erase.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=463, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1137, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ifstream.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./friend.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1147, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=390, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ifstream.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./friend.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1147, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=390, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./insert_emplace.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./functional1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=341, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=463, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./insert_emplace.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./functional1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=341, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=463, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./is_sorted.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ifstream.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=374, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1147, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./is_sorted.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ifstream.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=374, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1147, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./map_extract.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./insert_emplace.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1103, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=341, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./map_extract.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./insert_emplace.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1103, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=341, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myalgorithm.hpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./is_sorted.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=429, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=374, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myalgorithm.hpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./is_sorted.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=429, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=374, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myconcept.hpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./map_extract.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1005, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1103, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myconcept.hpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./map_extract.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1005, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1103, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myprt.hpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myalgorithm.hpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1178, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=429, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myprt.hpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myalgorithm.hpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1178, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=429, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./nothrow_new.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myconcept.hpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=218, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1005, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./nothrow_new.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myconcept.hpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=218, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1005, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./prt_mystruct.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myprt.hpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=554, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1178, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./prt_mystruct.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./myprt.hpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=554, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1178, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./raiiorder.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./nothrow_new.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=491, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=218, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./raiiorder.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./nothrow_new.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=491, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=218, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./prt_mystruct.cpp", {st_mode=S_IFREG|0644, st_size=554, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ranges1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./prt_mystruct.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=990, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=554, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ranges1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./raiiorder.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=990, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=491, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ref_type.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./raiiorder.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=751, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=491, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ref_type.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ranges1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=751, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=990, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./regex.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ranges1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1139, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=990, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./regex.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ref_type.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1139, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=751, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./regex.md",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./ref_type.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2932, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=751, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./regex.md",  <unfinished ...>
+[pid  7917] write(1, "Dir: /home/zp001/MyRepos/cpp_not"..., 4096 <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2932, ...}, 0) = 0
+[pid  7917] <... write resumed>)        = 4096
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./requires1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./regex.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=744, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1139, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./requires1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./regex.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=744, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1139, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./signed_cmp_unsigned.c",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./regex.md",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=167, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2932, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./signed_cmp_unsigned.c",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./regex.md",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=167, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2932, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./sorted_insert.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./requires1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=525, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=744, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./sorted_insert.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./requires1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=525, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=744, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./spaceship.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./signed_cmp_unsigned.c",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=338, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=167, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./spaceship.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./signed_cmp_unsigned.c",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=338, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=167, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./swap.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./sorted_insert.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=232, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=525, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./swap.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./sorted_insert.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=232, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=525, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./spaceship.cpp", {st_mode=S_IFREG|0644, st_size=338, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./temp_args.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./spaceship.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=684, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=338, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./temp_args.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./swap.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=684, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=232, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./tmp.cpp", {st_mode=S_IFREG|0644, st_size=539, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./swap.cpp",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./tmp.cpp",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=232, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=539, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./temp_args.cpp",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./\346\246\202\345\277\265\345\222\214\347\272\246\346\235\237.md",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=684, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2457, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./\346\246\202\345\277\265\345\222\214\347\272\246\346\235\237.md",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./temp_args.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2457, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=684, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./concept1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./tmp.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=241, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=539, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./concept1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./tmp.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=241, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=539, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmt.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./\346\246\202\345\277\265\345\222\214\347\272\246\346\235\237.md",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=120, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2457, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmt.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./\346\246\202\345\277\265\345\222\214\347\272\246\346\235\237.md",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=120, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2457, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmtlib.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./concept1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=77, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=241, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmtlib.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./concept1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=77, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=241, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmt_mem_buf.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmt.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=397, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=120, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmt_mem_buf.cpp", {st_mode=S_IFREG|0644, st_size=397, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmt.cpp", {st_mode=S_IFREG|0644, st_size=120, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./header_test.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmtlib.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=215, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=77, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./header_test.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmtlib.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=215, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=77, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./hello.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmt_mem_buf.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=102, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=397, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./hello.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fmt_mem_buf.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=102, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=397, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./mysum.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./header_test.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=512, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=215, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./mysum.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./header_test.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=512, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=215, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./std_print.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./hello.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=105, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=102, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./std_print.cpp", {st_mode=S_IFREG|0644, st_size=105, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./hello.cpp",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./temp_simplify.cpp",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=102, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=168, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./temp_simplify.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./mysum.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=168, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=512, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./span.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./mysum.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=508, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=512, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./span.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./std_print.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=508, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=105, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./\346\216\250\345\257\274\346\214\207\345\274\225.md",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./std_print.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=160, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=105, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./\346\216\250\345\257\274\346\214\207\345\274\225.md",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./temp_simplify.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=160, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=168, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline_ns.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./temp_simplify.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=705, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=168, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline_ns.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./span.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=705, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=508, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.clang-format",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./span.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=6169, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=508, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.clang-format",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./\346\216\250\345\257\274\346\214\207\345\274\225.md",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=6169, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=160, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./Makefile",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./\346\216\250\345\257\274\346\214\207\345\274\225.md",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=743, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=160, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./Makefile",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline_ns.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=743, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=705, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline_ns.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0755, st_size=18008, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=705, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.clang-format",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0755, st_size=18008, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=6169, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./.clang-format",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=289, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=6169, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./Makefile",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=289, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=743, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align.o",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./Makefile",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=4120, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=743, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align.o",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=4120, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0755, st_size=18008, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./compile_commands.json",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=333, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0755, st_size=18008, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./compile_commands.json",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=333, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=289, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./flags.c",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=333, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=289, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./flags.c",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align.o",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=333, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=4120, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fsync1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./align.o",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=755, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=4120, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fsync1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./compile_commands.json",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=755, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=333, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./get_kernel_ver.c",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./compile_commands.json",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=878, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=333, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./get_kernel_ver.c",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./flags.c",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=878, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=333, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./misc.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./flags.c",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=901, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=333, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./misc.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fsync1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=901, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=755, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./fsync1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=133, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=755, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./get_kernel_ver.c",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=133, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=878, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.c",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./get_kernel_ver.c",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=162, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=878, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.c",  <unfinished ...>
+[pid  7917] write(1, "cpp_notes/misc/./ref_type.cpp 75"..., 4096 <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=162, ...}, 0) = 0
+[pid  7917] <... write resumed>)        = 4096
+[pid  7918] futex(0x7f01fb317710, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+[pid  7917] futex(0x7f01fb317710, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+[pid  7918] <... futex resumed>)        = -1 EAGAIN (Resource temporarily unavailable)
+[pid  7917] <... futex resumed>)        = 0
+[pid  7918] futex(0x7f01fb317710, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./misc.cpp",  <unfinished ...>
+[pid  7918] <... futex resumed>)        = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=901, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.h",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./misc.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=44, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=901, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.h",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=44, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=133, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./variant.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=222, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=133, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./variant.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.c",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=222, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=162, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./atomic.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.c",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=147, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=162, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./atomic.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.h",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=147, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=44, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./xsbase.h",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./inline.h",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2150, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=44, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./xsbase.h", {st_mode=S_IFREG|0644, st_size=2150, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./variant.cpp",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt.c",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=222, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=780, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./variant.cpp",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt.c",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=222, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=780, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./atomic.cpp",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt.cpp",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=147, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=229, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./atomic.cpp",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt.cpp",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=147, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=229, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./xsbase.h",  <unfinished ...>
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt_boost.cpp",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2150, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=32, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt_boost.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./xsbase.h",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=32, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./limits.cpp",  <unfinished ...>
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2150, ...}, 0) = 0
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=182, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./limits.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt.c",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=182, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=780, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./classlayout1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt.c",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=318, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=780, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./classlayout1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=318, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=229, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./op_new.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=767, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=229, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./op_new.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt_boost.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=767, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=32, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./optional.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./bt_boost.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1429, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=32, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./optional.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./limits.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1429, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=182, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./vector1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./limits.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1579, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=182, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./vector1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./classlayout1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1579, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=318, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./info.md",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./classlayout1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=82, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=318, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./info.md",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./op_new.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=82, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=767, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./arena.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./op_new.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=767, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./arena.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./optional.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1429, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./enable_if1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./optional.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=239, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1429, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./enable_if1.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./vector1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=239, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1579, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./dir_iter.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./vector1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=3528, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=1579, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./dir_iter.cpp",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./info.md",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=3528, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=82, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./a.out",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./info.md",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0755, st_size=652920, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=82, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./a.out",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./arena.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0755, st_size=652920, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./trace.out",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./arena.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=77396, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0
+[pid  7918] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./trace.out",  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./enable_if1.cpp",  <unfinished ...>
+[pid  7918] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=77775, ...}, 0) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=239, ...}, 0) = 0
+[pid  7918] getdents64(4,  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./enable_if1.cpp",  <unfinished ...>
+[pid  7918] <... getdents64 resumed>0x7f01ec000ba0 /* 0 entries */, 32768) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=239, ...}, 0) = 0
+[pid  7918] close(4 <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./dir_iter.cpp",  <unfinished ...>
+[pid  7918] <... close resumed>)        = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=3528, ...}, 0) = 0
+[pid  7918] rt_sigprocmask(SIG_BLOCK, ~[RT_1],  <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./dir_iter.cpp",  <unfinished ...>
+[pid  7918] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=3528, ...}, 0) = 0
+[pid  7918] madvise(0x7f01f9e00000, 8368128, MADV_DONTNEED <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./a.out",  <unfinished ...>
+[pid  7918] <... madvise resumed>)      = 0
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0755, st_size=652920, ...}, 0) = 0
+[pid  7918] exit(0 <unfinished ...>
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./a.out",  <unfinished ...>
+[pid  7918] <... exit resumed>)         = ?
+[pid  7917] <... newfstatat resumed>{st_mode=S_IFREG|0755, st_size=652920, ...}, 0) = 0
+[pid  7918] +++ exited with 0 +++
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./trace.out", {st_mode=S_IFREG|0644, st_size=79545, ...}, 0) = 0
+[pid  7917] newfstatat(AT_FDCWD, "/home/zp001/MyRepos/cpp_notes/misc/./trace.out", {st_mode=S_IFREG|0644, st_size=79679, ...}, 0) = 0
+[pid  7917] getdents64(3, 0x7f01f4000ba0 /* 0 entries */, 32768) = 0
+[pid  7917] close(3)                    = 0
+[pid  7917] rt_sigprocmask(SIG_BLOCK, ~[RT_1], NULL, 8) = 0
+[pid  7917] madvise(0x7f01fa800000, 8368128, MADV_DONTNEED) = 0
+[pid  7917] exit(0)                     = ?
+[pid  7917] +++ exited with 0 +++
+<... futex resumed>)                    = 0
+write(1, "/misc/./get_kernel_ver.cFile:  8"..., 2548) = 2548
+exit_group(0)                           = ?
++++ exited with 0 +++
