@@ -49,3 +49,14 @@ typedef多了之后，连自己都不知道这玩意是什么了。
 
 ![img](https://ask.qcloudimg.com/developer-images/article/1198598/5mfdn24fw6.png)
 
+## 如何抛出异常
+
+1. 就地打印出错信息。这点和其他程序逻辑一样：在出错的地方打印错误日志
+2. 抛出异常的目的
+   1. 快速退出程序
+   2. 提供足够的诊断信息，让程序员找bug
+3. 抛出异常应该携带的信息
+   1. exception的类型不重要
+   2. exception本身的错误信息要简短
+   3. exception本身要提供stacktrace
+   4. cxception要提供：源码函数名、源码文件名、出错行号
