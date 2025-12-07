@@ -1,1 +1,4 @@
 misc/.cache
+misc/.vscode
+misc/a.out
+*.a.out
